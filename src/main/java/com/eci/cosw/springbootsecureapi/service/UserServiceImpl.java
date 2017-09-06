@@ -29,7 +29,7 @@ public class UserServiceImpl
     @PostConstruct
     private void populateSampleData()
     {
-        users.add( new User( "Pepito", "Perez", "https://image.freepik.com/iconos-gratis/usuario-masculino-foto-de-perfil_318-37825.jpg", "pepitoperez","password","test@mail.com" ) );
+        users.add( new User( "Pepito", "Perez", "https://i.ytimg.com/vi/MAwceGopiek/maxresdefault.jpg", "pepitoperez","password","test@mail.com" ) );
     }
 
 

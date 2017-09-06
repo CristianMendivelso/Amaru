@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LabCosw.iml" filepath="$PROJECT_DIR$/LabCosw.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LabCosw_main.iml" filepath="$PROJECT_DIR$/.idea/modules/LabCosw_main.iml" group="LabCosw" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/LabCosw_test.iml" filepath="$PROJECT_DIR$/.idea/modules/LabCosw_test.iml" group="LabCosw" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Amaru.iml" filepath="$PROJECT_DIR$/.idea/modules/Amaru.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Amaru_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Amaru_main.iml" group="Amaru" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Amaru_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Amaru_test.iml" group="Amaru" />
     </modules>
   </component>
 </project>
