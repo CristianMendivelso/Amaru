@@ -24,7 +24,8 @@ import { UsersService } from './services/users.service';
 import { UserListPageComponent } from "./pages/user-list-page/user-list-page.component";
 
 const ROUTES = [
-  { path: '', component: SingInPageComponent },
+  { path: '', component: HomePageComponent },
+    { path: 'signin', component: SingInPageComponent },
   { path: 'home', component: HomePageComponent },
   {
     path: 'tasks', component: TaskListPageComponent,
@@ -36,7 +37,8 @@ const ROUTES = [
   },
     {
         path: 'newuser', component: UserEditPageComponent,
-        canActivate: [AuthService],
+
+
     },
 
   {
