@@ -1,4 +1,4 @@
-export class Comment {
+export class Group {
     private text: string;
     private user: string;
     private date: boolean;
@@ -9,5 +9,3 @@ export class Comment {
         this.date = date;
     }
 }
-
-
