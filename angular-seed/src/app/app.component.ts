@@ -25,4 +25,6 @@ export class AppComponent {
   signOut() {
     this.authService.signOut();
   }
+
+
 }

@@ -13,8 +13,7 @@ import java.util.List;
  * 8/21/17.
  */
 @Service
-public class UserServiceImpl
-    implements UserService
+public class UserServiceImpl implements UserService
 {
 
     private List<User> users = new ArrayList<>();
@@ -29,9 +28,66 @@ public class UserServiceImpl
     @PostConstruct
     private void populateSampleData()
     {
-        users.add( new User( "Pepito", "Perez", "https://image.freepik.com/iconos-gratis/usuario-masculino-foto-de-perfil_318-37825.jpg", "pepitoperez","password","test@mail.com" ) );
+        users.add( new User( "Pepito", "Perez", "https://image.freepik.com/iconos-gratis/usuario-masculino-foto-de-perfil_318-37825.jpg", "2343423","password","test@mail.com","Profesional Amigable","instructor","pepito" ) );
     }
 
+
+    public User editImage( String username, String newImage ){
+        int indice=0;
+        for (int i=0;i< users.size();i++){
+            if(users.get(i).getUsername().equals(username)){
+                indice=i;
+                User u = users.get(i);
+                u.setImage(newImage);
+                users.set(i,u);
+                break;
+            }
+
+        }
+        return users.get(indice);
+    };
+
+    public User editDescription( String username, String newDescription ){
+        int indice=0;
+        for (int i=0;i< users.size();i++){
+            if(users.get(i).getUsername().equals(username)){
+                indice=i;
+                User u = users.get(i);
+                u.setDescription(newDescription);
+                users.set(i,u);
+                break;
+            }
+        }
+        return users.get(indice);
+    };
+
+    public User editEmail(String username, String newEmail ){
+        int indice=0;
+        for (int i=0;i< users.size();i++){
+            if(users.get(i).getUsername().equals(username)){
+                indice=i;
+                User u = users.get(i);
+                u.setEmail(newEmail);
+                users.set(i,u);
+                break;
+            }
+        }
+        return users.get(indice);
+    };
+
+    public User editPhone( String username, String newPhone ){
+        int indice=0;
+        for (int i=0;i< users.size();i++){
+            if(users.get(i).getUsername().equals(username)){
+                indice=i;
+                User u = users.get(i);
+                u.setPhone(newPhone);
+                users.set(i,u);
+                break;
+            }
+        }
+        return users.get(indice);
+    };
 
     @Override
     public List<User> getUsers()
@@ -48,14 +104,25 @@ public class UserServiceImpl
     @Override
     public User createUser( User user )
     {
-        users.add( user );
+        synchronized (users){
+            user.setId(users.size());
+            users.add( user );
+        }
+
         return user;
     }
 
     @Override
-    public User findUserByEmail( String email )
+    public User findUserByUsername( String username )
     {
-        return users.get( 0 );
+        int indice=0;
+        for (int i=0;i< users.size();i++){
+            if(users.get(i).getUsername().equals(username)){
+                indice=i;
+                break;
+            }
+        }
+        return users.get(indice);
     }
 
     @Override

@@ -16,7 +16,15 @@ public interface UserService
 
     User createUser( User user );
 
-    User findUserByEmail( String email );
+    User editImage( String username, String newImage );
+
+    User editDescription( String username, String newDescription );
+
+    User editEmail(String username, String newEmail );
+
+    User editPhone( String username, String newPhone );
+
+    User findUserByUsername( String username );
 
     User findUserByEmailAndPassword( String email, String password );
 }

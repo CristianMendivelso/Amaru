@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\r\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n  <a class=\"navbar-brand\" href=\"#\">AMARU</a>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/tasks\" routerLink=\"/tasks\">Tasks</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/edit\" routerLink=\"/edit\">Edit</a>\r\n      </li>\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/newuser\" routerLink=\"/newuser\">New User</a>\r\n        </li>\r\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\r\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\r\n      </li>\r\n<form class=\"form-inline my-2 my-lg-0\">\r\n          <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">\r\n          <button class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#myModal\">Search</button>\r\n        </form>\r\n\r\n\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n <!-- Modal -->\r\n  <div class=\"modal fade\" id=\"myModal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n    \r\n      <!-- Modal content-->\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\r\n          <h4 class=\"modal-title\">Modal Header</h4>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <p>This feature is not implemented yet. Sorry for the inconvenience</p>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n        </div>\r\n      </div>\r\n      \r\n    </div>\r\n  </div>\r\n\r\n\r\n<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n\r\n\r\n"
+module.exports = "\r\n<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\r\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n  <a class=\"navbar-brand\" href=\"#\">AMARU</a>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/tasks\" routerLink=\"/tasks\">Tasks</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/edit\" routerLink=\"/edit\">Edit</a>\r\n      </li>\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/newuser\" routerLink=\"/newuser\">New User</a>\r\n        </li>\r\n\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/profile\" routerLink=\"/profile\">My Profile</a>\r\n        </li>\r\n\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/info\" routerLink=\"/info\">Edit Info</a>\r\n        </li>\r\n\r\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\r\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\r\n      </li>\r\n<form class=\"form-inline my-2 my-lg-0\">\r\n          <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">\r\n          <button class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#myModal\">Search</button>\r\n        </form>\r\n\r\n\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n <!-- Modal -->\r\n  <div class=\"modal fade\" id=\"myModal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n    \r\n      <!-- Modal content-->\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\r\n          <h4 class=\"modal-title\">Modal Header</h4>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <p>This feature is not implemented yet. Sorry for the inconvenience</p>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n        </div>\r\n      </div>\r\n      \r\n    </div>\r\n  </div>\r\n\r\n\r\n<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -106,14 +106,16 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/task-edit-page/task-edit-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/pages/page-not-found/page-not-found.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/user-edit-page/user-edit-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_todo_service__ = __webpack_require__("../../../../../src/app/services/todo.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_sign_in_sing_in_page_component__ = __webpack_require__("../../../../../src/app/pages/sign-in/sing-in-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__common_app_data_service__ = __webpack_require__("../../../../../src/app/common/app-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__ = __webpack_require__("../../../../../src/app/pages/edit-info/edit-info-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_todo_service__ = __webpack_require__("../../../../../src/app/services/todo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__ = __webpack_require__("../../../../../src/app/pages/sign-in/sing-in-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__common_app_data_service__ = __webpack_require__("../../../../../src/app/common/app-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_user_profile_user_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -140,24 +142,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
-    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_15__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
+    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_21__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */] },
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
+    { path: 'info', component: __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */] },
     {
-        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_8__pages_task_list_page_task_list_page_component__["a" /* TaskListPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_16__common_auth_service__["a" /* AuthService */]],
+        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_17__common_auth_service__["a" /* AuthService */]],
     },
     {
-        path: 'users', component: __WEBPACK_IMPORTED_MODULE_19__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_16__common_auth_service__["a" /* AuthService */]],
+        path: 'users', component: __WEBPACK_IMPORTED_MODULE_20__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
     },
     {
         path: 'newuser', component: __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
     },
     {
         path: 'edit', component: __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_16__common_auth_service__["a" /* AuthService */]],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_17__common_auth_service__["a" /* AuthService */]],
     },
     {
         path: '**', component: __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]
@@ -176,17 +181,19 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__pages_task_list_page_task_list_page_component__["a" /* TaskListPageComponent */],
             __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
             __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */]
+            __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_12__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_13__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(ROUTES),
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_14__angular_http__["c" /* HttpModule */]
+            __WEBPACK_IMPORTED_MODULE_15__angular_http__["c" /* HttpModule */]
         ],
         providers: [
             {
@@ -195,10 +202,10 @@ AppModule = __decorate([
                     apiURL: 'http://localhost:8080'
                 }
             },
-            __WEBPACK_IMPORTED_MODULE_13__services_todo_service__["a" /* TodoService */],
-            __WEBPACK_IMPORTED_MODULE_16__common_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_17__common_app_data_service__["a" /* AppDataService */],
-            __WEBPACK_IMPORTED_MODULE_18__services_users_service__["a" /* UsersService */],
+            __WEBPACK_IMPORTED_MODULE_14__services_todo_service__["a" /* TodoService */],
+            __WEBPACK_IMPORTED_MODULE_17__common_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_18__common_app_data_service__["a" /* AppDataService */],
+            __WEBPACK_IMPORTED_MODULE_19__services_users_service__["a" /* UsersService */],
             __WEBPACK_IMPORTED_MODULE_4__common_config_app_configuration_service__["a" /* AppConfiguration */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
@@ -498,18 +505,138 @@ var Todo = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
 var User = (function () {
-    function User(name, lastname, image, username, password, email) {
+    function User(name, lastname, image, phone, password, email, description, type, username) {
         this.name = name;
         this.lastname = lastname;
         this.image = image;
-        this.username = username;
+        this.phone = phone;
         this.password = password;
         this.email = email;
+        this.description = description;
+        this.type = type;
+        this.username = username;
     }
     return User;
 }());
 
 //# sourceMappingURL=user.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/edit-info/edit-info-page.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/edit-info/edit-info-page.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\r\n    <title>Edit Info</title>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n\r\n    <style>\r\n        h1 {\r\n            font-weight: bold;\r\n            color: #333333;\r\n        }\r\n        h2{\r\n            text-align: center;\r\n        }\r\n        .bg-1 {\r\n            background-color: #474e5d; /* Green */\r\n            color: #ffffff;\r\n        }\r\n        .bg-2 {\r\n            background-color: #1abc9c; /* Dark Blue */\r\n            color: #ffffff;\r\n        }\r\n        .bg-3 {\r\n            background-color: #fff; /* White */\r\n            color: #555555;\r\n        }\r\n        .btn {\r\n            padding: 10px 20px;\r\n            background-color: #333;\r\n            color: #f1f1f1;\r\n            border-radius: 0;\r\n            transition: .2s;\r\n        }\r\n    </style>\r\n</head>\r\n<body >\r\n\r\n\r\n\r\n<div class=\"container\">\r\n    <form [formGroup]=\"userForm\" >\r\n\r\n<div class=\"container-fluid bg-1 text-center\">\r\n    <h3>{{user.type}}</h3>\r\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"110\" height=\"110\" />\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\" class=\"btn btn-primary btn-lg\" data-toggle=\"modal\" data-target=\"#editImage\" >Edit Image</button>\r\n    <h3>{{user.name}}</h3>\r\n    <h3>{{user.lastname}}</h3>\r\n</div>\r\n\r\n<div class=\"container-fluid bg-2 text-center\">\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editEmail\">Edit Email</button>\r\n    <h3>Contact</h3>\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"   data-toggle=\"modal\" data-target=\"#editPhone\">Edit Phone</button>\r\n    <p>Email: {{user.email}}</p>\r\n    <br>\r\n    <p>Phone: {{user.phone}}</p>\r\n\r\n</div>\r\n\r\n<div class=\"container-fluid bg-3 text-center\">\r\n    <h3>Description</h3>\r\n    <p>{{user.description}}</p>\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editDescription\">Edit Description</button>\r\n\r\n</div>\r\n\r\n<div class=\"container\">\r\n    <h2>Cursos Actuales</h2>\r\n    <p>Cursos Actuales Ofrecidos:</p>\r\n    <table class=\"table table-bordered\">\r\n        <thead>\r\n        <tr>\r\n            <th>Firstname</th>\r\n            <th>Lastname</th>\r\n            <th>Email</th>\r\n        </tr>\r\n        </thead>\r\n        <tbody>\r\n        <tr>\r\n            <td>John</td>\r\n            <td>Doe</td>\r\n            <td>john@example.com</td>\r\n        </tr>\r\n        </tbody>\r\n    </table>\r\n</div>\r\n\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"editImage\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n\r\n        <!-- Modal content-->\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Edit Url Image</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>New Image Url:</p>\r\n                <input id=\"newImage\" formControlName=\"newImage\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newImage\" aria-label=\"newImage\">\r\n                <button type=\"button\" class=\"btn btn-default\" onclick=\"myFunction()\" (click)=\"onSubmitImage()\">Save</button>\r\n\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"editEmail\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n\r\n        <!-- Modal content-->\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Edit Email</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>New Email:</p>\r\n                <input id=\"newEmail\" formControlName=\"newEmail\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newEmail\" aria-label=\"newEmail\">\r\n                <button type=\"button\" class=\"btn btn-default\" onclick=\"myFunction()\" (click)=\"onSubmitEmail()\">Save</button>\r\n\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"editPhone\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n\r\n        <!-- Modal content-->\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Edit Phone</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>New Phone:</p>\r\n                <input id=\"newPhone\"  formControlName=\"newPhone\" class=\"form-control mr-sm-2\" type=\"number\" placeholder=\"newPhone\" aria-label=\"newPhone\">\r\n                <button type=\"button\" class=\"btn btn-default\" onclick=\"myFunction()\" (click)=\"onSubmitPhone()\">Save</button>\r\n\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"editDescription\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n\r\n        <!-- Modal content-->\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Edit Description</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>New Description:</p>\r\n                <input id=\"newDescription\" formControlName=\"newDescription\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newDescription\" aria-label=\"newDescription\">\r\n                <button type=\"button\" class=\"btn btn-default\" onclick=\"myFunction()\" (click)=\"onSubmitDescription()\">Save</button>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n    </form>\r\n\r\n</div>\r\n</body>\r\n</html>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/edit-info/edit-info-page.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditInfoPageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var EditInfoPageComponent = (function () {
+    function EditInfoPageComponent(usersService, router, formBuilder) {
+        this.usersService = usersService;
+        this.router = router;
+        this.formBuilder = formBuilder;
+    }
+    EditInfoPageComponent.prototype.onSubmitImage = function () {
+        var _this = this;
+        this.usersService.editImage(this.user.username, this.userForm.get('newImage').value).subscribe(function (serverResponse9) {
+            _this.router.navigate(['/']);
+        }, function (error) {
+            console.log(error);
+        });
+        this.router.navigate(['/']);
+    };
+    EditInfoPageComponent.prototype.onSubmitDescription = function () {
+        var _this = this;
+        this.usersService.editDescription(this.user.username, this.userForm.get('newDescription').value).subscribe(function (serverResponse9) {
+            _this.router.navigate(['/']);
+        }, function (error) {
+            console.log(error);
+        });
+        this.router.navigate(['/']);
+    };
+    EditInfoPageComponent.prototype.onSubmitPhone = function () {
+        var _this = this;
+        this.usersService.editPhone(this.user.username, this.userForm.get('newPhone').value).subscribe(function (serverResponse9) {
+            _this.router.navigate(['/']);
+        }, function (error) {
+            console.log(error);
+        });
+        this.router.navigate(['/']);
+    };
+    EditInfoPageComponent.prototype.onSubmitEmail = function () {
+        var _this = this;
+        this.usersService.editEmail(this.user.username, this.userForm.get('newEmail').value).subscribe(function (serverResponse9) {
+            _this.router.navigate(['/']);
+        }, function (error) {
+            console.log(error);
+        });
+        this.router.navigate(['/']);
+    };
+    EditInfoPageComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userForm = this.formBuilder.group({
+            newDescription: '',
+            newPhone: '',
+            newEmail: '',
+            newImage: ''
+        });
+        this.usersService.findUserByUsername("pepito").subscribe(function (usersResponse4) {
+            _this.user = usersResponse4;
+        });
+    };
+    return EditInfoPageComponent;
+}());
+EditInfoPageComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-edit-info-page',
+        template: __webpack_require__("../../../../../src/app/pages/edit-info/edit-info-page.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/edit-info/edit-info-page.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object])
+], EditInfoPageComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=edit-info-page.component.js.map
 
 /***/ }),
 
@@ -894,7 +1021,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-edit-page/user-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <h2> Registrarse en AMARU </h2>\r\n    <form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n      <div class=\"form-group\">\r\n        <label for=\"nombre\">Name</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"nombre\" formControlName=\"nombre\" required>\r\n      </div>\r\n  \r\n      <div class=\"form-group\">\r\n        <label for=\"lastname\">Lastname</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"lastname\" formControlName=\"lastname\">\r\n      </div>\r\n  \r\n      <div class=\"form-group\">\r\n        <label for=\"image\">Url Image</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\">\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"email\">Email</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\">\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"username\">Username</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"username\" formControlName=\"username\">\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"password\">Password</label>\r\n        <input type=\"password\" class=\"form-control\" id=\"password\" formControlName=\"password\">\r\n      </div>\r\n\r\n\r\n\r\n\r\n  \r\n      <button type=\"submit\" class=\"btn btn-success\">Registrarse</button>\r\n  \r\n    </form>\r\n  </div>"
+module.exports = "<div class=\"container\">\r\n    <h2> Sign Up in AMARU </h2>\r\n    <form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n      <div class=\"form-group\">\r\n        <label for=\"nombre\">Name</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"nombre\" formControlName=\"nombre\" required>\r\n      </div>\r\n  \r\n      <div class=\"form-group\">\r\n        <label for=\"lastname\">Lastname</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"lastname\" formControlName=\"lastname\">\r\n      </div>\r\n  \r\n      <div class=\"form-group\">\r\n        <label for=\"image\">Url Image</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\">\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"email\">Email</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\">\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"password\">Password</label>\r\n        <input type=\"password\" class=\"form-control\" id=\"password\" formControlName=\"password\">\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"username\">Username</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"username\" formControlName=\"username\">\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"phone\">Phone</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"phone\" formControlName=\"username\">\r\n      </div>\r\n\r\n\r\n\r\n      <div class=\"container\">\r\n        <label >Type of User</label>\r\n        <p>Teach as Instructor, Learn as Amaru</p>\r\n        <select class=\"form-control\" id=\"type\">\r\n          <option value=\"instructor\">Instructor</option>\r\n          <option value=\"amaru\">Amaru</option>\r\n        </select>\r\n      </div>\r\n\r\n\r\n      <br><br>\r\n      <button type=\"submit\" class=\"btn btn-success\">Registrarse</button>\r\n  \r\n    </form>\r\n  </div>"
 
 /***/ }),
 
@@ -932,13 +1059,16 @@ var UserEditPageComponent = (function () {
             password: '',
             nombre: '',
             lastname: '',
-            username: '',
-            image: ''
+            phone: '',
+            image: '',
+            description: '',
+            type: '',
+            username: ''
         });
     };
     UserEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.userService.create(this.userForm.get('nombre').value, this.userForm.get('lastname').value, this.userForm.get('image').value, this.userForm.get('username').value, this.userForm.get('password').value, this.userForm.get('email').value).subscribe(function (serverResponse2) {
+        this.userService.create(this.userForm.get('nombre').value, this.userForm.get('lastname').value, this.userForm.get('image').value, this.userForm.get('phone').value, this.userForm.get('password').value, this.userForm.get('email').value, this.userForm.get('description').value, this.userForm.get('type').value, this.userForm.get('username').value).subscribe(function (serverResponse2) {
             _this.router.navigate(['/users']);
         }, function (error) {
             console.log(error);
@@ -982,7 +1112,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-list-page/user-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<h2>Lista de Usuarios</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>Name</th>\r\n     <th>Lastname</th>\r\n     <th>Image</th>\r\n       <th>email</th>\r\n       <th>Username</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let user of usuarios\">\r\n   <td>{{user.name}}</td>\r\n   <td>{{user.lastname}}</td>\r\n     <td><img [src]=\"user.image\" width=\"110\" height=\"110\" /></td>\r\n     <td>{{user.email}}</td>\r\n     <td>{{user.username}}</td>\r\n </tr>\r\n</table>\r\n"
+module.exports = "\r\n<h2>Lista de Usuarios</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>Name</th>\r\n     <th>Lastname</th>\r\n     <th>Image</th>\r\n       <th>email</th>\r\n       <th>Phone</th>\r\n       <th>Type</th>\r\n       <th>Description</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let user of usuarios\">\r\n   <td>{{user.name}}</td>\r\n   <td>{{user.lastname}}</td>\r\n     <td><img [src]=\"user.image\" width=\"110\" height=\"110\" /></td>\r\n     <td>{{user.email}}</td>\r\n     <td>{{user.phone}}</td>\r\n     <td>{{user.type}}</td>\r\n     <td>{{user.description}}</td>\r\n </tr>\r\n</table>\r\n"
 
 /***/ }),
 
@@ -1028,6 +1158,75 @@ UserListPageComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=user-list-page.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/user-profile/user-profile-page.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/user-profile/user-profile-page.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\r\n    <title>User Page</title>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n    <style>\r\n        h1 {\r\n            font-weight: bold;\r\n            color: #333333;\r\n        }\r\n        h2{\r\n            text-align: center;\r\n        }\r\n        .bg-1 {\r\n            background-color: #474e5d; /* Green */\r\n            color: #ffffff;\r\n        }\r\n        .bg-2 {\r\n            background-color: #1abc9c; /* Dark Blue */\r\n            color: #ffffff;\r\n        }\r\n        .bg-3 {\r\n            background-color: #fff; /* White */\r\n            color: #555555;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n\r\n<div class=\"container-fluid bg-1 text-center\">\r\n    <h3>{{user.type}}</h3>\r\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"110\" height=\"110\" />\r\n    <h3>{{user.name}}</h3>\r\n    <h3>{{user.lastname}}</h3>\r\n</div>\r\n\r\n<div class=\"container-fluid bg-2 text-center\">\r\n    <h3>Contact</h3>\r\n    <p>{{user.email}}</p>\r\n    <p>{{user.phone}}</p>\r\n</div>\r\n\r\n<div class=\"container-fluid bg-3 text-center\">\r\n    <h3>Description</h3>\r\n    <p>{{user.description}}</p>\r\n</div>\r\n\r\n<div class=\"container\">\r\n    <h2>Cursos Actuales</h2>\r\n    <p>Cursos Actuales Ofrecidos:</p>\r\n    <table class=\"table table-bordered\">\r\n        <thead>\r\n        <tr>\r\n            <th>Firstname</th>\r\n            <th>Lastname</th>\r\n            <th>Email</th>\r\n        </tr>\r\n        </thead>\r\n        <tbody>\r\n        <tr>\r\n            <td>John</td>\r\n            <td>Doe</td>\r\n            <td>john@example.com</td>\r\n        </tr>\r\n        </tbody>\r\n    </table>\r\n</div>\r\n\r\n</body>\r\n</html>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/user-profile/user-profile-page.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProfilePageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var UserProfilePageComponent = (function () {
+    function UserProfilePageComponent(usersService) {
+        this.usersService = usersService;
+    }
+    UserProfilePageComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.usersService.findUserByUsername("pepito").subscribe(function (usersResponse4) {
+            _this.user = usersResponse4;
+        });
+    };
+    return UserProfilePageComponent;
+}());
+UserProfilePageComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-user-profile-page',
+        template: __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object])
+], UserProfilePageComponent);
+
+var _a;
+//# sourceMappingURL=user-profile-page.component.js.map
 
 /***/ }),
 
@@ -1127,6 +1326,18 @@ var UsersService = (function (_super) {
         _this.resourceUrl = 'user/users';
         return _this;
     }
+    UsersService.prototype.editImage = function (username, image) {
+        return this.post('user/editImage', { username: username, image: image });
+    };
+    UsersService.prototype.editPhone = function (username, phone) {
+        return this.post('user/editPhone', { username: username, phone: phone });
+    };
+    UsersService.prototype.editDescription = function (username, description) {
+        return this.post('user/editDescription', { username: username, description: description });
+    };
+    UsersService.prototype.editEmail = function (username, email) {
+        return this.post('user/editEmail', { username: username, email: email });
+    };
     UsersService.prototype.login = function (username, password) {
         var _this = this;
         return this.post('user/login', { username: username, password: password }, { credentials: false }).map(function (loginResponse) {
@@ -1138,8 +1349,12 @@ var UsersService = (function (_super) {
     UsersService.prototype.list = function () {
         return this.get(this.resourceUrl);
     };
-    UsersService.prototype.create = function (name, lastname, image, username, password, email) {
-        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_5__models_user__["a" /* User */](name, lastname, image, username, password, email));
+    UsersService.prototype.findUserByUsername = function (username) {
+        return this.get("user/" + username);
+    };
+    ;
+    UsersService.prototype.create = function (name, lastname, image, phone, password, email, description, type, username) {
+        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_5__models_user__["a" /* User */](name, lastname, image, phone, password, email, description, type, username));
     };
     return UsersService;
 }(__WEBPACK_IMPORTED_MODULE_1__common_api_service__["a" /* APIService */]));
