@@ -7,6 +7,7 @@ import java.util.Date;
  * Created by 2107262 on 9/6/17.
  */
 public class Group {
+
     private long id;
 
     private String name;
@@ -17,11 +18,11 @@ public class Group {
 
     private Float score;
 
-    //private ArrayList<Comment>Comment comments;
+    private ArrayList<Comment> comments;
 
     private String place;
 
-    private Date hour;
+    private String hour;
 
     private String[] days;
 
@@ -31,7 +32,7 @@ public class Group {
     {
     }
 
-    public Group( String name, User instructor, String place, Date hour, String[] days, String description)
+    public Group( String name, User instructor, String place, String hour, String[] days, String description)
     {
         this.setName(name);
         this.setInstructor(instructor);
@@ -39,6 +40,7 @@ public class Group {
         this.setHour(hour);
         this.setDays(days);
         this.setDescription(description);
+        this.setComments(new ArrayList<Comment>());
     }
 
 
@@ -90,11 +92,11 @@ public class Group {
         this.place = place;
     }
 
-    public Date getHour() {
+    public String getHour() {
         return hour;
     }
 
-    public void setHour(Date hour) {
+    public void setHour(String hour) {
         this.hour = hour;
     }
 
@@ -112,5 +114,17 @@ public class Group {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public ArrayList<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(ArrayList<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public void addComment(Comment comment){
+        this.comments.add(comment);
     }
 }

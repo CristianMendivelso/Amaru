@@ -4,7 +4,7 @@
     aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-  <a class="navbar-brand" href="#">COSW Angular 4</a>
+  <a class="navbar-brand" href="#">AMARU</a>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -22,6 +22,15 @@
         <li class="nav-item">
             <a class="nav-link" routerLinkActive="/newuser" routerLink="/newuser">New User</a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="/profile" routerLink="/profile">Ver Perfil</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="/info" routerLink="/info">Edit Info</a>
+        </li>
+
       <li *ngIf="isLoggedIn()" class="nav-item">
         <a href="#" class="nav-link" (click)="signOut()">(Sign Out)</a>
       </li>
@@ -38,7 +47,7 @@
  <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -52,7 +61,7 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
+
     </div>
   </div>
 

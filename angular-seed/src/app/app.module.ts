@@ -12,6 +12,7 @@ import { TaskListPageComponent } from './pages/task-list-page/task-list-page.com
 import { TaskEditPageComponent } from './pages/task-edit-page/task-edit-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { UserEditPageComponent } from './pages/user-edit-page/user-edit-page.component';
+import { EditInfoPageComponent } from './pages/edit-info/edit-info-page.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -22,21 +23,26 @@ import { AuthService } from './common/auth.service';
 import { AppDataService } from './common/app-data.service';
 import { UsersService } from './services/users.service';
 import { UserListPageComponent } from "./pages/user-list-page/user-list-page.component";
+import { UserProfilePageComponent } from "./pages/user-profile/user-profile-page.component";
 
 const ROUTES = [
-  { path: '', component: SingInPageComponent },
+  { path: '', component: HomePageComponent },
+    { path: 'signin', component: SingInPageComponent },
+    { path: 'profile', component: UserProfilePageComponent },
   { path: 'home', component: HomePageComponent },
-  {
-    path: 'tasks', component: TaskListPageComponent,
+    { path: 'info', component: EditInfoPageComponent },
+
+    {
+    path: 'tasks', component: SingInPageComponent,
     canActivate: [AuthService],
   },
   {
     path: 'users', component: UserListPageComponent,
-    canActivate: [AuthService],
   },
     {
         path: 'newuser', component: UserEditPageComponent,
-        canActivate: [AuthService],
+
+
     },
 
   {
@@ -57,7 +63,9 @@ const ROUTES = [
     PageNotFoundComponent,
     SingInPageComponent,
     UserListPageComponent,
-      UserEditPageComponent
+      UserEditPageComponent,
+      UserProfilePageComponent,
+      EditInfoPageComponent
   ],
   imports: [
     BrowserModule,
