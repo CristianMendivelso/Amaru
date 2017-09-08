@@ -45,10 +45,9 @@
 
 <div class="container-fluid bg-1 text-center">
     <h3>{{user.type}}</h3>
-    <img [src]="user.image" class="img-circle" width="110" height="110" />
+    <img [src]="user.image" class="img-circle" width="200" height="200" />
     <button type="button" style="position: absolute; right: 0;" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#editImage" >Edit Image</button>
-    <h3>{{user.name}}</h3>
-    <h3>{{user.lastname}}</h3>
+    <h3>{{user.name}} {{user.lastname}}</h3>
 </div>
 
 <div class="container-fluid bg-2 text-center">
@@ -56,17 +55,17 @@
     <h3>Contact</h3>
     <button type="button" style="position: absolute; right: 0;"class="btn btn-primary btn-lg"   data-toggle="modal" data-target="#editPhone">Edit Phone</button>
     <p>Email: {{user.email}}</p>
-    <br>
     <p>Phone: {{user.phone}}</p>
 
 </div>
 
 <div class="container-fluid bg-3 text-center">
+    <button type="button" style="position: absolute; right: 0;"class="btn btn-primary btn-lg"  data-toggle="modal" data-target="#editDescription">Edit Description</button>
     <h3>Description</h3>
     <p>{{user.description}}</p>
-    <button type="button" style="position: absolute; right: 0;"class="btn btn-primary btn-lg"  data-toggle="modal" data-target="#editDescription">Edit Description</button>
 
 </div>
+
 
 <div class="container">
     <h2>Cursos Actuales</h2>

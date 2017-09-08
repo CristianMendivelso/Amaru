@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class EditInfoPageComponent implements OnInit {
     private user: User;
     userForm: FormGroup;
-
+    private username:string;
 
     constructor(public usersService: UsersService,   public router: Router,    public formBuilder: FormBuilder,
 
@@ -24,9 +24,8 @@ export class EditInfoPageComponent implements OnInit {
 
 
     onSubmitImage() {
-
         this.usersService.editImage(
-            this.user.username,
+            this.username,
             this.userForm.get('newImage').value
         ).subscribe(serverResponse9=>{
             this.router.navigate(['/']);
@@ -37,9 +36,12 @@ export class EditInfoPageComponent implements OnInit {
 
     }
 
+
+
+
     onSubmitDescription() {
         this.usersService.editDescription(
-            this.user.username,
+            this.username,
             this.userForm.get('newDescription').value
         ).subscribe(serverResponse9=>{
             this.router.navigate(['/']);
@@ -53,7 +55,7 @@ export class EditInfoPageComponent implements OnInit {
     onSubmitPhone() {
 
         this.usersService.editPhone(
-            this.user.username,
+            this.username,
             this.userForm.get('newPhone').value
         ).subscribe(serverResponse9=>{
             this.router.navigate(['/']);
@@ -67,7 +69,7 @@ export class EditInfoPageComponent implements OnInit {
     onSubmitEmail() {
 
         this.usersService.editEmail(
-            this.user.username,
+            this.username,
             this.userForm.get('newEmail').value
         ).subscribe(serverResponse9=>{
             this.router.navigate(['/']);
@@ -85,8 +87,10 @@ export class EditInfoPageComponent implements OnInit {
             newEmail: '',
             newImage:''
         });
-        this.usersService.findUserByUsername("pepito").subscribe(usersResponse4 => {
+        this.username=sessionStorage.getItem('username');
+        this.usersService.findUserByUsername(this.username).subscribe(usersResponse4 => {
             this.user = usersResponse4;
         })
+
     }
 }

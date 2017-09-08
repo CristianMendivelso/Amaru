@@ -6,7 +6,7 @@ export class User {
     private password:string;
     private email:string;
     private description:string;
-    private type:string;
+    type:string;
     username:string;
     
         constructor(name: string, lastname: string, image: string, phone:string,password:string,email:string,description:string,type:string,username:string) {

@@ -33,7 +33,7 @@
 
       <div class="form-group">
         <label for="phone">Phone</label>
-        <input type="text" class="form-control" id="phone" formControlName="username">
+        <input type="int" class="form-control" id="phone" formControlName="phone">
       </div>
 
 
@@ -41,9 +41,9 @@
       <div class="container">
         <label >Type of User</label>
         <p>Teach as Instructor, Learn as Amaru</p>
-        <select class="form-control" id="type">
-          <option value="instructor">Instructor</option>
-          <option value="amaru">Amaru</option>
+        <select class="form-control" id="type"  formControlName="type">
+          <option value="INSTRUCTOR">Instructor</option>
+          <option value="AMARU">Amaru</option>
         </select>
       </div>
 

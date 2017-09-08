@@ -63,28 +63,32 @@ public class UserController
         return userService.editDescription(edit.getUsername(),edit.getDescription());
     }
 
+    @RequestMapping( value = "/findUser", method = RequestMethod.GET )
+    public User findUserByEmail(@RequestBody User user){
+        return userService.findUserByEmail(user.getEmail());
+    }
+
     @RequestMapping( value = "/editEmail", method = RequestMethod.POST )
     public User editEmail(@RequestBody User edit){
         return userService.editEmail(edit.getUsername(),edit.getEmail());
     }
 
+
     @RequestMapping( value = "/login", method = RequestMethod.POST )
     public Token login( @RequestBody User login )
         throws ServletException
     {
-
         String jwtToken = "";
 
-        if ( login.getEmail() == null || login.getPassword() == null )
+        if ( login.getUsername() == null || login.getPassword() == null )
         {
             throw new ServletException( "Please fill in username and password" );
         }
 
-        String username = login.getEmail();
+        String username = login.getUsername();
         String password = login.getPassword();
 
-        User user = userService.getUser( 0l );
-
+        User user = userService.findUserByUsername(login.getUsername());
         if ( user == null )
         {
             throw new ServletException( "User username not found." );

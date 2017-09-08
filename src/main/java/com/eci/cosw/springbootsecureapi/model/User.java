@@ -34,6 +34,7 @@ public class User
     }
 
     public User( String name, String lastname, String image, String phone,String password, String email, String description, String type,String username)
+
     {
         this.email = email;
         this.password = password;
@@ -92,7 +93,7 @@ public class User
     public String toString()
     {
         return "User{" + "id=" + id + ", email='" + email + '\'' + ", password='" + password + '\'' + ", firstname='"
-            + getName() + '\'' + ", image =" + getImage()+"username"+getUsername()+'}';
+            + getName() + "username "+ getUsername()+ "phone "+ getPhone()+ "description "+getDescription()+ "password " +  getPassword()+'\'' + '}';
     }
 
     public String getImage() {

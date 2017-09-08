@@ -15,9 +15,20 @@ export class UserProfilePageComponent implements OnInit {
     }
 
 
+    isInstructor() {
+        if (this.user.type==='INSTRUCTOR'){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
     ngOnInit() {
-        this.usersService.findUserByUsername("pepito").subscribe(usersResponse4 => {
+        this.usersService.findUserByUsername(sessionStorage.getItem('username')).subscribe(usersResponse4 => {
             this.user = usersResponse4;
         })
     }
+
+
 }
