@@ -7,7 +7,9 @@
      <th>Lastname</th>
      <th>Image</th>
        <th>email</th>
-       <th>Username</th>
+       <th>Phone</th>
+       <th>Type</th>
+       <th>Description</th>
    </tr>
  </thead>
  <tr *ngFor="let user of usuarios">
@@ -15,6 +17,8 @@
    <td>{{user.lastname}}</td>
      <td><img [src]="user.image" width="110" height="110" /></td>
      <td>{{user.email}}</td>
-     <td>{{user.username}}</td>
+     <td>{{user.phone}}</td>
+     <td>{{user.type}}</td>
+     <td>{{user.description}}</td>
  </tr>
 </table>

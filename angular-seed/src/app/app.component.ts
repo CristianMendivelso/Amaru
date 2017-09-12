@@ -3,6 +3,7 @@ import { AuthService } from './common/auth.service';
 import { Router } from '@angular/router';
 import { Group } from './models/group';
 import { GroupService } from "./services/group.service";
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { GroupService } from "./services/group.service";
 })
 export class AppComponent {
   title = 'app';
-  private group:Group;
+  searchForm: FormGroup;
+  group:Group;
   constructor(
     public authService: AuthService,
     public groupService: GroupService,
@@ -22,8 +24,11 @@ export class AppComponent {
     }
   }
 
-  findGroupByName(){
-    this.groupService.getGroupByName();
+  onsubmit(){
+    this.group=null;
+    this.groupService.getGroupByName(this.searchForm.get("search").value).subscribe(response => {
+      this.group=response;
+    });
   }
 
   isLoggedIn() {
@@ -33,4 +38,6 @@ export class AppComponent {
   signOut() {
     this.authService.signOut();
   }
+
+
 }

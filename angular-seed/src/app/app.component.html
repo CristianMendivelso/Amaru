@@ -4,7 +4,7 @@
     aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-  <a class="navbar-brand" href="#">COSW Angular 4</a>
+  <a class="navbar-brand" href="#">AMARU</a>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -22,11 +22,20 @@
         <li class="nav-item">
             <a class="nav-link" routerLinkActive="/newuser" routerLink="/newuser">New User</a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="/profile" routerLink="/profile">Ver Perfil</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" routerLinkActive="/info" routerLink="/info">Edit Info</a>
+        </li>
+
       <li *ngIf="isLoggedIn()" class="nav-item">
         <a href="#" class="nav-link" (click)="signOut()">(Sign Out)</a>
       </li>
-<form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()"class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" formControlName="search">
           <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#myModal">Search</button>
         </form>
 
@@ -38,21 +47,35 @@
  <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 class="modal-title">Result</h4>
         </div>
-        <div class="modal-body">
-          <p>This feature is not implemented yet. Sorry for the inconvenience</p>
+        <div *ngIf="group==null" class="modal-body">
+          <p>group not found</p>
+        </div>
+        <div *ngIf="group!=null" class="modal-body">
+            <h2>Group found</h2>
+            <table class="table table-bordered">
+             <thead>
+               <tr>
+                 <th>Name</th>
+                 <th>Photo</th>
+               </tr>
+             </thead>
+             <tr>
+               <td>{{group.name}}</td>
+               <td><img [src]="group.instructor.image" width="110" height="110" /></td>
+             </tr>
+            </table>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
+
     </div>
   </div>
 

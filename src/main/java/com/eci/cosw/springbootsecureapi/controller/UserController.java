@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 import javax.servlet.ServletException;
 import java.util.Date;
@@ -32,6 +34,10 @@ public class UserController
         return userService.getUsers();
     }
 
+    @RequestMapping( path = "/{username}", method = RequestMethod.GET )
+    public User findUserByUsername(@PathVariable String username){
+        return userService.findUserByUsername(username);
+    }
 
     @RequestMapping( value = "/users", method = RequestMethod.POST )
     public User setUser(@RequestBody User user){
@@ -39,11 +45,39 @@ public class UserController
             return userService.createUser(user);
     }
 
+    @RequestMapping( value = "/editImage", method = RequestMethod.POST )
+    public User editImage(@RequestBody User edit){
+
+        return userService.editImage(edit.getUsername(),edit.getImage());
+    }
+
+    @RequestMapping( value = "/editPhone", method = RequestMethod.POST )
+    public User editPhone(@RequestBody User edit){
+
+        return userService.editPhone(edit.getUsername(),edit.getPhone());
+    }
+
+    @RequestMapping( value = "/editDescription", method = RequestMethod.POST )
+    public User editDescription(@RequestBody User edit){
+
+        return userService.editDescription(edit.getUsername(),edit.getDescription());
+    }
+
+    @RequestMapping( value = "/findUser", method = RequestMethod.GET )
+    public User findUserByEmail(@RequestBody User user){
+        return userService.findUserByEmail(user.getEmail());
+    }
+
+    @RequestMapping( value = "/editEmail", method = RequestMethod.POST )
+    public User editEmail(@RequestBody User edit){
+        return userService.editEmail(edit.getUsername(),edit.getEmail());
+    }
+
+
     @RequestMapping( value = "/login", method = RequestMethod.POST )
     public Token login( @RequestBody User login )
         throws ServletException
     {
-
         String jwtToken = "";
 
         if ( login.getUsername() == null || login.getPassword() == null )
@@ -54,8 +88,7 @@ public class UserController
         String username = login.getUsername();
         String password = login.getPassword();
 
-        User user = userService.getUser( 0l );
-
+        User user = userService.findUserByUsername(login.getUsername());
         if ( user == null )
         {
             throw new ServletException( "User username not found." );

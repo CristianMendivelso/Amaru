@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>User Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        h1 {
+            font-weight: bold;
+            color: #333333;
+        }
+        h2{
+            text-align: center;
+        }
+        .bg-1 {
+            background-color: #474e5d; /* Green */
+            color: #ffffff;
+        }
+        .bg-2 {
+            background-color: #1abc9c; /* Dark Blue */
+            color: #ffffff;
+        }
+        .bg-3 {
+            background-color: #fff; /* White */
+            color: #555555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid bg-1 text-center">
+    <h3>{{user.type}}</h3>
+    <img [src]="user.image" class="img-circle" width="200" height="200" />
+    <h3>{{user.name}} {{user.lastname}}</h3>
+</div>
+
+<div class="container-fluid bg-2 text-center">
+    <h3>Contact</h3>
+    <p>{{user.email}}</p>
+    <p>{{user.phone}}</p>
+</div>
+
+<div class="container-fluid bg-3 text-center">
+    <h3>Description</h3>
+    <p>{{user.description}}</p>
+</div>
+
+<div class="container">
+    <h2>Cursos Actuales</h2>
+    <p>Cursos Actuales Ofrecidos:</p>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="isInstructor()" class="container-fluid bg-3 text-center">
+    <h3>Averague rate</h3>
+    <p>5</p>
+    <h3>Rate Instructor</h3>
+    <select class="form-control" id="sel1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+    <button type="button" style="position: absolute; right: 0;"class="btn btn-primary btn-lg"  data-toggle="modal" data-target="#editDescription">Rate</button>
+
+</div>
+
+</body>
+</html>

@@ -15,24 +15,36 @@ public class User
 
     private String image;
 
-    private String username;
+    private String phone;
 
     private String password;
 
     private String email;
 
+    private String description;
+
+    private String type;
+
+    private String username;
+
+
+
     public User()
     {
     }
 
-    public User( String name, String lastname, String image, String username,String password, String email )
+    public User( String name, String lastname, String image, String phone,String password, String email, String description, String type,String username)
+
     {
         this.email = email;
         this.password = password;
-        this.setName(name);
+        this.name=name;
         this.lastname = lastname;
-        this.username=username;
+        this.setPhone(phone);
         this.image=image;
+        this.setDescription(description);
+        this.setType(type);
+        this.username=username;
     }
 
 
@@ -76,21 +88,12 @@ public class User
         this.lastname = lastname;
     }
 
-    public String getUsername()
-    {
-        return username;
-    }
-
-    public void setUsername( String username )
-    {
-        this.username = username;
-    }
 
     @Override
     public String toString()
     {
         return "User{" + "id=" + id + ", email='" + email + '\'' + ", password='" + password + '\'' + ", firstname='"
-            + getName() + '\'' + '}';
+            + getName() + "username "+ getUsername()+ "phone "+ getPhone()+ "description "+getDescription()+ "password " +  getPassword()+'\'' + '}';
     }
 
     public String getImage() {
@@ -107,5 +110,37 @@ public class User
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

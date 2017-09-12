@@ -7,5 +7,18 @@ import com.eci.cosw.springbootsecureapi.model.Group;
  */
 public interface GroupService {
 
+<<<<<<< HEAD
     public Group findGroupByName(String name);
+=======
+    Group editPlace(String name, String newPlace);
+
+    Group editHour(String name, String newHour);
+
+    Group editDays(String name, String[] newDays);
+
+    Group editDescription(String name, String newDescription);
+
+    Group editName(String name, String newName);
+
+>>>>>>> origin/master
 }

@@ -27,7 +27,8 @@ export class SingInPageComponent implements OnInit {
   }
 
   doLogin() {
-    this.usersService.login(
+      sessionStorage.setItem('username', this.signInForm.get('username').value);
+      this.usersService.login(
       this.signInForm.get('username').value,
       this.signInForm.get('password').value).subscribe(loginResponse => {
         this.router.navigate(['tasks']);
