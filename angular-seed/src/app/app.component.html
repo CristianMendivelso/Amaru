@@ -34,9 +34,9 @@
       <li *ngIf="isLoggedIn()" class="nav-item">
         <a href="#" class="nav-link" (click)="signOut()">(Sign Out)</a>
       </li>
-<form [formGroup]="searchForm" (ngSubmit)="onSubmit()"class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" formControlName="search">
-          <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#myModal">Search</button>
+<form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" #search>
+          <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#myModal" (click)="onSubmit(search.value)">Search</button>
         </form>
 
 

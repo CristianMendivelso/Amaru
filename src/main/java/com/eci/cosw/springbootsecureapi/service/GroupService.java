@@ -7,9 +7,8 @@ import com.eci.cosw.springbootsecureapi.model.Group;
  */
 public interface GroupService {
 
-<<<<<<< HEAD
+
     public Group findGroupByName(String name);
-=======
     Group editPlace(String name, String newPlace);
 
     Group editHour(String name, String newHour);
@@ -20,5 +19,5 @@ public interface GroupService {
 
     Group editName(String name, String newName);
 
->>>>>>> origin/master
+
 }

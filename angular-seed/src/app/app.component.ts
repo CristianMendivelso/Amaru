@@ -3,7 +3,7 @@ import { AuthService } from './common/auth.service';
 import { Router } from '@angular/router';
 import { Group } from './models/group';
 import { GroupService } from "./services/group.service";
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,6 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class AppComponent {
   title = 'app';
-  searchForm: FormGroup;
   group:Group;
   constructor(
     public authService: AuthService,
@@ -24,9 +23,9 @@ export class AppComponent {
     }
   }
 
-  onsubmit(){
+  onSubmit(search){
     this.group=null;
-    this.groupService.getGroupByName(this.searchForm.get("search").value).subscribe(response => {
+    this.groupService.getGroupByName(search).subscribe(response => {
       this.group=response;
     });
   }

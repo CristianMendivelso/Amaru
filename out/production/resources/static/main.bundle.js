@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\r\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n  <a class=\"navbar-brand\" href=\"#\">AMARU</a>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/tasks\" routerLink=\"/tasks\">Tasks</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/edit\" routerLink=\"/edit\">Edit</a>\r\n      </li>\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/newuser\" routerLink=\"/newuser\">New User</a>\r\n        </li>\r\n\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/profile\" routerLink=\"/profile\">Ver Perfil</a>\r\n        </li>\r\n\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/info\" routerLink=\"/info\">Edit Info</a>\r\n        </li>\r\n\r\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\r\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\r\n      </li>\r\n<form class=\"form-inline my-2 my-lg-0\">\r\n          <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">\r\n          <button class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#myModal\">Search</button>\r\n        </form>\r\n\r\n\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n <!-- Modal -->\r\n  <div class=\"modal fade\" id=\"myModal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n\r\n      <!-- Modal content-->\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\r\n          <h4 class=\"modal-title\">Modal Header</h4>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <p>This feature is not implemented yet. Sorry for the inconvenience</p>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n\r\n\r\n<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n\r\n\r\n"
+module.exports = "\r\n<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\r\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n  <a class=\"navbar-brand\" href=\"#\">AMARU</a>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/tasks\" routerLink=\"/tasks\">Tasks</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/edit\" routerLink=\"/edit\">Edit</a>\r\n      </li>\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/newuser\" routerLink=\"/newuser\">New User</a>\r\n        </li>\r\n\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/profile\" routerLink=\"/profile\">Ver Perfil</a>\r\n        </li>\r\n\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/info\" routerLink=\"/info\">Edit Info</a>\r\n        </li>\r\n\r\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\r\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\r\n      </li>\r\n<form class=\"form-inline my-2 my-lg-0\">\r\n          <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\" #search>\r\n          <button class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#myModal\" (click)=\"onSubmit(search.value)\">Search</button>\r\n        </form>\r\n\r\n\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n <!-- Modal -->\r\n  <div class=\"modal fade\" id=\"myModal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n\r\n      <!-- Modal content-->\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <h4 class=\"modal-title\">Result</h4>\r\n        </div>\r\n        <div *ngIf=\"group==null\" class=\"modal-body\">\r\n          <p>group not found</p>\r\n        </div>\r\n        <div *ngIf=\"group!=null\" class=\"modal-body\">\r\n            <h2>Group found</h2>\r\n            <table class=\"table table-bordered\">\r\n             <thead>\r\n               <tr>\r\n                 <th>Name</th>\r\n                 <th>Photo</th>\r\n               </tr>\r\n             </thead>\r\n             <tr>\r\n               <td>{{group.name}}</td>\r\n               <td><img [src]=\"group.instructor.image\" width=\"110\" height=\"110\" /></td>\r\n             </tr>\r\n            </table>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n\r\n\r\n<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -46,6 +46,7 @@ module.exports = "\r\n<nav class=\"navbar navbar-toggleable-md navbar-inverse fi
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,15 +59,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AppComponent = (function () {
-    function AppComponent(authService, router) {
+    function AppComponent(authService, groupService, router) {
         this.authService = authService;
+        this.groupService = groupService;
         this.router = router;
         this.title = 'app';
         if (!this.authService.isLoggedIn()) {
             this.router.navigate(['/']);
         }
     }
+    AppComponent.prototype.onSubmit = function (search) {
+        var _this = this;
+        this.group = null;
+        this.groupService.getGroupByName(search).subscribe(function (response) {
+            _this.group = response;
+        });
+    };
     AppComponent.prototype.isLoggedIn = function () {
         return this.authService.isLoggedIn();
     };
@@ -81,10 +91,10 @@ AppComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__common_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__common_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__common_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__common_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_group_service__["a" /* GroupService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _c || Object])
 ], AppComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -109,13 +119,14 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__ = __webpack_require__("../../../../../src/app/pages/edit-info/edit-info-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_todo_service__ = __webpack_require__("../../../../../src/app/services/todo.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__ = __webpack_require__("../../../../../src/app/pages/sign-in/sing-in-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__common_app_data_service__ = __webpack_require__("../../../../../src/app/common/app-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_user_profile_user_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__ = __webpack_require__("../../../../../src/app/pages/sign-in/sing-in-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__common_app_data_service__ = __webpack_require__("../../../../../src/app/common/app-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_user_profile_user_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -144,25 +155,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
-    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_21__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */] },
+    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_22__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */] },
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
     { path: 'info', component: __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */] },
     {
-        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_17__common_auth_service__["a" /* AuthService */]],
+        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */]],
     },
     {
-        path: 'users', component: __WEBPACK_IMPORTED_MODULE_20__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
+        path: 'users', component: __WEBPACK_IMPORTED_MODULE_21__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
     },
     {
         path: 'newuser', component: __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
     },
     {
         path: 'edit', component: __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_17__common_auth_service__["a" /* AuthService */]],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */]],
     },
     {
         path: '**', component: __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]
@@ -181,10 +193,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__pages_task_list_page_task_list_page_component__["a" /* TaskListPageComponent */],
             __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
             __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
             __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */],
             __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */]
         ],
         imports: [
@@ -193,7 +205,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(ROUTES),
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_15__angular_http__["c" /* HttpModule */]
+            __WEBPACK_IMPORTED_MODULE_16__angular_http__["c" /* HttpModule */]
         ],
         providers: [
             {
@@ -203,10 +215,11 @@ AppModule = __decorate([
                 }
             },
             __WEBPACK_IMPORTED_MODULE_14__services_todo_service__["a" /* TodoService */],
-            __WEBPACK_IMPORTED_MODULE_17__common_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_18__common_app_data_service__["a" /* AppDataService */],
-            __WEBPACK_IMPORTED_MODULE_19__services_users_service__["a" /* UsersService */],
-            __WEBPACK_IMPORTED_MODULE_4__common_config_app_configuration_service__["a" /* AppConfiguration */]
+            __WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_19__common_app_data_service__["a" /* AppDataService */],
+            __WEBPACK_IMPORTED_MODULE_20__services_users_service__["a" /* UsersService */],
+            __WEBPACK_IMPORTED_MODULE_4__common_config_app_configuration_service__["a" /* AppConfiguration */],
+            __WEBPACK_IMPORTED_MODULE_15__services_group_service__["a" /* GroupService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
@@ -868,7 +881,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/task-edit-page/task-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Edit Task</h2>\r\n  <form [formGroup]=\"todoForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"description\">Description</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Priority</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"priority\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"completed\">Completed</label>\r\n      <input type=\"checkbox\" class=\"form-control\" id=\"completed\" formControlName=\"completed\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Save</button>\r\n\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <h2>Edit Task</h2>\r\n  <form [formGroup]=\"todoForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"description\">Description</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Priority</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"priority\" formControlName=\"priority\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"completed\">Completed</label>\r\n      <input type=\"checkbox\" class=\"form-control\" id=\"completed\" formControlName=\"completed\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Save</button>\r\n\r\n  </form>\r\n</div>"
 
 /***/ }),
 
@@ -1237,6 +1250,49 @@ UserProfilePageComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=user-profile-page.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/group.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_api_service__ = __webpack_require__("../../../../../src/app/common/api.service.ts");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var GroupService = (function (_super) {
+    __extends(GroupService, _super);
+    function GroupService() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    GroupService.prototype.getGroupByName = function (name) {
+        return this.get("group/" + name);
+    };
+    return GroupService;
+}(__WEBPACK_IMPORTED_MODULE_1__common_api_service__["a" /* APIService */]));
+GroupService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])()
+], GroupService);
+
+//# sourceMappingURL=group.service.js.map
 
 /***/ }),
 

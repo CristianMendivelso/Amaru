@@ -5,10 +5,9 @@ import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class GroupService extends APIService{
-    private resourceUrl = 'group/name';
 
     getGroupByName(name:string): Observable<Group>{
-        return this.get(this.resourceUrl,name);
+        return this.get("group/"+name);
     }
 
 

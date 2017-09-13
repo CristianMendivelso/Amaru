@@ -1,14 +1,15 @@
 package com.eci.cosw.springbootsecureapi.service;
 
 import com.eci.cosw.springbootsecureapi.model.Group;
+import com.eci.cosw.springbootsecureapi.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-<<<<<<< HEAD
+
 import org.springframework.stereotype.Service;
 
-=======
+
 
 import javax.annotation.PostConstruct;
->>>>>>> origin/master
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,24 +20,8 @@ import java.util.List;
 @Service
 public class GroupServiceImpl implements GroupService{
 
-<<<<<<< HEAD
-    private List<Group> groups=new ArrayList<Group>();
-    @Autowired
-    public GroupServiceImpl(){
-
-    }
-    @Override
-    public Group findGroupByName(String name) {
-        Group found=null;
-        for(int i=0;i<groups.size();i++){
-            if(groups.get(i).getName().equals(name)) {
-                found = groups.get(i);
-            }
-        }
-        return found;
-=======
     private List<Group> groups = new ArrayList<>();
-    private UserServiceImpl users = new UserServiceImpl();
+    private UserService users = new UserServiceImpl();
 
     @Autowired
     public GroupServiceImpl()
@@ -44,11 +29,26 @@ public class GroupServiceImpl implements GroupService{
 
     }
 
+    @Override
+    public Group findGroupByName(String name) {
+        Group found = null;
+        for (int i = 0; i < groups.size(); i++) {
+            if (groups.get(i).getName().equals(name)) {
+                found = groups.get(i);
+            }
+        }
+        return found;
+    }
+
+
+
+
+
     @PostConstruct
     private void populateSampleData()
     {
         String[] days = {"Saturday", "Sunday"};
-        groups.add( new Group( "Volleyball", users.getUsers().get(0), "Parque el virrey", "10:00 am - 12:00 pm", days, "Learn how to play volleyball, and enjoy your morning exercising") );
+        groups.add( new Group( "Volleyball",  new User( "Pepito", "Perez", "https://image.freepik.com/iconos-gratis/usuario-masculino-foto-de-perfil_318-37825.jpg", "2343423","password","test@mail.com","Profesional Amigable","Instructor","pepito" ), "Parque el virrey", "10:00 am - 12:00 pm", days, "Learn how to play volleyball, and enjoy your morning exercising") );
     }
 
     @Override
@@ -74,6 +74,6 @@ public class GroupServiceImpl implements GroupService{
     @Override
     public Group editName(String name, String newName) {
         return null;
->>>>>>> origin/master
+
     }
 }
