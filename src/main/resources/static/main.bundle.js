@@ -1,15 +1,19 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src lazy recursive":
+/***/ "../../../../../src/$$_gendir lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
-	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
 }
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src lazy recursive";
+webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
@@ -34,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\r\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\r\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n      </button>\r\n  <a class=\"navbar-brand\" href=\"#\">AMARU</a>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/tasks\" routerLink=\"/tasks\">Tasks</a>\r\n      </li>\r\n      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLinkActive=\"/edit\" routerLink=\"/edit\">Edit</a>\r\n      </li>\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/newuser\" routerLink=\"/newuser\">New User</a>\r\n        </li>\r\n\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/profile\" routerLink=\"/profile\">Ver Perfil</a>\r\n        </li>\r\n\r\n        <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"/info\" routerLink=\"/info\">Edit Info</a>\r\n        </li>\r\n\r\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\r\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\r\n      </li>\r\n<form class=\"form-inline my-2 my-lg-0\">\r\n          <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">\r\n          <button class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#myModal\">Search</button>\r\n        </form>\r\n\r\n\r\n    </ul>\r\n  </div>\r\n</nav>\r\n\r\n <!-- Modal -->\r\n  <div class=\"modal fade\" id=\"myModal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n\r\n      <!-- Modal content-->\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\r\n          <h4 class=\"modal-title\">Modal Header</h4>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <p>This feature is not implemented yet. Sorry for the inconvenience</p>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n\r\n\r\n<div class=\"container\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n\r\n\r\n"
+module.exports = "\n<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n  <a class=\"navbar-brand\" href=\"#\">AMARU</a>\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/tasks\" routerLink=\"/tasks\">Tasks</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/edit\" routerLink=\"/edit\">Edit</a>\n      </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/newuser\" routerLink=\"/newuser\">New User</a>\n        </li>\n\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/profile\" routerLink=\"/profile\">Ver Perfil</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/newGroup\" routerLink=\"/newGroup\">New Group</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/info\" routerLink=\"/info\">Edit Info</a>\n        </li>\n\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\n      </li>\n<form class=\"form-inline my-2 my-lg-0\">\n          <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">\n          <button class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#myModal\">Search</button>\n        </form>\n\n\n    </ul>\n  </div>\n</nav>\n\n <!-- Modal -->\n  <div class=\"modal fade\" id=\"myModal\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n      <!-- Modal content-->\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n          <h4 class=\"modal-title\">Modal Header</h4>\n        </div>\n        <div class=\"modal-body\">\n          <p>This feature is not implemented yet. Sorry for the inconvenience</p>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n        </div>\n      </div>\n\n    </div>\n  </div>\n\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -107,15 +111,17 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/pages/page-not-found/page-not-found.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/user-edit-page/user-edit-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__ = __webpack_require__("../../../../../src/app/pages/edit-info/edit-info-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_todo_service__ = __webpack_require__("../../../../../src/app/services/todo.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__ = __webpack_require__("../../../../../src/app/pages/sign-in/sing-in-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__common_app_data_service__ = __webpack_require__("../../../../../src/app/common/app-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_user_profile_user_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_group_edit_page_group_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/group-edit-page/group-edit-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_todo_service__ = __webpack_require__("../../../../../src/app/services/todo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__ = __webpack_require__("../../../../../src/app/pages/sign-in/sing-in-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__common_app_data_service__ = __webpack_require__("../../../../../src/app/common/app-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_user_profile_user_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -144,25 +150,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
-    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_21__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */] },
+    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_23__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */] },
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
     { path: 'info', component: __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */] },
     {
-        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_17__common_auth_service__["a" /* AuthService */]],
+        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */]],
     },
     {
-        path: 'users', component: __WEBPACK_IMPORTED_MODULE_20__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
+        path: 'users', component: __WEBPACK_IMPORTED_MODULE_22__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
     },
     {
         path: 'newuser', component: __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
     },
     {
         path: 'edit', component: __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_17__common_auth_service__["a" /* AuthService */]],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */]],
+    },
+    {
+        path: 'newGroup', component: __WEBPACK_IMPORTED_MODULE_13__pages_group_edit_page_group_edit_page_component__["a" /* GroupEditPageComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */]],
     },
     {
         path: '**', component: __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]
@@ -181,19 +193,20 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__pages_task_list_page_task_list_page_component__["a" /* TaskListPageComponent */],
             __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
             __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
             __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_group_edit_page_group_edit_page_component__["a" /* GroupEditPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */],
             __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_13__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_14__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(ROUTES),
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_15__angular_http__["c" /* HttpModule */]
+            __WEBPACK_IMPORTED_MODULE_16__angular_http__["c" /* HttpModule */]
         ],
         providers: [
             {
@@ -202,10 +215,11 @@ AppModule = __decorate([
                     apiURL: 'http://localhost:8080'
                 }
             },
-            __WEBPACK_IMPORTED_MODULE_14__services_todo_service__["a" /* TodoService */],
-            __WEBPACK_IMPORTED_MODULE_17__common_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_18__common_app_data_service__["a" /* AppDataService */],
-            __WEBPACK_IMPORTED_MODULE_19__services_users_service__["a" /* UsersService */],
+            __WEBPACK_IMPORTED_MODULE_15__services_todo_service__["a" /* TodoService */],
+            __WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_19__common_app_data_service__["a" /* AppDataService */],
+            __WEBPACK_IMPORTED_MODULE_20__services_users_service__["a" /* UsersService */],
+            __WEBPACK_IMPORTED_MODULE_21__services_group_service__["a" /* GroupService */],
             __WEBPACK_IMPORTED_MODULE_4__common_config_app_configuration_service__["a" /* AppConfiguration */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
@@ -479,6 +493,30 @@ var INITIAL_CONFIG = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Inje
 
 /***/ }),
 
+/***/ "../../../../../src/app/models/group.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Group; });
+var Group = (function () {
+    function Group(name, instructor, place, days, hour, description) {
+        this.name = name;
+        this.instructor = instructor;
+        this.students = new Array();
+        this.score = 0;
+        this.comments = new Array();
+        this.place = place;
+        this.hour = hour;
+        this.days = days;
+        this.description = description;
+    }
+    return Group;
+}());
+
+//# sourceMappingURL=group.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/models/todo.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -544,7 +582,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/edit-info/edit-info-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\r\n    <title>Edit Info</title>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n\r\n    <style>\r\n        h1 {\r\n            font-weight: bold;\r\n            color: #333333;\r\n        }\r\n        h2{\r\n            text-align: center;\r\n        }\r\n        .bg-1 {\r\n            background-color: #474e5d; /* Green */\r\n            color: #ffffff;\r\n        }\r\n        .bg-2 {\r\n            background-color: #1abc9c; /* Dark Blue */\r\n            color: #ffffff;\r\n        }\r\n        .bg-3 {\r\n            background-color: #fff; /* White */\r\n            color: #555555;\r\n        }\r\n        .btn {\r\n            padding: 10px 20px;\r\n            background-color: #333;\r\n            color: #f1f1f1;\r\n            border-radius: 0;\r\n            transition: .2s;\r\n        }\r\n    </style>\r\n</head>\r\n<body >\r\n\r\n\r\n\r\n<div class=\"container\">\r\n    <form [formGroup]=\"userForm\" >\r\n\r\n<div class=\"container-fluid bg-1 text-center\">\r\n    <h3>{{user.type}}</h3>\r\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\" class=\"btn btn-primary btn-lg\" data-toggle=\"modal\" data-target=\"#editImage\" >Edit Image</button>\r\n    <h3>{{user.name}} {{user.lastname}}</h3>\r\n</div>\r\n\r\n<div class=\"container-fluid bg-2 text-center\">\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editEmail\">Edit Email</button>\r\n    <h3>Contact</h3>\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"   data-toggle=\"modal\" data-target=\"#editPhone\">Edit Phone</button>\r\n    <p>Email: {{user.email}}</p>\r\n    <p>Phone: {{user.phone}}</p>\r\n\r\n</div>\r\n\r\n<div class=\"container-fluid bg-3 text-center\">\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editDescription\">Edit Description</button>\r\n    <h3>Description</h3>\r\n    <p>{{user.description}}</p>\r\n\r\n</div>\r\n\r\n\r\n<div class=\"container\">\r\n    <h2>Cursos Actuales</h2>\r\n    <p>Cursos Actuales Ofrecidos:</p>\r\n    <table class=\"table table-bordered\">\r\n        <thead>\r\n        <tr>\r\n            <th>Firstname</th>\r\n            <th>Lastname</th>\r\n            <th>Email</th>\r\n        </tr>\r\n        </thead>\r\n        <tbody>\r\n        <tr>\r\n            <td>John</td>\r\n            <td>Doe</td>\r\n            <td>john@example.com</td>\r\n        </tr>\r\n        </tbody>\r\n    </table>\r\n</div>\r\n\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"editImage\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n\r\n        <!-- Modal content-->\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Edit Url Image</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>New Image Url:</p>\r\n                <input id=\"newImage\" formControlName=\"newImage\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newImage\" aria-label=\"newImage\">\r\n                <button type=\"button\" class=\"btn btn-default\" onclick=\"myFunction()\" (click)=\"onSubmitImage()\">Save</button>\r\n\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"editEmail\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n\r\n        <!-- Modal content-->\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Edit Email</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>New Email:</p>\r\n                <input id=\"newEmail\" formControlName=\"newEmail\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newEmail\" aria-label=\"newEmail\">\r\n                <button type=\"button\" class=\"btn btn-default\" onclick=\"myFunction()\" (click)=\"onSubmitEmail()\">Save</button>\r\n\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"editPhone\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n\r\n        <!-- Modal content-->\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Edit Phone</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>New Phone:</p>\r\n                <input id=\"newPhone\"  formControlName=\"newPhone\" class=\"form-control mr-sm-2\" type=\"number\" placeholder=\"newPhone\" aria-label=\"newPhone\">\r\n                <button type=\"button\" class=\"btn btn-default\" onclick=\"myFunction()\" (click)=\"onSubmitPhone()\">Save</button>\r\n\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n\r\n<!-- Modal -->\r\n<div class=\"modal fade\" id=\"editDescription\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n\r\n        <!-- Modal content-->\r\n        <div class=\"modal-content\">\r\n            <div class=\"modal-header\">\r\n                <h4 class=\"modal-title\">Edit Description</h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                <p>New Description:</p>\r\n                <input id=\"newDescription\" formControlName=\"newDescription\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newDescription\" aria-label=\"newDescription\">\r\n                <button type=\"button\" class=\"btn btn-default\" onclick=\"myFunction()\" (click)=\"onSubmitDescription()\">Save</button>\r\n            </div>\r\n            <div class=\"modal-footer\">\r\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n    </form>\r\n\r\n</div>\r\n</body>\r\n</html>\r\n"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\n    <title>Edit Info</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n\n    <style>\n        h1 {\n            font-weight: bold;\n            color: #333333;\n        }\n        h2{\n            text-align: center;\n        }\n        .bg-1 {\n            background-color: #474e5d; /* Green */\n            color: #ffffff;\n        }\n        .bg-2 {\n            background-color: #1abc9c; /* Dark Blue */\n            color: #ffffff;\n        }\n        .bg-3 {\n            background-color: #fff; /* White */\n            color: #555555;\n        }\n        .btn {\n            padding: 10px 20px;\n            background-color: #333;\n            color: #f1f1f1;\n            border-radius: 0;\n            transition: .2s;\n        }\n    </style>\n</head>\n<body >\n\n\n\n<div class=\"container\">\n    <form [formGroup]=\"userForm\" >\n\n<div class=\"container-fluid bg-1 text-center\">\n    <h3>{{user.type}}</h3>\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\n    <button type=\"button\" style=\"position: absolute; right: 0;\" class=\"btn btn-primary btn-lg\" data-toggle=\"modal\" data-target=\"#editImage\" >Edit Image</button>\n    <h3>{{user.name}} {{user.lastname}}</h3>\n</div>\n\n<div class=\"container-fluid bg-2 text-center\">\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editEmail\">Edit Email</button>\n    <h3>Contact</h3>\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"   data-toggle=\"modal\" data-target=\"#editPhone\">Edit Phone</button>\n    <p>Email: {{user.email}}</p>\n    <p>Phone: {{user.phone}}</p>\n\n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editDescription\">Edit Description</button>\n    <h3>Description</h3>\n    <p>{{user.description}}</p>\n\n</div>\n\n\n<div class=\"container\">\n    <h2>Cursos Actuales</h2>\n    <p>Cursos Actuales Ofrecidos:</p>\n    <table class=\"table table-bordered\">\n        <thead>\n        <tr>\n            <th>Firstname</th>\n            <th>Lastname</th>\n            <th>Email</th>\n        </tr>\n        </thead>\n        <tbody>\n        <tr>\n            <td>John</td>\n            <td>Doe</td>\n            <td>john@example.com</td>\n        </tr>\n        </tbody>\n    </table>\n</div>\n\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"editImage\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- Modal content-->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\">Edit Url Image</h4>\n            </div>\n            <div class=\"modal-body\">\n                <p>New Image Url:</p>\n                <input id=\"newImage\" formControlName=\"newImage\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newImage\" aria-label=\"newImage\">\n                <button type=\"button\" class=\"btn btn-default\" onclick=\"myFunction()\" (click)=\"onSubmitImage()\">Save</button>\n\n            </div>\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"editEmail\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- Modal content-->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\">Edit Email</h4>\n            </div>\n            <div class=\"modal-body\">\n                <p>New Email:</p>\n                <input id=\"newEmail\" formControlName=\"newEmail\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newEmail\" aria-label=\"newEmail\">\n                <button type=\"button\" class=\"btn btn-default\" onclick=\"myFunction()\" (click)=\"onSubmitEmail()\">Save</button>\n\n            </div>\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"editPhone\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- Modal content-->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\">Edit Phone</h4>\n            </div>\n            <div class=\"modal-body\">\n                <p>New Phone:</p>\n                <input id=\"newPhone\"  formControlName=\"newPhone\" class=\"form-control mr-sm-2\" type=\"number\" placeholder=\"newPhone\" aria-label=\"newPhone\">\n                <button type=\"button\" class=\"btn btn-default\" onclick=\"myFunction()\" (click)=\"onSubmitPhone()\">Save</button>\n\n            </div>\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"editDescription\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- Modal content-->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\">Edit Description</h4>\n            </div>\n            <div class=\"modal-body\">\n                <p>New Description:</p>\n                <input id=\"newDescription\" formControlName=\"newDescription\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newDescription\" aria-label=\"newDescription\">\n                <button type=\"button\" class=\"btn btn-default\" onclick=\"myFunction()\" (click)=\"onSubmitDescription()\">Save</button>\n            </div>\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            </div>\n        </div>\n\n    </div>\n</div>\n    </form>\n\n</div>\n</body>\n</html>\n"
 
 /***/ }),
 
@@ -641,6 +679,106 @@ var _a, _b, _c;
 
 /***/ }),
 
+/***/ "../../../../../src/app/pages/group-edit-page/group-edit-page.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/group-edit-page/group-edit-page.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n    <h2> Create Group </h2>\r\n    <form  novalidate>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"name\">Name</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"name\" #name required>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"place\">Place</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"place\" #place required>\r\n        </div>\r\n        \r\n        <div class=\"form-group\">\r\n            <label>Days</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day1\"  #monday>Monday\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day2\"  #tuesday>Tuesday\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day3\"  #wednesday>Wednesday\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day4\"  #thursday>Thursday\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day5\"  #friday>Friday\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day6\"  #saturday>Saturday\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day7\"  #sunday>Sunday\r\n            <br>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"hour\">Hour: </label>\r\n            <input type=\"time\" class=\"form-control\" width=\"34px\" id=\"hour\" #hour required>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"description\">Description</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"description\" #description required>\r\n        </div>\r\n\r\n        <br><br>\r\n        <button type=\"submit\" class=\"btn btn-success\" (click)=\"onSubmit(name.value,place.value,monday.value,tuesday.value,wednesday.value,thursday.value,friday.value, saturday.value, sunday.value,hour.value,description.value)\">Create group</button>\r\n\r\n    </form>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/group-edit-page/group-edit-page.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupEditPageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var GroupEditPageComponent = (function () {
+    function GroupEditPageComponent(groupService, router) {
+        this.groupService = groupService;
+        this.router = router;
+        this.days = [];
+    }
+    GroupEditPageComponent.prototype.ngOnInit = function () {
+    };
+    GroupEditPageComponent.prototype.onSubmit = function (name, place, monday, tuesday, wednesday, thursday, friday, saturday, sunday, hour, description) {
+        var _this = this;
+        if (monday) {
+            this.days.push("Monday");
+        }
+        if (tuesday) {
+            this.days.push("Tuesday");
+        }
+        if (wednesday) {
+            this.days.push("Wednesday");
+        }
+        if (thursday) {
+            this.days.push("Thursday");
+        }
+        if (friday) {
+            this.days.push("Friday");
+        }
+        if (saturday) {
+            this.days.push("Saturday");
+        }
+        if (sunday) {
+            this.days.push("Sunday");
+        }
+        this.days;
+        this.groupService.create(name, null, place, this.days, hour, description).subscribe(function (serverResponse) {
+            _this.router.navigate(['/groups']);
+        }, function (error) {
+            console.log(error);
+        });
+        this.router.navigate(['/groups']);
+    };
+    return GroupEditPageComponent;
+}());
+GroupEditPageComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-group-edit-page',
+        template: __webpack_require__("../../../../../src/app/pages/group-edit-page/group-edit-page.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/group-edit-page/group-edit-page.component.css")],
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_group_service__["a" /* GroupService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+], GroupEditPageComponent);
+
+var _a, _b;
+//# sourceMappingURL=group-edit-page.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/pages/home-page/home-page.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -649,7 +787,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#titulo {\r\n    font-style: italic;\r\n    text-align: center;\r\n    font-weight: bold;\r\n}", ""]);
+exports.push([module.i, "#titulo {\n    font-style: italic;\n    text-align: center;\n    font-weight: bold;\n}", ""]);
 
 // exports
 
@@ -662,7 +800,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/home-page/home-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <!-- Theme Made By www.w3schools.com - No Copyright -->\r\n  <title>Bootstrap Theme The Band</title>\r\n  <meta charset=\"utf-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n  <link href=\"https://fonts.googleapis.com/css?family=Lato\" rel=\"stylesheet\" type=\"text/css\">\r\n  <link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\" type=\"text/css\">\r\n\r\n  <style>\r\n    body {\r\n      font: 400 15px/1.8 Lato, sans-serif;\r\n      color: #777;\r\n    }\r\n    #tituloA{\r\n      color:#333333;\r\n      font-weight: bold;\r\n      text-align: center;\r\n    ;\r\n    }\r\n    h3, h4 {\r\n      margin: 10px 0 30px 0;\r\n      letter-spacing: 3px;\r\n      font-weight: bold;\r\n      color: #ffffff;\r\n      font-size: 20px;\r\n    }\r\n    .container {\r\n      padding: 80px 120px;\r\n    }\r\n    .person {\r\n      border: 10px solid transparent;\r\n      margin-bottom: 25px;\r\n      width: 80%;\r\n      height: 80%;\r\n      opacity: 0.7;\r\n    }\r\n    .person:hover {\r\n      border-color: #f1f1f1;\r\n    }\r\n    .carousel-inner img {\r\n      -webkit-filter: grayscale(20%);\r\n      filter: grayscale(20%); /* make all photos black and white */\r\n      width: 60%; /* Set width to 100% */\r\n      margin: auto;\r\n    }\r\n    .carousel-caption h3 {\r\n      color: #fff !important;\r\n    }\r\n    @media (max-width: 600px) {\r\n      .carousel-caption {\r\n        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */\r\n      }\r\n    }\r\n    .bg-1 {\r\n      background: #2d2d30;\r\n      color: #bdbdbd;\r\n    }\r\n    .bg-1 h3 {color: #fff;}\r\n    .bg-1 p {font-style: italic;}\r\n    .list-group-item:first-child {\r\n      border-top-right-radius: 0;\r\n      border-top-left-radius: 0;\r\n    }\r\n    .list-group-item:last-child {\r\n      border-bottom-right-radius: 0;\r\n      border-bottom-left-radius: 0;\r\n    }\r\n    .thumbnail {\r\n      padding: 0 0 15px 0;\r\n      border: none;\r\n      border-radius: 0;\r\n    }\r\n    .thumbnail p {\r\n      margin-top: 15px;\r\n      color: #555;\r\n    }\r\n    .btn {\r\n      padding: 10px 20px;\r\n      background-color: #333;\r\n      color: #f1f1f1;\r\n      border-radius: 0;\r\n      transition: .2s;\r\n    }\r\n    .btn:hover, .btn:focus {\r\n      border: 1px solid #333;\r\n      background-color: #fff;\r\n      color: #000;\r\n    }\r\n    .modal-header, h4, .close {\r\n      background-color: #333;\r\n      color: #fff !important;\r\n      text-align: center;\r\n      font-size: 30px;\r\n    }\r\n    .modal-header, .modal-body {\r\n      padding: 40px 50px;\r\n    }\r\n    .nav-tabs li a {\r\n      color: #777;\r\n    }\r\n    #googleMap {\r\n      width: 100%;\r\n      height: 400px;\r\n      -webkit-filter: grayscale(100%);\r\n      filter: grayscale(100%);\r\n    }\r\n    .navbar {\r\n      font-family: Montserrat, sans-serif;\r\n      margin-bottom: 0;\r\n      background-color: #2d2d30;\r\n      border: 0;\r\n      font-size: 11px !important;\r\n      letter-spacing: 4px;\r\n      opacity: 0.9;\r\n    }\r\n    .navbar li a, .navbar .navbar-brand {\r\n      color: #d5d5d5 !important;\r\n    }\r\n    .navbar-nav li a:hover {\r\n      color: #fff !important;\r\n    }\r\n    .navbar-nav li.active a {\r\n      color: #fff !important;\r\n      background-color: #29292c !important;\r\n    }\r\n    .navbar-default .navbar-toggle {\r\n      border-color: transparent;\r\n    }\r\n    .open .dropdown-toggle {\r\n      color: #fff;\r\n      background-color: #555 !important;\r\n    }\r\n    .dropdown-menu li a {\r\n      color: #000 !important;\r\n    }\r\n    .dropdown-menu li a:hover {\r\n      background-color: red !important;\r\n    }\r\n    footer {\r\n      background-color: #2d2d30;\r\n      color: #f5f5f5;\r\n      padding: 32px;\r\n    }\r\n    footer a {\r\n      color: #f5f5f5;\r\n    }\r\n    footer a:hover {\r\n      color: #777;\r\n      text-decoration: none;\r\n    }\r\n    .form-control {\r\n      border-radius: 0;\r\n    }\r\n    textarea {\r\n      resize: none;\r\n    }\r\n\r\n  </style>\r\n</head>\r\n<body id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">\r\n\r\n\r\n<div id=\"tituloA\"  >\r\n  <button style=\"position: absolute; right: 0;\" type=\"button\" class=\"btn btn-primary btn-lg\"  routerLinkActive=\"/signin\" routerLink=\"/signin\">Iniciar Sesión</button>\r\n  <h1 >Bienvenido a AMARU</h1>\r\n</div>\r\n\r\n\r\n<div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\r\n  <!-- Indicators -->\r\n  <ol class=\"carousel-indicators\">\r\n    <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\r\n    <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\r\n    <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\r\n  </ol>\r\n\r\n  <!-- Wrapper for slides -->\r\n  <div class=\"carousel-inner\" role=\"listbox\">\r\n    <div class=\"item active\">\r\n      <img src=\"http://www.zamoradeportivo.com/fotos/img_1263.jpg\" alt=\"New York\" width=\"800\" height=\"600\">\r\n      <div class=\"carousel-caption\">\r\n        <h3>Puedes Aprender</h3>\r\n        <p>¡En AMARU Puedes Aprender Disciplinas Deportivas Como Kick Boxing Entre Otros!</p>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"item\">\r\n      <img src=\"http://3.bp.blogspot.com/-a0rcSwOqJtk/VUnCm-RBOQI/AAAAAAAAZUA/PWGNB17bC54/s1600/IMG_7272.JPG\" alt=\"Chicago\" width=\"800\" height=\"600\">\r\n      <div class=\"carousel-caption\">\r\n        <h3>Crea Tus Propios Grupos</h3>\r\n        <p>En AMARU Con La Opción De Instructor Puedes Enseñarle A Los Demás</p>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"item\">\r\n      <img src=\"https://www.ecologiaverde.com/wp-content/2016/05/frisbee.jpg\" alt=\"Los Angeles\" width=\"800\" height=\"600\">\r\n      <div class=\"carousel-caption\">\r\n        <h3>Sal De La Rutina</h3>\r\n        <p>Con AMARU Puedes Aprovechar Tus Tiempos Libres Y Fortalecer Tu Mente Y Cuerpo</p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- Left and right controls -->\r\n  <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">\r\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\r\n    <span class=\"sr-only\">Previous</span>\r\n  </a>\r\n  <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">\r\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\r\n    <span class=\"sr-only\">Next</span>\r\n  </a>\r\n</div>\r\n\r\n<!-- Container (The Band Section) -->\r\n<div id=\"band\" class=\"container text-center\">\r\n  <h1>!Regístrate Es Gratis!</h1>\r\n  <button type=\"button\" class=\"btn btn-primary btn-lg\"  routerLinkActive=\"/newuser\" routerLink=\"/newuser\">REGISTRARSE</button>\r\n  <p><em>Nunca es tarde para empezar</em></p>\r\n  <br>\r\n\r\n</div>\r\n\r\n<!-- Container (TOUR Section) -->\r\n<div id=\"tour\" class=\"bg-1\">\r\n  <div class=\"container\">\r\n    <h3 class=\"text-center\">¿Qué es AMARU?</h3>\r\n    <p class=\"text-center\"> Sebastian Castaño <br> Leonardo Herrera <br> Cristian Mendivelso <br> Christian Soto </p>\r\n\r\n\r\n\r\n  </div>\r\n\r\n</div>\r\n\r\n<footer class=\"text-center\">\r\n  <a class=\"up-arrow\" href=\"#myPage\" data-toggle=\"tooltip\" title=\"TO TOP\">\r\n    <span class=\"glyphicon glyphicon-chevron-up\"></span>\r\n  </a><br><br>\r\n  <p>Bootstrap Theme Made By <a href=\"https://www.w3schools.com\" data-toggle=\"tooltip\" title=\"Visit w3schools\">www.w3schools.com</a></p>\r\n</footer>\r\n\r\n\r\n</body>\r\n</html>\r\n"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <!-- Theme Made By www.w3schools.com - No Copyright -->\n  <title>Bootstrap Theme The Band</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <link href=\"https://fonts.googleapis.com/css?family=Lato\" rel=\"stylesheet\" type=\"text/css\">\n  <link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\" type=\"text/css\">\n\n  <style>\n    body {\n      font: 400 15px/1.8 Lato, sans-serif;\n      color: #777;\n    }\n    #tituloA{\n      color:#333333;\n      font-weight: bold;\n      text-align: center;\n    ;\n    }\n    h3, h4 {\n      margin: 10px 0 30px 0;\n      letter-spacing: 3px;\n      font-weight: bold;\n      color: #ffffff;\n      font-size: 20px;\n    }\n    .container {\n      padding: 80px 120px;\n    }\n    .person {\n      border: 10px solid transparent;\n      margin-bottom: 25px;\n      width: 80%;\n      height: 80%;\n      opacity: 0.7;\n    }\n    .person:hover {\n      border-color: #f1f1f1;\n    }\n    .carousel-inner img {\n      -webkit-filter: grayscale(20%);\n      filter: grayscale(20%); /* make all photos black and white */\n      width: 60%; /* Set width to 100% */\n      margin: auto;\n    }\n    .carousel-caption h3 {\n      color: #fff !important;\n    }\n    @media (max-width: 600px) {\n      .carousel-caption {\n        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */\n      }\n    }\n    .bg-1 {\n      background: #2d2d30;\n      color: #bdbdbd;\n    }\n    .bg-1 h3 {color: #fff;}\n    .bg-1 p {font-style: italic;}\n    .list-group-item:first-child {\n      border-top-right-radius: 0;\n      border-top-left-radius: 0;\n    }\n    .list-group-item:last-child {\n      border-bottom-right-radius: 0;\n      border-bottom-left-radius: 0;\n    }\n    .thumbnail {\n      padding: 0 0 15px 0;\n      border: none;\n      border-radius: 0;\n    }\n    .thumbnail p {\n      margin-top: 15px;\n      color: #555;\n    }\n    .btn {\n      padding: 10px 20px;\n      background-color: #333;\n      color: #f1f1f1;\n      border-radius: 0;\n      transition: .2s;\n    }\n    .btn:hover, .btn:focus {\n      border: 1px solid #333;\n      background-color: #fff;\n      color: #000;\n    }\n    .modal-header, h4, .close {\n      background-color: #333;\n      color: #fff !important;\n      text-align: center;\n      font-size: 30px;\n    }\n    .modal-header, .modal-body {\n      padding: 40px 50px;\n    }\n    .nav-tabs li a {\n      color: #777;\n    }\n    #googleMap {\n      width: 100%;\n      height: 400px;\n      -webkit-filter: grayscale(100%);\n      filter: grayscale(100%);\n    }\n    .navbar {\n      font-family: Montserrat, sans-serif;\n      margin-bottom: 0;\n      background-color: #2d2d30;\n      border: 0;\n      font-size: 11px !important;\n      letter-spacing: 4px;\n      opacity: 0.9;\n    }\n    .navbar li a, .navbar .navbar-brand {\n      color: #d5d5d5 !important;\n    }\n    .navbar-nav li a:hover {\n      color: #fff !important;\n    }\n    .navbar-nav li.active a {\n      color: #fff !important;\n      background-color: #29292c !important;\n    }\n    .navbar-default .navbar-toggle {\n      border-color: transparent;\n    }\n    .open .dropdown-toggle {\n      color: #fff;\n      background-color: #555 !important;\n    }\n    .dropdown-menu li a {\n      color: #000 !important;\n    }\n    .dropdown-menu li a:hover {\n      background-color: red !important;\n    }\n    footer {\n      background-color: #2d2d30;\n      color: #f5f5f5;\n      padding: 32px;\n    }\n    footer a {\n      color: #f5f5f5;\n    }\n    footer a:hover {\n      color: #777;\n      text-decoration: none;\n    }\n    .form-control {\n      border-radius: 0;\n    }\n    textarea {\n      resize: none;\n    }\n\n  </style>\n</head>\n<body id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">\n\n\n<div id=\"tituloA\"  >\n  <button style=\"position: absolute; right: 0;\" type=\"button\" class=\"btn btn-primary btn-lg\"  routerLinkActive=\"/signin\" routerLink=\"/signin\">Iniciar Sesión</button>\n  <h1 >Bienvenido a AMARU</h1>\n</div>\n\n\n<div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\">\n    <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n    <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\n    <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n  </ol>\n\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <div class=\"item active\">\n      <img src=\"http://www.zamoradeportivo.com/fotos/img_1263.jpg\" alt=\"New York\" width=\"800\" height=\"600\">\n      <div class=\"carousel-caption\">\n        <h3>Puedes Aprender</h3>\n        <p>¡En AMARU Puedes Aprender Disciplinas Deportivas Como Kick Boxing Entre Otros!</p>\n      </div>\n    </div>\n\n    <div class=\"item\">\n      <img src=\"http://3.bp.blogspot.com/-a0rcSwOqJtk/VUnCm-RBOQI/AAAAAAAAZUA/PWGNB17bC54/s1600/IMG_7272.JPG\" alt=\"Chicago\" width=\"800\" height=\"600\">\n      <div class=\"carousel-caption\">\n        <h3>Crea Tus Propios Grupos</h3>\n        <p>En AMARU Con La Opción De Instructor Puedes Enseñarle A Los Demás</p>\n      </div>\n    </div>\n\n    <div class=\"item\">\n      <img src=\"https://www.ecologiaverde.com/wp-content/2016/05/frisbee.jpg\" alt=\"Los Angeles\" width=\"800\" height=\"600\">\n      <div class=\"carousel-caption\">\n        <h3>Sal De La Rutina</h3>\n        <p>Con AMARU Puedes Aprovechar Tus Tiempos Libres Y Fortalecer Tu Mente Y Cuerpo</p>\n      </div>\n    </div>\n  </div>\n\n  <!-- Left and right controls -->\n  <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n\n<!-- Container (The Band Section) -->\n<div id=\"band\" class=\"container text-center\">\n  <h1>!Regístrate Es Gratis!</h1>\n  <button type=\"button\" class=\"btn btn-primary btn-lg\"  routerLinkActive=\"/newuser\" routerLink=\"/newuser\">REGISTRARSE</button>\n  <p><em>Nunca es tarde para empezar</em></p>\n  <br>\n\n</div>\n\n<!-- Container (TOUR Section) -->\n<div id=\"tour\" class=\"bg-1\">\n  <div class=\"container\">\n    <h3 class=\"text-center\">¿Qué es AMARU?</h3>\n    <p class=\"text-center\"> Sebastian Castaño <br> Leonardo Herrera <br> Cristian Mendivelso <br> Christian Soto </p>\n\n\n\n  </div>\n\n</div>\n\n<footer class=\"text-center\">\n  <a class=\"up-arrow\" href=\"#myPage\" data-toggle=\"tooltip\" title=\"TO TOP\">\n    <span class=\"glyphicon glyphicon-chevron-up\"></span>\n  </a><br><br>\n  <p>Bootstrap Theme Made By <a href=\"https://www.w3schools.com\" data-toggle=\"tooltip\" title=\"Visit w3schools\">www.w3schools.com</a></p>\n</footer>\n\n\n</body>\n</html>\n"
 
 /***/ }),
 
@@ -723,7 +861,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/page-not-found/page-not-found.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  The page you were looking for was not found\r\n</p>\r\n<p>\r\n  <a routerLink=\"/\">Back to Home</a>\r\n</p>"
+module.exports = "<p>\n  The page you were looking for was not found\n</p>\n<p>\n  <a routerLink=\"/\">Back to Home</a>\n</p>"
 
 /***/ }),
 
@@ -784,7 +922,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/sign-in/sing-in-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Sign In</h2>\r\n  <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"description\">Username</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"username\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"description\">Password</label>\r\n      <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!signInForm.valid\">Sign In</button>\r\n\r\n    <p class=\"text-danger mt-1\" *ngIf=\"loginError\">{{loginError}}</p>\r\n\r\n  </form>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\n  <h2>Sign In</h2>\n  <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" novalidate>\n    <div class=\"form-group\">\n      <label for=\"description\">Username</label>\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"username\" required>\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"description\">Password</label>\n      <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\">\n    </div>\n\n    <button type=\"submit\" class=\"btn btn-success\" [disabled]=\"!signInForm.valid\">Sign In</button>\n\n    <p class=\"text-danger mt-1\" *ngIf=\"loginError\">{{loginError}}</p>\n\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -868,7 +1006,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/task-edit-page/task-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h2>Edit Task</h2>\r\n  <form [formGroup]=\"todoForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <div class=\"form-group\">\r\n      <label for=\"description\">Description</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"priority\">Priority</label>\r\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"priority\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"completed\">Completed</label>\r\n      <input type=\"checkbox\" class=\"form-control\" id=\"completed\" formControlName=\"completed\">\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"btn btn-success\">Save</button>\r\n\r\n  </form>\r\n</div>"
+module.exports = "<div class=\"container\">\n  <h2>Edit Task</h2>\n  <form [formGroup]=\"todoForm\" (ngSubmit)=\"onSubmit()\" novalidate>\n    <div class=\"form-group\">\n      <label for=\"description\">Description</label>\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"priority\">Priority</label>\n      <input type=\"number\" class=\"form-control\" id=\"alterEgo\" formControlName=\"priority\">\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"completed\">Completed</label>\n      <input type=\"checkbox\" class=\"form-control\" id=\"completed\" formControlName=\"completed\">\n    </div>\n\n    <button type=\"submit\" class=\"btn btn-success\">Save</button>\n\n  </form>\n</div>"
 
 /***/ }),
 
@@ -953,7 +1091,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/task-list-page/task-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Tasks</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>Description</th>\r\n     <th>Priority</th>\r\n     <th>Completed</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let todo of todos\">\r\n   <td>{{todo.description}}</td>\r\n   <td>{{todo.priority}}</td>\r\n   <td>{{todo.completed}}</td>\r\n </tr>\r\n</table>"
+module.exports = "<h2>Tasks</h2>\n<table class=\"table table-bordered\">\n <thead>\n   <tr>\n     <th>Description</th>\n     <th>Priority</th>\n     <th>Completed</th>\n   </tr>\n </thead>\n <tr *ngFor=\"let todo of todos\">\n   <td>{{todo.description}}</td>\n   <td>{{todo.priority}}</td>\n   <td>{{todo.completed}}</td>\n </tr>\n</table>"
 
 /***/ }),
 
@@ -1023,7 +1161,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-edit-page/user-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <h2> Sign Up in AMARU </h2>\r\n    <form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n      <div class=\"form-group\">\r\n        <label for=\"nombre\">Name</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"nombre\" formControlName=\"nombre\" required>\r\n      </div>\r\n  \r\n      <div class=\"form-group\">\r\n        <label for=\"lastname\">Lastname</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"lastname\" formControlName=\"lastname\">\r\n      </div>\r\n  \r\n      <div class=\"form-group\">\r\n        <label for=\"image\">Url Image</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\">\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"email\">Email</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\">\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"password\">Password</label>\r\n        <input type=\"password\" class=\"form-control\" id=\"password\" formControlName=\"password\">\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"username\">Username</label>\r\n        <input type=\"text\" class=\"form-control\" id=\"username\" formControlName=\"username\">\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"phone\">Phone</label>\r\n        <input type=\"int\" class=\"form-control\" id=\"phone\" formControlName=\"phone\">\r\n      </div>\r\n\r\n\r\n\r\n      <div class=\"container\">\r\n        <label >Type of User</label>\r\n        <p>Teach as Instructor, Learn as Amaru</p>\r\n        <select class=\"form-control\" id=\"type\"  formControlName=\"type\">\r\n          <option value=\"INSTRUCTOR\">Instructor</option>\r\n          <option value=\"AMARU\">Amaru</option>\r\n        </select>\r\n      </div>\r\n\r\n\r\n      <br><br>\r\n      <button type=\"submit\" class=\"btn btn-success\">Registrarse</button>\r\n  \r\n    </form>\r\n  </div>"
+module.exports = "<div class=\"container\">\n    <h2> Sign Up in AMARU </h2>\n    <form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\" novalidate>\n      <div class=\"form-group\">\n        <label for=\"nombre\">Name</label>\n        <input type=\"text\" class=\"form-control\" id=\"nombre\" formControlName=\"nombre\" required>\n      </div>\n  \n      <div class=\"form-group\">\n        <label for=\"lastname\">Lastname</label>\n        <input type=\"text\" class=\"form-control\" id=\"lastname\" formControlName=\"lastname\">\n      </div>\n  \n      <div class=\"form-group\">\n        <label for=\"image\">Url Image</label>\n        <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"email\">Email</label>\n        <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input type=\"password\" class=\"form-control\" id=\"password\" formControlName=\"password\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"username\">Username</label>\n        <input type=\"text\" class=\"form-control\" id=\"username\" formControlName=\"username\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"phone\">Phone</label>\n        <input type=\"int\" class=\"form-control\" id=\"phone\" formControlName=\"phone\">\n      </div>\n\n\n\n      <div class=\"container\">\n        <label >Type of User</label>\n        <p>Teach as Instructor, Learn as Amaru</p>\n        <select class=\"form-control\" id=\"type\"  formControlName=\"type\">\n          <option value=\"INSTRUCTOR\">Instructor</option>\n          <option value=\"AMARU\">Amaru</option>\n        </select>\n      </div>\n\n\n      <br><br>\n      <button type=\"submit\" class=\"btn btn-success\">Registrarse</button>\n  \n    </form>\n  </div>"
 
 /***/ }),
 
@@ -1114,7 +1252,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-list-page/user-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<h2>Lista de Usuarios</h2>\r\n<table class=\"table table-bordered\">\r\n <thead>\r\n   <tr>\r\n     <th>Name</th>\r\n     <th>Lastname</th>\r\n     <th>Image</th>\r\n       <th>email</th>\r\n       <th>Phone</th>\r\n       <th>Type</th>\r\n       <th>Description</th>\r\n   </tr>\r\n </thead>\r\n <tr *ngFor=\"let user of usuarios\">\r\n   <td>{{user.name}}</td>\r\n   <td>{{user.lastname}}</td>\r\n     <td><img [src]=\"user.image\" width=\"110\" height=\"110\" /></td>\r\n     <td>{{user.email}}</td>\r\n     <td>{{user.phone}}</td>\r\n     <td>{{user.type}}</td>\r\n     <td>{{user.description}}</td>\r\n </tr>\r\n</table>\r\n"
+module.exports = "\n<h2>Lista de Usuarios</h2>\n<table class=\"table table-bordered\">\n <thead>\n   <tr>\n     <th>Name</th>\n     <th>Lastname</th>\n     <th>Image</th>\n       <th>email</th>\n       <th>Phone</th>\n       <th>Type</th>\n       <th>Description</th>\n   </tr>\n </thead>\n <tr *ngFor=\"let user of usuarios\">\n   <td>{{user.name}}</td>\n   <td>{{user.lastname}}</td>\n     <td><img [src]=\"user.image\" width=\"110\" height=\"110\" /></td>\n     <td>{{user.email}}</td>\n     <td>{{user.phone}}</td>\n     <td>{{user.type}}</td>\n     <td>{{user.description}}</td>\n </tr>\n</table>\n"
 
 /***/ }),
 
@@ -1184,7 +1322,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-profile/user-profile-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\r\n    <title>User Page</title>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n    <style>\r\n        h1 {\r\n            font-weight: bold;\r\n            color: #333333;\r\n        }\r\n        h2{\r\n            text-align: center;\r\n        }\r\n        .bg-1 {\r\n            background-color: #474e5d; /* Green */\r\n            color: #ffffff;\r\n        }\r\n        .bg-2 {\r\n            background-color: #1abc9c; /* Dark Blue */\r\n            color: #ffffff;\r\n        }\r\n        .bg-3 {\r\n            background-color: #fff; /* White */\r\n            color: #555555;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n\r\n<div class=\"container-fluid bg-1 text-center\">\r\n    <h3>{{user.type}}</h3>\r\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\r\n    <h3>{{user.name}} {{user.lastname}}</h3>\r\n</div>\r\n\r\n<div class=\"container-fluid bg-2 text-center\">\r\n    <h3>Contact</h3>\r\n    <p>{{user.email}}</p>\r\n    <p>{{user.phone}}</p>\r\n</div>\r\n\r\n<div class=\"container-fluid bg-3 text-center\">\r\n    <h3>Description</h3>\r\n    <p>{{user.description}}</p>\r\n</div>\r\n\r\n<div class=\"container\">\r\n    <h2>Cursos Actuales</h2>\r\n    <p>Cursos Actuales Ofrecidos:</p>\r\n    <table class=\"table table-bordered\">\r\n        <thead>\r\n        <tr>\r\n            <th>Firstname</th>\r\n            <th>Lastname</th>\r\n            <th>Email</th>\r\n        </tr>\r\n        </thead>\r\n        <tbody>\r\n        <tr>\r\n            <td>John</td>\r\n            <td>Doe</td>\r\n            <td>john@example.com</td>\r\n        </tr>\r\n        </tbody>\r\n    </table>\r\n</div>\r\n\r\n<div *ngIf=\"isInstructor()\" class=\"container-fluid bg-3 text-center\">\r\n    <h3>Averague rate</h3>\r\n    <p>5</p>\r\n    <h3>Rate Instructor</h3>\r\n    <select class=\"form-control\" id=\"sel1\">\r\n        <option>1</option>\r\n        <option>2</option>\r\n        <option>3</option>\r\n        <option>4</option>\r\n        <option>5</option>\r\n    </select>\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editDescription\">Rate</button>\r\n\r\n</div>\r\n\r\n</body>\r\n</html>\r\n"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\n    <title>User Page</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n    <style>\n        h1 {\n            font-weight: bold;\n            color: #333333;\n        }\n        h2{\n            text-align: center;\n        }\n        .bg-1 {\n            background-color: #474e5d; /* Green */\n            color: #ffffff;\n        }\n        .bg-2 {\n            background-color: #1abc9c; /* Dark Blue */\n            color: #ffffff;\n        }\n        .bg-3 {\n            background-color: #fff; /* White */\n            color: #555555;\n        }\n    </style>\n</head>\n<body>\n\n<div class=\"container-fluid bg-1 text-center\">\n    <h3>{{user.type}}</h3>\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\n    <h3>{{user.name}} {{user.lastname}}</h3>\n</div>\n\n<div class=\"container-fluid bg-2 text-center\">\n    <h3>Contact</h3>\n    <p>{{user.email}}</p>\n    <p>{{user.phone}}</p>\n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <h3>Description</h3>\n    <p>{{user.description}}</p>\n</div>\n\n<div class=\"container\">\n    <h2>Cursos Actuales</h2>\n    <p>Cursos Actuales Ofrecidos:</p>\n    <table class=\"table table-bordered\">\n        <thead>\n        <tr>\n            <th>Firstname</th>\n            <th>Lastname</th>\n            <th>Email</th>\n        </tr>\n        </thead>\n        <tbody>\n        <tr>\n            <td>John</td>\n            <td>Doe</td>\n            <td>john@example.com</td>\n        </tr>\n        </tbody>\n    </table>\n</div>\n\n<div *ngIf=\"isInstructor()\" class=\"container-fluid bg-3 text-center\">\n    <h3>Averague rate</h3>\n    <p>5</p>\n    <h3>Rate Instructor</h3>\n    <select class=\"form-control\" id=\"sel1\">\n        <option>1</option>\n        <option>2</option>\n        <option>3</option>\n        <option>4</option>\n        <option>5</option>\n    </select>\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editDescription\">Rate</button>\n\n</div>\n\n</body>\n</html>\n"
 
 /***/ }),
 
@@ -1237,6 +1375,70 @@ UserProfilePageComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=user-profile-page.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/group.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_group__ = __webpack_require__("../../../../../src/app/models/group.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_api_service__ = __webpack_require__("../../../../../src/app/common/api.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_config_app_configuration_service__ = __webpack_require__("../../../../../src/app/common/config/app-configuration.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var GroupService = (function (_super) {
+    __extends(GroupService, _super);
+    function GroupService(config, authService, http) {
+        var _this = _super.call(this, config, authService, http) || this;
+        _this.config = config;
+        _this.authService = authService;
+        _this.http = http;
+        _this.resourceUrl = 'group/groups';
+        return _this;
+    }
+    GroupService.prototype.getGroupByName = function (name) {
+        return this.get(this.resourceUrl + "/groupname", name);
+    };
+    GroupService.prototype.create = function (name, instructor, place, days, hour, description) {
+        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_group__["a" /* Group */](name, instructor, place, days, hour, description));
+    };
+    return GroupService;
+}(__WEBPACK_IMPORTED_MODULE_2__common_api_service__["a" /* APIService */]));
+GroupService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__common_config_app_configuration_service__["a" /* AppConfiguration */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__common_config_app_configuration_service__["a" /* AppConfiguration */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__common_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__common_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */]) === "function" && _c || Object])
+], GroupService);
+
+var _a, _b, _c;
+//# sourceMappingURL=group.service.js.map
 
 /***/ }),
 

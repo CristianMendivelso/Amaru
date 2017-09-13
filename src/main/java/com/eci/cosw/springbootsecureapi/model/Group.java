@@ -32,7 +32,7 @@ public class Group {
     {
     }
 
-    public Group( String name, User instructor, String place, String hour, String[] days, String description)
+    public Group( String name, User instructor, String place, String[] days, String hour,  String description)
     {
         this.setName(name);
         this.setInstructor(instructor);
@@ -42,8 +42,25 @@ public class Group {
         this.setDescription(description);
         this.setComments(new ArrayList<Comment>());
     }
+    public Group( String name, String place,  String[] days, String hour, String description)
+    {
+        this.setName(name);
+        this.setPlace(place);
+        this.setHour(hour);
+        this.setDays(days);
+        this.setDescription(description);
+        this.setComments(new ArrayList<Comment>());
+    }
 
-
+    @Override
+    public String toString()
+    {
+        String n = "";
+        for (String a : this.days){
+            n = n + a;
+        }
+        return "Group{" + "id=" + id + "days=" + n;
+    }
     public long getId() {
         return id;
     }

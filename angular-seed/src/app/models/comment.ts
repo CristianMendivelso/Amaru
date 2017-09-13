@@ -1,7 +1,7 @@
 export class Comment {
-    private String text;
-    private String user;
-    private boolean date;
+    private text: String ;
+    private user: String;
+    private date: boolean;
 
     constructor(text:string, user:string, date:boolean) {
         this.text = text;
