@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GroupService } from "../../services/group.service";
+import { UsersService } from "../../services/users.service";
+import { Observable } from 'rxjs/Observable';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-group-edit-page',
@@ -11,48 +14,67 @@ import { GroupService } from "../../services/group.service";
 })
 export class GroupEditPageComponent implements OnInit {
   days:string[] = [];
+  groupForm: FormGroup; 
+  userO : Observable<User>;
+  user : User;
   constructor(
     public groupService: GroupService,
+    public usersService: UsersService,
+    public formBuilder: FormBuilder,
     public router: Router,
   ) {
     
   }
 
   ngOnInit() {
-      
+    this.groupForm = this.formBuilder.group({
+      name: '',
+      place: '',
+      day1: '',
+      day2: '',
+      day3: '',
+      day4: '',
+      day5: '',
+      day6: '',
+      day7:'',
+      hour:'',
+      description:''
+});
 
   }
 
-  onSubmit(name,place,monday,tuesday,wednesday,thursday,friday, saturday, sunday,hour,description) {
-    if (monday){
+  onSubmit() {
+    this.userO = this.usersService.getLoged();
+    this.user = this.userO.map[0];
+    if (this.groupForm.get('day1').value){
       this.days.push("Monday") 
     }
-    if (tuesday){
+    if (this.groupForm.get('day2').value){
       this.days.push("Tuesday") 
     }
-    if (wednesday){
+    if (this.groupForm.get('day3').value){
       this.days.push("Wednesday") 
     }
-    if (thursday){
+    if (this.groupForm.get('day4').value){
       this.days.push("Thursday") 
     }
-    if (friday){
+    if (this.groupForm.get('day5').value){
       this.days.push("Friday") 
     }
-    if (saturday){
+    if (this.groupForm.get('day6').value){
       this.days.push("Saturday") 
     }
-    if (sunday){
+    if (this.groupForm.get('day7' ).value){
       this.days.push("Sunday") 
     }
     this.days 
     this.groupService.create(
-      name,
-      null,
-      place,
+      this.groupForm.get('name').value,
+      this.user,
+      this.groupForm.get('place').value,
       this.days,
-      hour,
-      description
+      this.groupForm.get('hour').value,
+      this.groupForm.get('description').value
     ).subscribe(serverResponse=>{
         this.router.navigate(['/groups']);
     }, error=>{

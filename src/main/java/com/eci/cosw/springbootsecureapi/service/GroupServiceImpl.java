@@ -68,8 +68,8 @@ public class GroupServiceImpl implements GroupService{
 
     @Override
     public Group createGroup(Group group) {
-        System.out.println(group.toString());
         group.setId(groups.size());
+        System.out.println(group.toString());
         groups.add(group);
         return groups.get(groups.size() - 1);
     }

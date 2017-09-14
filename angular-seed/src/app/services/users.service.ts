@@ -10,7 +10,7 @@ import { User } from "../models/user";
 export class UsersService extends APIService {
 
   private resourceUrl = 'user/users';
-  
+  loged : Observable<User> = null;
   constructor(
     public config: AppConfiguration,
     public authService: AuthService,
@@ -41,6 +41,7 @@ export class UsersService extends APIService {
     return this.post('user/login', { username, password }, { credentials: false }).map(loginResponse => {
       if (loginResponse) {
         this.authService.accessToken = loginResponse.accessToken;
+        this.loged = this.findUserByUsername(username);
       }
     });
   }
@@ -52,11 +53,18 @@ export class UsersService extends APIService {
   findUserByUsername(username:string):Observable<User>{
       return this.get("user/"+ username);
   };
+  findUserByUsernameNotObservable(username:string):User{
+    return this.gets("user/"+ username);
+};
 
 
 
   create(name: string, lastname: string, image: string, phone:string,password:string,email:string,description:string,type:string,username:string):Observable<User>{
     return this.post(this.resourceUrl,new User(name,lastname,image,phone,password,email,description,type,username));
+  }
+
+  getLoged():Observable<User>{
+    return this.loged;
   }
 
 

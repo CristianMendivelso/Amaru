@@ -1,5 +1,6 @@
 import { User } from "./user";
 import { Comment } from "./comment";
+import { Observable } from "rxjs/Observable";
 
 export class Group {
     private name: string;

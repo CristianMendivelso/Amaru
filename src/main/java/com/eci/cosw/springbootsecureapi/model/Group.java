@@ -1,7 +1,10 @@
 package com.eci.cosw.springbootsecureapi.model;
 
+import javafx.beans.Observable;
+
 import java.util.ArrayList;
-import java.util.Date;
+
+
 
 /**
  * Created by 2107262 on 9/6/17.
@@ -59,7 +62,7 @@ public class Group {
         for (String a : this.days){
             n = n + a;
         }
-        return "Group{" + "id=" + id + "days=" + n;
+        return "Group{" + "id=" + id + "days=" + n + "Instructor = " + instructor + "}";
     }
     public long getId() {
         return id;
