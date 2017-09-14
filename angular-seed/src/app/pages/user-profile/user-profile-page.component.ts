@@ -14,9 +14,7 @@ export class UserProfilePageComponent implements OnInit {
     userForm: FormGroup;
     private username:string;
 
-    constructor(public usersService: UsersService,   public router: Router,    public formBuilder: FormBuilder,
-
-    )  {
+    constructor(public usersService: UsersService,   public router: Router,    public formBuilder: FormBuilder,)  {
 
     }
 
@@ -32,16 +30,15 @@ export class UserProfilePageComponent implements OnInit {
 
 
     onSubmitRate() {
-
         this.usersService.editRate(
             this.username,
-            this.userForm.get('sel1').value
+            this.userForm.get('newRate').value
         ).subscribe(serverResponse9=>{
-            this.router.navigate(['']);
+            this.router.navigate(['/']);
         }, error=>{
             console.log(error);
         });
-        this.router.navigate(['']);
+        this.router.navigate(['/']);
 
     }
 
