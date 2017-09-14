@@ -73,6 +73,12 @@ public class UserController
         return userService.editEmail(edit.getUsername(),edit.getEmail());
     }
 
+    @RequestMapping( value = "/rate", method = RequestMethod.POST )
+    public User editRate(@RequestBody User edit){
+
+        return userService.editRate(edit.getUsername(),edit.getRate());
+    }
+
 
     @RequestMapping( value = "/login", method = RequestMethod.POST )
     public Token login( @RequestBody User login )

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from "../../models/user";
 import { UsersService } from "../../services/users.service";
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-user-profile-page',
@@ -9,8 +11,12 @@ import { UsersService } from "../../services/users.service";
 })
 export class UserProfilePageComponent implements OnInit {
     private user: User;
+    userForm: FormGroup;
+    private username:string;
 
-    constructor(public usersService: UsersService) {
+    constructor(public usersService: UsersService,   public router: Router,    public formBuilder: FormBuilder,
+
+    )  {
 
     }
 
@@ -24,11 +30,31 @@ export class UserProfilePageComponent implements OnInit {
         }
     }
 
+
+    onSubmitRate() {
+
+        this.usersService.editRate(
+            this.username,
+            this.userForm.get('sel1').value
+        ).subscribe(serverResponse9=>{
+            this.router.navigate(['']);
+        }, error=>{
+            console.log(error);
+        });
+        this.router.navigate(['']);
+
+    }
+
     ngOnInit() {
-        this.usersService.findUserByUsername(sessionStorage.getItem('username')).subscribe(usersResponse4 => {
+        this.userForm = this.formBuilder.group({
+            newRate: ''
+        });
+        this.username=sessionStorage.getItem('username');
+        this.usersService.findUserByUsername(this.username).subscribe(usersResponse4 => {
             this.user = usersResponse4;
         })
     }
+
 
 
 }

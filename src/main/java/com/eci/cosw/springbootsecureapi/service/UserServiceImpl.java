@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService
     @PostConstruct
     private void populateSampleData()
     {
-        users.add( new User( "Pepito", "Perez", "https://image.freepik.com/iconos-gratis/usuario-masculino-foto-de-perfil_318-37825.jpg", "2343423","password","test@mail.com","Profesional Amigable","Instructor","pepito" ) );
+        users.add( new User( "Pepito", "Perez", "https://image.freepik.com/iconos-gratis/usuario-masculino-foto-de-perfil_318-37825.jpg", "2343423","password","test@mail.com","Profesional Amigable","Instructor","pepito" ,3,1) );
     }
 
 
@@ -147,6 +147,24 @@ public class UserServiceImpl implements UserService
     public User findUserByEmailAndPassword( String email, String password )
     {
         return users.get( 0 );
+    }
+
+    public User editRate(String username, float rate) {
+        int indice=0;
+        for (int i=0;i< users.size();i++){
+            if(users.get(i).getUsername().equals(username)){
+                indice=i;
+                User u = users.get(i);
+                float oldRate = u.getRate();
+                int cont = u.getTotalVotes();
+
+                u.setRate((oldRate+rate)/2);
+                u.setTotalVotes(cont+1);
+                users.set(i,u);
+                break;
+            }
+        }
+        return users.get(indice);
     }
 
 }

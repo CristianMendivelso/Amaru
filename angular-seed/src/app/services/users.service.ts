@@ -35,6 +35,10 @@ export class UsersService extends APIService {
         return this.post('user/editEmail',{username,email});
     }
 
+    editRate(username: string, rate: number){
+        return this.post('user/rate',{username,rate});
+    }
+
 
 
     login(username: string, password: string) {
@@ -55,8 +59,8 @@ export class UsersService extends APIService {
 
 
 
-  create(name: string, lastname: string, image: string, phone:string,password:string,email:string,description:string,type:string,username:string):Observable<User>{
-    return this.post(this.resourceUrl,new User(name,lastname,image,phone,password,email,description,type,username));
+  create(name: string, lastname: string, image: string, phone:string,password:string,email:string,description:string,type:string,username:string,rate:number,totalVotes:number):Observable<User>{
+    return this.post(this.resourceUrl,new User(name,lastname,image,phone,password,email,description,type,username,rate,totalVotes));
   }
 
 

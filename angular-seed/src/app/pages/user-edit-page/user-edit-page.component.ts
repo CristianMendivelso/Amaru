@@ -39,13 +39,15 @@ export class UserEditPageComponent implements OnInit {
     this.userService.create(
       this.userForm.get('nombre').value,
       this.userForm.get('lastname').value,
-    this.userForm.get('image').value,
-        this.userForm.get('phone').value,
-        this.userForm.get('password').value,
-        this.userForm.get('email').value,
-        this.userForm.get('description').value,
-        this.userForm.get('type').value,
-        this.userForm.get('username').value
+      this.userForm.get('image').value,
+      this.userForm.get('phone').value,
+      this.userForm.get('password').value,
+      this.userForm.get('email').value,
+      this.userForm.get('description').value,
+      this.userForm.get('type').value,
+      this.userForm.get('username').value,
+      0,
+      0
     ).subscribe(serverResponse2=>{
         this.router.navigate(['/users']);
     }, error=>{

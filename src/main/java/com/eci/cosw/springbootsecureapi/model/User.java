@@ -27,13 +27,17 @@ public class User
 
     private String username;
 
+    private float rate;
+
+    private int totalVotes;
+
 
 
     public User()
     {
     }
 
-    public User( String name, String lastname, String image, String phone,String password, String email, String description, String type,String username)
+    public User( String name, String lastname, String image, String phone,String password, String email, String description, String type,String username, float rate , int totalVotes)
 
     {
         this.email = email;
@@ -45,6 +49,8 @@ public class User
         this.setDescription(description);
         this.setType(type);
         this.username=username;
+        this.rate=rate;
+        this.totalVotes=totalVotes;
     }
 
 
@@ -86,6 +92,23 @@ public class User
     public void setLastname( String lastname )
     {
         this.lastname = lastname;
+    }
+
+    public float getRate() { return rate; }
+
+    public void setRate( float rate )
+    {
+        this.rate = rate;
+    }
+
+    public int getTotalVotes()
+    {
+        return totalVotes;
+    }
+
+    public void setTotalVotes( int totalVotes )
+    {
+        this.totalVotes = totalVotes;
     }
 
 

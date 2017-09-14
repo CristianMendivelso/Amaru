@@ -29,4 +29,6 @@ public interface UserService
     User findUserByEmail( String email );
 
     User findUserByEmailAndPassword( String email, String password );
+
+    User editRate( String username, float rate );
 }
