@@ -58,4 +58,11 @@ export class APIService {
       .map(this.extractData)
       .catch(this.handleError);
   }
+
+  gets(url: string, options?: any):any {
+    return this.http
+      .get(`${this.config.apiURL}/${url}`, this.getRequestOptions(options))
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
 }

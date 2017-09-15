@@ -13,6 +13,8 @@ import { TaskEditPageComponent } from './pages/task-edit-page/task-edit-page.com
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { UserEditPageComponent } from './pages/user-edit-page/user-edit-page.component';
 import { EditInfoPageComponent } from './pages/edit-info/edit-info-page.component';
+import { GroupEditPageComponent } from './pages/group-edit-page/group-edit-page.component';
+
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -22,6 +24,7 @@ import { SingInPageComponent } from './pages/sign-in/sing-in-page.component';
 import { AuthService } from './common/auth.service';
 import { AppDataService } from './common/app-data.service';
 import { UsersService } from './services/users.service';
+import { GroupService } from './services/group.service';
 import { UserListPageComponent } from "./pages/user-list-page/user-list-page.component";
 import { UserProfilePageComponent } from "./pages/user-profile/user-profile-page.component";
 
@@ -49,6 +52,11 @@ const ROUTES = [
     path: 'edit', component: TaskEditPageComponent,
     canActivate: [AuthService],
   },
+
+  {
+      path: 'newGroup', component: GroupEditPageComponent,
+      canActivate: [AuthService],
+    },
   {
     path: '**', component: PageNotFoundComponent
   }
@@ -64,6 +72,7 @@ const ROUTES = [
     SingInPageComponent,
     UserListPageComponent,
       UserEditPageComponent,
+      GroupEditPageComponent,
       UserProfilePageComponent,
       EditInfoPageComponent
   ],
@@ -86,6 +95,7 @@ const ROUTES = [
     AuthService,
     AppDataService,
     UsersService,
+    GroupService,
     AppConfiguration],
   bootstrap: [AppComponent]
  })

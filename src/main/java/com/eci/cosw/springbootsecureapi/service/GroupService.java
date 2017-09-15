@@ -17,4 +17,8 @@ public interface GroupService {
 
     Group editName(String name, String newName);
 
+    Group getGroupByName(String name);
+
+    Group createGroup(Group group);
+
 }

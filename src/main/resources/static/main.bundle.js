@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n  <a class=\"navbar-brand\" href=\"#\">AMARU</a>\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/tasks\" routerLink=\"/tasks\">Tasks</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/edit\" routerLink=\"/edit\">Edit</a>\n      </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/newuser\" routerLink=\"/newuser\">New User</a>\n        </li>\n\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/profile\" routerLink=\"/profile\">Ver Perfil</a>\n        </li>\n\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/info\" routerLink=\"/info\">Edit Info</a>\n        </li>\n\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\n      </li>\n<form class=\"form-inline my-2 my-lg-0\">\n          <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">\n          <button class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#myModal\">Search</button>\n        </form>\n\n\n    </ul>\n  </div>\n</nav>\n\n <!-- Modal -->\n  <div class=\"modal fade\" id=\"myModal\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n      <!-- Modal content-->\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n          <h4 class=\"modal-title\">Modal Header</h4>\n        </div>\n        <div class=\"modal-body\">\n          <p>This feature is not implemented yet. Sorry for the inconvenience</p>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n        </div>\n      </div>\n\n    </div>\n  </div>\n\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n\n"
+module.exports = "\n<nav class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n  <a class=\"navbar-brand\" href=\"#\">AMARU</a>\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/\" routerLink=\"/\">Home</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/tasks\" routerLink=\"/tasks\">Tasks</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/edit\" routerLink=\"/edit\">Edit</a>\n      </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/users\" routerLink=\"/users\">Users</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/newuser\" routerLink=\"/newuser\">New User</a>\n        </li>\n\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/profile\" routerLink=\"/profile\">Ver Perfil</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/newGroup\" routerLink=\"/newGroup\">New Group</a>\n        </li>\n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/info\" routerLink=\"/info\">Edit Info</a>\n        </li>\n\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\n      </li>\n<form class=\"form-inline my-2 my-lg-0\">\n          <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">\n          <button class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#myModal\">Search</button>\n        </form>\n\n\n    </ul>\n  </div>\n</nav>\n\n <!-- Modal -->\n  <div class=\"modal fade\" id=\"myModal\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n      <!-- Modal content-->\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n          <h4 class=\"modal-title\">Modal Header</h4>\n        </div>\n        <div class=\"modal-body\">\n          <p>This feature is not implemented yet. Sorry for the inconvenience</p>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n        </div>\n      </div>\n\n    </div>\n  </div>\n\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n\n"
 
 /***/ }),
 
@@ -111,15 +111,17 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/pages/page-not-found/page-not-found.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/user-edit-page/user-edit-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__ = __webpack_require__("../../../../../src/app/pages/edit-info/edit-info-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_todo_service__ = __webpack_require__("../../../../../src/app/services/todo.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__ = __webpack_require__("../../../../../src/app/pages/sign-in/sing-in-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__common_app_data_service__ = __webpack_require__("../../../../../src/app/common/app-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_user_profile_user_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_group_edit_page_group_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/group-edit-page/group-edit-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_todo_service__ = __webpack_require__("../../../../../src/app/services/todo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__ = __webpack_require__("../../../../../src/app/pages/sign-in/sing-in-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__common_app_data_service__ = __webpack_require__("../../../../../src/app/common/app-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_user_profile_user_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -148,25 +150,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
-    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_21__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */] },
+    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_23__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */] },
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
     { path: 'info', component: __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */] },
     {
-        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_17__common_auth_service__["a" /* AuthService */]],
+        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */]],
     },
     {
-        path: 'users', component: __WEBPACK_IMPORTED_MODULE_20__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
+        path: 'users', component: __WEBPACK_IMPORTED_MODULE_22__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
     },
     {
         path: 'newuser', component: __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
     },
     {
         path: 'edit', component: __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_17__common_auth_service__["a" /* AuthService */]],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */]],
+    },
+    {
+        path: 'newGroup', component: __WEBPACK_IMPORTED_MODULE_13__pages_group_edit_page_group_edit_page_component__["a" /* GroupEditPageComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */]],
     },
     {
         path: '**', component: __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]
@@ -185,19 +193,20 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__pages_task_list_page_task_list_page_component__["a" /* TaskListPageComponent */],
             __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
             __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
             __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_group_edit_page_group_edit_page_component__["a" /* GroupEditPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */],
             __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_13__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_14__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(ROUTES),
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_15__angular_http__["c" /* HttpModule */]
+            __WEBPACK_IMPORTED_MODULE_16__angular_http__["c" /* HttpModule */]
         ],
         providers: [
             {
@@ -206,10 +215,11 @@ AppModule = __decorate([
                     apiURL: 'http://localhost:8080'
                 }
             },
-            __WEBPACK_IMPORTED_MODULE_14__services_todo_service__["a" /* TodoService */],
-            __WEBPACK_IMPORTED_MODULE_17__common_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_18__common_app_data_service__["a" /* AppDataService */],
-            __WEBPACK_IMPORTED_MODULE_19__services_users_service__["a" /* UsersService */],
+            __WEBPACK_IMPORTED_MODULE_15__services_todo_service__["a" /* TodoService */],
+            __WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_19__common_app_data_service__["a" /* AppDataService */],
+            __WEBPACK_IMPORTED_MODULE_20__services_users_service__["a" /* UsersService */],
+            __WEBPACK_IMPORTED_MODULE_21__services_group_service__["a" /* GroupService */],
             __WEBPACK_IMPORTED_MODULE_4__common_config_app_configuration_service__["a" /* AppConfiguration */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
@@ -289,6 +299,12 @@ var APIService = (function () {
         return __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__["Observable"].throw(errObj);
     };
     APIService.prototype.get = function (url, options) {
+        return this.http
+            .get(this.config.apiURL + "/" + url, this.getRequestOptions(options))
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    APIService.prototype.gets = function (url, options) {
         return this.http
             .get(this.config.apiURL + "/" + url, this.getRequestOptions(options))
             .map(this.extractData)
@@ -483,6 +499,30 @@ var INITIAL_CONFIG = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Inje
 
 /***/ }),
 
+/***/ "../../../../../src/app/models/group.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Group; });
+var Group = (function () {
+    function Group(name, instructor, place, days, hour, description) {
+        this.name = name;
+        this.instructor = instructor;
+        this.students = new Array();
+        this.score = 0;
+        this.comments = new Array();
+        this.place = place;
+        this.hour = hour;
+        this.days = days;
+        this.description = description;
+    }
+    return Group;
+}());
+
+//# sourceMappingURL=group.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/models/todo.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -644,6 +684,129 @@ EditInfoPageComponent = __decorate([
 
 var _a, _b, _c;
 //# sourceMappingURL=edit-info-page.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/group-edit-page/group-edit-page.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/group-edit-page/group-edit-page.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n    <h2> Create Group </h2>\r\n    <form  [formGroup]=\"groupForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"name\">Name</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"place\">Place</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"place\" formControlName=\"place\" required>\r\n        </div>\r\n        \r\n        <div class=\"form-group\">\r\n            <label>Days</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day1\" formControlName=\"day1\" value = 1> <label for=\"day1\">Monday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day2\" formControlName=\"day2\" value = 1 ><label for=\"day2\">Tuesday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day3\" formControlName=\"day3\" value = 1 ><label for=\"day3\">Wednesday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day4\" formControlName=\"day4\" value = 1 ><label for=\"day4\">Thursday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day5\" formControlName=\"day5\" value = 1 ><label for=\"day5\">Friday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day6\" formControlName=\"day6\" value = 1 ><label for=\"day6\">Saturday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day7\" formControlName=\"day7\" value = 1 ><label for=\"day7\">Sunday</label>\r\n            <br>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"hour\">Hour: </label>\r\n            <input type=\"time\" class=\"form-control\" id=\"hour\" formControlName=\"hour\" required>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"description\">Description</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\r\n        </div>\r\n\r\n        <br><br>\r\n        <button type=\"submit\" class=\"btn btn-success\">Create group</button>\r\n\r\n    </form>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/group-edit-page/group-edit-page.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupEditPageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var GroupEditPageComponent = (function () {
+    function GroupEditPageComponent(groupService, usersService, formBuilder, router) {
+        this.groupService = groupService;
+        this.usersService = usersService;
+        this.formBuilder = formBuilder;
+        this.router = router;
+        this.days = [];
+    }
+    GroupEditPageComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.groupForm = this.formBuilder.group({
+            name: '',
+            place: '',
+            day1: '',
+            day2: '',
+            day3: '',
+            day4: '',
+            day5: '',
+            day6: '',
+            day7: '',
+            hour: '',
+            description: ''
+        });
+        this.usersService.findUserByUsername(sessionStorage.getItem('username')).subscribe(function (usersResponse4) {
+            _this.user = usersResponse4;
+        });
+    };
+    GroupEditPageComponent.prototype.onSubmit = function () {
+        var _this = this;
+        if (this.groupForm.get('day1').value) {
+            this.days.push("Monday");
+        }
+        if (this.groupForm.get('day2').value) {
+            this.days.push("Tuesday");
+        }
+        if (this.groupForm.get('day3').value) {
+            this.days.push("Wednesday");
+        }
+        if (this.groupForm.get('day4').value) {
+            this.days.push("Thursday");
+        }
+        if (this.groupForm.get('day5').value) {
+            this.days.push("Friday");
+        }
+        if (this.groupForm.get('day6').value) {
+            this.days.push("Saturday");
+        }
+        if (this.groupForm.get('day7').value) {
+            this.days.push("Sunday");
+        }
+        this.days;
+        this.groupService.create(this.groupForm.get('name').value, this.user, this.groupForm.get('place').value, this.days, this.groupForm.get('hour').value, this.groupForm.get('description').value).subscribe(function (serverResponse) {
+            _this.router.navigate(['/groups']);
+        }, function (error) {
+            console.log(error);
+        });
+        this.router.navigate(['/groups']);
+    };
+    return GroupEditPageComponent;
+}());
+GroupEditPageComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-group-edit-page',
+        template: __webpack_require__("../../../../../src/app/pages/group-edit-page/group-edit-page.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/group-edit-page/group-edit-page.component.css")],
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_group_service__["a" /* GroupService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_users_service__["a" /* UsersService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _d || Object])
+], GroupEditPageComponent);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=group-edit-page.component.js.map
 
 /***/ }),
 
@@ -1265,6 +1428,70 @@ var _a, _b, _c;
 
 /***/ }),
 
+/***/ "../../../../../src/app/services/group.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_group__ = __webpack_require__("../../../../../src/app/models/group.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_api_service__ = __webpack_require__("../../../../../src/app/common/api.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_config_app_configuration_service__ = __webpack_require__("../../../../../src/app/common/config/app-configuration.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var GroupService = (function (_super) {
+    __extends(GroupService, _super);
+    function GroupService(config, authService, http) {
+        var _this = _super.call(this, config, authService, http) || this;
+        _this.config = config;
+        _this.authService = authService;
+        _this.http = http;
+        _this.resourceUrl = 'group/groups';
+        return _this;
+    }
+    GroupService.prototype.getGroupByName = function (name) {
+        return this.get(this.resourceUrl + "/groupname", name);
+    };
+    GroupService.prototype.create = function (name, instructor, place, days, hour, description) {
+        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_group__["a" /* Group */](name, instructor, place, days, hour, description));
+    };
+    return GroupService;
+}(__WEBPACK_IMPORTED_MODULE_2__common_api_service__["a" /* APIService */]));
+GroupService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__common_config_app_configuration_service__["a" /* AppConfiguration */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__common_config_app_configuration_service__["a" /* AppConfiguration */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__common_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__common_auth_service__["a" /* AuthService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_http__["b" /* Http */]) === "function" && _c || Object])
+], GroupService);
+
+var _a, _b, _c;
+//# sourceMappingURL=group.service.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/services/todo.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1359,6 +1586,7 @@ var UsersService = (function (_super) {
         _this.authService = authService;
         _this.http = http;
         _this.resourceUrl = 'user/users';
+        _this.loged = null;
         return _this;
     }
     UsersService.prototype.editImage = function (username, image) {
@@ -1381,6 +1609,7 @@ var UsersService = (function (_super) {
         return this.post('user/login', { username: username, password: password }, { credentials: false }).map(function (loginResponse) {
             if (loginResponse) {
                 _this.authService.accessToken = loginResponse.accessToken;
+                _this.loged = _this.findUserByUsername(username);
             }
         });
     };
@@ -1391,8 +1620,15 @@ var UsersService = (function (_super) {
         return this.get("user/" + username);
     };
     ;
+    UsersService.prototype.findUserByUsernameNotObservable = function (username) {
+        return this.gets("user/" + username);
+    };
+    ;
     UsersService.prototype.create = function (name, lastname, image, phone, password, email, description, type, username, rate, totalVotes) {
         return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_5__models_user__["a" /* User */](name, lastname, image, phone, password, email, description, type, username, rate, totalVotes));
+    };
+    UsersService.prototype.getLoged = function () {
+        return this.loged;
     };
     return UsersService;
 }(__WEBPACK_IMPORTED_MODULE_1__common_api_service__["a" /* APIService */]));

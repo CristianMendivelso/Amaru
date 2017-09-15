@@ -1,0 +1,48 @@
+<div class="container">
+    <h2> Create Group </h2>
+    <form  [formGroup]="groupForm" (ngSubmit)="onSubmit()" novalidate>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" formControlName="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="place">Place</label>
+            <input type="text" class="form-control" id="place" formControlName="place" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Days</label>
+            <br>
+            <input type="checkbox" class="form-control" id="day1" formControlName="day1" value = 1> <label for="day1">Monday</label>
+            <br>
+            <input type="checkbox" class="form-control" id="day2" formControlName="day2" value = 1 ><label for="day2">Tuesday</label>
+            <br>
+            <input type="checkbox" class="form-control" id="day3" formControlName="day3" value = 1 ><label for="day3">Wednesday</label>
+            <br>
+            <input type="checkbox" class="form-control" id="day4" formControlName="day4" value = 1 ><label for="day4">Thursday</label>
+            <br>
+            <input type="checkbox" class="form-control" id="day5" formControlName="day5" value = 1 ><label for="day5">Friday</label>
+            <br>
+            <input type="checkbox" class="form-control" id="day6" formControlName="day6" value = 1 ><label for="day6">Saturday</label>
+            <br>
+            <input type="checkbox" class="form-control" id="day7" formControlName="day7" value = 1 ><label for="day7">Sunday</label>
+            <br>
+        </div>
+
+        <div class="form-group">
+            <label for="hour">Hour: </label>
+            <input type="time" class="form-control" id="hour" formControlName="hour" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" formControlName="description" required>
+        </div>
+
+        <br><br>
+        <button type="submit" class="btn btn-success">Create group</button>
+
+    </form>
+</div>
