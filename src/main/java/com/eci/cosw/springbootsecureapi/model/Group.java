@@ -31,11 +31,13 @@ public class Group {
 
     private String description;
 
+    private String category;
+
     public Group()
     {
     }
 
-    public Group( String name, User instructor, String place, String[] days, String hour,  String description)
+    public Group( String name, User instructor, String place, String[] days, String hour,  String description, String category)
     {
         this.setName(name);
         this.setInstructor(instructor);
@@ -44,6 +46,7 @@ public class Group {
         this.setDays(days);
         this.setDescription(description);
         this.setComments(new ArrayList<Comment>());
+        this.setCategory(category);
     }
     public Group( String name, String place,  String[] days, String hour, String description)
     {
@@ -62,7 +65,7 @@ public class Group {
         for (String a : this.days){
             n = n + a;
         }
-        return "Group{" + "id=" + id + "days=" + n + "Instructor = " + instructor + "}";
+        return "Group{" + "id=" + id + "days=" + n + "Category= " + category + "Instructor = " + instructor + "}";
     }
     public long getId() {
         return id;
@@ -146,5 +149,13 @@ public class Group {
 
     public void addComment(Comment comment){
         this.comments.add(comment);
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

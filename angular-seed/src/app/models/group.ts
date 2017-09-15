@@ -12,7 +12,8 @@ export class Group {
     private hour:string;
     private days:string[];
     private description:string;
-        constructor(name: string, instructor: User, place:string,  days:string[], hour:string, description:string) {
+    private category:string;
+        constructor(name: string, instructor: User, place:string,  days:string[], hour:string, description:string, category:string) {
             this.name = name;
             this.instructor = instructor;
             this.students = new Array<User>();
@@ -22,5 +23,6 @@ export class Group {
             this.hour = hour;
             this.days = days;
             this.description = description;
+            this.category = category;
         }
     }

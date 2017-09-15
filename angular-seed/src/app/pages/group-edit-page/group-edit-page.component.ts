@@ -37,7 +37,8 @@ export class GroupEditPageComponent implements OnInit {
       day6: '',
       day7:'',
       hour:'',
-      description:''
+      description:'',
+      category: ''
     });
     this.usersService.findUserByUsername(sessionStorage.getItem('username')).subscribe(usersResponse4 => {
       this.user = usersResponse4;
@@ -75,7 +76,8 @@ export class GroupEditPageComponent implements OnInit {
       this.groupForm.get('place').value,
       this.days,
       this.groupForm.get('hour').value,
-      this.groupForm.get('description').value
+      this.groupForm.get('description').value,
+      this.groupForm.get('category').value
     ).subscribe(serverResponse=>{
         this.router.navigate(['/group']);
     }, error=>{

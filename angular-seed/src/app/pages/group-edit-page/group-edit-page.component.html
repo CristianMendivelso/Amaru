@@ -37,6 +37,17 @@
         </div>
 
         <div class="form-group">
+            <label for="category">Category: </label>
+            <input list="Categories" class="form-control" id="category" formControlName="category" required>
+            <datalist id="Categories">
+                <option value="Martial arts">
+                <option value="Sports">
+                <option value="Aerobics">
+                <option value="flexibility">
+              </datalist>
+        </div>
+
+        <div class="form-group">
             <label for="description">Description</label>
             <input type="text" class="form-control" id="description" formControlName="description" required>
         </div>

@@ -27,7 +27,7 @@ public class GroupServiceImpl implements GroupService{
     private void populateSampleData()
     {
         String[] days = {"Friday", "Sunday"};
-        groups.add( new Group( "Volleyball", null, "Parque el virrey", days, "10:00 am - 12:00 pm", "Learn how to play volleyball, and enjoy your morning exercising") );
+        groups.add( new Group( "Volleyball", null, "Parque el virrey", days, "10:00 am - 12:00 pm", "Learn how to play volleyball, and enjoy your morning exercising","Sports") );
     }
 
     @Override

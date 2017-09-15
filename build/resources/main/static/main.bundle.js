@@ -508,7 +508,7 @@ var INITIAL_CONFIG = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Inje
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Group; });
 var Group = (function () {
-    function Group(name, instructor, place, days, hour, description) {
+    function Group(name, instructor, place, days, hour, description, category) {
         this.name = name;
         this.instructor = instructor;
         this.students = new Array();
@@ -518,6 +518,7 @@ var Group = (function () {
         this.hour = hour;
         this.days = days;
         this.description = description;
+        this.category = category;
     }
     return Group;
 }());
@@ -711,7 +712,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/group-edit-page/group-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <h2> Create Group </h2>\r\n    <form  [formGroup]=\"groupForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"name\">Name</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"place\">Place</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"place\" formControlName=\"place\" required>\r\n        </div>\r\n        \r\n        <div class=\"form-group\">\r\n            <label>Days</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day1\" formControlName=\"day1\" value = 1> <label for=\"day1\">Monday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day2\" formControlName=\"day2\" value = 1 ><label for=\"day2\">Tuesday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day3\" formControlName=\"day3\" value = 1 ><label for=\"day3\">Wednesday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day4\" formControlName=\"day4\" value = 1 ><label for=\"day4\">Thursday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day5\" formControlName=\"day5\" value = 1 ><label for=\"day5\">Friday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day6\" formControlName=\"day6\" value = 1 ><label for=\"day6\">Saturday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day7\" formControlName=\"day7\" value = 1 ><label for=\"day7\">Sunday</label>\r\n            <br>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"hour\">Hour: </label>\r\n            <input type=\"time\" class=\"form-control\" id=\"hour\" formControlName=\"hour\" required>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"description\">Description</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\r\n        </div>\r\n\r\n        <br><br>\r\n        <button type=\"submit\" class=\"btn btn-success\">Create group</button>\r\n\r\n    </form>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n    <h2> Create Group </h2>\r\n    <form  [formGroup]=\"groupForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"name\">Name</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"place\">Place</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"place\" formControlName=\"place\" required>\r\n        </div>\r\n        \r\n        <div class=\"form-group\">\r\n            <label>Days</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day1\" formControlName=\"day1\" value = 1> <label for=\"day1\">Monday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day2\" formControlName=\"day2\" value = 1 ><label for=\"day2\">Tuesday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day3\" formControlName=\"day3\" value = 1 ><label for=\"day3\">Wednesday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day4\" formControlName=\"day4\" value = 1 ><label for=\"day4\">Thursday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day5\" formControlName=\"day5\" value = 1 ><label for=\"day5\">Friday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day6\" formControlName=\"day6\" value = 1 ><label for=\"day6\">Saturday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day7\" formControlName=\"day7\" value = 1 ><label for=\"day7\">Sunday</label>\r\n            <br>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"hour\">Hour: </label>\r\n            <input type=\"time\" class=\"form-control\" id=\"hour\" formControlName=\"hour\" required>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"category\">Category: </label>\r\n            <input list=\"Categories\" class=\"form-control\" id=\"category\" formControlName=\"category\" required>\r\n            <datalist id=\"Categories\">\r\n                <option value=\"Martial arts\">\r\n                <option value=\"Sports\">\r\n                <option value=\"Aerobics\">\r\n                <option value=\"flexibility\">\r\n              </datalist>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"description\">Description</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\r\n        </div>\r\n\r\n        <br><br>\r\n        <button type=\"submit\" class=\"btn btn-success\">Create group</button>\r\n\r\n    </form>\r\n</div>"
 
 /***/ }),
 
@@ -760,7 +761,8 @@ var GroupEditPageComponent = (function () {
             day6: '',
             day7: '',
             hour: '',
-            description: ''
+            description: '',
+            category: ''
         });
         this.usersService.findUserByUsername(sessionStorage.getItem('username')).subscribe(function (usersResponse4) {
             _this.user = usersResponse4;
@@ -790,7 +792,7 @@ var GroupEditPageComponent = (function () {
             this.days.push("Sunday");
         }
         this.days;
-        this.groupService.create(this.groupForm.get('name').value, this.user, this.groupForm.get('place').value, this.days, this.groupForm.get('hour').value, this.groupForm.get('description').value).subscribe(function (serverResponse) {
+        this.groupService.create(this.groupForm.get('name').value, this.user, this.groupForm.get('place').value, this.days, this.groupForm.get('hour').value, this.groupForm.get('description').value, this.groupForm.get('category').value).subscribe(function (serverResponse) {
             _this.router.navigate(['/group']);
         }, function (error) {
             console.log(error);
@@ -1576,8 +1578,8 @@ var GroupService = (function (_super) {
     GroupService.prototype.getGroupByName = function (name) {
         return this.get(this.resourceUrl + "/groupname", name);
     };
-    GroupService.prototype.create = function (name, instructor, place, days, hour, description) {
-        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_group__["a" /* Group */](name, instructor, place, days, hour, description));
+    GroupService.prototype.create = function (name, instructor, place, days, hour, description, category) {
+        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_group__["a" /* Group */](name, instructor, place, days, hour, description, category));
     };
     return GroupService;
 }(__WEBPACK_IMPORTED_MODULE_2__common_api_service__["a" /* APIService */]));
