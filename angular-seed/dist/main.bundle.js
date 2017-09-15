@@ -1,19 +1,15 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src/$$_gendir lazy recursive":
+/***/ "../../../../../src lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
+	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
 }
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
+webpackEmptyAsyncContext.id = "../../../../../src lazy recursive";
 
 /***/ }),
 
@@ -112,16 +108,17 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/user-edit-page/user-edit-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__ = __webpack_require__("../../../../../src/app/pages/edit-info/edit-info-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_group_edit_page_group_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/group-edit-page/group-edit-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_todo_service__ = __webpack_require__("../../../../../src/app/services/todo.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__ = __webpack_require__("../../../../../src/app/pages/sign-in/sing-in-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__common_app_data_service__ = __webpack_require__("../../../../../src/app/common/app-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_user_profile_user_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_group_profile_page_group_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/group-profile-page/group-profile-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_todo_service__ = __webpack_require__("../../../../../src/app/services/todo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_sign_in_sing_in_page_component__ = __webpack_require__("../../../../../src/app/pages/sign-in/sing-in-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__common_app_data_service__ = __webpack_require__("../../../../../src/app/common/app-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_user_profile_user_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -152,29 +149,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var ROUTES = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
-    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_23__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */] },
+    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_18__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_24__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */] },
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
     { path: 'info', component: __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */] },
     {
-        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */]],
+        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_18__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_19__common_auth_service__["a" /* AuthService */]],
     },
     {
-        path: 'users', component: __WEBPACK_IMPORTED_MODULE_22__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
+        path: 'users', component: __WEBPACK_IMPORTED_MODULE_23__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
     },
     {
         path: 'newuser', component: __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
     },
     {
         path: 'edit', component: __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */]],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_19__common_auth_service__["a" /* AuthService */]],
     },
     {
         path: 'newGroup', component: __WEBPACK_IMPORTED_MODULE_13__pages_group_edit_page_group_edit_page_component__["a" /* GroupEditPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */]],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_19__common_auth_service__["a" /* AuthService */]],
+    },
+    {
+        path: 'group', component: __WEBPACK_IMPORTED_MODULE_14__pages_group_profile_page_group_profile_page_component__["a" /* GroupProfilePageComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_19__common_auth_service__["a" /* AuthService */]],
     },
     {
         path: '**', component: __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]
@@ -193,20 +195,21 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__pages_task_list_page_task_list_page_component__["a" /* TaskListPageComponent */],
             __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
             __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
             __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
             __WEBPACK_IMPORTED_MODULE_13__pages_group_edit_page_group_edit_page_component__["a" /* GroupEditPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */]
+            __WEBPACK_IMPORTED_MODULE_24__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_group_profile_page_group_profile_page_component__["a" /* GroupProfilePageComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_14__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_15__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(ROUTES),
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_16__angular_http__["c" /* HttpModule */]
+            __WEBPACK_IMPORTED_MODULE_17__angular_http__["c" /* HttpModule */]
         ],
         providers: [
             {
@@ -215,11 +218,11 @@ AppModule = __decorate([
                     apiURL: 'http://localhost:8080'
                 }
             },
-            __WEBPACK_IMPORTED_MODULE_15__services_todo_service__["a" /* TodoService */],
-            __WEBPACK_IMPORTED_MODULE_18__common_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_19__common_app_data_service__["a" /* AppDataService */],
-            __WEBPACK_IMPORTED_MODULE_20__services_users_service__["a" /* UsersService */],
-            __WEBPACK_IMPORTED_MODULE_21__services_group_service__["a" /* GroupService */],
+            __WEBPACK_IMPORTED_MODULE_16__services_todo_service__["a" /* TodoService */],
+            __WEBPACK_IMPORTED_MODULE_19__common_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_20__common_app_data_service__["a" /* AppDataService */],
+            __WEBPACK_IMPORTED_MODULE_21__services_users_service__["a" /* UsersService */],
+            __WEBPACK_IMPORTED_MODULE_22__services_group_service__["a" /* GroupService */],
             __WEBPACK_IMPORTED_MODULE_4__common_config_app_configuration_service__["a" /* AppConfiguration */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
@@ -788,11 +791,11 @@ var GroupEditPageComponent = (function () {
         }
         this.days;
         this.groupService.create(this.groupForm.get('name').value, this.user, this.groupForm.get('place').value, this.days, this.groupForm.get('hour').value, this.groupForm.get('description').value).subscribe(function (serverResponse) {
-            _this.router.navigate(['/groups']);
+            _this.router.navigate(['/group']);
         }, function (error) {
             console.log(error);
         });
-        this.router.navigate(['/groups']);
+        this.router.navigate(['/group']);
     };
     return GroupEditPageComponent;
 }());
@@ -807,6 +810,102 @@ GroupEditPageComponent = __decorate([
 
 var _a, _b, _c, _d;
 //# sourceMappingURL=group-edit-page.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/group-profile-page/group-profile-page.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/group-profile-page/group-profile-page.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\n    <title>User Page</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n    <style>\n        h1 {\n            font-weight: bold;\n            color: #333333;\n        }\n        h2{\n            text-align: center;\n        }\n        .bg-1 {\n            background-color: #474e5d; /* Green */\n            color: #ffffff;\n        }\n        .bg-2 {\n            background-color: #1abc9c; /* Dark Blue */\n            color: #ffffff;\n        }\n        .bg-3 {\n            background-color: #fff; /* White */\n            color: #555555;\n        }\n    </style>\n</head>\n<body>\n\n<div class=\"container\">\n    <form [formGroup]=\"userForm\" >\n\n<div class=\"container-fluid bg-1 text-center\">\n    <h3>{{user.type}}</h3>\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\n    <h3>{{user.name}} {{user.lastname}}</h3>\n</div>\n\n<div class=\"container-fluid bg-2 text-center\">\n    <h3>Contact</h3>\n    <p>{{user.email}}</p>\n    <p>{{user.phone}}</p>\n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <h3>Description</h3>\n    <p>{{user.description}}</p>\n</div>\n\n<div class=\"container\">\n    <h2>Cursos Actuales</h2>\n    <p>Cursos Actuales Ofrecidos:</p>\n    <table class=\"table table-bordered\">\n        <thead>\n        <tr>\n            <th>Firstname</th>\n            <th>Lastname</th>\n            <th>Email</th>\n        </tr>\n        </thead>\n        <tbody>\n        <tr>\n            <td>John</td>\n            <td>Doe</td>\n            <td>john@example.com</td>\n        </tr>\n        </tbody>\n    </table>\n</div>\n\n<div *ngIf=\"isInstructor()\" class=\"container-fluid bg-3 text-center\">\n    <h3>Averague rate</h3>\n    <p>{{user.rate}}</p>\n    <h3>Total</h3>\n    <p>{{user.totalVotes}}</p>\n\n    <h3>Rate Instructor</h3>\n\n\n    <!--\n    <label>Number:\n        <input id=\"newRate\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\"  ng-model=\"3\"\n               min=\"1\" max=\"5\" required>\n    </label>\n\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" onclick=\"myFunction()\" (click)=\"onSubmitRate()\">Rate</button>\n    -->\n    <select class=\"form-control\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\" id=\"newRate\">\n        <option>1</option>\n        <option>2</option>\n        <option>3</option>\n        <option>4</option>\n        <option>5</option>\n    </select>\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" onclick=\"myFunction()\" (click)=\"onSubmitRate()\">Rate</button>\n    \n\n</div>\n\n</form>\n</div>\n</body>\n</html>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/group-profile-page/group-profile-page.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupProfilePageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var GroupProfilePageComponent = (function () {
+    function GroupProfilePageComponent(usersService, router, formBuilder) {
+        this.usersService = usersService;
+        this.router = router;
+        this.formBuilder = formBuilder;
+    }
+    GroupProfilePageComponent.prototype.isInstructor = function () {
+        if (this.user.type === 'INSTRUCTOR') {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+    GroupProfilePageComponent.prototype.onSubmitRate = function () {
+        var _this = this;
+        this.usersService.editRate(this.username, this.userForm.get('newRate').value).subscribe(function (serverResponse9) {
+            _this.router.navigate(['/']);
+        }, function (error) {
+            console.log(error);
+        });
+        this.router.navigate(['/']);
+    };
+    GroupProfilePageComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userForm = this.formBuilder.group({
+            newRate: ''
+        });
+        this.username = sessionStorage.getItem('username');
+        this.usersService.findUserByUsername(this.username).subscribe(function (usersResponse4) {
+            _this.user = usersResponse4;
+        });
+    };
+    return GroupProfilePageComponent;
+}());
+GroupProfilePageComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-group-profile-page',
+        template: __webpack_require__("../../../../../src/app/pages/group-profile-page/group-profile-page.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/group-profile-page/group-profile-page.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object])
+], GroupProfilePageComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=group-profile-page.component.js.map
 
 /***/ }),
 

@@ -77,13 +77,13 @@ export class GroupEditPageComponent implements OnInit {
       this.groupForm.get('hour').value,
       this.groupForm.get('description').value
     ).subscribe(serverResponse=>{
-        this.router.navigate(['/groups']);
+        this.router.navigate(['/group']);
     }, error=>{
       console.log(error);
     });
   
  
-    this.router.navigate(['/groups']);
+    this.router.navigate(['/group']);
   }
 
 }

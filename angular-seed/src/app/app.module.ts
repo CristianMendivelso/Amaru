@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { UserEditPageComponent } from './pages/user-edit-page/user-edit-page.component';
 import { EditInfoPageComponent } from './pages/edit-info/edit-info-page.component';
 import { GroupEditPageComponent } from './pages/group-edit-page/group-edit-page.component';
+import { GroupProfilePageComponent } from './pages/group-profile-page/group-profile-page.component';
 
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -58,6 +59,10 @@ const ROUTES = [
       canActivate: [AuthService],
     },
   {
+      path: 'group', component: GroupProfilePageComponent,
+      canActivate: [AuthService],
+    },
+  {
     path: '**', component: PageNotFoundComponent
   }
 ]
@@ -74,7 +79,8 @@ const ROUTES = [
       UserEditPageComponent,
       GroupEditPageComponent,
       UserProfilePageComponent,
-      EditInfoPageComponent
+      EditInfoPageComponent,
+      GroupProfilePageComponent
   ],
   imports: [
     BrowserModule,
