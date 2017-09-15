@@ -15,8 +15,7 @@ import { User } from '../../models/user';
 export class GroupEditPageComponent implements OnInit {
   days:string[] = [];
   groupForm: FormGroup; 
-  userO : Observable<User>;
-  user : User;
+  user :User;
   constructor(
     public groupService: GroupService,
     public usersService: UsersService,
@@ -39,13 +38,15 @@ export class GroupEditPageComponent implements OnInit {
       day7:'',
       hour:'',
       description:''
-});
+    });
+    this.usersService.findUserByUsername(sessionStorage.getItem('username')).subscribe(usersResponse4 => {
+      this.user = usersResponse4;
+    })
 
   }
 
   onSubmit() {
-    this.userO = this.usersService.getLoged();
-    this.user = this.userO.map[0];
+    
     if (this.groupForm.get('day1').value){
       this.days.push("Monday") 
     }

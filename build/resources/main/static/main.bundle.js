@@ -1,15 +1,19 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src lazy recursive":
+/***/ "../../../../../src/$$_gendir lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
-	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
 }
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src lazy recursive";
+webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
@@ -739,6 +743,7 @@ var GroupEditPageComponent = (function () {
         this.days = [];
     }
     GroupEditPageComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.groupForm = this.formBuilder.group({
             name: '',
             place: '',
@@ -752,11 +757,12 @@ var GroupEditPageComponent = (function () {
             hour: '',
             description: ''
         });
+        this.usersService.findUserByUsername(sessionStorage.getItem('username')).subscribe(function (usersResponse4) {
+            _this.user = usersResponse4;
+        });
     };
     GroupEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.userO = this.usersService.getLoged();
-        this.user = this.userO.map[0];
         if (this.groupForm.get('day1').value) {
             this.days.push("Monday");
         }
