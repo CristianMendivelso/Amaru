@@ -5,6 +5,7 @@ import { GroupService } from "../../services/group.service";
 import { UsersService } from "../../services/users.service";
 import { Observable } from 'rxjs/Observable';
 import { User } from '../../models/user';
+import { Comment } from '../../models/comment';
 
 @Component({
   selector: 'app-group-edit-page',
@@ -14,6 +15,9 @@ import { User } from '../../models/user';
 })
 export class GroupEditPageComponent implements OnInit {
   days:string[] = [];
+  comments: Comment[]=[];
+  co:Comment;
+  co2:Comment;
   groupForm: FormGroup; 
   user :User;
   constructor(
@@ -47,9 +51,13 @@ export class GroupEditPageComponent implements OnInit {
   }
 
   onSubmit() {
-    
+    this.co = new Comment("Primer comentario :v","pepito",true);
+    this.co2 = new Comment("segundo comentario >:v","pepito",false);
+    this.comments.push(this.co);
+
+
     if (this.groupForm.get('day1').value){
-      this.days.push("Monday") 
+      this.days.push("Monday")
     }
     if (this.groupForm.get('day2').value){
       this.days.push("Tuesday") 
@@ -69,7 +77,8 @@ export class GroupEditPageComponent implements OnInit {
     if (this.groupForm.get('day7' ).value){
       this.days.push("Sunday") 
     }
-    this.days 
+    sessionStorage.setItem('groupname',this.groupForm.get('name').value);
+    this.days
     this.groupService.create(
       this.groupForm.get('name').value,
       this.user,
@@ -77,7 +86,8 @@ export class GroupEditPageComponent implements OnInit {
       this.days,
       this.groupForm.get('hour').value,
       this.groupForm.get('description').value,
-      this.groupForm.get('category').value
+      this.groupForm.get('category').value,
+      this.comments
     ).subscribe(serverResponse=>{
         this.router.navigate(['/group']);
     }, error=>{

@@ -1,5 +1,6 @@
 package com.eci.cosw.springbootsecureapi.service;
 
+import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,10 @@ public class GroupServiceImpl implements GroupService{
     private void populateSampleData()
     {
         String[] days = {"Friday", "Sunday"};
-        groups.add( new Group( "Volleyball", null, "Parque el virrey", days, "10:00 am - 12:00 pm", "Learn how to play volleyball, and enjoy your morning exercising","Sports") );
+        Comment co = new Comment("primer comentario :v","Pepito",true);
+        Comment co2 = new Comment("Segundo comentario >:v","Pepito",false);
+        Comment[] comments = {co,co2};
+        groups.add( new Group( "Volleyball", null, "Parque el virrey", days, "10:00 am - 12:00 pm", "Learn how to play volleyball, and enjoy your morning exercising","Sports",comments) );
     }
 
     @Override

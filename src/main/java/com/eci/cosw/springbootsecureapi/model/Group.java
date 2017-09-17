@@ -21,7 +21,7 @@ public class Group {
 
     private Float score;
 
-    private ArrayList<Comment> comments;
+    private Comment[] comments;
 
     private String place;
 
@@ -37,7 +37,7 @@ public class Group {
     {
     }
 
-    public Group( String name, User instructor, String place, String[] days, String hour,  String description, String category)
+    public Group( String name, User instructor, String place, String[] days, String hour,  String description, String category, Comment[] comment)
     {
         this.setName(name);
         this.setInstructor(instructor);
@@ -45,7 +45,8 @@ public class Group {
         this.setHour(hour);
         this.setDays(days);
         this.setDescription(description);
-        this.setComments(new ArrayList<Comment>());
+        //this.setComments(new ArrayList<Comment>());
+        this.comments=comment;
         this.setCategory(category);
     }
     public Group( String name, String place,  String[] days, String hour, String description)
@@ -55,7 +56,7 @@ public class Group {
         this.setHour(hour);
         this.setDays(days);
         this.setDescription(description);
-        this.setComments(new ArrayList<Comment>());
+        //this.setComments(new ArrayList<Comment>());
     }
 
     @Override
@@ -139,17 +140,15 @@ public class Group {
         this.description = description;
     }
 
-    public ArrayList<Comment> getComments() {
+    public Comment[] getComments() {
         return comments;
     }
 
-    public void setComments(ArrayList<Comment> comments) {
+    public void setComments(Comment[] comments) {
         this.comments = comments;
     }
 
-    public void addComment(Comment comment){
-        this.comments.add(comment);
-    }
+    //public void addComment(Comment comment){ this.comments.add(comment); }
 
     public String getCategory() {
         return category;

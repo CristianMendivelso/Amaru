@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Group } from '../models/group';
 import { User } from '../models/user';
+import { Comment } from '../models/comment';
 import { APIService } from '../common/api.service';
 import { Observable } from "rxjs/Observable";
 import { AppConfiguration } from '../common/config/app-configuration.service';
@@ -20,10 +21,10 @@ export class GroupService extends APIService{
       }
 
     getGroupByName(name:string): Observable<Group>{
-        return this.get(this.resourceUrl + "/groupname",name);
+        return this.get("group" + "/groupname",name);
     }
-    create(name: string, instructor: User, place:string,  days:string[], hour:string,description:string, category:string):Observable<Group>{
-        return this.post(this.resourceUrl,new Group(name,instructor,place, days, hour,description, category));
+    create(name: string, instructor: User, place:string,  days:string[], hour:string,description:string, category:string, comments:Comment[]):Observable<Group>{
+        return this.post(this.resourceUrl,new Group(name,instructor,place, days, hour,description, category,comments));
       }
 
 

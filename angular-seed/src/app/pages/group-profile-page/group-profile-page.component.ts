@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from "../../models/user";
+import { Group } from "../../models/group";
+import { Comment } from "../../models/comment";
 import { UsersService } from "../../services/users.service";
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { GroupService } from '../../services/group.service';
 
 @Component({
     selector: 'app-group-profile-page',
@@ -11,10 +14,13 @@ import { Router } from '@angular/router';
 })
 export class GroupProfilePageComponent implements OnInit {
     private user: User;
+    private group: Group;
+    comentarios:Comment [];
     userForm: FormGroup;
     private username:string;
+    private groupname:string;
 
-    constructor(public usersService: UsersService,   public router: Router,    public formBuilder: FormBuilder,)  {
+    constructor(public usersService: UsersService,   public router: Router,    public formBuilder: FormBuilder, public groupService:GroupService)  {
 
     }
 
@@ -47,8 +53,14 @@ export class GroupProfilePageComponent implements OnInit {
             newRate: ''
         });
         this.username=sessionStorage.getItem('username');
+        this.groupname=sessionStorage.getItem('groupname');
         this.usersService.findUserByUsername(this.username).subscribe(usersResponse4 => {
             this.user = usersResponse4;
+        })
+        this.groupService.getGroupByName(this.groupname).subscribe(usersResponse5 => {
+            this.group = usersResponse5;
+            this.comentarios=this.group.comments;
+
         })
     }
 

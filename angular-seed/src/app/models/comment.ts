@@ -1,6 +1,6 @@
 export class Comment {
-    private text: string;
-    private user: string;
+    text: string;
+    user: string;
     private date: boolean;
 
     constructor(text:string, user:string, date:boolean) {
