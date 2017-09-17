@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
-    <title>User Page</title>
+    <title>Group Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -31,53 +31,35 @@
 <body>
 
 <div class="container">
-    <form [formGroup]="userForm" >
+    <form [formGroup]="groupForm" >
 
 <div class="container-fluid bg-1 text-center">
-    <h3>{{user.type}}</h3>
-    <img [src]="user.image" class="img-circle" width="200" height="200" />
-    <h3>{{user.name}} {{user.lastname}}</h3>
+    <h3>{{group.name}}</h3>
+    <h3>Group Description</h3>
+    <p>{{group.description}}</p>
+    <h3>Place</h3>
+    <p>{{group.place}}</p>
+    <h3>Days</h3>
+    <p>{{group.days}}</p>
+    <h3>Hour</h3>
+    <p>{{group.hour}}</p>
 </div>
 
 <div class="container-fluid bg-2 text-center">
+    <h3>{{instructor.type}}</h3>
+    <img [src]="instructor.image" class="img-circle" width="200" height="200" />
+    <h3>{{instructor.name}} {{instructor.lastname}}</h3>
     <h3>Contact</h3>
-    <p>{{user.email}}</p>
-    <p>{{user.phone}}</p>
+    <p>{{instructor.email}}</p>
+    <p>{{instructor.phone}}</p>
 </div>
 
-<div class="container-fluid bg-3 text-center">
-    <h3>Description</h3>
-    <p>{{user.description}}</p>
-</div>
-
-<div class="container">
-    <h2>Cursos Actuales</h2>
-    <p>Cursos Actuales Ofrecidos:</p>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
-<div *ngIf="isInstructor()" class="container-fluid bg-3 text-center">
+<div *ngIf="isSameInstructor()" class="container-fluid bg-3 text-center">
     <h3>Averague rate</h3>
     <p>{{user.rate}}</p>
     <h3>Total</h3>
     <p>{{user.totalVotes}}</p>
-
-    <h3>Rate Instructor</h3>
+    <h3>Rate Group</h3>
 
 
     <!--
@@ -98,6 +80,10 @@
     <button type="button" style="position: absolute; right: 0;"class="btn btn-primary btn-lg"  data-toggle="modal" data-target="#editRate " onclick="myFunction()" (click)="onSubmitRate()">Rate</button>
     
 
+</div>
+
+<div *ngIf="isSameInstructor()" class="container-fluid bg-3 text-center">
+        <button type="button" style="position: absolute; right: 0;"class="btn btn-primary btn-lg"  data-toggle="modal" data-target="#editRate " onclick="myFunction()" (click)="onSubmitRegister()">Register</button>
 </div>
 
 </form>

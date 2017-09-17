@@ -70,6 +70,7 @@ export class GroupEditPageComponent implements OnInit {
       this.days.push("Sunday") 
     }
     this.days 
+    sessionStorage.setItem('groupname', this.groupForm.get('name').value);
     this.groupService.create(
       this.groupForm.get('name').value,
       this.user,
@@ -85,7 +86,6 @@ export class GroupEditPageComponent implements OnInit {
     });
   
  
-    this.router.navigate(['/group']);
   }
 
 }

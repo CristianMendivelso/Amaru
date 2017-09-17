@@ -4,7 +4,7 @@ import { Observable } from "rxjs/Observable";
 
 export class Group {
     private name: string;
-    private instructor: User;
+    public instructor: User;
     private students: Array<User>;
     private score:number;
     private comments: Array<Comment>;

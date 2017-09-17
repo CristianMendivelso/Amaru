@@ -61,6 +61,7 @@ public class GroupServiceImpl implements GroupService{
         for (Group g : groups){
             if (g.getName().equals(groupname)){
                 group = g;
+                break;
             }
         }
         return group;
@@ -69,7 +70,6 @@ public class GroupServiceImpl implements GroupService{
     @Override
     public Group createGroup(Group group) {
         group.setId(groups.size());
-        System.out.println(group.toString());
         groups.add(group);
         return groups.get(groups.size() - 1);
     }

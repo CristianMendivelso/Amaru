@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from "../../models/user";
+import { Group } from "../../models/group";
 import { UsersService } from "../../services/users.service";
+import { GroupService } from "../../services/group.service";
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -11,16 +13,19 @@ import { Router } from '@angular/router';
 })
 export class GroupProfilePageComponent implements OnInit {
     private user: User;
-    userForm: FormGroup;
+    private instructor : User;
+    private group:Group;
+    groupForm: FormGroup;
     private username:string;
+    private groupname:string;
 
-    constructor(public usersService: UsersService,   public router: Router,    public formBuilder: FormBuilder,)  {
+    constructor(public groupService :GroupService,public usersService: UsersService,   public router: Router,    public formBuilder: FormBuilder,)  {
 
     }
 
 
-    isInstructor() {
-        if (this.user.type==='INSTRUCTOR'){
+    isSameInstructor() {
+        if (this.user.username===this.instructor.username){
             return false;
         }
         else{
@@ -32,7 +37,7 @@ export class GroupProfilePageComponent implements OnInit {
     onSubmitRate() {
         this.usersService.editRate(
             this.username,
-            this.userForm.get('newRate').value
+            this.groupForm.get('newRate').value
         ).subscribe(serverResponse9=>{
             this.router.navigate(['/']);
         }, error=>{
@@ -43,13 +48,19 @@ export class GroupProfilePageComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.userForm = this.formBuilder.group({
+        this.groupForm = this.formBuilder.group({
             newRate: ''
         });
         this.username=sessionStorage.getItem('username');
+        this.groupname = sessionStorage.getItem('groupname');
+        this.groupService.getGroupByName(this.groupname).subscribe(groupResponse => {
+            this.group = groupResponse;
+            this.instructor = this.group.instructor;
+        })
         this.usersService.findUserByUsername(this.username).subscribe(usersResponse4 => {
             this.user = usersResponse4;
         })
+        
     }
 
 
