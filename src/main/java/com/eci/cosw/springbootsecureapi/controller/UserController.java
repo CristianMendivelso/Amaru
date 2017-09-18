@@ -74,10 +74,7 @@ public class UserController
     }
 
     @RequestMapping( value = "/rate", method = RequestMethod.POST )
-    public User editRate(@RequestBody User edit){
-
-        return userService.editRate(edit.getUsername(),edit.getRate());
-    }
+    public User editRate(@RequestBody User edit){ return userService.editRate(edit.getUsername(),edit.getRate()); }
 
 
     @RequestMapping( value = "/login", method = RequestMethod.POST )

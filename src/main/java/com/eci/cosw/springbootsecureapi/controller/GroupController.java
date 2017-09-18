@@ -23,5 +23,9 @@ public class GroupController {
     public Group setUser(@RequestBody Group group){
         return groupService.createGroup(group);
     }
+
+    @RequestMapping( value = "/rate", method = RequestMethod.GET )
+    public Group getGroupRate(@RequestBody Group group){ return groupService.editRate(group.getName(),group.getRate()); }
+
 }
 

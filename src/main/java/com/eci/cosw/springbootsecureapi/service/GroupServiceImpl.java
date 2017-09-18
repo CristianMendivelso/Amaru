@@ -31,7 +31,7 @@ public class GroupServiceImpl implements GroupService{
         Comment co = new Comment("primer comentario :v","Pepito",true);
         Comment co2 = new Comment("Segundo comentario >:v","Pepito",false);
         Comment[] comments = {co,co2};
-        groups.add( new Group( "Volleyball", null, "Parque el virrey", days, "10:00 am - 12:00 pm", "Learn how to play volleyball, and enjoy your morning exercising","Sports",comments) );
+        groups.add( new Group( "Volleyball", null, "Parque el virrey", days, "10:00 am - 12:00 pm", "Learn how to play volleyball, and enjoy your morning exercising","Sports",comments,3.0,1) );
     }
 
     @Override
@@ -76,6 +76,34 @@ public class GroupServiceImpl implements GroupService{
         group.setId(groups.size());
         groups.add(group);
         return groups.get(groups.size() - 1);
+    }
+
+    public Group editRate(String groupname, Double rate) {
+        int indice=0;
+        for (int i=0;i< groups.size();i++){
+            if(groups.get(i).getName().equals(groupname)){
+                indice=i;
+                Group g = groups.get(i);
+                Double oldRate = g.getRate();
+                int cont = g.getTotalVotes();
+
+                g.setRate( redondearDecimales((oldRate+rate)/2,2) );
+                g.setTotalVotes(cont+1);
+                groups.set(i,g);
+                break;
+            }
+        }
+        return groups.get(indice);
+    }
+
+    public static double redondearDecimales(double valorInicial, int numeroDecimales) {
+        double parteEntera, resultado;
+        resultado = valorInicial;
+        parteEntera = Math.floor(resultado);
+        resultado=(resultado-parteEntera)*Math.pow(10, numeroDecimales);
+        resultado=Math.round(resultado);
+        resultado=(resultado/Math.pow(10, numeroDecimales))+parteEntera;
+        return resultado;
     }
 
 }

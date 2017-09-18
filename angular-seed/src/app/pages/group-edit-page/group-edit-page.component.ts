@@ -87,7 +87,9 @@ export class GroupEditPageComponent implements OnInit {
       this.groupForm.get('hour').value,
       this.groupForm.get('description').value,
       this.groupForm.get('category').value,
-      this.comments
+      this.comments,
+        3,
+        1
     ).subscribe(serverResponse=>{
         this.router.navigate(['/group']);
     }, error=>{

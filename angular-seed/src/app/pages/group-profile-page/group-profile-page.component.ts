@@ -42,7 +42,7 @@ export class GroupProfilePageComponent implements OnInit {
 
     }
     onSubmitRate() {
-        this.usersService.editRate(
+        this.groupService.editRate(
             this.username,
             this.groupForm.get('newRate').value
         ).subscribe(serverResponse9=>{

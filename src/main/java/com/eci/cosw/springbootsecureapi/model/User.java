@@ -29,7 +29,7 @@ public class User
 
     private String username;
 
-    private float rate;
+    private Double rate;
 
     private int totalVotes;
 
@@ -40,7 +40,7 @@ public class User
     {
     }
 
-    public User( String name, String lastname, String image, String phone,String password, String email, String description, String type,String username, float rate , int totalVotes,ArrayList<Group> groups)
+    public User( String name, String lastname, String image, String phone,String password, String email, String description, String type,String username, Double rate , int totalVotes,ArrayList<Group> groups)
 
     {
         this.email = email;
@@ -98,9 +98,9 @@ public class User
         this.lastname = lastname;
     }
 
-    public float getRate() { return rate; }
+    public Double getRate() { return rate; }
 
-    public void setRate( float rate )
+    public void setRate( Double rate )
     {
         this.rate = rate;
     }

@@ -21,4 +21,6 @@ public interface GroupService {
 
     Group createGroup(Group group);
 
+    Group editRate( String groupname, Double rate );
+
 }
