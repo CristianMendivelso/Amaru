@@ -6,7 +6,7 @@ import { AppConfiguration } from './common/config/app-configuration.service';
 import { INITIAL_CONFIG } from './common/config/initial-config';
 
 import { AppComponent } from './app.component';
-
+import {HomeSigninPageComponent} from './pages/home-signin-page/home-signin-page-component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { TaskListPageComponent } from './pages/task-list-page/task-list-page.component';
 import { TaskEditPageComponent } from './pages/task-edit-page/task-edit-page.component';
@@ -48,6 +48,12 @@ const ROUTES = [
 
 
     },
+    {
+        path: 'welcome', component: HomeSigninPageComponent,
+
+
+    }
+    ,
 
   {
     path: 'edit', component: TaskEditPageComponent,
@@ -80,7 +86,8 @@ const ROUTES = [
       GroupEditPageComponent,
       UserProfilePageComponent,
       EditInfoPageComponent,
-      GroupProfilePageComponent
+      GroupProfilePageComponent,
+      HomeSigninPageComponent
   ],
   imports: [
     BrowserModule,

@@ -50,24 +50,18 @@
     <p>{{user.description}}</p>
 </div>
 
-<div class="container">
-    <h2>Cursos Actuales</h2>
-    <p>Cursos Actuales Ofrecidos:</p>
+<div div *ngIf="isInstructor()" class="container">
+    <h2>Grupos Actuales</h2>
+    <p>Grupos Ofrecidos Actualmente:</p>
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
+            <th>Name</th>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
+        <tr *ngFor="let group of groups">
+            <td>{{group.name}}</td>
         </tr>
-        </tbody>
     </table>
 </div>
 

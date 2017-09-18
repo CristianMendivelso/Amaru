@@ -31,10 +31,11 @@ export class SingInPageComponent implements OnInit {
       this.usersService.login(
       this.signInForm.get('username').value,
       this.signInForm.get('password').value).subscribe(loginResponse => {
-        this.router.navigate(['tasks']);
+        this.router.navigate(['welcome']);
       }, error => {
         this.loginError = 'Error Signing in: ' + (error && error.message ? error.message : '');
       })
+      this.router.navigate(['/welcome']);
   }
 
 }

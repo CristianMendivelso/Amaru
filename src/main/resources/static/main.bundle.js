@@ -101,24 +101,25 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_config_app_configuration_service__ = __webpack_require__("../../../../../src/app/common/config/app-configuration.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_config_initial_config__ = __webpack_require__("../../../../../src/app/common/config/initial-config.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__ = __webpack_require__("../../../../../src/app/pages/home-page/home-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_task_list_page_task_list_page_component__ = __webpack_require__("../../../../../src/app/pages/task-list-page/task-list-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/task-edit-page/task-edit-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/pages/page-not-found/page-not-found.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/user-edit-page/user-edit-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__ = __webpack_require__("../../../../../src/app/pages/edit-info/edit-info-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_group_edit_page_group_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/group-edit-page/group-edit-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_group_profile_page_group_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/group-profile-page/group-profile-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_todo_service__ = __webpack_require__("../../../../../src/app/services/todo.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_sign_in_sing_in_page_component__ = __webpack_require__("../../../../../src/app/pages/sign-in/sing-in-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__common_app_data_service__ = __webpack_require__("../../../../../src/app/common/app-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_user_profile_user_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_signin_page_home_signin_page_component__ = __webpack_require__("../../../../../src/app/pages/home-signin-page/home-signin-page-component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_home_page_home_page_component__ = __webpack_require__("../../../../../src/app/pages/home-page/home-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_task_list_page_task_list_page_component__ = __webpack_require__("../../../../../src/app/pages/task-list-page/task-list-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_task_edit_page_task_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/task-edit-page/task-edit-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/pages/page-not-found/page-not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_user_edit_page_user_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/user-edit-page/user-edit-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_edit_info_edit_info_page_component__ = __webpack_require__("../../../../../src/app/pages/edit-info/edit-info-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_group_edit_page_group_edit_page_component__ = __webpack_require__("../../../../../src/app/pages/group-edit-page/group-edit-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_group_profile_page_group_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/group-profile-page/group-profile-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_todo_service__ = __webpack_require__("../../../../../src/app/services/todo.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_sign_in_sing_in_page_component__ = __webpack_require__("../../../../../src/app/pages/sign-in/sing-in-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__common_app_data_service__ = __webpack_require__("../../../../../src/app/common/app-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_user_profile_user_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -150,36 +151,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var ROUTES = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
-    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_18__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_24__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */] },
-    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
-    { path: 'info', component: __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_8__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
+    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_19__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_25__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */] },
+    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_8__pages_home_page_home_page_component__["a" /* HomePageComponent */] },
+    { path: 'info', component: __WEBPACK_IMPORTED_MODULE_13__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */] },
     {
-        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_18__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_19__common_auth_service__["a" /* AuthService */]],
+        path: 'tasks', component: __WEBPACK_IMPORTED_MODULE_19__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_20__common_auth_service__["a" /* AuthService */]],
     },
     {
-        path: 'users', component: __WEBPACK_IMPORTED_MODULE_23__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
+        path: 'users', component: __WEBPACK_IMPORTED_MODULE_24__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
     },
     {
-        path: 'newuser', component: __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
+        path: 'newuser', component: __WEBPACK_IMPORTED_MODULE_12__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
     },
     {
-        path: 'edit', component: __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_19__common_auth_service__["a" /* AuthService */]],
+        path: 'welcome', component: __WEBPACK_IMPORTED_MODULE_7__pages_home_signin_page_home_signin_page_component__["a" /* HomeSigninPageComponent */],
     },
     {
-        path: 'newGroup', component: __WEBPACK_IMPORTED_MODULE_13__pages_group_edit_page_group_edit_page_component__["a" /* GroupEditPageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_19__common_auth_service__["a" /* AuthService */]],
+        path: 'edit', component: __WEBPACK_IMPORTED_MODULE_10__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_20__common_auth_service__["a" /* AuthService */]],
     },
     {
-        path: 'group', component: __WEBPACK_IMPORTED_MODULE_14__pages_group_profile_page_group_profile_page_component__["a" /* GroupProfilePageComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_19__common_auth_service__["a" /* AuthService */]],
+        path: 'newGroup', component: __WEBPACK_IMPORTED_MODULE_14__pages_group_edit_page_group_edit_page_component__["a" /* GroupEditPageComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_20__common_auth_service__["a" /* AuthService */]],
     },
     {
-        path: '**', component: __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]
+        path: 'group', component: __WEBPACK_IMPORTED_MODULE_15__pages_group_profile_page_group_profile_page_component__["a" /* GroupProfilePageComponent */],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_20__common_auth_service__["a" /* AuthService */]],
+    },
+    {
+        path: '**', component: __WEBPACK_IMPORTED_MODULE_11__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]
     }
 ];
 var AppModule = (function () {
@@ -191,25 +196,26 @@ AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__pages_home_page_home_page_component__["a" /* HomePageComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__pages_task_list_page_task_list_page_component__["a" /* TaskListPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__pages_group_edit_page_group_edit_page_component__["a" /* GroupEditPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__pages_group_profile_page_group_profile_page_component__["a" /* GroupProfilePageComponent */]
+            __WEBPACK_IMPORTED_MODULE_8__pages_home_page_home_page_component__["a" /* HomePageComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__pages_task_list_page_task_list_page_component__["a" /* TaskListPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__pages_task_edit_page_task_edit_page_component__["a" /* TaskEditPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__pages_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__pages_sign_in_sing_in_page_component__["a" /* SingInPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__pages_user_list_page_user_list_page_component__["a" /* UserListPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_user_edit_page_user_edit_page_component__["a" /* UserEditPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__pages_group_edit_page_group_edit_page_component__["a" /* GroupEditPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__pages_group_profile_page_group_profile_page_component__["a" /* GroupProfilePageComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__pages_home_signin_page_home_signin_page_component__["a" /* HomeSigninPageComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_15__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_16__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* RouterModule */].forRoot(ROUTES),
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["e" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_17__angular_http__["c" /* HttpModule */]
+            __WEBPACK_IMPORTED_MODULE_18__angular_http__["c" /* HttpModule */]
         ],
         providers: [
             {
@@ -218,11 +224,11 @@ AppModule = __decorate([
                     apiURL: 'http://localhost:8080'
                 }
             },
-            __WEBPACK_IMPORTED_MODULE_16__services_todo_service__["a" /* TodoService */],
-            __WEBPACK_IMPORTED_MODULE_19__common_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_20__common_app_data_service__["a" /* AppDataService */],
-            __WEBPACK_IMPORTED_MODULE_21__services_users_service__["a" /* UsersService */],
-            __WEBPACK_IMPORTED_MODULE_22__services_group_service__["a" /* GroupService */],
+            __WEBPACK_IMPORTED_MODULE_17__services_todo_service__["a" /* TodoService */],
+            __WEBPACK_IMPORTED_MODULE_20__common_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_21__common_app_data_service__["a" /* AppDataService */],
+            __WEBPACK_IMPORTED_MODULE_22__services_users_service__["a" /* UsersService */],
+            __WEBPACK_IMPORTED_MODULE_23__services_group_service__["a" /* GroupService */],
             __WEBPACK_IMPORTED_MODULE_4__common_config_app_configuration_service__["a" /* AppConfiguration */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
@@ -572,7 +578,7 @@ var Todo = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
 var User = (function () {
-    function User(name, lastname, image, phone, password, email, description, type, username, rate, totalVotes) {
+    function User(name, lastname, image, phone, password, email, description, type, username, rate, totalVotes, groups) {
         this.name = name;
         this.lastname = lastname;
         this.image = image;
@@ -584,6 +590,7 @@ var User = (function () {
         this.username = username;
         this.rate = rate;
         this.totalVotes = totalVotes;
+        this.groups = groups;
     }
     return User;
 }());
@@ -969,7 +976,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/home-page/home-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <!-- Theme Made By www.w3schools.com - No Copyright -->\r\n  <title>Bootstrap Theme The Band</title>\r\n  <meta charset=\"utf-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n  <link href=\"https://fonts.googleapis.com/css?family=Lato\" rel=\"stylesheet\" type=\"text/css\">\r\n  <link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\" type=\"text/css\">\r\n\r\n  <style>\r\n    body {\r\n      font: 400 15px/1.8 Lato, sans-serif;\r\n      color: #777;\r\n    }\r\n    #tituloA{\r\n      color:#333333;\r\n      font-weight: bold;\r\n      text-align: center;\r\n    ;\r\n    }\r\n    h3, h4 {\r\n      margin: 10px 0 30px 0;\r\n      letter-spacing: 3px;\r\n      font-weight: bold;\r\n      color: #ffffff;\r\n      font-size: 20px;\r\n    }\r\n    .container {\r\n      padding: 80px 120px;\r\n    }\r\n    .person {\r\n      border: 10px solid transparent;\r\n      margin-bottom: 25px;\r\n      width: 80%;\r\n      height: 80%;\r\n      opacity: 0.7;\r\n    }\r\n    .person:hover {\r\n      border-color: #f1f1f1;\r\n    }\r\n    .carousel-inner img {\r\n      -webkit-filter: grayscale(20%);\r\n      filter: grayscale(20%); /* make all photos black and white */\r\n      width: 60%; /* Set width to 100% */\r\n      margin: auto;\r\n    }\r\n    .carousel-caption h3 {\r\n      color: #fff !important;\r\n    }\r\n    @media (max-width: 600px) {\r\n      .carousel-caption {\r\n        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */\r\n      }\r\n    }\r\n    .bg-1 {\r\n      background: #2d2d30;\r\n      color: #bdbdbd;\r\n    }\r\n    .bg-1 h3 {color: #fff;}\r\n    .bg-1 p {font-style: italic;}\r\n    .list-group-item:first-child {\r\n      border-top-right-radius: 0;\r\n      border-top-left-radius: 0;\r\n    }\r\n    .list-group-item:last-child {\r\n      border-bottom-right-radius: 0;\r\n      border-bottom-left-radius: 0;\r\n    }\r\n    .thumbnail {\r\n      padding: 0 0 15px 0;\r\n      border: none;\r\n      border-radius: 0;\r\n    }\r\n    .thumbnail p {\r\n      margin-top: 15px;\r\n      color: #555;\r\n    }\r\n    .btn {\r\n      padding: 10px 20px;\r\n      background-color: #333;\r\n      color: #f1f1f1;\r\n      border-radius: 0;\r\n      transition: .2s;\r\n    }\r\n    .btn:hover, .btn:focus {\r\n      border: 1px solid #333;\r\n      background-color: #fff;\r\n      color: #000;\r\n    }\r\n    .modal-header, h4, .close {\r\n      background-color: #333;\r\n      color: #fff !important;\r\n      text-align: center;\r\n      font-size: 30px;\r\n    }\r\n    .modal-header, .modal-body {\r\n      padding: 40px 50px;\r\n    }\r\n    .nav-tabs li a {\r\n      color: #777;\r\n    }\r\n    #googleMap {\r\n      width: 100%;\r\n      height: 400px;\r\n      -webkit-filter: grayscale(100%);\r\n      filter: grayscale(100%);\r\n    }\r\n    .navbar {\r\n      font-family: Montserrat, sans-serif;\r\n      margin-bottom: 0;\r\n      background-color: #2d2d30;\r\n      border: 0;\r\n      font-size: 11px !important;\r\n      letter-spacing: 4px;\r\n      opacity: 0.9;\r\n    }\r\n    .navbar li a, .navbar .navbar-brand {\r\n      color: #d5d5d5 !important;\r\n    }\r\n    .navbar-nav li a:hover {\r\n      color: #fff !important;\r\n    }\r\n    .navbar-nav li.active a {\r\n      color: #fff !important;\r\n      background-color: #29292c !important;\r\n    }\r\n    .navbar-default .navbar-toggle {\r\n      border-color: transparent;\r\n    }\r\n    .open .dropdown-toggle {\r\n      color: #fff;\r\n      background-color: #555 !important;\r\n    }\r\n    .dropdown-menu li a {\r\n      color: #000 !important;\r\n    }\r\n    .dropdown-menu li a:hover {\r\n      background-color: red !important;\r\n    }\r\n    footer {\r\n      background-color: #2d2d30;\r\n      color: #f5f5f5;\r\n      padding: 32px;\r\n    }\r\n    footer a {\r\n      color: #f5f5f5;\r\n    }\r\n    footer a:hover {\r\n      color: #777;\r\n      text-decoration: none;\r\n    }\r\n    .form-control {\r\n      border-radius: 0;\r\n    }\r\n    textarea {\r\n      resize: none;\r\n    }\r\n\r\n  </style>\r\n</head>\r\n<body id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">\r\n\r\n\r\n<div id=\"tituloA\"  >\r\n  <button style=\"position: absolute; right: 0;\" type=\"button\" class=\"btn btn-primary btn-lg\"  routerLinkActive=\"/signin\" routerLink=\"/signin\">Iniciar Sesión</button>\r\n  <h1 >Bienvenido a AMARU</h1>\r\n</div>\r\n\r\n\r\n<div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\r\n  <!-- Indicators -->\r\n  <ol class=\"carousel-indicators\">\r\n    <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\r\n    <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\r\n    <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\r\n  </ol>\r\n\r\n  <!-- Wrapper for slides -->\r\n  <div class=\"carousel-inner\" role=\"listbox\">\r\n    <div class=\"item active\">\r\n      <img src=\"http://www.zamoradeportivo.com/fotos/img_1263.jpg\" alt=\"New York\" width=\"800\" height=\"600\">\r\n      <div class=\"carousel-caption\">\r\n        <h3>Puedes Aprender</h3>\r\n        <p>¡En AMARU Puedes Aprender Disciplinas Deportivas Como Kick Boxing Entre Otros!</p>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"item\">\r\n      <img src=\"http://3.bp.blogspot.com/-a0rcSwOqJtk/VUnCm-RBOQI/AAAAAAAAZUA/PWGNB17bC54/s1600/IMG_7272.JPG\" alt=\"Chicago\" width=\"800\" height=\"600\">\r\n      <div class=\"carousel-caption\">\r\n        <h3>Crea Tus Propios Grupos</h3>\r\n        <p>En AMARU Con La Opción De Instructor Puedes Enseñarle A Los Demás</p>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"item\">\r\n      <img src=\"https://www.ecologiaverde.com/wp-content/2016/05/frisbee.jpg\" alt=\"Los Angeles\" width=\"800\" height=\"600\">\r\n      <div class=\"carousel-caption\">\r\n        <h3>Sal De La Rutina</h3>\r\n        <p>Con AMARU Puedes Aprovechar Tus Tiempos Libres Y Fortalecer Tu Mente Y Cuerpo</p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- Left and right controls -->\r\n  <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">\r\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\r\n    <span class=\"sr-only\">Previous</span>\r\n  </a>\r\n  <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">\r\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\r\n    <span class=\"sr-only\">Next</span>\r\n  </a>\r\n</div>\r\n\r\n<!-- Container (The Band Section) -->\r\n<div id=\"band\" class=\"container text-center\">\r\n  <h1>!Regístrate Es Gratis!</h1>\r\n  <button type=\"button\" class=\"btn btn-primary btn-lg\"  routerLinkActive=\"/newuser\" routerLink=\"/newuser\">REGISTRARSE</button>\r\n  <p><em>Nunca es tarde para empezar</em></p>\r\n  <br>\r\n\r\n</div>\r\n\r\n<!-- Container (TOUR Section) -->\r\n<div id=\"tour\" class=\"bg-1\">\r\n  <div class=\"container\">\r\n    <h3 class=\"text-center\">¿Qué es AMARU?</h3>\r\n    <p class=\"text-center\"> Sebastian Castaño <br> Leonardo Herrera <br> Cristian Mendivelso <br> Christian Soto </p>\r\n\r\n\r\n\r\n  </div>\r\n\r\n</div>\r\n\r\n<footer class=\"text-center\">\r\n  <a class=\"up-arrow\" href=\"#myPage\" data-toggle=\"tooltip\" title=\"TO TOP\">\r\n    <span class=\"glyphicon glyphicon-chevron-up\"></span>\r\n  </a><br><br>\r\n  <p>Bootstrap Theme Made By <a href=\"https://www.w3schools.com\" data-toggle=\"tooltip\" title=\"Visit w3schools\">www.w3schools.com</a></p>\r\n</footer>\r\n\r\n\r\n</body>\r\n</html>\r\n"
+module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <!-- Theme Made By www.w3schools.com - No Copyright -->\r\n  <title>Bienvenido a Amaru</title>\r\n  <meta charset=\"utf-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n  <link href=\"https://fonts.googleapis.com/css?family=Lato\" rel=\"stylesheet\" type=\"text/css\">\r\n  <link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\" type=\"text/css\">\r\n\r\n  <style>\r\n    body {\r\n      font: 400 15px/1.8 Lato, sans-serif;\r\n      color: #777;\r\n    }\r\n    #tituloA{\r\n      color:#333333;\r\n      font-weight: bold;\r\n      text-align: center;\r\n    ;\r\n    }\r\n    h3, h4 {\r\n      margin: 10px 0 30px 0;\r\n      letter-spacing: 3px;\r\n      font-weight: bold;\r\n      color: #ffffff;\r\n      font-size: 20px;\r\n    }\r\n    .container {\r\n      padding: 80px 120px;\r\n    }\r\n    .person {\r\n      border: 10px solid transparent;\r\n      margin-bottom: 25px;\r\n      width: 80%;\r\n      height: 80%;\r\n      opacity: 0.7;\r\n    }\r\n    .person:hover {\r\n      border-color: #f1f1f1;\r\n    }\r\n    .carousel-inner img {\r\n      -webkit-filter: grayscale(20%);\r\n      filter: grayscale(20%); /* make all photos black and white */\r\n      width: 60%; /* Set width to 100% */\r\n      margin: auto;\r\n    }\r\n    .carousel-caption h3 {\r\n      color: #fff !important;\r\n    }\r\n    @media (max-width: 600px) {\r\n      .carousel-caption {\r\n        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */\r\n      }\r\n    }\r\n    .bg-1 {\r\n      background: #2d2d30;\r\n      color: #bdbdbd;\r\n    }\r\n    .bg-1 h3 {color: #fff;}\r\n    .bg-1 p {font-style: italic;}\r\n    .list-group-item:first-child {\r\n      border-top-right-radius: 0;\r\n      border-top-left-radius: 0;\r\n    }\r\n    .list-group-item:last-child {\r\n      border-bottom-right-radius: 0;\r\n      border-bottom-left-radius: 0;\r\n    }\r\n    .thumbnail {\r\n      padding: 0 0 15px 0;\r\n      border: none;\r\n      border-radius: 0;\r\n    }\r\n    .thumbnail p {\r\n      margin-top: 15px;\r\n      color: #555;\r\n    }\r\n    .btn {\r\n      padding: 10px 20px;\r\n      background-color: #333;\r\n      color: #f1f1f1;\r\n      border-radius: 0;\r\n      transition: .2s;\r\n    }\r\n    .btn:hover, .btn:focus {\r\n      border: 1px solid #333;\r\n      background-color: #fff;\r\n      color: #000;\r\n    }\r\n    .modal-header, h4, .close {\r\n      background-color: #333;\r\n      color: #fff !important;\r\n      text-align: center;\r\n      font-size: 30px;\r\n    }\r\n    .modal-header, .modal-body {\r\n      padding: 40px 50px;\r\n    }\r\n    .nav-tabs li a {\r\n      color: #777;\r\n    }\r\n    #googleMap {\r\n      width: 100%;\r\n      height: 400px;\r\n      -webkit-filter: grayscale(100%);\r\n      filter: grayscale(100%);\r\n    }\r\n    .navbar {\r\n      font-family: Montserrat, sans-serif;\r\n      margin-bottom: 0;\r\n      background-color: #2d2d30;\r\n      border: 0;\r\n      font-size: 11px !important;\r\n      letter-spacing: 4px;\r\n      opacity: 0.9;\r\n    }\r\n    .navbar li a, .navbar .navbar-brand {\r\n      color: #d5d5d5 !important;\r\n    }\r\n    .navbar-nav li a:hover {\r\n      color: #fff !important;\r\n    }\r\n    .navbar-nav li.active a {\r\n      color: #fff !important;\r\n      background-color: #29292c !important;\r\n    }\r\n    .navbar-default .navbar-toggle {\r\n      border-color: transparent;\r\n    }\r\n    .open .dropdown-toggle {\r\n      color: #fff;\r\n      background-color: #555 !important;\r\n    }\r\n    .dropdown-menu li a {\r\n      color: #000 !important;\r\n    }\r\n    .dropdown-menu li a:hover {\r\n      background-color: red !important;\r\n    }\r\n    footer {\r\n      background-color: #2d2d30;\r\n      color: #f5f5f5;\r\n      padding: 32px;\r\n    }\r\n    footer a {\r\n      color: #f5f5f5;\r\n    }\r\n    footer a:hover {\r\n      color: #777;\r\n      text-decoration: none;\r\n    }\r\n    .form-control {\r\n      border-radius: 0;\r\n    }\r\n    textarea {\r\n      resize: none;\r\n    }\r\n\r\n  </style>\r\n</head>\r\n<body id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">\r\n\r\n\r\n<div id=\"tituloA\"  >\r\n  <button style=\"position: absolute; right: 0;\" type=\"button\" class=\"btn btn-primary btn-lg\"  routerLinkActive=\"/signin\" routerLink=\"/signin\">Iniciar Sesión</button>\r\n  <h1 >Bienvenido a AMARU</h1>\r\n</div>\r\n\r\n\r\n<div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\r\n  <!-- Indicators -->\r\n  <ol class=\"carousel-indicators\">\r\n    <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\r\n    <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\r\n    <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\r\n  </ol>\r\n\r\n  <!-- Wrapper for slides -->\r\n  <div class=\"carousel-inner\" role=\"listbox\">\r\n    <div class=\"item active\">\r\n      <img src=\"http://www.zamoradeportivo.com/fotos/img_1263.jpg\" alt=\"New York\" width=\"800\" height=\"600\">\r\n      <div class=\"carousel-caption\">\r\n        <h3>Puedes Aprender</h3>\r\n        <p>¡En AMARU Puedes Aprender Disciplinas Deportivas Como Kick Boxing Entre Otros!</p>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"item\">\r\n      <img src=\"http://3.bp.blogspot.com/-a0rcSwOqJtk/VUnCm-RBOQI/AAAAAAAAZUA/PWGNB17bC54/s1600/IMG_7272.JPG\" alt=\"Chicago\" width=\"800\" height=\"600\">\r\n      <div class=\"carousel-caption\">\r\n        <h3>Crea Tus Propios Grupos</h3>\r\n        <p>En AMARU Con La Opción De Instructor Puedes Enseñarle A Los Demás</p>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"item\">\r\n      <img src=\"https://www.ecologiaverde.com/wp-content/2016/05/frisbee.jpg\" alt=\"Los Angeles\" width=\"800\" height=\"600\">\r\n      <div class=\"carousel-caption\">\r\n        <h3>Sal De La Rutina</h3>\r\n        <p>Con AMARU Puedes Aprovechar Tus Tiempos Libres Y Fortalecer Tu Mente Y Cuerpo</p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- Left and right controls -->\r\n  <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">\r\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\r\n    <span class=\"sr-only\">Previous</span>\r\n  </a>\r\n  <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">\r\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\r\n    <span class=\"sr-only\">Next</span>\r\n  </a>\r\n</div>\r\n\r\n<!-- Container (The Band Section) -->\r\n<div id=\"band\" class=\"container text-center\">\r\n  <h1>!Regístrate Es Gratis!</h1>\r\n  <button type=\"button\" class=\"btn btn-primary btn-lg\"  routerLinkActive=\"/newuser\" routerLink=\"/newuser\">REGISTRARSE</button>\r\n  <p><em>Nunca es tarde para empezar</em></p>\r\n  <br>\r\n\r\n</div>\r\n\r\n<!-- Container (TOUR Section) -->\r\n<div id=\"tour\" class=\"bg-1\">\r\n  <div class=\"container\">\r\n    <h3 class=\"text-center\">¿Qué es AMARU?</h3>\r\n    <p class=\"text-center\"> Sebastian Castaño <br> Leonardo Herrera <br> Cristian Mendivelso <br> Christian Soto </p>\r\n\r\n\r\n\r\n  </div>\r\n\r\n</div>\r\n\r\n<footer class=\"text-center\">\r\n  <a class=\"up-arrow\" href=\"#myPage\" data-toggle=\"tooltip\" title=\"TO TOP\">\r\n    <span class=\"glyphicon glyphicon-chevron-up\"></span>\r\n  </a><br><br>\r\n  <p>Bootstrap Theme Made By <a href=\"https://www.w3schools.com\" data-toggle=\"tooltip\" title=\"Visit w3schools\">www.w3schools.com</a></p>\r\n</footer>\r\n\r\n\r\n</body>\r\n</html>\r\n"
 
 /***/ }),
 
@@ -1006,6 +1013,101 @@ HomePageComponent = __decorate([
 ], HomePageComponent);
 
 //# sourceMappingURL=home-page.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/home-signin-page/home-signin-page-component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeSigninPageComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var HomeSigninPageComponent = (function () {
+    function HomeSigninPageComponent(usersService, router, formBuilder) {
+        this.usersService = usersService;
+        this.router = router;
+        this.formBuilder = formBuilder;
+        this.groups = [];
+    }
+    HomeSigninPageComponent.prototype.isInstructor = function () {
+        if (this.user.type === 'INSTRUCTOR') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+    ;
+    HomeSigninPageComponent.prototype.isAmaru = function () {
+        if (this.user.type === 'AMARU') {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+    HomeSigninPageComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.username = sessionStorage.getItem('username');
+        this.usersService.findUserByUsername(this.username).subscribe(function (usersResponse4) {
+            _this.user = usersResponse4;
+            _this.groups = _this.user.groups;
+        });
+    };
+    return HomeSigninPageComponent;
+}());
+HomeSigninPageComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-home-signin-page',
+        template: __webpack_require__("../../../../../src/app/pages/home-signin-page/home-signin-page.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/home-signin-page/home-signin-page.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object])
+], HomeSigninPageComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=home-signin-page-component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/home-signin-page/home-signin-page.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/home-signin-page/home-signin-page.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\r\n    <title>Bienvenido a Amaru</title>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n    <link href=\"https://fonts.googleapis.com/css?family=Lato\" rel=\"stylesheet\" type=\"text/css\">\r\n    <link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\" type=\"text/css\">\r\n\r\n    <style>\r\n        body {\r\n            font: 400 15px/1.8 Lato, sans-serif;\r\n            color: #777;\r\n        }\r\n        #tituloA{\r\n            color:#333333;\r\n            font-weight: bold;\r\n            text-align: center;\r\n        ;\r\n        }\r\n        h3, h4 {\r\n            margin: 10px 0 30px 0;\r\n            letter-spacing: 3px;\r\n            font-weight: bold;\r\n            color: #ffffff;\r\n            font-size: 20px;\r\n        }\r\n        .container {\r\n            padding: 80px 120px;\r\n        }\r\n        .person {\r\n            border: 10px solid transparent;\r\n            margin-bottom: 25px;\r\n            width: 80%;\r\n            height: 80%;\r\n            opacity: 0.7;\r\n        }\r\n        .person:hover {\r\n            border-color: #f1f1f1;\r\n        }\r\n        .carousel-inner img {\r\n            -webkit-filter: grayscale(20%);\r\n            filter: grayscale(20%); /* make all photos black and white */\r\n            width: 60%; /* Set width to 100% */\r\n            margin: auto;\r\n        }\r\n        .carousel-caption h3 {\r\n            color: #fff !important;\r\n        }\r\n        @media (max-width: 600px) {\r\n            .carousel-caption {\r\n                display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */\r\n            }\r\n        }\r\n        .bg-1 {\r\n            background: #2d2d30;\r\n            color: #bdbdbd;\r\n        }\r\n        .bg-1 h3 {color: #fff;}\r\n        .bg-1 p {font-style: italic;}\r\n        .list-group-item:first-child {\r\n            border-top-right-radius: 0;\r\n            border-top-left-radius: 0;\r\n        }\r\n        .list-group-item:last-child {\r\n            border-bottom-right-radius: 0;\r\n            border-bottom-left-radius: 0;\r\n        }\r\n        .thumbnail {\r\n            padding: 0 0 15px 0;\r\n            border: none;\r\n            border-radius: 0;\r\n        }\r\n        .thumbnail p {\r\n            margin-top: 15px;\r\n            color: #555;\r\n        }\r\n        .btn {\r\n            padding: 10px 20px;\r\n            background-color: #333;\r\n            color: #f1f1f1;\r\n            border-radius: 0;\r\n            transition: .2s;\r\n        }\r\n        .btn:hover, .btn:focus {\r\n            border: 1px solid #333;\r\n            background-color: #fff;\r\n            color: #000;\r\n        }\r\n        .modal-header, h4, .close {\r\n            background-color: #333;\r\n            color: #fff !important;\r\n            text-align: center;\r\n            font-size: 30px;\r\n        }\r\n        .modal-header, .modal-body {\r\n            padding: 40px 50px;\r\n        }\r\n        .nav-tabs li a {\r\n            color: #777;\r\n        }\r\n        #googleMap {\r\n            width: 100%;\r\n            height: 400px;\r\n            -webkit-filter: grayscale(100%);\r\n            filter: grayscale(100%);\r\n        }\r\n        .navbar {\r\n            font-family: Montserrat, sans-serif;\r\n            margin-bottom: 0;\r\n            background-color: #2d2d30;\r\n            border: 0;\r\n            font-size: 11px !important;\r\n            letter-spacing: 4px;\r\n            opacity: 0.9;\r\n        }\r\n        .navbar li a, .navbar .navbar-brand {\r\n            color: #d5d5d5 !important;\r\n        }\r\n        .navbar-nav li a:hover {\r\n            color: #fff !important;\r\n        }\r\n        .navbar-nav li.active a {\r\n            color: #fff !important;\r\n            background-color: #29292c !important;\r\n        }\r\n        .navbar-default .navbar-toggle {\r\n            border-color: transparent;\r\n        }\r\n        .open .dropdown-toggle {\r\n            color: #fff;\r\n            background-color: #555 !important;\r\n        }\r\n        .dropdown-menu li a {\r\n            color: #000 !important;\r\n        }\r\n        .dropdown-menu li a:hover {\r\n            background-color: red !important;\r\n        }\r\n        footer {\r\n            background-color: #2d2d30;\r\n            color: #f5f5f5;\r\n            padding: 32px;\r\n        }\r\n        footer a {\r\n            color: #f5f5f5;\r\n        }\r\n        footer a:hover {\r\n            color: #777;\r\n            text-decoration: none;\r\n        }\r\n        .form-control {\r\n            border-radius: 0;\r\n        }\r\n        textarea {\r\n            resize: none;\r\n        }\r\n\r\n    </style>\r\n</head>\r\n<body id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">\r\n\r\n\r\n<div id=\"titulo\"  >\r\n    <h1 >Bienvenido a AMARU</h1>\r\n\r\n\r\n    <div div *ngIf=\"isInstructor()\" class=\"container\">\r\n        <h2>Grupos Actuales</h2>\r\n        <p>Grupos Ofrecidos Actualmente:</p>\r\n        <table class=\"table table-bordered\">\r\n            <thead>\r\n            <tr>\r\n                <th>Name</th>\r\n            </tr>\r\n            </thead>\r\n            <tr *ngFor=\"let group of groups\">\r\n                <td>{{group.name}}</td>\r\n            </tr>\r\n        </table>\r\n    </div>\r\n\r\n    <div div *ngIf=\"isAmaru()\" class=\"container\">\r\n        <h2>Mis Grupso</h2>\r\n        <p>Grupos Inscrito Actualmente:</p>\r\n        <table class=\"table table-bordered\">\r\n            <thead>\r\n            <tr>\r\n                <th>Name</th>\r\n            </tr>\r\n            </thead>\r\n            <tr *ngFor=\"let group of groups\">\r\n                <td>{{group.name}}</td>\r\n            </tr>\r\n        </table>\r\n    </div>\r\n\r\n\r\n    <div class=\"container\">\r\n        <h2>Principales Categorías</h2>\r\n        <p>Descubre los mejores cursos que se adaptan a tus gustos</p>\r\n        <br>\r\n        <div class=\"row\">\r\n\r\n            <div class=\"col-md-4\">\r\n                <div class=\"thumbnail\">\r\n                    <a href=\"/w3images/nature.jpg\">\r\n                        <img src=\"https://static7.depositphotos.com/1004713/683/i/950/depositphotos_6836827-stock-photo-aerobics-class-in-park.jpg\" alt=\"Nature\" style=\"width:100%\">\r\n                        <div class=\"caption\">\r\n                            <p align=\"center\">Aerobics</p>\r\n                        </div>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <div class=\"thumbnail\">\r\n                    <a href=\"/w3images/nature.jpg\" target=\"_blank\">\r\n                        <img src=\"https://i0.wp.com/www.healthfitnessrevolution.com/wp-content/uploads/2015/04/ThinkstockPhotos-463625399.jpg?fit=720%2C487\" alt=\"Nature\" style=\"width:100%\">\r\n                        <div class=\"caption\">\r\n                            <p align=\"center\">Martial Arts</p>\r\n                        </div>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <div class=\"thumbnail\">\r\n                    <a href=\"/w3images/fjords.jpg\" target=\"_blank\">\r\n                        <img src=\"https://cdn.tinybuddha.com/wp-content/uploads/2011/03/Flexible.jpg\" alt=\"Fjords\" style=\"width:100%\">\r\n                        <div class=\"caption\">\r\n                            <p align=\"center\">Flexibility</p>\r\n                        </div>\r\n                    </a>\r\n                </div>\r\n            </div>\r\n\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n            <div class=\"thumbnail\">\r\n                <a href=\"/w3images/lights.jpg\">\r\n                    <img src=\"https://favim.com/orig/201108/16/couple-dancing-kiss-kisses-photography-Favim.com-124153.jpg\" alt=\"Lights\" style=\"width:100%\">\r\n                    <div class=\"caption\">\r\n                        <p align=\"center\">Dance</p>\r\n                    </div>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n            <div class=\"thumbnail\">\r\n                <a href=\"/w3images/lights.jpg\" target=\"_blank\">\r\n                    <img src=\"http://www.imdsg.es/wp-content/uploads/fondo.jpg\" alt=\"Lights\" style=\"width:100%\">\r\n                    <div class=\"caption\">\r\n                        <p align=\"center\">Sports</p>\r\n                    </div>\r\n                </a>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n            <div class=\"thumbnail\">\r\n                <a href=\"/w3images/fjords.jpg\">\r\n                    <img src=\"http://innerfitnw.com/wp-content/uploads/2016/04/girl_jogging_868.jpg\" alt=\"Fjords\" style=\"width:100%\">\r\n                    <div class=\"caption\">\r\n                        <p align=\"center\">Others</p>\r\n                    </div>\r\n                </a>\r\n            </div>\r\n        </div>\r\n\r\n\r\n\r\n\r\n\r\n</div>\r\n</div>\r\n\r\n\r\n</body>\r\n</html>"
 
 /***/ }),
 
@@ -1133,10 +1235,11 @@ var SingInPageComponent = (function () {
         var _this = this;
         sessionStorage.setItem('username', this.signInForm.get('username').value);
         this.usersService.login(this.signInForm.get('username').value, this.signInForm.get('password').value).subscribe(function (loginResponse) {
-            _this.router.navigate(['tasks']);
+            _this.router.navigate(['welcome']);
         }, function (error) {
             _this.loginError = 'Error Signing in: ' + (error && error.message ? error.message : '');
         });
+        this.router.navigate(['/welcome']);
     };
     return SingInPageComponent;
 }());
@@ -1377,7 +1480,7 @@ var UserEditPageComponent = (function () {
     };
     UserEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.userService.create(this.userForm.get('nombre').value, this.userForm.get('lastname').value, this.userForm.get('image').value, this.userForm.get('phone').value, this.userForm.get('password').value, this.userForm.get('email').value, this.userForm.get('description').value, this.userForm.get('type').value, this.userForm.get('username').value, 0, 0).subscribe(function (serverResponse2) {
+        this.userService.create(this.userForm.get('nombre').value, this.userForm.get('lastname').value, this.userForm.get('image').value, this.userForm.get('phone').value, this.userForm.get('password').value, this.userForm.get('email').value, this.userForm.get('description').value, this.userForm.get('type').value, this.userForm.get('username').value, 0, 0, new Array()).subscribe(function (serverResponse2) {
             _this.router.navigate(['/users']);
         }, function (error) {
             console.log(error);
@@ -1491,7 +1594,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-profile/user-profile-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\r\n    <title>User Page</title>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n    <style>\r\n        h1 {\r\n            font-weight: bold;\r\n            color: #333333;\r\n        }\r\n        h2{\r\n            text-align: center;\r\n        }\r\n        .bg-1 {\r\n            background-color: #474e5d; /* Green */\r\n            color: #ffffff;\r\n        }\r\n        .bg-2 {\r\n            background-color: #1abc9c; /* Dark Blue */\r\n            color: #ffffff;\r\n        }\r\n        .bg-3 {\r\n            background-color: #fff; /* White */\r\n            color: #555555;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n\r\n<div class=\"container\">\r\n    <form [formGroup]=\"userForm\" >\r\n\r\n<div class=\"container-fluid bg-1 text-center\">\r\n    <h3>{{user.type}}</h3>\r\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\r\n    <h3>{{user.name}} {{user.lastname}}</h3>\r\n</div>\r\n\r\n<div class=\"container-fluid bg-2 text-center\">\r\n    <h3>Contact</h3>\r\n    <p>{{user.email}}</p>\r\n    <p>{{user.phone}}</p>\r\n</div>\r\n\r\n<div class=\"container-fluid bg-3 text-center\">\r\n    <h3>Description</h3>\r\n    <p>{{user.description}}</p>\r\n</div>\r\n\r\n<div class=\"container\">\r\n    <h2>Cursos Actuales</h2>\r\n    <p>Cursos Actuales Ofrecidos:</p>\r\n    <table class=\"table table-bordered\">\r\n        <thead>\r\n        <tr>\r\n            <th>Firstname</th>\r\n            <th>Lastname</th>\r\n            <th>Email</th>\r\n        </tr>\r\n        </thead>\r\n        <tbody>\r\n        <tr>\r\n            <td>John</td>\r\n            <td>Doe</td>\r\n            <td>john@example.com</td>\r\n        </tr>\r\n        </tbody>\r\n    </table>\r\n</div>\r\n\r\n<div *ngIf=\"isInstructor()\" class=\"container-fluid bg-3 text-center\">\r\n    <h3>Averague rate</h3>\r\n    <p>{{user.rate}}</p>\r\n    <h3>Total</h3>\r\n    <p>{{user.totalVotes}}</p>\r\n\r\n    <h3>Rate Instructor</h3>\r\n\r\n\r\n    <!--\r\n    <label>Number:\r\n        <input id=\"newRate\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\"  ng-model=\"3\"\r\n               min=\"1\" max=\"5\" required>\r\n    </label>\r\n\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" onclick=\"myFunction()\" (click)=\"onSubmitRate()\">Rate</button>\r\n    -->\r\n    <select class=\"form-control\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\" id=\"newRate\">\r\n        <option>1</option>\r\n        <option>2</option>\r\n        <option>3</option>\r\n        <option>4</option>\r\n        <option>5</option>\r\n    </select>\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" onclick=\"myFunction()\" (click)=\"onSubmitRate()\">Rate</button>\r\n    \r\n\r\n</div>\r\n\r\n</form>\r\n</div>\r\n</body>\r\n</html>\r\n"
+module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\r\n    <title>User Page</title>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n    <style>\r\n        h1 {\r\n            font-weight: bold;\r\n            color: #333333;\r\n        }\r\n        h2{\r\n            text-align: center;\r\n        }\r\n        .bg-1 {\r\n            background-color: #474e5d; /* Green */\r\n            color: #ffffff;\r\n        }\r\n        .bg-2 {\r\n            background-color: #1abc9c; /* Dark Blue */\r\n            color: #ffffff;\r\n        }\r\n        .bg-3 {\r\n            background-color: #fff; /* White */\r\n            color: #555555;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n\r\n<div class=\"container\">\r\n    <form [formGroup]=\"userForm\" >\r\n\r\n<div class=\"container-fluid bg-1 text-center\">\r\n    <h3>{{user.type}}</h3>\r\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\r\n    <h3>{{user.name}} {{user.lastname}}</h3>\r\n</div>\r\n\r\n<div class=\"container-fluid bg-2 text-center\">\r\n    <h3>Contact</h3>\r\n    <p>{{user.email}}</p>\r\n    <p>{{user.phone}}</p>\r\n</div>\r\n\r\n<div class=\"container-fluid bg-3 text-center\">\r\n    <h3>Description</h3>\r\n    <p>{{user.description}}</p>\r\n</div>\r\n\r\n<div div *ngIf=\"isInstructor()\" class=\"container\">\r\n    <h2>Grupos Actuales</h2>\r\n    <p>Grupos Ofrecidos Actualmente:</p>\r\n    <table class=\"table table-bordered\">\r\n        <thead>\r\n        <tr>\r\n            <th>Name</th>\r\n        </tr>\r\n        </thead>\r\n        <tr *ngFor=\"let group of groups\">\r\n            <td>{{group.name}}</td>\r\n        </tr>\r\n    </table>\r\n</div>\r\n\r\n<div *ngIf=\"isInstructor()\" class=\"container-fluid bg-3 text-center\">\r\n    <h3>Averague rate</h3>\r\n    <p>{{user.rate}}</p>\r\n    <h3>Total</h3>\r\n    <p>{{user.totalVotes}}</p>\r\n\r\n    <h3>Rate Instructor</h3>\r\n\r\n\r\n    <!--\r\n    <label>Number:\r\n        <input id=\"newRate\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\"  ng-model=\"3\"\r\n               min=\"1\" max=\"5\" required>\r\n    </label>\r\n\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" onclick=\"myFunction()\" (click)=\"onSubmitRate()\">Rate</button>\r\n    -->\r\n    <select class=\"form-control\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\" id=\"newRate\">\r\n        <option>1</option>\r\n        <option>2</option>\r\n        <option>3</option>\r\n        <option>4</option>\r\n        <option>5</option>\r\n    </select>\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" onclick=\"myFunction()\" (click)=\"onSubmitRate()\">Rate</button>\r\n    \r\n\r\n</div>\r\n\r\n</form>\r\n</div>\r\n</body>\r\n</html>\r\n"
 
 /***/ }),
 
@@ -1522,13 +1625,14 @@ var UserProfilePageComponent = (function () {
         this.usersService = usersService;
         this.router = router;
         this.formBuilder = formBuilder;
+        this.groups = [];
     }
     UserProfilePageComponent.prototype.isInstructor = function () {
         if (this.user.type === 'INSTRUCTOR') {
-            return false;
+            return true;
         }
         else {
-            return true;
+            return false;
         }
     };
     UserProfilePageComponent.prototype.onSubmitRate = function () {
@@ -1548,6 +1652,7 @@ var UserProfilePageComponent = (function () {
         this.username = sessionStorage.getItem('username');
         this.usersService.findUserByUsername(this.username).subscribe(function (usersResponse4) {
             _this.user = usersResponse4;
+            _this.groups = _this.user.groups;
         });
     };
     return UserProfilePageComponent;
@@ -1765,8 +1870,8 @@ var UsersService = (function (_super) {
         return this.gets("user/" + username);
     };
     ;
-    UsersService.prototype.create = function (name, lastname, image, phone, password, email, description, type, username, rate, totalVotes) {
-        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_5__models_user__["a" /* User */](name, lastname, image, phone, password, email, description, type, username, rate, totalVotes));
+    UsersService.prototype.create = function (name, lastname, image, phone, password, email, description, type, username, rate, totalVotes, groups) {
+        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_5__models_user__["a" /* User */](name, lastname, image, phone, password, email, description, type, username, rate, totalVotes, groups));
     };
     UsersService.prototype.getLoged = function () {
         return this.loged;

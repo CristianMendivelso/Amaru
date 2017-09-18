@@ -1,3 +1,6 @@
+import { Group } from "./group";
+
+
 export class User {
 
     private name: string;
@@ -11,8 +14,9 @@ export class User {
     private totalVotes:number;
     type:string;
     username:string;
+    groups:Array<Group>;
     
-        constructor(name: string, lastname: string, image: string, phone:string,password:string,email:string,description:string,type:string,username:string,rate:number,totalVotes:number) {
+        constructor(name: string, lastname: string, image: string, phone:string,password:string,email:string,description:string,type:string,username:string,rate:number,totalVotes:number, groups:Array<Group>) {
             this.name = name;
             this.lastname = lastname;
             this.image = image;
@@ -24,5 +28,6 @@ export class User {
             this.username=username;
             this.rate=rate;
             this.totalVotes=totalVotes;
+            this.groups=groups;
         }
     }

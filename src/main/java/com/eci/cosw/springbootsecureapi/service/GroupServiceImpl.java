@@ -16,7 +16,7 @@ import java.util.List;
 public class GroupServiceImpl implements GroupService{
 
     private List<Group> groups = new ArrayList<>();
-    private UserServiceImpl users = new UserServiceImpl();
+
 
     @Autowired
     public GroupServiceImpl()

@@ -1,5 +1,6 @@
 package com.eci.cosw.springbootsecureapi.service;
 
+import com.eci.cosw.springbootsecureapi.model.Group;
 import com.eci.cosw.springbootsecureapi.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,8 @@ public class UserServiceImpl implements UserService
 {
 
     private List<User> users = new ArrayList<>();
+    @Autowired
+    GroupService grupos;
 
 
     @Autowired
@@ -28,7 +31,10 @@ public class UserServiceImpl implements UserService
     @PostConstruct
     private void populateSampleData()
     {
-        users.add( new User( "Pepito", "Perez", "https://image.freepik.com/iconos-gratis/usuario-masculino-foto-de-perfil_318-37825.jpg", "2343423","password","test@mail.com","Profesional Amigable","Instructor","pepito" ,3,1) );
+        ArrayList<Group> g = new ArrayList<Group>();
+        g.add(grupos.getGroupByName("Volleyball"));
+        users.add( new User( "Pepito", "Perez", "https://image.freepik.com/iconos-gratis/usuario-masculino-foto-de-perfil_318-37825.jpg", "2343423","password","test@mail.com","Profesional Amigable","INSTRUCTOR","pepito" ,3,1,g) );
+        users.add( new User( "Laura", "Soto", "https://cde.peru.com/ima/0/1/1/6/5/1165933/924x530/facebook.jpg", "2343423","password","laura@mail.com","Dispuesta a aprender","AMARU","laura" ,5,0,g) );
     }
 
 

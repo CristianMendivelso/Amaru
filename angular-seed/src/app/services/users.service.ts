@@ -5,6 +5,7 @@ import { AuthService } from '../common/auth.service';
 import { Http } from '@angular/http';
 import { Observable } from "rxjs/Observable";
 import { User } from "../models/user";
+import {Group} from "../models/group";
 
 @Injectable()
 export class UsersService extends APIService {
@@ -63,8 +64,8 @@ export class UsersService extends APIService {
 
 
 
-  create(name: string, lastname: string, image: string, phone:string,password:string,email:string,description:string,type:string,username:string,rate:number,totalVotes:number):Observable<User>{
-    return this.post(this.resourceUrl,new User(name,lastname,image,phone,password,email,description,type,username,rate,totalVotes));
+  create(name: string, lastname: string, image: string, phone:string,password:string,email:string,description:string,type:string,username:string,rate:number,totalVotes:number,groups: Array<Group>):Observable<User>{
+    return this.post(this.resourceUrl,new User(name,lastname,image,phone,password,email,description,type,username,rate,totalVotes,groups));
   }
 
   getLoged():Observable<User>{

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from "../../services/users.service";
+import {Group} from "../../models/group"
 
 
 @Component({
@@ -47,7 +48,7 @@ export class UserEditPageComponent implements OnInit {
       this.userForm.get('type').value,
       this.userForm.get('username').value,
       0,
-      0
+      0, new Array<Group>()
     ).subscribe(serverResponse2=>{
         this.router.navigate(['/users']);
     }, error=>{

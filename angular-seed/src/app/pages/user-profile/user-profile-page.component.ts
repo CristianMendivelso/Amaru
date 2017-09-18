@@ -3,6 +3,7 @@ import { User } from "../../models/user";
 import { UsersService } from "../../services/users.service";
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import {Group} from "../../models/group";
 
 @Component({
     selector: 'app-user-profile-page',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class UserProfilePageComponent implements OnInit {
     private user: User;
+    private groups: Group[] = [];
     userForm: FormGroup;
     private username:string;
 
@@ -21,10 +23,10 @@ export class UserProfilePageComponent implements OnInit {
 
     isInstructor() {
         if (this.user.type==='INSTRUCTOR'){
-            return false;
+            return true;
         }
         else{
-            return true;
+            return false;
         }
     }
 
@@ -49,6 +51,7 @@ export class UserProfilePageComponent implements OnInit {
         this.username=sessionStorage.getItem('username');
         this.usersService.findUserByUsername(this.username).subscribe(usersResponse4 => {
             this.user = usersResponse4;
+            this.groups=this.user.groups;
         })
     }
 
