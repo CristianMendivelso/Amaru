@@ -2,6 +2,7 @@ package com.eci.cosw.springbootsecureapi.service;
 
 import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
+import com.eci.cosw.springbootsecureapi.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,10 +20,7 @@ public class GroupServiceImpl implements GroupService{
 
 
     @Autowired
-    public GroupServiceImpl()
-    {
-
-    }
+    public UserService users;
 
     @PostConstruct
     private void populateSampleData()
@@ -31,7 +29,9 @@ public class GroupServiceImpl implements GroupService{
         Comment co = new Comment("primer comentario :v","Pepito",true);
         Comment co2 = new Comment("Segundo comentario >:v","Pepito",false);
         Comment[] comments = {co,co2};
-        groups.add( new Group( "Volleyball", null, "Parque el virrey", days, "10:00 am - 12:00 pm", "Learn how to play volleyball, and enjoy your morning exercising","Sports",comments,3.0,1) );
+
+        groups.add( new Group( "Volleyball", null, "Parque el virrey", days, "10:00 am - 12:00 pm", "Learn how to play volleyball, and enjoy your morning exercising","Sports",comments, 0.0,0,  "http://www.longbeachny.gov/vertical/Sites/%7BC3C1054A-3D3A-41B3-8896-814D00B86D2A%7D/uploads/bigstock-Beach-Volleyball-Silhouette-81799844_(1).jpg") );
+
     }
 
     @Override
@@ -57,6 +57,24 @@ public class GroupServiceImpl implements GroupService{
     @Override
     public Group editName(String name, String newName) {
         return null;
+    }
+
+    @Override
+    public Group registerStudent(String names){
+        String[] n = names.split(",");
+        Group g = null;
+        for (Group group : groups){
+            if (group.getName().equals(n[0])){
+                ArrayList<User> students = group.getStudents();
+                students.add(this.users.findUserByUsername(n[1]));
+                group.setStudents(students);
+                g = group;
+                System.out.println("INSCRIBIO!!!" + n[1]);
+                break;
+            }
+        }
+
+        return g;
     }
 
     @Override

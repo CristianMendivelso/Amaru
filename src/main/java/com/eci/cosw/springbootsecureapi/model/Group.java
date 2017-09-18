@@ -37,12 +37,13 @@ public class Group {
 
     private int totalVotes;
 
-    public Group()
-    {
+    private String image;
+
+    public Group() {
     }
 
-    public Group( String name, User instructor, String place, String[] days, String hour,  String description, String category, Comment[] comment, Double rate , int totalVotes )
-    {
+
+    public Group(String name, User instructor, String place, String[] days, String hour, String description, String category, Comment[] comment, Double rate, int totalVotes, String image) {
         this.setName(name);
         this.setInstructor(instructor);
         this.setPlace(place);
@@ -50,13 +51,14 @@ public class Group {
         this.setDays(days);
         this.setDescription(description);
         //this.setComments(new ArrayList<Comment>());
-        this.comments=comment;
+        this.comments = comment;
         this.setCategory(category);
-        this.rate=rate;
-        this.totalVotes=totalVotes;
+        this.rate = rate;
+        this.totalVotes = totalVotes;
+        this.setImage(image);
     }
-    public Group( String name, String place,  String[] days, String hour, String description)
-    {
+
+    public Group(String name, String place, String[] days, String hour, String description) {
         this.setName(name);
         this.setPlace(place);
         this.setHour(hour);
@@ -66,14 +68,14 @@ public class Group {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         String n = "";
-        for (String a : this.days){
+        for (String a : this.days) {
             n = n + a;
         }
         return "Group{" + "id=" + id + "days=" + n + "Category= " + category + "Instructor = " + instructor + "}";
     }
+
     public long getId() {
         return id;
     }
@@ -164,20 +166,28 @@ public class Group {
         this.category = category;
     }
 
-    public Double getRate() { return rate; }
+    public Double getRate() {
+        return rate;
+    }
 
-    public void setRate( Double rate )
-    {
+    public void setRate(Double rate) {
         this.rate = rate;
     }
 
-    public int getTotalVotes()
-    {
+    public int getTotalVotes() {
         return totalVotes;
     }
 
-    public void setTotalVotes( int totalVotes )
-    {
-        this.totalVotes = totalVotes;
+    public void setTotalVotes(int totalVotes) {
+
+
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

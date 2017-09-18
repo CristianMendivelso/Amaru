@@ -15,8 +15,9 @@ export class Group {
     private category:string;
 	private rate:number;
     private totalVotes:number;
+    private image:string;
 	
-        constructor(name: string, instructor: User, place:string,  days:string[], hour:string, description:string, category:string, comment: Comment[], rate:number, totalVotes:number ) {
+        constructor(name: string, instructor: User, place:string,  days:string[], hour:string, description:string, category:string, comment: Comment[], rate:number, totalVotes:number, image:string ) {
             this.name = name;
             this.instructor = instructor;
             this.students = new Array<User>();
@@ -30,5 +31,6 @@ export class Group {
             this.category = category;
 			this.rate=rate;
             this.totalVotes=totalVotes;
+            this.image = image;
         }
     }

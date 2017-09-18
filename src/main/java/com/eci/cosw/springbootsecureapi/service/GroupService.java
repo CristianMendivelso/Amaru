@@ -1,6 +1,7 @@
 package com.eci.cosw.springbootsecureapi.service;
 
 import com.eci.cosw.springbootsecureapi.model.Group;
+import com.eci.cosw.springbootsecureapi.model.User;
 
 /**
  * Created by 2107262 on 9/6/17.
@@ -22,5 +23,8 @@ public interface GroupService {
     Group createGroup(Group group);
 
     Group editRate( String groupname, Double rate );
+
+    Group registerStudent(String names);
+
 
 }
