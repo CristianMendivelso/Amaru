@@ -33,11 +33,17 @@ public class Group {
 
     private String category;
 
+    private String image;
+
+    private float rate;
+
+    private Integer totalVotes;
+
     public Group()
     {
     }
 
-    public Group( String name, User instructor, String place, String[] days, String hour,  String description, String category, Comment[] comment)
+    public Group( String name, User instructor, String place, String[] days, String hour,  String description, String category, Comment[] comment, float rate, Integer totalVotes ,String image)
     {
         this.setName(name);
         this.setInstructor(instructor);
@@ -48,7 +54,11 @@ public class Group {
         //this.setComments(new ArrayList<Comment>());
         this.comments=comment;
         this.setCategory(category);
+        this.setImage(image);
+        this.setRate(rate);
+        this.setTotalVotes(totalVotes);
     }
+
     public Group( String name, String place,  String[] days, String hour, String description)
     {
         this.setName(name);
@@ -156,5 +166,29 @@ public class Group {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public float getRate() {
+        return rate;
+    }
+
+    public void setRate(float rate) {
+        this.rate = rate;
+    }
+
+    public Integer getTotalVotes() {
+        return totalVotes;
+    }
+
+    public void setTotalVotes(Integer totalVotes) {
+        this.totalVotes = totalVotes;
     }
 }
