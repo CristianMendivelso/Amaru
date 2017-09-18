@@ -25,8 +25,8 @@ export class GroupService extends APIService{
     create(name: string, instructor: User, place:string,  days:string[], hour:string,description:string, category:string, comments: Comment[]):Observable<Group>{
         return this.post(this.resourceUrl + "groups",new Group(name,instructor,place, days, hour,description, category, comments));
       }
-    registerUserInGroup(groupname: string, user: User){
-      return this.post(this.resourceUrl + groupname , user)
+    registerUserInGroup(groupname: string, user: String): Observable<Group>{
+      return this.get(this.resourceUrl+ "register/" + groupname + "," +user)
     }
 
 

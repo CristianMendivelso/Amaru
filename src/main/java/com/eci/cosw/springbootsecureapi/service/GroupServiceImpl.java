@@ -2,6 +2,7 @@ package com.eci.cosw.springbootsecureapi.service;
 
 import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
+import com.eci.cosw.springbootsecureapi.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,6 +58,24 @@ public class GroupServiceImpl implements GroupService{
     @Override
     public Group editName(String name, String newName) {
         return null;
+    }
+
+    @Override
+    public Group registerStudent(String names){
+        String[] n = names.split(",");
+        Group g = null;
+        for (Group group : groups){
+            if (group.getName().equals(n[0])){
+                ArrayList<User> students = group.getStudents();
+                students.add(this.users.findUserByUsername(n[1]));
+                group.setStudents(students);
+                g = group;
+                System.out.println("INSCRIBIO!!!" + n[1]);
+                break;
+            }
+        }
+
+        return g;
     }
 
     @Override

@@ -37,8 +37,13 @@ export class GroupProfilePageComponent implements OnInit {
     }
 
 	onSubmitRegister() {
-       
-        this.router.navigate(['/group']);
+        this.groupService.registerUserInGroup(this.groupname,this.username
+        ).subscribe(groupResponse => {
+            this.group = groupResponse;
+        }, error=>{
+            console.log(error);
+        });
+        this.router.navigate(['/']);
 
     }
     onSubmitRate() {

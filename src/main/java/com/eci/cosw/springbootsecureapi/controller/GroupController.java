@@ -4,6 +4,7 @@ import com.eci.cosw.springbootsecureapi.model.Group;
 import com.eci.cosw.springbootsecureapi.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import com.eci.cosw.springbootsecureapi.model.User;
 
 /**
  * Created by 2107262 on 9/6/17.
@@ -23,5 +24,9 @@ public class GroupController {
     public Group setUser(@RequestBody Group group){
         return groupService.createGroup(group);
     }
+
+    @RequestMapping( path = "/register/{names}", method = RequestMethod.GET )
+    public Group registerUserInGroup(@PathVariable String names) {return groupService.registerStudent(names);}
 }
+
 
