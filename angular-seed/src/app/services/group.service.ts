@@ -10,8 +10,7 @@ import { Http } from '@angular/http';
 
 @Injectable()
 export class GroupService extends APIService{
-    private resourceUrl = 'group/groups';
-
+    private resourceUrl = 'group/';
     constructor(
         public config: AppConfiguration,
         public authService: AuthService,
@@ -21,11 +20,14 @@ export class GroupService extends APIService{
       }
 
     getGroupByName(name:string): Observable<Group>{
-        return this.get("group" + "/groupname",name);
+        return this.get(this.resourceUrl+ name);
     }
-    create(name: string, instructor: User, place:string,  days:string[], hour:string,description:string, category:string, comments:Comment[]):Observable<Group>{
-        return this.post(this.resourceUrl,new Group(name,instructor,place, days, hour,description, category,comments));
+    create(name: string, instructor: User, place:string,  days:string[], hour:string,description:string, category:string, comments: Comment[]):Observable<Group>{
+        return this.post(this.resourceUrl + "groups",new Group(name,instructor,place, days, hour,description, category, comments));
       }
+    registerUserInGroup(groupname: string, user: User){
+      return this.post(this.resourceUrl + groupname , user)
+    }
 
 
 

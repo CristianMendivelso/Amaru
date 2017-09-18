@@ -795,7 +795,6 @@ var GroupEditPageComponent = (function () {
         this.co = new __WEBPACK_IMPORTED_MODULE_5__models_comment__["a" /* Comment */]("Primer comentario :v", "pepito", true);
         this.co2 = new __WEBPACK_IMPORTED_MODULE_5__models_comment__["a" /* Comment */]("segundo comentario >:v", "pepito", false);
         this.comments.push(this.co);
-        this.comments.push(this.co2);
         if (this.groupForm.get('day1').value) {
             this.days.push("Monday");
         }
@@ -817,14 +816,13 @@ var GroupEditPageComponent = (function () {
         if (this.groupForm.get('day7').value) {
             this.days.push("Sunday");
         }
-        sessionStorage.setItem('groupname', this.groupForm.get('name').value);
         this.days;
+        sessionStorage.setItem('groupname', this.groupForm.get('name').value);
         this.groupService.create(this.groupForm.get('name').value, this.user, this.groupForm.get('place').value, this.days, this.groupForm.get('hour').value, this.groupForm.get('description').value, this.groupForm.get('category').value, this.comments).subscribe(function (serverResponse) {
             _this.router.navigate(['/group']);
         }, function (error) {
             console.log(error);
         });
-        this.router.navigate(['/group']);
     };
     return GroupEditPageComponent;
 }());
@@ -863,7 +861,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/group-profile-page/group-profile-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\r\n    <title>User Page</title>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n    <style>\r\n        h1 {\r\n            font-weight: bold;\r\n            color: #333333;\r\n        }\r\n        h2{\r\n            text-align: center;\r\n        }\r\n        .bg-1 {\r\n            background-color: #474e5d; /* Green */\r\n            color: #ffffff;\r\n        }\r\n        .bg-2 {\r\n            background-color: #1abc9c; /* Dark Blue */\r\n            color: #ffffff;\r\n        }\r\n        .bg-3 {\r\n            background-color: #fff; /* White */\r\n            color: #555555;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n\r\n<div class=\"container\">\r\n    <h2>Cursos Actuales</h2>\r\n    <p>Cursos Actuales Ofrecidos:</p>\r\n    <table class=\"table table-bordered\">\r\n        <thead>\r\n        <tr>\r\n            <th>Firstname</th>\r\n            <th>Lastname</th>\r\n            <th>Email</th>\r\n        </tr>\r\n        </thead>\r\n        <tbody>\r\n        <tr>\r\n            <td>John</td>\r\n            <td>Doe</td>\r\n            <td>john@example.com</td>\r\n        </tr>\r\n        </tbody>\r\n    </table>\r\n</div>\r\n\r\n    <h3>Comments</h3>\r\n    <tr *ngFor=\"let comentario of comentarios\">\r\n        <td>{{comentario.user}}</td>\r\n        <td>{{comentario.text}}</td>\r\n    </tr>\r\n    <!--\r\n    <h3>Rate Instructor</h3>\r\n    <select class=\"form-control\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\" id=\"newRate\">\r\n        <option>1</option>\r\n        <option>2</option>\r\n        <option>3</option>\r\n        <option>4</option>\r\n        <option>5</option>\r\n    </select>\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" onclick=\"myFunction()\" (click)=\"onSubmitRate()\">Rate</button>\r\n    -->\r\n\r\n</body>\r\n</html>\r\n"
+module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\r\n    <title>Group Page</title>\r\n    <meta charset=\"utf-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n    <style>\r\n        h1 {\r\n            font-weight: bold;\r\n            color: #333333;\r\n        }\r\n        h2{\r\n            text-align: center;\r\n        }\r\n        .bg-1 {\r\n            background-color: #474e5d; /* Green */\r\n            color: #ffffff;\r\n        }\r\n        .bg-2 {\r\n            background-color: #1abc9c; /* Dark Blue */\r\n            color: #ffffff;\r\n        }\r\n        .bg-3 {\r\n            background-color: #fff; /* White */\r\n            color: #555555;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n\r\n<div class=\"container\">   \r\n    <form [formGroup]=\"groupForm\" >\r\n<div class=\"container-fluid bg-1 text-center\">\r\n    <h3>{{group.name}}</h3>\r\n    <h3>Group Description</h3>\r\n    <p>{{group.description}}</p>\r\n    <h3>Place</h3>\r\n    <p>{{group.place}}</p>\r\n    <h3>Days</h3>\r\n    <p>{{group.days}}</p>\r\n    <h3>Hour</h3>\r\n    <p>{{group.hour}}</p>\r\n</div>\r\n\r\n<div class=\"container-fluid bg-2 text-center\">\r\n    <h3>{{instructor.type}}</h3>\r\n    <img [src]=\"instructor.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\r\n    <h3>{{instructor.name}} {{instructor.lastname}}</h3>\r\n    <h3>Contact</h3>\r\n    <p>{{instructor.email}}</p>\r\n    <p>{{instructor.phone}}</p>\r\n</div>\r\n\r\n<div *ngIf=\"isSameInstructor()\" class=\"container-fluid bg-3 text-center\">\r\n    <h3>Averague rate</h3>\r\n    <p>{{user.rate}}</p>\r\n    <h3>Total</h3>\r\n    <p>{{user.totalVotes}}</p>\r\n    <h3>Rate Group</h3>\r\n\r\n\r\n    <!--\r\n    <h3>Rate Instructor</h3>\r\n    <select class=\"form-control\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\" id=\"newRate\">\r\n        <option>1</option>\r\n        <option>2</option>\r\n        <option>3</option>\r\n        <option>4</option>\r\n        <option>5</option>\r\n    </select>\r\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" onclick=\"myFunction()\" (click)=\"onSubmitRate()\">Rate</button>\r\n    -->\r\n    <select class=\"form-control\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\" id=\"newRate\">\r\n            <option>1</option>\r\n            <option>2</option>\r\n            <option>3</option>\r\n            <option>4</option>\r\n            <option>5</option>\r\n        </select>\r\n        <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" onclick=\"myFunction()\" (click)=\"onSubmitRate()\">Rate</button>\r\n</div>\r\n\r\n<h3>Comments</h3>\r\n<tr *ngFor=\"let comentario of comentarios\">\r\n    <td>{{comentario.user}}</td>\r\n    <td>{{comentario.text}}</td>\r\n</tr>\r\n<div *ngIf=\"isSameInstructor()\" class=\"container-fluid bg-3 text-center\">\r\n        <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" onclick=\"myFunction()\" (click)=\"onSubmitRegister()\">Register</button>\r\n</div>\r\n\r\n\r\n</form>\r\n</div>\r\n</body>\r\n</html>\r\n"
 
 /***/ }),
 
@@ -874,9 +872,9 @@ module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <!-- Th
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupProfilePageComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -892,23 +890,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var GroupProfilePageComponent = (function () {
-    function GroupProfilePageComponent(usersService, router, formBuilder, groupService) {
+    function GroupProfilePageComponent(groupService, usersService, router, formBuilder) {
+        this.groupService = groupService;
         this.usersService = usersService;
         this.router = router;
         this.formBuilder = formBuilder;
-        this.groupService = groupService;
     }
-    GroupProfilePageComponent.prototype.isInstructor = function () {
-        if (this.user.type === 'INSTRUCTOR') {
+    GroupProfilePageComponent.prototype.isSameInstructor = function () {
+        if (this.user.username === this.instructor.username) {
             return false;
         }
         else {
             return true;
         }
     };
+    GroupProfilePageComponent.prototype.onSubmitRegister = function () {
+        this.router.navigate(['/group']);
+    };
     GroupProfilePageComponent.prototype.onSubmitRate = function () {
         var _this = this;
-        this.usersService.editRate(this.username, this.userForm.get('newRate').value).subscribe(function (serverResponse9) {
+        this.usersService.editRate(this.username, this.groupForm.get('newRate').value).subscribe(function (serverResponse9) {
             _this.router.navigate(['/']);
         }, function (error) {
             console.log(error);
@@ -917,7 +918,7 @@ var GroupProfilePageComponent = (function () {
     };
     GroupProfilePageComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.userForm = this.formBuilder.group({
+        this.groupForm = this.formBuilder.group({
             newRate: ''
         });
         this.username = sessionStorage.getItem('username');
@@ -928,6 +929,7 @@ var GroupProfilePageComponent = (function () {
         this.groupService.getGroupByName(this.groupname).subscribe(function (usersResponse5) {
             _this.group = usersResponse5;
             _this.comentarios = _this.group.comments;
+            _this.instructor = _this.group.instructor;
         });
     };
     return GroupProfilePageComponent;
@@ -938,7 +940,7 @@ GroupProfilePageComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/pages/group-profile-page/group-profile-page.component.html"),
         styles: [__webpack_require__("../../../../../src/app/pages/group-profile-page/group-profile-page.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_group_service__["a" /* GroupService */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_group_service__["a" /* GroupService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _d || Object])
 ], GroupProfilePageComponent);
 
 var _a, _b, _c, _d;
@@ -1607,14 +1609,17 @@ var GroupService = (function (_super) {
         _this.config = config;
         _this.authService = authService;
         _this.http = http;
-        _this.resourceUrl = 'group/groups';
+        _this.resourceUrl = 'group/';
         return _this;
     }
     GroupService.prototype.getGroupByName = function (name) {
-        return this.get("group" + "/groupname", name);
+        return this.get(this.resourceUrl + name);
     };
     GroupService.prototype.create = function (name, instructor, place, days, hour, description, category, comments) {
-        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_1__models_group__["a" /* Group */](name, instructor, place, days, hour, description, category, comments));
+        return this.post(this.resourceUrl + "groups", new __WEBPACK_IMPORTED_MODULE_1__models_group__["a" /* Group */](name, instructor, place, days, hour, description, category, comments));
+    };
+    GroupService.prototype.registerUserInGroup = function (groupname, user) {
+        return this.post(this.resourceUrl + groupname, user);
     };
     return GroupService;
 }(__WEBPACK_IMPORTED_MODULE_2__common_api_service__["a" /* APIService */]));

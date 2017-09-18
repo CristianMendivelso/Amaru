@@ -3,9 +3,9 @@ import { User } from "../../models/user";
 import { Group } from "../../models/group";
 import { Comment } from "../../models/comment";
 import { UsersService } from "../../services/users.service";
+import { GroupService } from "../../services/group.service";
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { GroupService } from '../../services/group.service';
 
 @Component({
     selector: 'app-group-profile-page',
@@ -14,19 +14,21 @@ import { GroupService } from '../../services/group.service';
 })
 export class GroupProfilePageComponent implements OnInit {
     private user: User;
+	private instructor : User;
     private group: Group;
     comentarios:Comment [];
-    userForm: FormGroup;
+    groupForm: FormGroup;
     private username:string;
     private groupname:string;
 
-    constructor(public usersService: UsersService,   public router: Router,    public formBuilder: FormBuilder, public groupService:GroupService)  {
+    constructor(public groupService :GroupService,public usersService: UsersService,   public router: Router,    public formBuilder: FormBuilder,)  {
+
 
     }
 
 
-    isInstructor() {
-        if (this.user.type==='INSTRUCTOR'){
+    isSameInstructor() {
+        if (this.user.username===this.instructor.username){
             return false;
         }
         else{
@@ -34,11 +36,15 @@ export class GroupProfilePageComponent implements OnInit {
         }
     }
 
+	onSubmitRegister() {
+       
+        this.router.navigate(['/group']);
 
+    }
     onSubmitRate() {
         this.usersService.editRate(
             this.username,
-            this.userForm.get('newRate').value
+            this.groupForm.get('newRate').value
         ).subscribe(serverResponse9=>{
             this.router.navigate(['/']);
         }, error=>{
@@ -49,17 +55,18 @@ export class GroupProfilePageComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.userForm = this.formBuilder.group({
+        this.groupForm = this.formBuilder.group({
             newRate: ''
         });
         this.username=sessionStorage.getItem('username');
-        this.groupname=sessionStorage.getItem('groupname');
+		this.groupname = sessionStorage.getItem('groupname');
         this.usersService.findUserByUsername(this.username).subscribe(usersResponse4 => {
             this.user = usersResponse4;
         })
         this.groupService.getGroupByName(this.groupname).subscribe(usersResponse5 => {
             this.group = usersResponse5;
             this.comentarios=this.group.comments;
+			this.instructor = this.group.instructor;
 
         })
     }

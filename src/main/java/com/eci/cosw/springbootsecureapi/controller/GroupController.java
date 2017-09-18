@@ -24,3 +24,4 @@ public class GroupController {
         return groupService.createGroup(group);
     }
 }
+
