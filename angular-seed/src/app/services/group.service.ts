@@ -31,7 +31,10 @@ export class GroupService extends APIService{
     editRate(groupname: string, rate: number){
         return this.post(this.resourceUrl + 'rate',{groupname,rate});
     }
-    
+    addComment(co:Comment) {
+        alert("HACIENDO EL POST");
+        return this.post(this.resourceUrl + 'comment', co);
+    }
 
 
 

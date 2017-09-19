@@ -1,15 +1,19 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src lazy recursive":
+/***/ "../../../../../src/$$_gendir lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
-	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
 }
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src lazy recursive";
+webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
@@ -527,10 +531,10 @@ var INITIAL_CONFIG = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Inje
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Comment; });
 var Comment = (function () {
-    function Comment(text, user, date) {
+    function Comment(text, user, groupName) {
         this.text = text;
         this.user = user;
-        this.date = date;
+        this.groupName = groupName;
     }
     return Comment;
 }());
@@ -815,9 +819,10 @@ var GroupEditPageComponent = (function () {
     };
     GroupEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.co = new __WEBPACK_IMPORTED_MODULE_5__models_comment__["a" /* Comment */]("Primer comentario :v", "pepito", true);
-        this.co2 = new __WEBPACK_IMPORTED_MODULE_5__models_comment__["a" /* Comment */]("segundo comentario >:v", "pepito", false);
+        this.co2 = new __WEBPACK_IMPORTED_MODULE_5__models_comment__["a" /* Comment */]("Primer comentario :v", "pepito", this.groupForm.get('name').value);
+        this.co = new __WEBPACK_IMPORTED_MODULE_5__models_comment__["a" /* Comment */]("segundo comentario >:v", "pepito", this.groupForm.get('name').value);
         this.comments.push(this.co);
+        this.comments.push(this.co2);
         if (this.groupForm.get('day1').value) {
             this.days.push("Monday");
         }
@@ -949,7 +954,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/group-profile-page/group-profile-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\n    <title>Group Page</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n    <style>\n        body {\n            font: 400 15px/1.8 Lato, sans-serif;\n            color: #777;\n          }\n          #tituloA{\n            color:#333333;\n            font-weight: bold;\n            text-align: center;\n          ;\n          }\n          h3, h4 {\n            margin: 10px 0 30px 0;\n            letter-spacing: 3px;\n            font-weight: bold;\n            color: #ffffff;\n            font-size: 20px;\n          }\n          .container {\n            padding: 80px 120px;\n          }\n          .person {\n            border: 10px solid transparent;\n            margin-bottom: 25px;\n            width: 80%;\n            height: 80%;\n            opacity: 0.7;\n          }\n          .person:hover {\n            border-color: #f1f1f1;\n          }\n          .carousel-inner img {\n            -webkit-filter: grayscale(20%);\n            filter: grayscale(20%); /* make all photos black and white */\n            width: 60%; /* Set width to 100% */\n            margin: auto;\n          }\n          .carousel-caption h3 {\n            color: #fff !important;\n          }\n          @media (max-width: 600px) {\n            .carousel-caption {\n              display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */\n            }\n          }\n          .bg-2 { \n      background-color: #474e5d; /* Dark Blue */\n      color: #ffffff;\n  }\n\n  .bg-3 { \n      background-color:darkgray; /* Dark Blue */\n      color: #ffffff;\n  }\n          .bg-1 {\n            background: #2d2d30;\n            color: #bdbdbd;\n          }\n          .bg-1 h3 {color: #fff;}\n          .bg-1 p {font-style: italic;}\n          .list-group-item:first-child {\n            border-top-right-radius: 0;\n            border-top-left-radius: 0;\n          }\n          .list-group-item:last-child {\n            border-bottom-right-radius: 0;\n            border-bottom-left-radius: 0;\n          }\n          .thumbnail {\n            padding: 0 0 15px 0;\n            border: none;\n            border-radius: 0;\n          }\n          .thumbnail p {\n            margin-top: 15px;\n            color: #555;\n          }\n          .btn {\n            padding: 10px 20px;\n            background-color: #333;\n            color: #f1f1f1;\n            border-radius: 0;\n            transition: .2s;\n          }\n          .btn:hover, .btn:focus {\n            border: 1px solid #333;\n            background-color: #fff;\n            color: #000;\n          }\n          .modal-header, h4, .close {\n            background-color: #333;\n            color: #fff !important;\n            text-align: center;\n            font-size: 30px;\n          }\n          .modal-header, .modal-body {\n            padding: 40px 50px;\n          }\n          .nav-tabs li a {\n            color: #777;\n          }\n          #googleMap {\n            width: 100%;\n            height: 400px;\n            -webkit-filter: grayscale(100%);\n            filter: grayscale(100%);\n          }\n          .navbar {\n            font-family: Montserrat, sans-serif;\n            margin-bottom: 0;\n            background-color: #2d2d30;\n            border: 0;\n            font-size: 11px !important;\n            letter-spacing: 4px;\n            opacity: 0.9;\n          }\n          .navbar li a, .navbar .navbar-brand {\n            color: #d5d5d5 !important;\n          }\n          .navbar-nav li a:hover {\n            color: #fff !important;\n          }\n          .navbar-nav li.active a {\n            color: #fff !important;\n            background-color: #29292c !important;\n          }\n          .navbar-default .navbar-toggle {\n            border-color: transparent;\n          }\n          .open .dropdown-toggle {\n            color: #fff;\n            background-color: #555 !important;\n          }\n          .dropdown-menu li a {\n            color: #000 !important;\n          }\n          .dropdown-menu li a:hover {\n            background-color: red !important;\n          }\n          footer {\n            background-color: #2d2d30;\n            color: #f5f5f5;\n            padding: 32px;\n          }\n          footer a {\n            color: #f5f5f5;\n          }\n          footer a:hover {\n            color: #777;\n            text-decoration: none;\n          }\n          .form-control {\n            border-radius: 0;\n          }\n          textarea {\n            resize: none;\n          }\n          \n    </style>\n</head>\n<body>\n\n<div class=\"container\">   \n    <form [formGroup]=\"groupForm\" >\n<div class=\"container-fluid bg-1 text-center\">\n    <h3>{{group.name}}</h3>\n    <img [src]=\"group.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\n    <h3>Group Description</h3>\n    <p>{{group.description}}</p>\n    <h3>Place</h3>\n    <p>{{group.place}}</p>\n    <h3>Days</h3>\n    <p>{{group.days}}</p>\n    <h3>Hour</h3>\n    <p>{{group.hour}}</p>\n</div>\n\n<div class=\"container-fluid bg-2 text-center\">\n    <h3>{{instructor.type}}</h3>\n    <h3>{{instructor.name}} {{instructor.lastname}}</h3>\n    <h3>Contact</h3>\n    <p>{{instructor.email}}</p>\n    <p>{{instructor.phone}}</p>\n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <h3>Averague rate</h3>\n    <p>{{group.rate}}</p>\n    <h3>Total</h3>\n    <p>{{group.totalVotes}}</p>\n    <h3>Rate Group</h3>\n\n    <select class=\"form-control\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\" id=\"newRate\">\n            <option>1</option>\n            <option>2</option>\n            <option>3</option>\n            <option>4</option>\n            <option>5</option>\n        </select>\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \"  (click)=\"onSubmitRate()\">Rate</button>\n    <h3 align=\"center\">Join In This Group</h3>\n    <button align=\"center\" style=\"position: absolute; right: 0;\" type=\"button\" class=\"btn btn-primary btn-lg\"  (click)=\"onSubmitRegister()\">Register</button>\n    \n    <h3>Comments</h3>\n    <tr *ngFor=\"let comentario of comentarios\">\n        <td>{{comentario.user}}</td>\n        <td>{{comentario.text}}</td>\n    </tr>\n   \n  </div>\n\n\n</form>\n</div>\n</body>\n</html>\n"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\n    <title>Group Page</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n    <style>\n        body {\n            font: 400 15px/1.8 Lato, sans-serif;\n            color: #777;\n          }\n          #tituloA{\n            color:#333333;\n            font-weight: bold;\n            text-align: center;\n          ;\n          }\n          h3, h4 {\n            margin: 10px 0 30px 0;\n            letter-spacing: 3px;\n            font-weight: bold;\n            color: #ffffff;\n            font-size: 20px;\n          }\n          .container {\n            padding: 80px 120px;\n          }\n          .person {\n            border: 10px solid transparent;\n            margin-bottom: 25px;\n            width: 80%;\n            height: 80%;\n            opacity: 0.7;\n          }\n          .person:hover {\n            border-color: #f1f1f1;\n          }\n          .carousel-inner img {\n            -webkit-filter: grayscale(20%);\n            filter: grayscale(20%); /* make all photos black and white */\n            width: 60%; /* Set width to 100% */\n            margin: auto;\n          }\n          .carousel-caption h3 {\n            color: #fff !important;\n          }\n          @media (max-width: 600px) {\n            .carousel-caption {\n              display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */\n            }\n          }\n          .bg-2 { \n      background-color: #474e5d; /* Dark Blue */\n      color: #ffffff;\n  }\n\n  .bg-3 { \n      background-color:darkgray; /* Dark Blue */\n      color: #ffffff;\n  }\n          .bg-1 {\n            background: #2d2d30;\n            color: #bdbdbd;\n          }\n          .bg-1 h3 {color: #fff;}\n          .bg-1 p {font-style: italic;}\n          .list-group-item:first-child {\n            border-top-right-radius: 0;\n            border-top-left-radius: 0;\n          }\n          .list-group-item:last-child {\n            border-bottom-right-radius: 0;\n            border-bottom-left-radius: 0;\n          }\n          .thumbnail {\n            padding: 0 0 15px 0;\n            border: none;\n            border-radius: 0;\n          }\n          .thumbnail p {\n            margin-top: 15px;\n            color: #555;\n          }\n          .btn {\n            padding: 10px 20px;\n            background-color: #333;\n            color: #f1f1f1;\n            border-radius: 0;\n            transition: .2s;\n          }\n          .btn:hover, .btn:focus {\n            border: 1px solid #333;\n            background-color: #fff;\n            color: #000;\n          }\n          .modal-header, h4, .close {\n            background-color: #333;\n            color: #fff !important;\n            text-align: center;\n            font-size: 30px;\n          }\n          .modal-header, .modal-body {\n            padding: 40px 50px;\n          }\n          .nav-tabs li a {\n            color: #777;\n          }\n          #googleMap {\n            width: 100%;\n            height: 400px;\n            -webkit-filter: grayscale(100%);\n            filter: grayscale(100%);\n          }\n          .navbar {\n            font-family: Montserrat, sans-serif;\n            margin-bottom: 0;\n            background-color: #2d2d30;\n            border: 0;\n            font-size: 11px !important;\n            letter-spacing: 4px;\n            opacity: 0.9;\n          }\n          .navbar li a, .navbar .navbar-brand {\n            color: #d5d5d5 !important;\n          }\n          .navbar-nav li a:hover {\n            color: #fff !important;\n          }\n          .navbar-nav li.active a {\n            color: #fff !important;\n            background-color: #29292c !important;\n          }\n          .navbar-default .navbar-toggle {\n            border-color: transparent;\n          }\n          .open .dropdown-toggle {\n            color: #fff;\n            background-color: #555 !important;\n          }\n          .dropdown-menu li a {\n            color: #000 !important;\n          }\n          .dropdown-menu li a:hover {\n            background-color: red !important;\n          }\n          footer {\n            background-color: #2d2d30;\n            color: #f5f5f5;\n            padding: 32px;\n          }\n          footer a {\n            color: #f5f5f5;\n          }\n          footer a:hover {\n            color: #777;\n            text-decoration: none;\n          }\n          .form-control {\n            border-radius: 0;\n          }\n          textarea {\n            resize: none;\n          }\n          \n    </style>\n</head>\n<body>\n\n<div class=\"container\">   \n    <form [formGroup]=\"groupForm\" >\n\n\n<div class=\"container-fluid bg-1 text-center\">\n    <h3>{{group.name}}</h3>\n    <img [src]=\"group.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\n    <h3>Group Description</h3>\n    <p>{{group.description}}</p>\n    <h3>Place</h3>\n    <p>{{group.place}}</p>\n    <h3>Days</h3>\n    <p>{{group.days}}</p>\n    <h3>Hour</h3>\n    <p>{{group.hour}}</p>\n</div>\n\n<div class=\"container-fluid bg-2 text-center\">\n    <h3>{{instructor.type}}</h3>\n    <h3>{{instructor.name}} {{instructor.lastname}}</h3>\n    <h3>Contact</h3>\n    <p>{{instructor.email}}</p>\n    <p>{{instructor.phone}}</p>\n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <h3>Averague rate</h3>\n    <p>{{group.rate}}</p>\n    <h3>Total</h3>\n    <p>{{group.totalVotes}}</p>\n    <h3>Rate Group</h3>\n\n    <select class=\"form-control\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\" id=\"newRate\">\n            <option>1</option>\n            <option>2</option>\n            <option>3</option>\n            <option>4</option>\n            <option>5</option>\n        </select>\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \"  (click)=\"onSubmitRate()\">Rate</button>\n    <h3 align=\"center\">Join In This Group</h3>\n    <button align=\"center\" style=\"position: absolute; right: 0;\" type=\"button\" class=\"btn btn-primary btn-lg\"  (click)=\"onSubmitRegister()\">Register</button>\n    \n    <h3>Comments</h3>\n    <tr *ngFor=\"let comentario of comentarios\">\n        <td>{{comentario.user}}</td>\n        <td>{{comentario.text}}</td>\n    </tr>\n\n    <textarea class=\"form-control\" formControlName=\"newComment\" class=\"form-control mr-sm-2\" id=\"newComment\" rows=\"4\" cols=\"50\">\n    </textarea>\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editComment \" (click)=\"onSubmitComment()\">Comment</button>\n  </div>\n\n\n</form>\n</div>\n</body>\n</html>\n"
 
 /***/ }),
 
@@ -959,10 +964,11 @@ module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <!-- Theme Ma
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupProfilePageComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_comment__ = __webpack_require__("../../../../../src/app/models/comment.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -972,6 +978,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -992,6 +999,16 @@ var GroupProfilePageComponent = (function () {
             return true;
         }
     };
+    GroupProfilePageComponent.prototype.onSubmitComment = function () {
+        var _this = this;
+        this.co = new __WEBPACK_IMPORTED_MODULE_1__models_comment__["a" /* Comment */](this.groupForm.get('newComment').value, this.username, this.groupname);
+        this.groupService.addComment(this.co).subscribe(function (groupResponse) {
+            _this.group = groupResponse;
+        }, function (error) {
+            console.log(error);
+        });
+        this.router.navigate(['/']);
+    };
     GroupProfilePageComponent.prototype.onSubmitRegister = function () {
         var _this = this;
         this.groupService.registerUserInGroup(this.groupname, this.username).subscribe(function (groupResponse) {
@@ -1003,7 +1020,7 @@ var GroupProfilePageComponent = (function () {
     };
     GroupProfilePageComponent.prototype.onSubmitRate = function () {
         var _this = this;
-        this.groupService.editRate(this.username, this.groupForm.get('newRate').value).subscribe(function (serverResponse9) {
+        this.groupService.editRate(this.groupname, this.groupForm.get('newRate').value).subscribe(function (serverResponse9) {
             _this.router.navigate(['/welcome']);
         }, function (error) {
             console.log(error);
@@ -1013,7 +1030,8 @@ var GroupProfilePageComponent = (function () {
     GroupProfilePageComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.groupForm = this.formBuilder.group({
-            newRate: ''
+            newRate: '',
+            newComment: ''
         });
         this.username = sessionStorage.getItem('username');
         this.groupname = sessionStorage.getItem('groupname');
@@ -1034,7 +1052,7 @@ GroupProfilePageComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/pages/group-profile-page/group-profile-page.component.html"),
         styles: [__webpack_require__("../../../../../src/app/pages/group-profile-page/group-profile-page.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_group_service__["a" /* GroupService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_group_service__["a" /* GroupService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_users_service__["a" /* UsersService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]) === "function" && _d || Object])
 ], GroupProfilePageComponent);
 
 var _a, _b, _c, _d;
@@ -1815,6 +1833,10 @@ var GroupService = (function (_super) {
     };
     GroupService.prototype.editRate = function (groupname, rate) {
         return this.post(this.resourceUrl + 'rate', { groupname: groupname, rate: rate });
+    };
+    GroupService.prototype.addComment = function (co) {
+        alert("HACIENDO EL POST");
+        return this.post(this.resourceUrl + 'comment', co);
     };
     return GroupService;
 }(__WEBPACK_IMPORTED_MODULE_2__common_api_service__["a" /* APIService */]));

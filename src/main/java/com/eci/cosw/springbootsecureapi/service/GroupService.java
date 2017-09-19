@@ -1,5 +1,6 @@
 package com.eci.cosw.springbootsecureapi.service;
 
+import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
 import com.eci.cosw.springbootsecureapi.model.User;
 
@@ -25,6 +26,8 @@ public interface GroupService {
     Group editRate( String groupname, Double rate );
 
     Group registerStudent(String names);
+
+    Group addCommnet(Comment comment);
 
 
 }

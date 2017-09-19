@@ -7,7 +7,7 @@ export class Group {
     public instructor: User;
     private students: Array<User>;
     private score:number;
-    comments: Array<Comment>;
+    comments: Comment[];
     private place:string;
     private hour:string;
     private days:string[];
@@ -21,7 +21,7 @@ export class Group {
             this.name = name;
             this.instructor = instructor;
             this.students = new Array<User>();
-            this.score = 0;
+            this.score = 50;
             this.comments=comment;
             this.place = place;
             this.hour = hour;
