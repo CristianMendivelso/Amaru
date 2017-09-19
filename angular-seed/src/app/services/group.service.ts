@@ -11,6 +11,7 @@ import { Http } from '@angular/http';
 @Injectable()
 export class GroupService extends APIService{
     private resourceUrl = 'group/';
+    group:Group;
     constructor(
         public config: AppConfiguration,
         public authService: AuthService,
@@ -31,6 +32,11 @@ export class GroupService extends APIService{
     editRate(name: string, rate: number){
         return this.post(this.resourceUrl + 'rate',{name,rate});
     }
+
+    getGroupByCategory(name:string):Observable<Group[]>{
+        return this.get(this.resourceUrl+"groups/"+name);
+    }
+
     addComment(co:Comment) {
         return this.post(this.resourceUrl + 'comment', co);
     }

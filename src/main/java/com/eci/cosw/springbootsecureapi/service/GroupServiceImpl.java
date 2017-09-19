@@ -80,6 +80,17 @@ public class GroupServiceImpl implements GroupService{
     }
 
     @Override
+    public List<Group> getGroupByGategory(String name) {
+        List<Group> categories=new ArrayList<>();
+        for(int i=0;i<groups.size();i++){
+            if(name.equals(groups.get(i).getCategory())){
+                categories.add(groups.get(i));
+            }
+        }
+        return categories;
+    }
+
+    @Override
     public Group getGroupByName(String groupname) {
         Group group = null;
         for (Group g : groups){

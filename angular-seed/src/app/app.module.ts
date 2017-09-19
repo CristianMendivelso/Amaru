@@ -70,6 +70,9 @@ const ROUTES = [
       canActivate: [AuthService],
     },
   {
+    path: 'groups', component: GroupListComponent,
+  },
+  {
     path: '**', component: PageNotFoundComponent
   }
 ]
@@ -111,6 +114,7 @@ const ROUTES = [
     AppDataService,
     UsersService,
     GroupService,
+    GroupListComponent,
     AppConfiguration],
   bootstrap: [AppComponent]
  })

@@ -1,3 +1,14 @@
-<p>
-  group-list works!
-</p>
+<h2>Groups</h2>
+<table class="table table-bordered">
+ <thead>
+   <tr>
+     <th>Name</th>
+     <th>Photo</th>
+   </tr>
+ </thead>
+ <tr *ngFor="let group of groups">
+  <td>{{group.name}}</td>
+  <td><img [src]="group.image" width="110" height="110" /></td>
+  <td> <button class="btn btn-outline-success my-2 my-sm-0" data-dismiss="modal"  (click)="entergr()">Enter</button> <td>
+ </tr>
+</table>
