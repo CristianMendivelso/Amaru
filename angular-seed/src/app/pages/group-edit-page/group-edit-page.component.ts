@@ -52,11 +52,6 @@ export class GroupEditPageComponent implements OnInit {
   }
 
   onSubmit() {
-    this.co = new Comment("Primer comentario :v","pepito",true);
-    this.co2 = new Comment("segundo comentario >:v","pepito",false);
-    this.comments.push(this.co);
-
-
     if (this.groupForm.get('day1').value){
       this.days.push("Monday")
     }

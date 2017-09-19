@@ -1,5 +1,6 @@
 package com.eci.cosw.springbootsecureapi.service;
 
+import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
 import com.eci.cosw.springbootsecureapi.model.User;
 
@@ -28,7 +29,11 @@ public interface GroupService {
 
     Group registerStudent(String names);
 
+<<<<<<< HEAD
     List<Group> getGroupByGategory(String name);
+=======
+    Group addCommnet(Comment comment);
+>>>>>>> b3af19737617e993a93b110c8929efe42f8199ae
 
 
 }

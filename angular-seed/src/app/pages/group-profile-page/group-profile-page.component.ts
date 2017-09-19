@@ -16,6 +16,7 @@ export class GroupProfilePageComponent implements OnInit {
     private user: User;
 	private instructor : User;
     private group: Group;
+    co : Comment;
     comentarios:Comment [];
     groupForm: FormGroup;
     private username:string;
@@ -26,6 +27,12 @@ export class GroupProfilePageComponent implements OnInit {
 
     }
 
+    seeprofile(){
+        sessionStorage.setItem('username',this.instructor.username);
+        this.router.navigate(['/profile']);
+        
+    }
+
 
     isSameInstructor() {
         if (this.user.username===this.instructor.username){
@@ -34,6 +41,17 @@ export class GroupProfilePageComponent implements OnInit {
         else{
             return true;
         }
+    }
+
+    onSubmitComment() {
+        this.co=new Comment(this.groupForm.get('newComment').value,this.username,this.groupname);
+        this.groupService.addComment(this.co
+        ).subscribe(groupResponse => {
+            this.group = groupResponse;
+        }, error=>{
+            console.log(error);
+        });
+        this.router.navigate(['/welcome']);
     }
 
 	onSubmitRegister() {
@@ -48,7 +66,7 @@ export class GroupProfilePageComponent implements OnInit {
     }
     onSubmitRate() {
         this.groupService.editRate(
-            this.username,
+            this.groupname,
             this.groupForm.get('newRate').value
         ).subscribe(serverResponse9=>{
             this.router.navigate(['/welcome']);
@@ -61,7 +79,8 @@ export class GroupProfilePageComponent implements OnInit {
 
     ngOnInit() {
         this.groupForm = this.formBuilder.group({
-            newRate: ''
+            newRate: '',
+            newComment:''
         });
         this.username=sessionStorage.getItem('username');
 		this.groupname = sessionStorage.getItem('groupname');

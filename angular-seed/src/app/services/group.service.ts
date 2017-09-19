@@ -32,11 +32,17 @@ export class GroupService extends APIService{
     editRate(groupname: string, rate: number){
         return this.post(this.resourceUrl + 'rate',{groupname,rate});
     }
+<<<<<<< HEAD
 
     getGroupByCategory(name:string):Observable<Group[]>{
         return this.get(this.resourceUrl+"groups/"+name);
     }
 
+=======
+    addComment(co:Comment) {
+        return this.post(this.resourceUrl + 'comment', co);
+    }
+>>>>>>> b3af19737617e993a93b110c8929efe42f8199ae
 
 
 
