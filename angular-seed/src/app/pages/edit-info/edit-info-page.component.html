@@ -67,28 +67,6 @@
 </div>
 
 
-<div class="container">
-    <h2>Cursos Actuales</h2>
-    <p>Cursos Actuales Ofrecidos:</p>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
-
 <!-- Modal -->
 <div class="modal fade" id="editImage" role="dialog">
     <div class="modal-dialog">
@@ -101,7 +79,7 @@
             <div class="modal-body">
                 <p>New Image Url:</p>
                 <input id="newImage" formControlName="newImage" class="form-control mr-sm-2" type="text" placeholder="newImage" aria-label="newImage">
-                <button type="button" class="btn btn-default" onclick="myFunction()" (click)="onSubmitImage()">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"  (click)="onSubmitImage()">Save</button>
 
             </div>
             <div class="modal-footer">
@@ -125,7 +103,7 @@
             <div class="modal-body">
                 <p>New Email:</p>
                 <input id="newEmail" formControlName="newEmail" class="form-control mr-sm-2" type="text" placeholder="newEmail" aria-label="newEmail">
-                <button type="button" class="btn btn-default" onclick="myFunction()" (click)="onSubmitEmail()">Save</button>
+                <button type="button" class="btn btn-default"  data-dismiss="modal" (click)="onSubmitEmail()">Save</button>
 
             </div>
             <div class="modal-footer">
@@ -148,7 +126,7 @@
             <div class="modal-body">
                 <p>New Phone:</p>
                 <input id="newPhone"  formControlName="newPhone" class="form-control mr-sm-2" type="number" placeholder="newPhone" aria-label="newPhone">
-                <button type="button" class="btn btn-default" onclick="myFunction()" (click)="onSubmitPhone()">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onSubmitPhone()">Save</button>
 
             </div>
             <div class="modal-footer">
@@ -171,7 +149,7 @@
             <div class="modal-body">
                 <p>New Description:</p>
                 <input id="newDescription" formControlName="newDescription" class="form-control mr-sm-2" type="text" placeholder="newDescription" aria-label="newDescription">
-                <button type="button" class="btn btn-default" onclick="myFunction()" (click)="onSubmitDescription()">Save</button>
+                <button type="button" class="btn btn-default"data-dismiss="modal"  (click)="onSubmitDescription()">Save</button>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

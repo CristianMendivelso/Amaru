@@ -43,7 +43,7 @@ export class GroupProfilePageComponent implements OnInit {
         }, error=>{
             console.log(error);
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/welcome']);
 
     }
     onSubmitRate() {
@@ -51,11 +51,11 @@ export class GroupProfilePageComponent implements OnInit {
             this.username,
             this.groupForm.get('newRate').value
         ).subscribe(serverResponse9=>{
-            this.router.navigate(['/']);
+            this.router.navigate(['/welcome']);
         }, error=>{
             console.log(error);
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/welcome']);
 
     }
 

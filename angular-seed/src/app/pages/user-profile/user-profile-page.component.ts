@@ -36,11 +36,11 @@ export class UserProfilePageComponent implements OnInit {
             this.username,
             this.userForm.get('newRate').value
         ).subscribe(serverResponse9=>{
-            this.router.navigate(['/']);
+            this.router.navigate(['/welcome']);
         }, error=>{
             console.log(error);
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/welcome']);
 
     }
 
@@ -51,7 +51,7 @@ export class UserProfilePageComponent implements OnInit {
         this.username=sessionStorage.getItem('username');
         this.usersService.findUserByUsername(this.username).subscribe(usersResponse4 => {
             this.user = usersResponse4;
-            this.groups=this.user.groups;
+            this.groups=usersResponse4.groups;
         })
     }
 

@@ -3,7 +3,7 @@ import { Comment } from "./comment";
 import { Observable } from "rxjs/Observable";
 
 export class Group {
-    private name: string;
+    name: string;
     public instructor: User;
     private students: Array<User>;
     private score:number;
@@ -22,7 +22,6 @@ export class Group {
             this.instructor = instructor;
             this.students = new Array<User>();
             this.score = 0;
-            //this.comments = new Array<Comment>();
             this.comments=comment;
             this.place = place;
             this.hour = hour;

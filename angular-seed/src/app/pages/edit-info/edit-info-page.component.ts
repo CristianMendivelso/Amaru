@@ -28,11 +28,11 @@ export class EditInfoPageComponent implements OnInit {
             this.username,
             this.userForm.get('newImage').value
         ).subscribe(serverResponse9=>{
-            this.router.navigate(['/']);
+            this.router.navigate(['/welcome']);
         }, error=>{
             console.log(error);
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/welcome']);
 
     }
 
@@ -44,11 +44,11 @@ export class EditInfoPageComponent implements OnInit {
             this.username,
             this.userForm.get('newDescription').value
         ).subscribe(serverResponse9=>{
-            this.router.navigate(['/']);
+            this.router.navigate(['/welcome']);
         }, error=>{
             console.log(error);
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/welcome']);
 
     }
 
@@ -58,11 +58,11 @@ export class EditInfoPageComponent implements OnInit {
             this.username,
             this.userForm.get('newPhone').value
         ).subscribe(serverResponse9=>{
-            this.router.navigate(['/']);
+            this.router.navigate(['/welcome']);
         }, error=>{
             console.log(error);
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/welcome']);
 
     }
 
@@ -72,11 +72,11 @@ export class EditInfoPageComponent implements OnInit {
             this.username,
             this.userForm.get('newEmail').value
         ).subscribe(serverResponse9=>{
-            this.router.navigate(['/']);
+            this.router.navigate(['/welcome']);
         }, error=>{
             console.log(error);
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/welcome']);
 
     }
 

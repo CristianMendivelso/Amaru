@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+<nav  *ngIf="isLoggedIn()" class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
     aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -8,27 +8,14 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLinkActive="/" routerLink="/">Home</a>
+        <a class="nav-link" routerLinkActive="/welcome" routerLink="/welcome">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="/tasks" routerLink="/tasks">Tasks</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLinkActive="/edit" routerLink="/edit">Edit</a>
-      </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLinkActive="/users" routerLink="/users">Users</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLinkActive="/newuser" routerLink="/newuser">New User</a>
-        </li>
+        
 
         <li class="nav-item">
             <a class="nav-link" routerLinkActive="/profile" routerLink="/profile">Ver Perfil</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLinkActive="/newGroup" routerLink="/newGroup">New Group</a>
-        </li>
+     
         <li class="nav-item">
             <a class="nav-link" routerLinkActive="/info" routerLink="/info">Edit Info</a>
         </li>
