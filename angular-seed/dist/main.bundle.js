@@ -1131,30 +1131,30 @@ var HomeSigninPageComponent = (function () {
         this.router = router;
         this.formBuilder = formBuilder;
         this.groups = [];
+        this.flag = false;
+        this.flagamaru = false;
     }
     HomeSigninPageComponent.prototype.isInstructor = function () {
-        if (this.user.type === 'INSTRUCTOR') {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.flag;
     };
     ;
     HomeSigninPageComponent.prototype.isAmaru = function () {
-        if (this.user.type === 'AMARU') {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.flagamaru;
     };
     HomeSigninPageComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.username = sessionStorage.getItem('username');
         this.usersService.findUserByUsername(this.username).subscribe(function (usersResponse4) {
             _this.user = usersResponse4;
-            _this.groups = _this.user.groups;
+            _this.groups = usersResponse4.groups;
+            if (usersResponse4.type === 'INSTRUCTOR') {
+                _this.flag = true;
+                _this.flagamaru = false;
+            }
+            else {
+                _this.flag = false;
+                _this.flagamaru = true;
+            }
         });
     };
     return HomeSigninPageComponent;

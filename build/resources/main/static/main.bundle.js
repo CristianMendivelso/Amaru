@@ -130,12 +130,14 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_user_list_page_user_list_page_component__ = __webpack_require__("../../../../../src/app/pages/user-list-page/user-list-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_user_profile_user_profile_page_component__ = __webpack_require__("../../../../../src/app/pages/user-profile/user-profile-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_group_list_group_list_component__ = __webpack_require__("../../../../../src/app/pages/group-list/group-list.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -217,7 +219,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_25__pages_user_profile_user_profile_page_component__["a" /* UserProfilePageComponent */],
             __WEBPACK_IMPORTED_MODULE_13__pages_edit_info_edit_info_page_component__["a" /* EditInfoPageComponent */],
             __WEBPACK_IMPORTED_MODULE_15__pages_group_profile_page_group_profile_page_component__["a" /* GroupProfilePageComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__pages_home_signin_page_home_signin_page_component__["a" /* HomeSigninPageComponent */]
+            __WEBPACK_IMPORTED_MODULE_7__pages_home_signin_page_home_signin_page_component__["a" /* HomeSigninPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__pages_group_list_group_list_component__["a" /* GroupListComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -860,6 +863,71 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
+/***/ "../../../../../src/app/pages/group-list/group-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/group-list/group-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  group-list works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pages/group-list/group-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var GroupListComponent = (function () {
+    function GroupListComponent(groupService) {
+        this.groupService = groupService;
+    }
+    GroupListComponent.prototype.ngOnInit = function () {
+    };
+    return GroupListComponent;
+}());
+GroupListComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-group-list',
+        template: __webpack_require__("../../../../../src/app/pages/group-list/group-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pages/group-list/group-list.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_group_service__["a" /* GroupService */]) === "function" && _a || Object])
+], GroupListComponent);
+
+var _a;
+//# sourceMappingURL=group-list.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/pages/group-profile-page/group-profile-page.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1063,30 +1131,30 @@ var HomeSigninPageComponent = (function () {
         this.router = router;
         this.formBuilder = formBuilder;
         this.groups = [];
+        this.flag = false;
+        this.flagamaru = false;
     }
     HomeSigninPageComponent.prototype.isInstructor = function () {
-        if (this.user.type === 'INSTRUCTOR') {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.flag;
     };
     ;
     HomeSigninPageComponent.prototype.isAmaru = function () {
-        if (this.user.type === 'AMARU') {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return this.flagamaru;
     };
     HomeSigninPageComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.username = sessionStorage.getItem('username');
         this.usersService.findUserByUsername(this.username).subscribe(function (usersResponse4) {
             _this.user = usersResponse4;
-            _this.groups = _this.user.groups;
+            _this.groups = usersResponse4.groups;
+            if (usersResponse4.type === 'INSTRUCTOR') {
+                _this.flag = true;
+                _this.flagamaru = false;
+            }
+            else {
+                _this.flag = false;
+                _this.flagamaru = true;
+            }
         });
     };
     return HomeSigninPageComponent;
