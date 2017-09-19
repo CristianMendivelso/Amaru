@@ -10,14 +10,10 @@
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="/welcome" routerLink="/welcome">Home</a>
       </li>
-        
-
-        <li class="nav-item">
-            <a class="nav-link" routerLinkActive="/profile" routerLink="/profile">Ver Perfil</a>
-        </li>
+      
      
         <li class="nav-item">
-            <a class="nav-link" routerLinkActive="/info" routerLink="/info">Edit Info</a>
+            <a class="nav-link" routerLinkActive="/info" routerLink="/info">Ver Perfil</a>
         </li>
 
       <li *ngIf="isLoggedIn()" class="nav-item">
@@ -52,11 +48,13 @@
                <tr>
                  <th>Name</th>
                  <th>Photo</th>
+                 <th>Entrar al grupo</th>
                </tr>
              </thead>
              <tr>
                <td>{{group.name}}</td>
                <td><img [src]="group.image" width="110" height="110" /></td>
+               <td> <button class="btn btn-outline-success my-2 my-sm-0" data-dismiss="modal"  (click)="entergr()">Enter</button> <td>                
              </tr>
             </table>
         </div>

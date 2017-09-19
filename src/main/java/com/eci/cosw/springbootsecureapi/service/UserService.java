@@ -1,5 +1,6 @@
 package com.eci.cosw.springbootsecureapi.service;
 
+import com.eci.cosw.springbootsecureapi.model.Group;
 import com.eci.cosw.springbootsecureapi.model.User;
 
 import java.util.List;
@@ -31,4 +32,6 @@ public interface UserService
     User findUserByEmailAndPassword( String email, String password );
 
     User editRate( String username, Double rate );
+
+    User addGroup(String username, Group g);
 }

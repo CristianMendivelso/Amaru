@@ -1,6 +1,7 @@
 package com.eci.cosw.springbootsecureapi.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Santiago Carrillo
@@ -33,14 +34,14 @@ public class User
 
     private int totalVotes;
 
-    private ArrayList<Group> groups;
+    private List<Group> groups;
 
 
     public User()
     {
     }
 
-    public User( String name, String lastname, String image, String phone,String password, String email, String description, String type,String username, Double rate , int totalVotes,ArrayList<Group> groups)
+    public User( String name, String lastname, String image, String phone,String password, String email, String description, String type,String username, Double rate , int totalVotes,List<Group> groups)
 
     {
         this.email = email;
@@ -171,11 +172,11 @@ public class User
         this.username = username;
     }
 
-    public ArrayList<Group> getGroups() {
+    public  List<Group>  getGroups() {
         return groups;
     }
 
-    public void setGroups(ArrayList<Group> groups) {
+    public void setGroups( List<Group> groups) {
         this.groups = groups;
     }
 }

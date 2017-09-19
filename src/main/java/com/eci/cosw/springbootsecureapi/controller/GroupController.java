@@ -36,7 +36,6 @@ public class GroupController {
 
     @RequestMapping( value = "/comment", method = RequestMethod.POST )
     public Group addComment(@RequestBody Comment coment){
-        System.out.println("AAAAAAAAAAAAAAAAAAAA");
         return groupService.addCommnet(coment);
     }
 }

@@ -15,32 +15,31 @@ export class HomeSigninPageComponent implements OnInit {
     private user: User;
     private username:string;
     private groups: Group[] = [];
-
+    private flag: boolean=false;
+    private flagamaru: boolean=false;
 
     constructor(public usersService: UsersService,   public router: Router,    public formBuilder: FormBuilder,) { }
 
     isInstructor() {
-        if (this.user.type==='INSTRUCTOR'){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return this.flag;
     };
     isAmaru() {
-        if (this.user.type==='AMARU'){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return this.flagamaru;
     }
 
     ngOnInit() {
         this.username=sessionStorage.getItem('username');
         this.usersService.findUserByUsername(this.username).subscribe(usersResponse4 => {
             this.user = usersResponse4;
-            this.groups=this.user.groups;
+            this.groups=usersResponse4.groups;
+            if (usersResponse4.type==='INSTRUCTOR'){
+                this.flag=true;
+                this.flagamaru=false;
+            }
+            else{
+                this.flag=false;
+                this.flagamaru=true;
+            }
         })
     }
 

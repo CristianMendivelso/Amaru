@@ -31,6 +31,11 @@ export class AppComponent {
     this.authService.signOut();
   }
 
+  entergr() {
+    sessionStorage.setItem('groupname',this.group.name);
+    this.router.navigate(['/group']);
+  }
+
   onSubmit(search){
     this.group=null;
     this.groupService.getGroupByName(search).subscribe(response => {

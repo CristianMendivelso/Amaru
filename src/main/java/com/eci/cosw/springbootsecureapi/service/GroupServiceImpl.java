@@ -71,7 +71,7 @@ public class GroupServiceImpl implements GroupService{
                 students.add(this.users.findUserByUsername(n[1]));
                 group.setStudents(students);
                 g = group;
-                System.out.println("INSCRIBIO!!!" + n[1]);
+                users.addGroup(n[1],group);
                 break;
             }
         }
@@ -95,6 +95,7 @@ public class GroupServiceImpl implements GroupService{
     public Group createGroup(Group group) {
         group.setId(groups.size());
         groups.add(group);
+        users.addGroup(group.getInstructor().getUsername(),group);
         return groups.get(groups.size() - 1);
     }
 
@@ -135,8 +136,6 @@ public class GroupServiceImpl implements GroupService{
                 Group g = groups.get(i);
                 g.addComment(comment);
                 groups.set(i,g);
-                System.out.println(comment.getText()+" El COMENTARIO");
-                System.out.println(g.getName()+" NOMBRE DEL GRUPO");
                 break;
             }
         }

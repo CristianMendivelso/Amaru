@@ -21,7 +21,7 @@ export class Group {
             this.name = name;
             this.instructor = instructor;
             this.students = new Array<User>();
-            this.score = 50;
+            this.score = 0;
             this.comments=comment;
             this.place = place;
             this.hour = hour;

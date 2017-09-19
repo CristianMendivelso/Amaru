@@ -14,9 +14,9 @@ export class User {
     private totalVotes:number;
     type:string;
     username:string;
-    groups:Array<Group>;
+    groups:Group[];
     
-        constructor(name: string, lastname: string, image: string, phone:string,password:string,email:string,description:string,type:string,username:string,rate:number,totalVotes:number, groups:Array<Group>) {
+        constructor(name: string, lastname: string, image: string, phone:string,password:string,email:string,description:string,type:string,username:string,rate:number,totalVotes:number, groups:Group[]) {
             this.name = name;
             this.lastname = lastname;
             this.image = image;

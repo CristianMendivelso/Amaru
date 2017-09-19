@@ -27,6 +27,12 @@ export class GroupProfilePageComponent implements OnInit {
 
     }
 
+    seeprofile(){
+        sessionStorage.setItem('username',this.instructor.username);
+        this.router.navigate(['/profile']);
+        
+    }
+
 
     isSameInstructor() {
         if (this.user.username===this.instructor.username){
@@ -45,7 +51,7 @@ export class GroupProfilePageComponent implements OnInit {
         }, error=>{
             console.log(error);
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/welcome']);
     }
 
 	onSubmitRegister() {
