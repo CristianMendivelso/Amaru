@@ -114,8 +114,9 @@ const ROUTES = [
     AppDataService,
     UsersService,
     GroupService,
-    GroupListComponent,
-    AppConfiguration],
+    AppConfiguration,
+    GroupListComponent
+  ],
   bootstrap: [AppComponent]
  })
  export class AppModule { }
