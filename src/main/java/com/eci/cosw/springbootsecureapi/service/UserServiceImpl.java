@@ -36,9 +36,11 @@ public class UserServiceImpl implements UserService
     private void populateSampleData()
     {
         String[] days = {"Friday", "Sunday"};
-        Comment co = new Comment("primer comentario :v","Pepito",true);
-        Comment co2 = new Comment("Segundo comentario >:v","Pepito",false);
-        Comment[] comments = {co,co2};
+        Comment co = new Comment("primer comentario :v","Pepito","Volleyball");
+        Comment co2 = new Comment("Segundo comentario >:v","Pepito","Volleyball");
+        List<Comment> comments = new ArrayList<>();
+        comments.add(co);
+        comments.add(co2);
         List<Group> groups = new ArrayList<>();
 
         Group g= new Group( "Volleyball", null, "Parque el virrey", days, "10:00 am - 12:00 pm", "Learn how to play volleyball, and enjoy your morning exercising","Sports",comments, 0.0,0,  "http://www.longbeachny.gov/vertical/Sites/%7BC3C1054A-3D3A-41B3-8896-814D00B86D2A%7D/uploads/bigstock-Beach-Volleyball-Silhouette-81799844_(1).jpg");

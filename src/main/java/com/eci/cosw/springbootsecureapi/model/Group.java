@@ -3,7 +3,7 @@ package com.eci.cosw.springbootsecureapi.model;
 import javafx.beans.Observable;
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 
 /**
@@ -21,7 +21,7 @@ public class Group {
 
     private Float score;
 
-    private Comment[] comments;
+    private List<Comment> comments;
 
     private String place;
 
@@ -43,7 +43,7 @@ public class Group {
     }
 
 
-    public Group(String name, User instructor, String place, String[] days, String hour, String description, String category, Comment[] comment, Double rate, int totalVotes, String image) {
+    public Group(String name, User instructor, String place, String[] days, String hour, String description, String category, List<Comment> comment, Double rate, int totalVotes, String image) {
         this.setName(name);
         this.setInstructor(instructor);
         this.setPlace(place);
@@ -148,15 +148,15 @@ public class Group {
         this.description = description;
     }
 
-    public Comment[] getComments() {
+    public List<Comment> getComments() {
         return comments;
     }
 
-    public void setComments(Comment[] comments) {
+    public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
 
-    //public void addComment(Comment comment){ this.comments.add(comment); }
+    public void addComment(Comment comment){ this.comments.add(comment); }
 
     public String getCategory() {
         return category;

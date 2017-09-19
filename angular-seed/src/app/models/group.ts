@@ -7,7 +7,7 @@ export class Group {
     public instructor: User;
     private students: Array<User>;
     private score:number;
-    comments: Array<Comment>;
+    comments: Comment[];
     private place:string;
     private hour:string;
     private days:string[];

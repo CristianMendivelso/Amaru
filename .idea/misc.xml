@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+=======
+>>>>>>> 4e7d0928307ec5be33f8edcee83a75eda060be3a
   <component name="ClientPropertiesManager">
     <properties class="javax.swing.AbstractButton">
       <property name="hideActionText" class="java.lang.Boolean" />
@@ -53,6 +60,7 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
+<<<<<<< HEAD
   </component>
   <component name="masterDetails">
     <states>
@@ -102,5 +110,8 @@
         </settings>
       </state>
     </states>
+=======
+>>>>>>> b3af19737617e993a93b110c8929efe42f8199ae
+>>>>>>> 4e7d0928307ec5be33f8edcee83a75eda060be3a
   </component>
 </project>

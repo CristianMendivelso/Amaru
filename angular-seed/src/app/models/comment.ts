@@ -1,12 +1,12 @@
 export class Comment {
     text: string;
     user: string;
-    private date: boolean;
+    groupName: String;
 
-    constructor(text:string, user:string, date:boolean) {
+    constructor(text:string, user:string, groupName:string) {
         this.text = text;
         this.user = user;
-        this.date = date;
+        this.groupName=groupName;
     }
 }
 

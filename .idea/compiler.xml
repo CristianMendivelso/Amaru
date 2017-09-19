@@ -19,8 +19,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="amaru_main" target="1.8" />
-      <module name="amaru_test" target="1.8" />
+      <module name="Amaru_main" target="1.8" />
+      <module name="Amaru_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
