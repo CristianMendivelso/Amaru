@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: org.springframework.boot:spring-boot-starter-test:2.0.0.BUILD-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/2.0.0.BUILD-SNAPSHOT/b1fb27f46acd57ce1e3c35bd3bf122461fa45077/spring-boot-starter-test-2.0.0.BUILD-SNAPSHOT.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/2.0.0.BUILD-SNAPSHOT/6ea1e622246ddb5ddf73415cea906564e68598ab/spring-boot-starter-test-2.0.0.BUILD-SNAPSHOT.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/2.0.0.BUILD-SNAPSHOT/10483100121576e7a692fbdd28325033735a7c4e/spring-boot-starter-test-2.0.0.BUILD-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-test/2.0.0.BUILD-SNAPSHOT/f32032b7642bfa5bbca8d8319e4bfec4a804ed35/spring-boot-starter-test-2.0.0.BUILD-SNAPSHOT-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

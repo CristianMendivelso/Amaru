@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../../models/user";
 import { UsersService } from "../../services/users.service";
+import { GroupService } from '../../services/group.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import {Group} from "../../models/group";
+import { GroupListComponent } from '../group-list/group-list.component';
 
 @Component({
     selector: 'app-home-signin-page',
@@ -18,7 +20,11 @@ export class HomeSigninPageComponent implements OnInit {
     private flag: boolean=false;
     private flagamaru: boolean=false;
 
-    constructor(public usersService: UsersService,   public router: Router,    public formBuilder: FormBuilder,) { }
+    constructor(public usersService: UsersService,  
+                 public router: Router,
+                 public formBuilder: FormBuilder,
+                  public groupService:GroupService,
+                public groupListComponent:GroupListComponent) { }
 
     isInstructor() {
         return this.flag;
@@ -41,6 +47,11 @@ export class HomeSigninPageComponent implements OnInit {
                 this.flagamaru=true;
             }
         })
+    }
+
+    onSubmit(name){
+        this.groupListComponent.setGroup(name);
+        this.router.navigate(['/groups']);
     }
 
 
