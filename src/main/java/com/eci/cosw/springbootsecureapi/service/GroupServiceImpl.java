@@ -107,7 +107,6 @@ public class GroupServiceImpl implements GroupService{
                 Group g = groups.get(i);
                 Double oldRate = g.getRate();
                 int cont = g.getTotalVotes();
-
                 g.setRate( redondearDecimales((oldRate+rate)/2,2) );
                 g.setTotalVotes(cont+1);
                 groups.set(i,g);

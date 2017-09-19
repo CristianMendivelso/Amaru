@@ -1829,8 +1829,8 @@ var GroupService = (function (_super) {
     GroupService.prototype.registerUserInGroup = function (groupname, user) {
         return this.get(this.resourceUrl + "register/" + groupname + "," + user);
     };
-    GroupService.prototype.editRate = function (groupname, rate) {
-        return this.post(this.resourceUrl + 'rate', { groupname: groupname, rate: rate });
+    GroupService.prototype.editRate = function (name, rate) {
+        return this.post(this.resourceUrl + 'rate', { name: name, rate: rate });
     };
     GroupService.prototype.addComment = function (co) {
         return this.post(this.resourceUrl + 'comment', co);

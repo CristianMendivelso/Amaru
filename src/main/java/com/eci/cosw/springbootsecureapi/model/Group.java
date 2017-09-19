@@ -178,9 +178,9 @@ public class Group {
         return totalVotes;
     }
 
-    public void setTotalVotes(int totalVotes) {
-
-
+    public void setTotalVotes( int totalVotes )
+    {
+        this.totalVotes = totalVotes;
     }
 
     public String getImage() {

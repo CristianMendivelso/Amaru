@@ -28,8 +28,8 @@ export class GroupService extends APIService{
     registerUserInGroup(groupname: string, user: String): Observable<Group>{
         return this.get(this.resourceUrl+ "register/" + groupname + "," +user)
     }
-    editRate(groupname: string, rate: number){
-        return this.post(this.resourceUrl + 'rate',{groupname,rate});
+    editRate(name: string, rate: number){
+        return this.post(this.resourceUrl + 'rate',{name,rate});
     }
     addComment(co:Comment) {
         return this.post(this.resourceUrl + 'comment', co);
