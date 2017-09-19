@@ -15,7 +15,8 @@ export class AppComponent {
   group:Group;
   constructor(
     public authService: AuthService,
-    public router: Router
+    public router: Router,
+    public groupService:GroupService
   ) {
     if (!this.authService.isLoggedIn()) {
       this.router.navigate(['/']);
