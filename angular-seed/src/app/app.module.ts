@@ -28,6 +28,7 @@ import { UsersService } from './services/users.service';
 import { GroupService } from './services/group.service';
 import { UserListPageComponent } from "./pages/user-list-page/user-list-page.component";
 import { UserProfilePageComponent } from "./pages/user-profile/user-profile-page.component";
+import { GroupListComponent } from './pages/group-list/src/app/pages/group-list/group-list/group-list.component';
 
 const ROUTES = [
   { path: '', component: HomePageComponent },
@@ -87,7 +88,8 @@ const ROUTES = [
       UserProfilePageComponent,
       EditInfoPageComponent,
       GroupProfilePageComponent,
-      HomeSigninPageComponent
+      HomeSigninPageComponent,
+      GroupListComponent
   ],
   imports: [
     BrowserModule,
