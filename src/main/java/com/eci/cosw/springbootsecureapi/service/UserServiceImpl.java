@@ -98,9 +98,16 @@ public class UserServiceImpl implements UserService
                 indice=i;
                 User u = users.get(i);
                 List<Group> group= u.getGroups();
+
                 group.add(g);
                 u.setGroups(group);
                 users.set(i,u);
+                for(int uu=0;uu<group.size();uu++){
+                    System.out.println(group.get(uu).getName()+"2222222222");
+                }
+                for(int uu=0;uu<users.size();uu++){
+                    System.out.println(users.get(uu).getName()+"555555555");
+                }
                 break;
             }
         }

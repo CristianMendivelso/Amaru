@@ -37,6 +37,7 @@ export class UserEditPageComponent implements OnInit {
   }
 
   onSubmit() {
+    
     this.userService.create(
       this.userForm.get('nombre').value,
       this.userForm.get('lastname').value,
@@ -50,13 +51,13 @@ export class UserEditPageComponent implements OnInit {
       0,
       0, new Array<Group>()
     ).subscribe(serverResponse2=>{
-        this.router.navigate(['/users']);
+        this.router.navigate(['/']);
     }, error=>{
       console.log(error);
     });
   
  
-    this.router.navigate(['/users']);
+    this.router.navigate(['/']);
   }
 
 }
