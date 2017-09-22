@@ -6,16 +6,16 @@ package com.eci.cosw.springbootsecureapi.model;
 public class Comment {
 
     private String text;
+    private String groupName;
     private String user;
-    private boolean date;
 
     public Comment() {
     }
 
-    public Comment(String text, String user, boolean date) {
+    public Comment(String text, String user, String groupName) {
         this.text = text;
+        this.groupName = groupName;
         this.user = user;
-        this.date = date;
     }
 
     public String getText() {
@@ -26,6 +26,14 @@ public class Comment {
         this.text = text;
     }
 
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
     public String getUser() {
         return user;
     }
@@ -33,13 +41,4 @@ public class Comment {
     public void setUser(String user) {
         this.user = user;
     }
-
-    public boolean isDate() {
-        return date;
-    }
-
-    public void setDate(boolean date) {
-        this.date = date;
-    }
 }
-

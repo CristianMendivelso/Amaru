@@ -1,7 +1,10 @@
 package com.eci.cosw.springbootsecureapi.model;
 
+import javafx.beans.Observable;
+
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.List;
+
 
 /**
  * Created by 2107262 on 9/6/17.
@@ -18,7 +21,7 @@ public class Group {
 
     private Float score;
 
-    private ArrayList<Comment> comments;
+    private List<Comment> comments;
 
     private String place;
 
@@ -28,21 +31,50 @@ public class Group {
 
     private String description;
 
-    public Group()
-    {
+    private String category;
+
+    private Double rate;
+
+    private int totalVotes;
+
+    private String image;
+
+    public Group() {
     }
 
-    public Group( String name, User instructor, String place, String hour, String[] days, String description)
-    {
+
+    public Group(String name, User instructor, String place, String[] days, String hour, String description, String category, List<Comment> comment, Double rate, int totalVotes, String image) {
         this.setName(name);
         this.setInstructor(instructor);
         this.setPlace(place);
         this.setHour(hour);
         this.setDays(days);
         this.setDescription(description);
-        this.setComments(new ArrayList<Comment>());
+        //this.setComments(new ArrayList<Comment>());
+        this.comments = comment;
+        this.setCategory(category);
+        this.rate = rate;
+        this.totalVotes = totalVotes;
+        this.setImage(image);
     }
 
+    public Group(String name, String place, String[] days, String hour, String description) {
+        this.setName(name);
+        this.setPlace(place);
+        this.setHour(hour);
+        this.setDays(days);
+        this.setDescription(description);
+        //this.setComments(new ArrayList<Comment>());
+    }
+
+    @Override
+    public String toString() {
+        String n = "";
+        for (String a : this.days) {
+            n = n + a;
+        }
+        return "Group{" + "id=" + id + "days=" + n + "Category= " + category + "Instructor = " + instructor + "}";
+    }
 
     public long getId() {
         return id;
@@ -116,15 +148,46 @@ public class Group {
         this.description = description;
     }
 
-    public ArrayList<Comment> getComments() {
+    public List<Comment> getComments() {
         return comments;
     }
 
-    public void setComments(ArrayList<Comment> comments) {
+    public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
 
-    public void addComment(Comment comment){
-        this.comments.add(comment);
+    public void addComment(Comment comment){ this.comments.add(comment); }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Double getRate() {
+        return rate;
+    }
+
+    public void setRate(Double rate) {
+        this.rate = rate;
+    }
+
+    public int getTotalVotes() {
+        return totalVotes;
+    }
+
+    public void setTotalVotes( int totalVotes )
+    {
+        this.totalVotes = totalVotes;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
