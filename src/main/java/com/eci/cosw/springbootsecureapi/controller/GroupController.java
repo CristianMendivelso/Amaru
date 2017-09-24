@@ -1,36 +1,21 @@
 package com.eci.cosw.springbootsecureapi.controller;
 
-<<<<<<< HEAD
-=======
 import com.eci.cosw.springbootsecureapi.model.Comment;
->>>>>>> origin/master
 import com.eci.cosw.springbootsecureapi.model.Group;
 import com.eci.cosw.springbootsecureapi.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-<<<<<<< HEAD
-=======
 import java.util.List;
 
->>>>>>> origin/master
+
 /**
  * Created by 2107262 on 9/6/17.
  */
 @RestController
 @RequestMapping( "group" )
 public class GroupController {
-<<<<<<< HEAD
 
-    @Autowired
-    private GroupService groupService;
-
-    @RequestMapping( value = "/{name}", method = RequestMethod.GET )
-    public Group getGroup(@PathVariable String name){
-        return groupService.findGroupByName(name);
-    }
-
-=======
     @Autowired
     private GroupService groupService;
 
@@ -59,7 +44,7 @@ public class GroupController {
     public Group addComment(@RequestBody Comment coment){
         return groupService.addCommnet(coment);
     }
->>>>>>> origin/master
+
 
 }
 

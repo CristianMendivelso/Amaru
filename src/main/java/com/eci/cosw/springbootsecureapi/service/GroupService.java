@@ -2,7 +2,6 @@ package com.eci.cosw.springbootsecureapi.service;
 
 import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
-import com.eci.cosw.springbootsecureapi.model.User;
 
 import java.util.List;
 
@@ -23,8 +22,7 @@ public interface GroupService {
 
     Group editName(String name, String newName);
 
-<<<<<<< HEAD
-=======
+
     Group getGroupByName(String name);
 
     Group createGroup(Group group);
@@ -38,6 +36,5 @@ public interface GroupService {
     Group addCommnet(Comment comment);
 
 
->>>>>>> origin/master
 
 }

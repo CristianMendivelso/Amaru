@@ -6,30 +6,20 @@ import com.eci.cosw.springbootsecureapi.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import org.springframework.stereotype.Service;
-
-
-
 import javax.annotation.PostConstruct;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by 2107262 on 9/6/17.
  */
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 @Service
 public class GroupServiceImpl implements GroupService{
 
     private List<Group> groups = new ArrayList<>();
-<<<<<<< HEAD
-    private UserService users = new UserServiceImpl();
-=======
->>>>>>> origin/master
+
+
 
 
     @Autowired
@@ -53,10 +43,6 @@ public class GroupServiceImpl implements GroupService{
     @PostConstruct
     private void populateSampleData()
     {
-<<<<<<< HEAD
-        String[] days = {"Saturday", "Sunday"};
-        groups.add( new Group( "Volleyball",  new User( "Pepito", "Perez", "https://image.freepik.com/iconos-gratis/usuario-masculino-foto-de-perfil_318-37825.jpg", "2343423","password","test@mail.com","Profesional Amigable","Instructor","pepito" ), "Parque el virrey", "10:00 am - 12:00 pm", days, "Learn how to play volleyball, and enjoy your morning exercising") );
-=======
         String[] days = {"Friday", "Sunday"};
         Comment co = new Comment("primer comentario :v","Pepito","Volleyball");
         Comment co2 = new Comment("Segundo comentario >:v","Pepito","Volleyball");
@@ -66,7 +52,6 @@ public class GroupServiceImpl implements GroupService{
 
         groups.add( new Group( "Volleyball", null, "Parque el virrey", days, "10:00 am - 12:00 pm", "Learn how to play volleyball, and enjoy your morning exercising","Sports",comments, 0.0,0,  "http://www.longbeachny.gov/vertical/Sites/%7BC3C1054A-3D3A-41B3-8896-814D00B86D2A%7D/uploads/bigstock-Beach-Volleyball-Silhouette-81799844_(1).jpg") );
 
->>>>>>> origin/master
     }
 
     @Override
