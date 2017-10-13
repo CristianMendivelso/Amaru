@@ -1,5 +1,6 @@
 package com.eci.cosw.springbootsecureapi.service;
 
+import com.eci.cosw.springbootsecureapi.model.Clase;
 import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
 import com.eci.cosw.springbootsecureapi.model.User;
@@ -35,18 +36,22 @@ public class UserServiceImpl implements UserService
     @PostConstruct
     private void populateSampleData()
     {
-        String[] days = {"Friday", "Sunday"};
-        Comment co = new Comment("primer comentario :v","Pepito","Volleyball");
-        Comment co2 = new Comment("Segundo comentario >:v","Pepito","Volleyball");
+        Comment co = new Comment("Excelente Grupo",1, "Pepito", "31 Marzo 2017");
+        Comment co2 = new Comment("Segundo Comentario",1, "Pepito", "3 Mayo 2017");
         List<Comment> comments = new ArrayList<>();
         comments.add(co);
         comments.add(co2);
         List<Group> groups = new ArrayList<>();
-
-        Group g= new Group( "Volleyball", null, "Parque el virrey", days, "10:00 am - 12:00 pm", "Learn how to play volleyball, and enjoy your morning exercising","Sports",comments, 0.0,0,  "http://www.longbeachny.gov/vertical/Sites/%7BC3C1054A-3D3A-41B3-8896-814D00B86D2A%7D/uploads/bigstock-Beach-Volleyball-Silhouette-81799844_(1).jpg");
-        groups.add(g);
-        users.add( new User( "Pepito", "Perez", "https://image.freepik.com/iconos-gratis/usuario-masculino-foto-de-perfil_318-37825.jpg", "2343423","password","test@mail.com","Profesional Amigable","INSTRUCTOR","pepito" ,3.0,1,groups) );
-        users.add( new User( "Laura", "Soto", "https://cde.peru.com/ima/0/1/1/6/5/1165933/924x530/facebook.jpg", "2343423","password","laura@mail.com","Dispuesta a aprender","AMARU","laura" ,5.0,0,groups) );
+        List<Clase> clases=new ArrayList<>();
+        Clase c1=new Clase(1,"3 Octubre 2017","11:00","Parque el Virrey",1,"Volleyball");
+        Clase c2=new Clase(1,"2 Octubre 2017","11:00","Parque el Virrey",2,"Volleyball");
+        clases.add(c1);
+        clases.add(c2);
+        comments.add(co);
+        comments.add(co2);
+        groups.add( new Group( 1,"Volleyball","pepito",comments,"Aprende Volleyball Con la mejor metodología","Sports", 0.0,0,"https://www.standardmedia.co.ke/images/saturday/bcxaonet5vqlo5961439761817.jpg",clases) );
+        users.add(new User("Pepito", "Perez", "https://guiafitness.com/wp-content/uploads/dieta-deportistas-principiantes.jpg", "324324324", "password", "pepito@mail.com", "Apasionado por el deporte", "AMARU", "pepito", 0.0, 0, clases ,1));
+        users.add(new User("Andrea", "Romero", "http://www.mujerhoy.com/pic.aspx?w=640&h=530&img=mujercorre858913345.jpg", "324324323", "password", "andrea@mail.com", "Instructora de Voleyball", "INSTRUCTOR", "andrea", 0.0, 0, clases ,1));
     }
 
 
@@ -93,23 +98,17 @@ public class UserServiceImpl implements UserService
         return users.get(indice);
     };
 
-    public User addGroup(String username, Group g){
+    public User addGroup(String username, Clase c){
         int indice=0;
         for (int i=0;i< users.size();i++){
             if(users.get(i).getUsername().equals(username)){
                 indice=i;
                 User u = users.get(i);
-                List<Group> group= u.getGroups();
+                List<Clase> clases= u.getClases();
 
-                group.add(g);
-                u.setGroups(group);
+                clases.add(c);
+                u.setClases(clases);
                 users.set(i,u);
-                for(int uu=0;uu<group.size();uu++){
-                    System.out.println(group.get(uu).getName()+"2222222222");
-                }
-                for(int uu=0;uu<users.size();uu++){
-                    System.out.println(users.get(uu).getName()+"555555555");
-                }
                 break;
             }
         }
@@ -142,16 +141,7 @@ public class UserServiceImpl implements UserService
         return users.get( id );
     }
 
-    @Override
-    public User createUser( User user )
-    {
-        synchronized (users){
-            user.setId(users.size());
-            users.add( user );
-        }
 
-        return user;
-    }
 
     @Override
     public User findUserByEmail( String email )
@@ -216,6 +206,15 @@ public class UserServiceImpl implements UserService
         resultado=Math.round(resultado);
         resultado=(resultado/Math.pow(10, numeroDecimales))+parteEntera;
         return resultado;
+    }
+    @Override
+    public User createUser( User user )
+    {
+        synchronized (users){
+            users.add( user );
+        }
+
+        return user;
     }
 
 }

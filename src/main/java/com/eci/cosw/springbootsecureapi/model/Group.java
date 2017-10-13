@@ -1,7 +1,5 @@
 package com.eci.cosw.springbootsecureapi.model;
 
-import javafx.beans.Observable;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,19 +13,9 @@ public class Group {
 
     private String name;
 
-    private User instructor;
-
-    private ArrayList<User> students;
-
-    private Float score;
+    private String instructor;
 
     private List<Comment> comments;
-
-    private String place;
-
-    private String hour;
-
-    private String[] days;
 
     private String description;
 
@@ -39,42 +27,25 @@ public class Group {
 
     private String image;
 
+    private List<Clase> clases;
+
+    public Group(long id,String name,String instructor,List<Comment> comments,String description,String category, Double rate,int totalVotes,String image,List<Clase> clases) {
+        this.id=id;
+        this.name=name;
+        this.instructor=instructor;
+        this.comments=comments;
+        this.description=description;
+        this.category=category;
+        this.rate=rate;
+        this.totalVotes=totalVotes;
+        this.image=image;
+        this.clases=clases;
+    }
+
     public Group() {
     }
 
 
-    public Group(String name, User instructor, String place, String[] days, String hour, String description, String category, List<Comment> comment, Double rate, int totalVotes, String image) {
-        this.setName(name);
-        this.setInstructor(instructor);
-        this.setPlace(place);
-        this.setHour(hour);
-        this.setDays(days);
-        this.setDescription(description);
-        //this.setComments(new ArrayList<Comment>());
-        this.comments = comment;
-        this.setCategory(category);
-        this.rate = rate;
-        this.totalVotes = totalVotes;
-        this.setImage(image);
-    }
-
-    public Group(String name, String place, String[] days, String hour, String description) {
-        this.setName(name);
-        this.setPlace(place);
-        this.setHour(hour);
-        this.setDays(days);
-        this.setDescription(description);
-        //this.setComments(new ArrayList<Comment>());
-    }
-
-    @Override
-    public String toString() {
-        String n = "";
-        for (String a : this.days) {
-            n = n + a;
-        }
-        return "Group{" + "id=" + id + "days=" + n + "Category= " + category + "Instructor = " + instructor + "}";
-    }
 
     public long getId() {
         return id;
@@ -92,60 +63,12 @@ public class Group {
         this.name = name;
     }
 
-    public User getInstructor() {
+    public String getInstructor() {
         return instructor;
     }
 
-    public void setInstructor(User instructor) {
+    public void setInstructor(String instructor) {
         this.instructor = instructor;
-    }
-
-    public ArrayList<User> getStudents() {
-        return students;
-    }
-
-    public void setStudents(ArrayList<User> students) {
-        this.students = students;
-    }
-
-    public Float getScore() {
-        return score;
-    }
-
-    public void setScore(Float score) {
-        this.score = score;
-    }
-
-    public String getPlace() {
-        return place;
-    }
-
-    public void setPlace(String place) {
-        this.place = place;
-    }
-
-    public String getHour() {
-        return hour;
-    }
-
-    public void setHour(String hour) {
-        this.hour = hour;
-    }
-
-    public String[] getDays() {
-        return days;
-    }
-
-    public void setDays(String[] days) {
-        this.days = days;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public List<Comment> getComments() {
@@ -156,7 +79,13 @@ public class Group {
         this.comments = comments;
     }
 
-    public void addComment(Comment comment){ this.comments.add(comment); }
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getCategory() {
         return category;
@@ -178,8 +107,7 @@ public class Group {
         return totalVotes;
     }
 
-    public void setTotalVotes( int totalVotes )
-    {
+    public void setTotalVotes(int totalVotes) {
         this.totalVotes = totalVotes;
     }
 
@@ -189,5 +117,13 @@ public class Group {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public List<Clase> getClases() {
+        return clases;
+    }
+
+    public void setClases(List<Clase> clases) {
+        this.clases = clases;
     }
 }

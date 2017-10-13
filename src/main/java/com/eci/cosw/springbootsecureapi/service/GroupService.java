@@ -1,5 +1,6 @@
 package com.eci.cosw.springbootsecureapi.service;
 
+import com.eci.cosw.springbootsecureapi.model.Clase;
 import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
 import com.eci.cosw.springbootsecureapi.model.User;
@@ -11,23 +12,23 @@ import java.util.List;
  */
 public interface GroupService {
 
-    Group editPlace(String name, String newPlace);
+    Group editPlace(long groupId, String newPlace);
 
-    Group editHour(String name, String newHour);
+    Group editHour(long groupId, String newHour);
 
-    Group editDays(String name, String[] newDays);
+    Group editDescription(long groupId, String newDescription);
 
-    Group editDescription(String name, String newDescription);
+    Group editName(long groupId, String newName);
 
-    Group editName(String name, String newName);
+    List<Group> getGroupByName(String name);
 
-    Group getGroupByName(String name);
+    Group getGroupByid(long groupId );
 
-    Group createGroup(Group group);
+    Group createGroup(Group grupo);
 
-    Group editRate( String groupname, Double rate );
+    Group editRate( long groupId, Double rate );
 
-    Group registerStudent(String names);
+    Group registerStudent(long groupId,String username);
 
     List<Group> getGroupByGategory(String name);
 

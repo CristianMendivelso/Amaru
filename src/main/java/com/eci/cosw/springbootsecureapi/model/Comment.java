@@ -6,17 +6,20 @@ package com.eci.cosw.springbootsecureapi.model;
 public class Comment {
 
     private String text;
-    private String groupName;
+    private long groupId;
     private String user;
+    private String date;
 
     public Comment() {
     }
 
-    public Comment(String text, String user, String groupName) {
+    public Comment(String text, long groupId, String user, String date) {
         this.text = text;
-        this.groupName = groupName;
+        this.groupId = groupId;
         this.user = user;
+        this.date = date;
     }
+
 
     public String getText() {
         return text;
@@ -26,12 +29,12 @@ public class Comment {
         this.text = text;
     }
 
-    public String getGroupName() {
-        return groupName;
+    public long getGroupId() {
+        return groupId;
     }
 
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
+    public void setGroupId(long groupId) {
+        this.groupId = groupId;
     }
 
     public String getUser() {
@@ -41,4 +44,14 @@ public class Comment {
     public void setUser(String user) {
         this.user = user;
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+
 }

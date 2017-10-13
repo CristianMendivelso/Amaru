@@ -1,5 +1,6 @@
 package com.eci.cosw.springbootsecureapi.service;
 
+import com.eci.cosw.springbootsecureapi.model.Clase;
 import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
 import com.eci.cosw.springbootsecureapi.model.User;
@@ -25,45 +26,56 @@ public class GroupServiceImpl implements GroupService{
     @PostConstruct
     private void populateSampleData()
     {
-        String[] days = {"Friday", "Sunday"};
-        Comment co = new Comment("primer comentario :v","Pepito","Volleyball");
-        Comment co2 = new Comment("Segundo comentario >:v","Pepito","Volleyball");
+        Comment co = new Comment("Excelente Grupo",1, "Pepito", "31 Marzo 2017");
+        Comment co2 = new Comment("Segundo Comentario",1, "Pepito", "3 Mayo 2017");
         List<Comment> comments = new ArrayList<>();
+        Clase c1=new Clase(1,"3 Octubre 2017","11:00","Parque el Virrey",1,"Volleyball");
+        Clase c2=new Clase(1,"2 Octubre 2017","11:00","Parque el Virrey",2,"Volleyball");
+        List< Clase > clases=new ArrayList<>();
+        clases.add(c1);
+        clases.add(c2);
         comments.add(co);
         comments.add(co2);
-
-        groups.add( new Group( "Volleyball", null, "Parque el virrey", days, "10:00 am - 12:00 pm", "Learn how to play volleyball, and enjoy your morning exercising","Sports",comments, 0.0,0,  "http://www.longbeachny.gov/vertical/Sites/%7BC3C1054A-3D3A-41B3-8896-814D00B86D2A%7D/uploads/bigstock-Beach-Volleyball-Silhouette-81799844_(1).jpg") );
+        groups.add( new Group( 1,"Volleyball","pepito",comments,"Aprende Volleyball Con la mejor metodología","Sports", 4.0,2,"https://www.standardmedia.co.ke/images/saturday/bcxaonet5vqlo5961439761817.jpg",clases) );
 
     }
 
     @Override
-    public Group editPlace(String name, String newPlace) {
+    public Group editPlace(long groupId, String newPlace) {
         return null;
     }
 
     @Override
-    public Group editHour(String name, String newHour) {
+    public Group editHour(long groupId, String newHour) {
+        return null;
+    }
+
+
+    @Override
+    public Group editDescription(long groupId, String newDescription) {
         return null;
     }
 
     @Override
-    public Group editDays(String name, String[] newDays) {
+    public Group editName(long groupId, String newName) {
         return null;
     }
 
     @Override
-    public Group editDescription(String name, String newDescription) {
-        return null;
+    public List<Group> getGroupByName(String name) {
+        List<Group> categories=new ArrayList<>();
+        for(int i=0;i<groups.size();i++){
+            if(name.equals(groups.get(i).getName())){
+                categories.add(groups.get(i));
+            }
+        }
+        return categories;
+
     }
 
     @Override
-    public Group editName(String name, String newName) {
-        return null;
-    }
-
-    @Override
-    public Group registerStudent(String names){
-        String[] n = names.split(",");
+    public Group registerStudent(long groupId, String username){
+        /*String[] n = names.split(",");
         Group g = null;
         for (Group group : groups){
             if (group.getName().equals(n[0])){
@@ -76,7 +88,8 @@ public class GroupServiceImpl implements GroupService{
             }
         }
 
-        return g;
+        return g;*/
+        return null;
     }
 
     @Override
@@ -91,10 +104,10 @@ public class GroupServiceImpl implements GroupService{
     }
 
     @Override
-    public Group getGroupByName(String groupname) {
+    public Group  getGroupByid(long groupId ){
         Group group = null;
         for (Group g : groups){
-            if (g.getName().equals(groupname)){
+            if (g.getId()==groupId){
                 group = g;
                 break;
             }
@@ -106,14 +119,16 @@ public class GroupServiceImpl implements GroupService{
     public Group createGroup(Group group) {
         group.setId(groups.size());
         groups.add(group);
-        users.addGroup(group.getInstructor().getUsername(),group);
+        for(Clase c:group.getClases()){
+            users.addGroup(group.getInstructor(),c);
+        }
         return groups.get(groups.size() - 1);
     }
 
-    public Group editRate(String groupname, Double rate) {
+    public Group editRate(long groupId, Double rate) {
         int indice=0;
         for (int i=0;i< groups.size();i++){
-            if(groups.get(i).getName().equals(groupname)){
+            if(groups.get(i).getId()==groupId){
                 indice=i;
                 Group g = groups.get(i);
                 Double oldRate = g.getRate();
@@ -141,10 +156,12 @@ public class GroupServiceImpl implements GroupService{
     public Group addCommnet(Comment comment) {
         int indice=0;
         for (int i=0;i< groups.size();i++){
-            if(groups.get(i).getName().equals(comment.getGroupName())){
+            if(groups.get(i).getId()==comment.getGroupId()){
                 indice=i;
                 Group g = groups.get(i);
-                g.addComment(comment);
+                List<Comment> temp= g.getComments();
+                temp.add(comment);
+                g.setComments(temp);
                 groups.set(i,g);
                 break;
             }

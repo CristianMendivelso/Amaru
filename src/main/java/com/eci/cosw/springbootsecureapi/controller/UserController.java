@@ -51,6 +51,8 @@ public class UserController
         return userService.editImage(edit.getUsername(),edit.getImage());
     }
 
+
+
     @RequestMapping( value = "/editPhone", method = RequestMethod.POST )
     public User editPhone(@RequestBody User edit){
 

@@ -1,16 +1,12 @@
 package com.eci.cosw.springbootsecureapi.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author Santiago Carrillo
  * 8/21/17.
  */
-public class User
-{
-
-    private long id;
+public class User {
 
     private String name;
 
@@ -34,94 +30,78 @@ public class User
 
     private int totalVotes;
 
-    private List<Group> groups;
+    private List<Clase> clases;
+
+    private int cupo;
 
 
-    public User()
-    {
+    public User() {
     }
 
-    public User( String name, String lastname, String image, String phone,String password, String email, String description, String type,String username, Double rate , int totalVotes,List<Group> groups)
+    public User(String name, String lastname, String image, String phone, String password, String email, String description, String type, String username, Double rate, int totalVotes, List<Clase> clases, int cupo)
 
     {
         this.email = email;
         this.password = password;
-        this.name=name;
+        this.name = name;
         this.lastname = lastname;
         this.setPhone(phone);
-        this.image=image;
+        this.image = image;
         this.setDescription(description);
         this.setType(type);
-        this.username=username;
-        this.rate=rate;
-        this.totalVotes=totalVotes;
-        this.setGroups(groups);
+        this.username = username;
+        this.rate = rate;
+        this.totalVotes = totalVotes;
+        this.setClases(clases);
+        this.setCupo(cupo);
     }
 
 
-    public long getId()
-    {
-        return id;
-    }
-
-    public void setId( long id )
-    {
-        this.id = id;
-    }
-
-    public String getEmail()
-    {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail( String email )
-    {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPassword()
-    {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword( String password )
-    {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getLastname()
-    {
+    public String getLastname() {
         return lastname;
     }
 
-    public void setLastname( String lastname )
-    {
+    public void setLastname(String lastname) {
         this.lastname = lastname;
     }
 
-    public Double getRate() { return rate; }
+    public Double getRate() {
+        return rate;
+    }
 
-    public void setRate( Double rate )
-    {
+    public void setRate(Double rate) {
         this.rate = rate;
     }
 
-    public int getTotalVotes()
-    {
+    public int getTotalVotes() {
         return totalVotes;
     }
 
-    public void setTotalVotes( int totalVotes )
-    {
+    public void setTotalVotes(int totalVotes) {
         this.totalVotes = totalVotes;
     }
 
 
     @Override
-    public String toString()
-    {
-        return "User{" + "id=" + id + ", email='" + email + '\'' + ", password='" + password + '\'' + ", firstname='"
-            + getName() + "username "+ getUsername()+ "phone "+ getPhone()+ "description "+getDescription()+ "password " +  getPassword()+'\'' + '}';
+    public String toString() {
+        return "User{"  + ", email='" + email + '\'' + ", password='" + password + '\'' + ", firstname='"
+                + getName() + "username " + getUsername() + "phone " + getPhone() + "description " + getDescription() + "password " + getPassword() + '\'' + '}';
     }
 
     public String getImage() {
@@ -172,11 +152,19 @@ public class User
         this.username = username;
     }
 
-    public  List<Group>  getGroups() {
-        return groups;
+    public List<Clase> getClases() {
+        return clases;
     }
 
-    public void setGroups( List<Group> groups) {
-        this.groups = groups;
+    public void setClases(List<Clase> clases) {
+        this.clases = clases;
+    }
+
+    public int getCupo() {
+        return cupo;
+    }
+
+    public void setCupo(int cupo) {
+        this.cupo = cupo;
     }
 }
