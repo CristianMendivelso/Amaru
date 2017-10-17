@@ -2,6 +2,8 @@ package com.eci.cosw.springbootsecureapi.controller;
 
 import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
+import com.eci.cosw.springbootsecureapi.model.Pojo;
+import com.eci.cosw.springbootsecureapi.model.User;
 import com.eci.cosw.springbootsecureapi.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +24,14 @@ public class GroupController {
         return groupService.getGroupByid(groupname);
     }
 
+    @RequestMapping( value = "/susbcribe", method = RequestMethod.POST )
+    public boolean subscribe(@RequestBody Pojo pojo){
+        System.out.println(pojo.getUsername()+" "+pojo.getIdgroup()+" grupo "+pojo.getIdclase());
+        return groupService.subscribe(pojo.getIdclase(),pojo.getIdgroup(),pojo.getUsername());
+    }
+
     @RequestMapping( value = "/groups", method = RequestMethod.POST )
-    public Group setUser(@RequestBody Group group){
+    public Group createGroup(@RequestBody Group group){
         return groupService.createGroup(group);
     }
 
@@ -32,9 +40,6 @@ public class GroupController {
         return groupService.editRate(group.getId(),group.getRate());
     }
 
-    @RequestMapping( value = "/register/", method = RequestMethod.POST )
-    public Group registerUserInGroup(@RequestBody Group group) {return groupService.registerStudent(group.getId(),"prueba");
-    }
 
     @RequestMapping( path = "/groupsname/{name}", method = RequestMethod.GET )
     public List<Group> getGroupsByName(@PathVariable String name){return groupService.getGroupByName(name);}

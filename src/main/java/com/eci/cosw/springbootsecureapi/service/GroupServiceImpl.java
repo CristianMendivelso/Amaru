@@ -29,14 +29,14 @@ public class GroupServiceImpl implements GroupService{
         Comment co = new Comment("Excelente Grupo",1, "Pepito", "31 Marzo 2017");
         Comment co2 = new Comment("Segundo Comentario",1, "Pepito", "3 Mayo 2017");
         List<Comment> comments = new ArrayList<>();
-        Clase c1=new Clase(1,"3 Octubre 2017","11:00","Parque el Virrey",1,"Volleyball");
-        Clase c2=new Clase(1,"2 Octubre 2017","11:00","Parque el Virrey",2,"Volleyball");
+        Clase c1=new Clase(1,"3 Octubre 2017","11:00","Parque el Virrey",1,"Volleyball",0);
+        Clase c2=new Clase(1,"2 Octubre 2017","11:00","Parque el Virrey",2,"Volleyball",0);
         List< Clase > clases=new ArrayList<>();
         clases.add(c1);
         clases.add(c2);
         comments.add(co);
         comments.add(co2);
-        groups.add( new Group( 1,"Volleyball","pepito",comments,"Aprende Volleyball Con la mejor metodología","Sports", 4.0,2,"https://www.standardmedia.co.ke/images/saturday/bcxaonet5vqlo5961439761817.jpg",clases) );
+        groups.add( new Group( 1,"Volleyball","andrea",comments,"Aprende Volleyball Con la mejor metodología","Sports", 4.0,2,"https://www.standardmedia.co.ke/images/saturday/bcxaonet5vqlo5961439761817.jpg",clases) );
 
     }
 
@@ -73,23 +73,16 @@ public class GroupServiceImpl implements GroupService{
 
     }
 
-    @Override
-    public Group registerStudent(long groupId, String username){
-        /*String[] n = names.split(",");
-        Group g = null;
-        for (Group group : groups){
-            if (group.getName().equals(n[0])){
-                ArrayList<User> students = group.getStudents();
-                students.add(this.users.findUserByUsername(n[1]));
-                group.setStudents(students);
-                g = group;
-                users.addGroup(n[1],group);
+    public void EditGroup(Group g){
+        int index=0;
+        for (int i=0;i<groups.size();i++){
+            if (groups.get(i).getId()==g.getId()){
+                index=i;
                 break;
             }
         }
+        groups.set(index,g);
 
-        return g;*/
-        return null;
     }
 
     @Override
@@ -105,8 +98,10 @@ public class GroupServiceImpl implements GroupService{
 
     @Override
     public Group  getGroupByid(long groupId ){
+        System.out.println(groupId+" groupid");
         Group group = null;
         for (Group g : groups){
+            System.out.println(g.getName()+" "+g.getId());
             if (g.getId()==groupId){
                 group = g;
                 break;
@@ -116,13 +111,51 @@ public class GroupServiceImpl implements GroupService{
     }
 
     @Override
+    public boolean subscribe(long idclase, long idgroup, String username) {
+        User u= users.findUserByUsername(username);
+        if (u.getCupo()>0){
+            Clase te=null;
+            Group g = getGroupByid(idgroup);
+            for (Clase clase: g.getClases()){
+                if(clase.getId_clase()==idclase){
+                    List<Clase> temp=u.getClases();
+                    clase.setNum_inscritos(clase.getNum_inscritos()+1);
+                    te=clase;
+                    temp.add(clase);
+                    u.setClases(temp);
+                    u.setCupo(u.getCupo()-1);
+                    break;
+                }
+            }
+            List<Clase> temp= g.getClases();
+            int index=0;
+            for (int j=0;j<temp.size();j++){
+                if (temp.get(j).getId_clase()==te.getId_clase()){
+                    index=j;
+                    break;
+                }
+            }
+            temp.set(index,te);
+            g.setClases(temp);
+            EditGroup(g);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public Group createGroup(Group group) {
-        group.setId(groups.size());
+        int a=groups.size()+1;
+        group.setId(a);
         groups.add(group);
+        int cont=0;
         for(Clase c:group.getClases()){
+            c.setGroup_id(a);
+            c.setId_clase(cont);
+            cont+=1;
             users.addGroup(group.getInstructor(),c);
         }
-        return groups.get(groups.size() - 1);
+        return group;
     }
 
     public Group editRate(long groupId, Double rate) {

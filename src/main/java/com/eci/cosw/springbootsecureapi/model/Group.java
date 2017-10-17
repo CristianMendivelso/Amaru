@@ -45,7 +45,9 @@ public class Group {
     public Group() {
     }
 
-
+    public String toString(){
+        return "id: "+id +"name: " +name+ "instructor: "+instructor +"clases: " + clases.size();
+    }
 
     public long getId() {
         return id;

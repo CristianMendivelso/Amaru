@@ -24,11 +24,11 @@ public interface GroupService {
 
     Group getGroupByid(long groupId );
 
+    boolean subscribe(long idclase, long idgroup,String username);
+
     Group createGroup(Group grupo);
 
     Group editRate( long groupId, Double rate );
-
-    Group registerStudent(long groupId,String username);
 
     List<Group> getGroupByGategory(String name);
 

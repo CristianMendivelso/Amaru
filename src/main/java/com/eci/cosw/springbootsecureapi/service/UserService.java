@@ -34,4 +34,6 @@ public interface UserService
     User editRate( String username, Double rate );
 
     User addGroup(String username, Clase c);
+
+    User buy(User user);
 }

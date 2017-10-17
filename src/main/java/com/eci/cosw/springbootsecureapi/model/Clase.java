@@ -1,20 +1,22 @@
 package com.eci.cosw.springbootsecureapi.model;
 
 public class Clase {
-    private long Group_id;
+    private long group_id;
     private String fecha;
     private String hour;
     private String place;
     private long id_clase;
-    private String Group_name;
+    private String group_name;
+    private int num_inscritos;
 
-    public Clase(long Group_id,String fecha,String hour,String place,long id_clase,String Group_name){
-        this.Group_id=Group_id;
+    public Clase(long group_id,String fecha,String hour,String place,long id_clase,String group_name,int num_inscritos){
+        this.group_id=group_id;
         this.fecha=fecha;
         this.hour=hour;
         this.place=place;
         this.id_clase=id_clase;
-        this.Group_name=Group_name;
+        this.group_name=group_name;
+        this.num_inscritos=num_inscritos;
     }
 
     public  Clase(){}
@@ -22,7 +24,7 @@ public class Clase {
 
 
     public String getFecha() {
-        return fecha;
+        return this.fecha;
     }
 
     public void setFecha(String fecha) {
@@ -46,15 +48,15 @@ public class Clase {
     }
 
     public long getGroup_id() {
-        return Group_id;
+        return group_id;
     }
 
     public void setGroup_id(long group_id) {
-        Group_id = group_id;
+        this.group_id = group_id;
     }
 
     public long getId_clase() {
-        return id_clase;
+        return this.id_clase;
     }
 
     public void setId_clase(long id_clase) {
@@ -62,11 +64,19 @@ public class Clase {
     }
 
     public String getGroup_name() {
-        return Group_name;
+        return this.group_name;
     }
 
     public void setGroup_name(String group_name) {
-        Group_name = group_name;
+        this.group_name = group_name;
+    }
+
+    public int getNum_inscritos() {
+        return num_inscritos;
+    }
+
+    public void setNum_inscritos(int num_inscritos) {
+        this.num_inscritos = num_inscritos;
     }
 }
 

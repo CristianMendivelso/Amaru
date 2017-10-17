@@ -45,6 +45,11 @@ public class UserController
             return userService.createUser(user);
     }
 
+    @RequestMapping( value = "/buy", method = RequestMethod.POST )
+    public User buy(@RequestBody User user){
+        return userService.buy(user);
+    }
+
     @RequestMapping( value = "/editImage", method = RequestMethod.POST )
     public User editImage(@RequestBody User edit){
 

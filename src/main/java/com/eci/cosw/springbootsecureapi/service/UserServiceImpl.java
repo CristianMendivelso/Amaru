@@ -43,8 +43,8 @@ public class UserServiceImpl implements UserService
         comments.add(co2);
         List<Group> groups = new ArrayList<>();
         List<Clase> clases=new ArrayList<>();
-        Clase c1=new Clase(1,"3 Octubre 2017","11:00","Parque el Virrey",1,"Volleyball");
-        Clase c2=new Clase(1,"2 Octubre 2017","11:00","Parque el Virrey",2,"Volleyball");
+        Clase c1=new Clase(1,"3 Octubre 2017","11:00","Parque el Virrey",1,"Volleyball",0);
+        Clase c2=new Clase(1,"2 Octubre 2017","11:00","Parque el Virrey",2,"Volleyball",0);
         clases.add(c1);
         clases.add(c2);
         comments.add(co);
@@ -114,6 +114,23 @@ public class UserServiceImpl implements UserService
         }
         return users.get(indice);
 
+    }
+
+    @Override
+    public User buy(User user) {
+        int indice=0;
+        for (int i=0;i< users.size();i++){
+            if(users.get(i).getUsername().equals(user.getUsername())){
+                indice=i;
+                User u = users.get(i);
+                int cupo = u.getCupo();
+                cupo+=user.getCupo();
+                u.setCupo(cupo);
+                users.set(i,u);
+                break;
+            }
+        }
+        return users.get(indice);
     }
 
     public User editPhone( String username, String newPhone ){
