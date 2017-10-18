@@ -30,6 +30,8 @@ public interface GroupService {
 
     Group editRate( long groupId, Double rate );
 
+    List<Group> getAllGroups();
+
     List<Group> getGroupByGategory(String name);
 
     Group addCommnet(Comment comment);

@@ -177,6 +177,11 @@ public class GroupServiceImpl implements GroupService{
         return groups.get(indice);
     }
 
+    @Override
+    public List<Group> getAllGroups() {
+        return null;
+    }
+
     public static double redondearDecimales(double valorInicial, int numeroDecimales) {
         double parteEntera, resultado;
         resultado = valorInicial;

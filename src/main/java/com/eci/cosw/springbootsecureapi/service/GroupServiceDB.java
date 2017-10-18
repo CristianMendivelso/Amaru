@@ -2,11 +2,14 @@ package com.eci.cosw.springbootsecureapi.service;
 
 import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
+import com.eci.cosw.springbootsecureapi.model.User;
 import com.eci.cosw.springbootsecureapi.repositories.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class GroupServiceDB  implements GroupService {
 
@@ -54,7 +57,13 @@ public class GroupServiceDB  implements GroupService {
 
     @Override
     public Group getGroupByid(long groupId) {
-        return null;
+        Optional optional= grprepo.findById(groupId);
+        Group g=null;
+        if ( optional.isPresent() ){
+            g=(Group) optional.get();
+        }
+        return g;
+
     }
 
     @Override

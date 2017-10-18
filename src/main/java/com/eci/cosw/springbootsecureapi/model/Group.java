@@ -11,7 +11,7 @@ import static javax.persistence.CascadeType.ALL;
  * Created by 2107262 on 9/6/17.
  */
 @Entity
-@Table(name = "group" )
+@Table(name = "grupos" )
 public class Group {
 
     private long id;
@@ -66,7 +66,7 @@ public class Group {
 
     @Column(name = "name", nullable = false, length = 100)
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {

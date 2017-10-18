@@ -29,7 +29,7 @@ public class Comment {
         this.id=id;
     }
 
-    @Column(name = "text", nullable = false, length = 1000)
+    @Column(name = "contenido", nullable = false, length = 1000)
     public String getText() {
         return text;
     }
@@ -47,7 +47,7 @@ public class Comment {
         this.groupId = groupId;
     }
 
-    @Column(name = "user", nullable = false, length = 100)
+    @Column(name = "usuario", nullable = false, length = 100)
     public String getUser() {
         return user;
     }
@@ -56,7 +56,7 @@ public class Comment {
         this.user = user;
     }
 
-    @Column(name = "date", nullable = false, length = 100)
+    @Column(name = "fecha", nullable = false, length = 100)
     public String getDate() {
         return date;
     }

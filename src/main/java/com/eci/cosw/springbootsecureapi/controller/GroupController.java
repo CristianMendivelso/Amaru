@@ -29,6 +29,12 @@ public class GroupController {
         return groupService.subscribe(pojo.getIdclase(),pojo.getIdgroup(),pojo.getUsername());
     }
 
+    @RequestMapping( path = "/all", method = RequestMethod.GET )
+    public List<Group> getAllGroups(){
+        return groupService.getAllGroups();
+    }
+
+
     @RequestMapping( value = "/groups", method = RequestMethod.POST )
     public Group createGroup(@RequestBody Group group){
         return groupService.createGroup(group);
