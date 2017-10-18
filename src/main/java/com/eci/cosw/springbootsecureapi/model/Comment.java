@@ -9,15 +9,17 @@ public class Comment {
     private long groupId;
     private String user;
     private String date;
+    private long id;
 
     public Comment() {
     }
 
-    public Comment(String text, long groupId, String user, String date) {
+    public Comment(String text, long groupId, String user, String date,long id) {
         this.text = text;
         this.groupId = groupId;
         this.user = user;
         this.date = date;
+        this.id=id;
     }
 
 
@@ -54,4 +56,11 @@ public class Comment {
     }
 
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }

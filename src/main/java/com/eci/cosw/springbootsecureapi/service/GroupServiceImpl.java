@@ -17,6 +17,7 @@ import java.util.List;
 public class GroupServiceImpl implements GroupService{
 
     private List<Group> groups = new ArrayList<>();
+    private  List<Comment> commentslist=new ArrayList<>();
 
 
     @Autowired
@@ -25,9 +26,11 @@ public class GroupServiceImpl implements GroupService{
     @PostConstruct
     private void populateSampleData()
     {
-        Comment co = new Comment("Excelente Grupo",1, "Pepito", "31 Marzo 2017");
-        Comment co2 = new Comment("Segundo Comentario",1, "Pepito", "3 Mayo 2017");
+        Comment co = new Comment("Excelente Grupo",1, "Pepito", "31 Marzo 2017",0);
+        Comment co2 = new Comment("Segundo Comentario",1, "Pepito", "3 Mayo 2017",1);
         List<Comment> comments = new ArrayList<>();
+        commentslist.add(co);
+        commentslist.add(co2);
         Clase c1=new Clase(1,"3 Octubre 2017","11:00","Parque el Virrey",1,"Volleyball",0);
         Clase c2=new Clase(1,"2 Octubre 2017","11:00","Parque el Virrey",2,"Volleyball",0);
         List< Clase > clases=new ArrayList<>();
@@ -186,6 +189,8 @@ public class GroupServiceImpl implements GroupService{
 
 
     public Group addCommnet(Comment comment) {
+        commentslist.add(comment);
+        comment.setId(commentslist.size());
         int indice=0;
         for (int i=0;i< groups.size();i++){
             if(groups.get(i).getId()==comment.getGroupId()){

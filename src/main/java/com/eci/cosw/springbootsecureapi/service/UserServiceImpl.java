@@ -35,8 +35,8 @@ public class UserServiceImpl implements UserService
     @PostConstruct
     private void populateSampleData()
     {
-        Comment co = new Comment("Excelente Grupo",1, "Pepito", "31 Marzo 2017");
-        Comment co2 = new Comment("Segundo Comentario",1, "Pepito", "3 Mayo 2017");
+        Comment co = new Comment("Excelente Grupo",1, "Pepito", "31 Marzo 2017",0);
+        Comment co2 = new Comment("Segundo Comentario",1, "Pepito", "3 Mayo 2017",0);
         List<Comment> comments = new ArrayList<>();
         comments.add(co);
         comments.add(co2);
