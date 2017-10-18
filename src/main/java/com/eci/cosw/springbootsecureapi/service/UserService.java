@@ -27,6 +27,7 @@ public interface UserService
     User findUserByUsername( String username );
 
     User createUser( User user );
+
     User findUserByEmail( String email );
 
     User findUserByEmailAndPassword( String email, String password );

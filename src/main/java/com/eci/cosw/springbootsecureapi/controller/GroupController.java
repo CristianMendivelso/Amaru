@@ -26,7 +26,6 @@ public class GroupController {
 
     @RequestMapping( value = "/susbcribe", method = RequestMethod.POST )
     public boolean subscribe(@RequestBody Pojo pojo){
-        System.out.println(pojo.getUsername()+" "+pojo.getIdgroup()+" grupo "+pojo.getIdclase());
         return groupService.subscribe(pojo.getIdclase(),pojo.getIdgroup(),pojo.getUsername());
     }
 

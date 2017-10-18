@@ -20,7 +20,6 @@ public class UserServiceDB implements UserService {
     public List<User> getUsers() {
         List<User> p=usrrepo.findAll();
         return p;
-
     }
 
     @Override
@@ -54,8 +53,9 @@ public class UserServiceDB implements UserService {
     }
 
     @Override
-    public User createUser(com.eci.cosw.springbootsecureapi.model.User user) {
-        return null;
+    public User createUser(User user) {
+        usrrepo.save(user);
+        return user;
     }
 
     @Override
