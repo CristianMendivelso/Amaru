@@ -36,5 +36,5 @@ public interface UserService
 
     User addGroup(String username, Clase c);
 
-    User buy(User user);
+    User buy(String username,int nuevocupo);
 }

@@ -5,6 +5,7 @@ import com.eci.cosw.springbootsecureapi.model.User;
 import com.eci.cosw.springbootsecureapi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
@@ -30,23 +31,31 @@ public class UserServiceDB implements UserService {
     }
 
     @Override
+    @Transactional
     public User editImage(String username, String newImage) {
-        return null;
+        usrrepo.editImage(username,newImage);
+        return findUserByUsername(username);
     }
 
     @Override
+    @Transactional
     public User editDescription(String username, String newDescription) {
-        return null;
+        usrrepo.editDescription(username,newDescription);
+        return findUserByUsername(username);
     }
 
     @Override
+    @Transactional
     public User editEmail(String username, String newEmail) {
-        return null;
+        usrrepo.editEmail(username,newEmail);
+        return findUserByUsername(username);
     }
 
     @Override
+    @Transactional
     public User editPhone(String username, String newPhone) {
-        return null;
+        usrrepo.editPhone(username,newPhone);
+        return findUserByUsername(username);
     }
 
     @Override
@@ -86,7 +95,10 @@ public class UserServiceDB implements UserService {
     }
 
     @Override
-    public User buy(com.eci.cosw.springbootsecureapi.model.User user) {
-        return null;
+    @Transactional
+    public User buy(String username,int nuevocupo) {
+        User u= findUserByUsername(username);
+        usrrepo.buy(username,nuevocupo+u.getCupo());
+        return findUserByUsername(username);
     }
 }
