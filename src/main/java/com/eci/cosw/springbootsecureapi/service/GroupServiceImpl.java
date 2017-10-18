@@ -14,7 +14,6 @@ import java.util.List;
 /**
  * Created by 2107262 on 9/6/17.
  */
-@Service
 public class GroupServiceImpl implements GroupService{
 
     private List<Group> groups = new ArrayList<>();

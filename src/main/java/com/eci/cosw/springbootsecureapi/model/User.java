@@ -1,12 +1,20 @@
 package com.eci.cosw.springbootsecureapi.model;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import javax.persistence.*;
 import java.util.List;
+import static javax.persistence.CascadeType.ALL;
+
 
 /**
  * @author Santiago Carrillo
  * 8/21/17.
  */
-public class User {
+@Entity
+@Table(name = "user" )
+public class User implements java.io.Serializable{
 
     private String name;
 
@@ -56,7 +64,7 @@ public class User {
         this.setCupo(cupo);
     }
 
-
+    @Column(name = "email", nullable = false, length = 100)
     public String getEmail() {
         return email;
     }
@@ -65,6 +73,7 @@ public class User {
         this.email = email;
     }
 
+    @Column(name = "password", nullable = false, length = 300)
     public String getPassword() {
         return password;
     }
@@ -73,6 +82,7 @@ public class User {
         this.password = password;
     }
 
+    @Column(name = "lastname", nullable = false, length = 100)
     public String getLastname() {
         return lastname;
     }
@@ -81,6 +91,7 @@ public class User {
         this.lastname = lastname;
     }
 
+    @Column(name = "rate", nullable = false)
     public Double getRate() {
         return rate;
     }
@@ -89,6 +100,7 @@ public class User {
         this.rate = rate;
     }
 
+    @Column(name = "totalVotes", nullable = false)
     public int getTotalVotes() {
         return totalVotes;
     }
@@ -104,6 +116,7 @@ public class User {
                 + getName() + "username " + getUsername() + "phone " + getPhone() + "description " + getDescription() + "password " + getPassword() + '\'' + '}';
     }
 
+    @Column(name = "image", nullable = false, length = 1000)
     public String getImage() {
         return image;
     }
@@ -112,6 +125,7 @@ public class User {
         this.image = image;
     }
 
+    @Column(name = "name", nullable = false, length = 100)
     public String getName() {
         return name;
     }
@@ -120,6 +134,7 @@ public class User {
         this.name = name;
     }
 
+    @Column(name = "phone", nullable = false, length = 100)
     public String getPhone() {
         return phone;
     }
@@ -128,6 +143,7 @@ public class User {
         this.phone = phone;
     }
 
+    @Column(name = "description", nullable = false, length = 300)
     public String getDescription() {
         return description;
     }
@@ -136,6 +152,7 @@ public class User {
         this.description = description;
     }
 
+    @Column(name = "type", nullable = false, length = 100)
     public String getType() {
         return type;
     }
@@ -144,6 +161,8 @@ public class User {
         this.type = type;
     }
 
+    @Id
+    @Column(name = "username", unique = true, nullable = false)
     public String getUsername() {
         return username;
     }
@@ -152,6 +171,9 @@ public class User {
         this.username = username;
     }
 
+
+    @OneToMany(cascade=ALL)
+    @JoinColumn(name="User_username", referencedColumnName="username", nullable=false)
     public List<Clase> getClases() {
         return clases;
     }
@@ -160,6 +182,7 @@ public class User {
         this.clases = clases;
     }
 
+    @Column(name = "cupo", nullable = false)
     public int getCupo() {
         return cupo;
     }

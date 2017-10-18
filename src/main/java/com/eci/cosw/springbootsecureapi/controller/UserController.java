@@ -2,10 +2,13 @@ package com.eci.cosw.springbootsecureapi.controller;
 
 import com.eci.cosw.springbootsecureapi.model.Todo;
 import com.eci.cosw.springbootsecureapi.model.User;
+import com.eci.cosw.springbootsecureapi.service.ServicesException;
 import com.eci.cosw.springbootsecureapi.service.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +19,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.ServletException;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Santiago Carrillo
@@ -31,7 +36,9 @@ public class UserController
 
     @RequestMapping( value = "/users", method = RequestMethod.GET )
     public List<User> getUsers(){
+
         return userService.getUsers();
+
     }
 
     @RequestMapping( path = "/{username}", method = RequestMethod.GET )

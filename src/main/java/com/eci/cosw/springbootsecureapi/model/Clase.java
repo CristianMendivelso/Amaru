@@ -1,6 +1,14 @@
 package com.eci.cosw.springbootsecureapi.model;
 
-public class Clase {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "clase" )
+public class Clase  implements java.io.Serializable{
     private long group_id;
     private String fecha;
     private String hour;
@@ -22,7 +30,7 @@ public class Clase {
     public  Clase(){}
 
 
-
+    @Column(name = "fecha", nullable = false, length = 100)
     public String getFecha() {
         return this.fecha;
     }
@@ -31,6 +39,7 @@ public class Clase {
         this.fecha = fecha;
     }
 
+    @Column(name = "hour", nullable = false, length = 100)
     public String getHour() {
         return hour;
     }
@@ -39,6 +48,7 @@ public class Clase {
         this.hour = hour;
     }
 
+    @Column(name = "place", nullable = false, length = 100)
     public String getPlace() {
         return place;
     }
@@ -47,6 +57,7 @@ public class Clase {
         this.place = place;
     }
 
+    @Column(name = "Group_id", nullable = false)
     public long getGroup_id() {
         return group_id;
     }
@@ -55,6 +66,8 @@ public class Clase {
         this.group_id = group_id;
     }
 
+    @Id
+    @Column(name = "id_clase", nullable = false)
     public long getId_clase() {
         return this.id_clase;
     }
@@ -63,6 +76,7 @@ public class Clase {
         this.id_clase = id_clase;
     }
 
+    @Column(name = "Group_name", nullable = false, length = 300)
     public String getGroup_name() {
         return this.group_name;
     }
@@ -71,9 +85,11 @@ public class Clase {
         this.group_name = group_name;
     }
 
+    @Column(name = "num_inscritos", nullable = false)
     public int getNum_inscritos() {
         return num_inscritos;
     }
+
 
     public void setNum_inscritos(int num_inscritos) {
         this.num_inscritos = num_inscritos;

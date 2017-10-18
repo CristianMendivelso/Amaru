@@ -18,7 +18,6 @@ import java.text.NumberFormat;
  * @author Santiago Carrillo
  * 8/21/17.
  */
-@Service
 public class UserServiceImpl implements UserService
 {
 
