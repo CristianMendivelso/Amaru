@@ -1,9 +1,6 @@
 package com.eci.cosw.springbootsecureapi.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -57,7 +54,7 @@ public class Clase  implements java.io.Serializable{
         this.place = place;
     }
 
-    @Column(name = "Group_id", nullable = false)
+    //@Column(name = "Group_id", nullable = false)
     public long getGroup_id() {
         return group_id;
     }

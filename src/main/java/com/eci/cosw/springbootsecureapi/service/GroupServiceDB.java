@@ -2,6 +2,7 @@ package com.eci.cosw.springbootsecureapi.service;
 
 import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
+import com.eci.cosw.springbootsecureapi.repositories.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,14 @@ import java.util.List;
 @Service
 public class GroupServiceDB  implements GroupService {
 
+
+    @Autowired
+    private GroupRepository grprepo;
+
+    public List<Group> getAllGroups() {
+        List<Group> groups = grprepo.findAll();
+        return groups;
+    }
 
     @Override
     public Group editPlace(long groupId, String newPlace) {
@@ -32,7 +41,15 @@ public class GroupServiceDB  implements GroupService {
 
     @Override
     public List<Group> getGroupByName(String name) {
-        return null;
+        List<Group> names = this.getAllGroups();
+        System.out.println(names.size());
+        for(int i=0;i<names.size();i++){
+            if(name.equals(names.get(i).getName())){
+                names.add(names.get(i));
+            }
+        }
+        return names;
+
     }
 
     @Override

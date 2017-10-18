@@ -1,8 +1,15 @@
 package com.eci.cosw.springbootsecureapi.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Created by 2106088 on 9/6/17.
  */
+@Entity
+@Table(name = "comment" )
 public class Comment {
 
     private String text;
@@ -22,7 +29,7 @@ public class Comment {
         this.id=id;
     }
 
-
+    @Column(name = "text", nullable = false, length = 1000)
     public String getText() {
         return text;
     }
@@ -31,6 +38,7 @@ public class Comment {
         this.text = text;
     }
 
+    //@Column(name = "Groupid", nullable = false)
     public long getGroupId() {
         return groupId;
     }
@@ -39,6 +47,7 @@ public class Comment {
         this.groupId = groupId;
     }
 
+    @Column(name = "user", nullable = false, length = 100)
     public String getUser() {
         return user;
     }
@@ -47,6 +56,7 @@ public class Comment {
         this.user = user;
     }
 
+    @Column(name = "date", nullable = false, length = 100)
     public String getDate() {
         return date;
     }
@@ -55,7 +65,8 @@ public class Comment {
         this.date = date;
     }
 
-
+    @Id
+    @Column(name = "id", nullable = false, length = 100)
     public long getId() {
         return id;
     }

@@ -12,7 +12,9 @@
     <property name="format_sql">true</property>
     <property name="use_sql_comments">true</property>
 	<mapping class="com.eci.cosw.springbootsecureapi.model.Clase"/>
+      <mapping class="com.eci.cosw.springbootsecureapi.model.Group"/>
 	<mapping class="com.eci.cosw.springbootsecureapi.model.User"/>
+    <mapping class="com.eci.cosw.springbootsecureapi.model.Comment"/>
 
 
 
