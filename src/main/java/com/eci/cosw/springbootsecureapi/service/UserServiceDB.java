@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 
 public class UserServiceDB implements UserService {
@@ -49,7 +51,12 @@ public class UserServiceDB implements UserService {
 
     @Override
     public User findUserByUsername(String username) {
-        return null;
+        Optional optional= usrrepo.findById(username);
+        User u=null;
+        if ( optional.isPresent() ){
+            u=(User)optional.get();
+        }
+        return u;
     }
 
     @Override
