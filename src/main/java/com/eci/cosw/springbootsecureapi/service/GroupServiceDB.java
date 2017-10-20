@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -46,13 +47,13 @@ public class GroupServiceDB  implements GroupService {
     @Override
     public List<Group> getGroupByName(String name) {
         List<Group> names = this.getAllGroups();
-        System.out.println(names.size());
+        List<Group> groups = new ArrayList<>();
         for(int i=0;i<names.size();i++){
             if(name.equals(names.get(i).getName())){
-                names.add(names.get(i));
+                groups.add(names.get(i));
             }
         }
-        return names;
+        return groups;
 
     }
 
@@ -74,7 +75,10 @@ public class GroupServiceDB  implements GroupService {
 
     @Override
     public Group createGroup(Group grupo) {
-        return null;
+        List<Group> names = this.getAllGroups();
+        grupo.setId(names.size());
+        grprepo.save(grupo);
+        return grupo;
     }
 
     @Override
