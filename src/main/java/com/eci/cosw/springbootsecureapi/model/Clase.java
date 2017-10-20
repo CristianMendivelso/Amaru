@@ -1,27 +1,31 @@
 package com.eci.cosw.springbootsecureapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 
 @Entity
-@Table(name = "clase" )
+@Table(name = "Clase" )
 public class Clase  implements java.io.Serializable{
-    private long group_id;
+    private long idgrupo;
     private String fecha;
     private String hour;
     private String place;
-    private long id_clase;
-    private String group_name;
-    private int num_inscritos;
+    private long idclase;
+    private String nombregrupo;
+    private int numinscritos;
+    private String usuario;
 
-    public Clase(long group_id,String fecha,String hour,String place,long id_clase,String group_name,int num_inscritos){
-        this.group_id=group_id;
+    public Clase(long idgrupo,String fecha,String hour,String place,long idclase,String nombregrupo,int numinscritos, String usuario){
+        this.idgrupo=idgrupo;
         this.fecha=fecha;
         this.hour=hour;
         this.place=place;
-        this.id_clase=id_clase;
-        this.group_name=group_name;
-        this.num_inscritos=num_inscritos;
+        this.idclase=idclase;
+        this.nombregrupo=nombregrupo;
+        this.numinscritos=numinscritos;
+        this.usuario = usuario;
     }
 
     public  Clase(){}
@@ -54,42 +58,50 @@ public class Clase  implements java.io.Serializable{
         this.place = place;
     }
 
-    //@Column(name = "Group_id", nullable = false)
-    public long getGroup_id() {
-        return group_id;
+    //@Column(name = "idgrupo", nullable = false)
+    public long getIdgrupo() {
+        return idgrupo;
     }
 
-    public void setGroup_id(long group_id) {
-        this.group_id = group_id;
+    public void setIdgrupo(long idgrupo) {
+        this.idgrupo = idgrupo;
     }
 
     @Id
-    @Column(name = "id_clase", nullable = false)
-    public long getId_clase() {
-        return this.id_clase;
+    @Column(name = "idclase", nullable = false)
+    public long getIdclase() {
+        return this.idclase;
     }
 
-    public void setId_clase(long id_clase) {
-        this.id_clase = id_clase;
+    public void setIdclase(long idclase) {
+        this.idclase = idclase;
     }
 
-    @Column(name = "Group_name", nullable = false, length = 300)
-    public String getGroup_name() {
-        return this.group_name;
+    @Column(name = "nombregrupo", nullable = false, length = 300)
+    public String getNombregrupo() {
+        return this.nombregrupo;
     }
 
-    public void setGroup_name(String group_name) {
-        this.group_name = group_name;
+    public void setNombregrupo(String nombregrupo) {
+        this.nombregrupo = nombregrupo;
     }
 
-    @Column(name = "num_inscritos", nullable = false)
-    public int getNum_inscritos() {
-        return num_inscritos;
+    @Column(name = "numinscritos", nullable = false)
+    public int getNuminscritos() {
+        return numinscritos;
     }
 
 
-    public void setNum_inscritos(int num_inscritos) {
-        this.num_inscritos = num_inscritos;
+    public void setNuminscritos(int numinscritos) {
+        this.numinscritos = numinscritos;
+    }
+
+    public String getUsuario() {
+        return this.usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 }
 

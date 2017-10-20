@@ -1,5 +1,6 @@
 package com.eci.cosw.springbootsecureapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -13,10 +14,10 @@ import static javax.persistence.CascadeType.ALL;
  * 8/21/17.
  */
 @Entity
-@Table(name = "user" )
+@Table(name = "Usuarios" )
 public class User implements java.io.Serializable{
 
-    private String name;
+    private String nombre;
 
     private String lastname;
 
@@ -46,12 +47,12 @@ public class User implements java.io.Serializable{
     public User() {
     }
 
-    public User(String name, String lastname, String image, String phone, String password, String email, String description, String type, String username, Double rate, int totalVotes, List<Clase> clases, int cupo)
+    public User(String nombre, String lastname, String image, String phone, String password, String email, String description, String type, String username, Double rate, int totalVotes, List<Clase> clases, int cupo)
 
     {
         this.email = email;
         this.password = password;
-        this.name = name;
+        this.nombre = nombre;
         this.lastname = lastname;
         this.setPhone(phone);
         this.image = image;
@@ -113,7 +114,7 @@ public class User implements java.io.Serializable{
     @Override
     public String toString() {
         return "User{"  + ", email='" + email + '\'' + ", password='" + password + '\'' + ", firstname='"
-                + getName() + "username " + getUsername() + "phone " + getPhone() + "description " + getDescription() + "password " + getPassword() + '\'' + '}';
+                + getNombre() + "username " + getUsername() + "phone " + getPhone() + "description " + getDescription() + "password " + getPassword() + '\'' + '}';
     }
 
     @Column(name = "image", nullable = false, length = 1000)
@@ -125,13 +126,13 @@ public class User implements java.io.Serializable{
         this.image = image;
     }
 
-    @Column(name = "name", nullable = false, length = 100)
-    public String getName() {
-        return name;
+    @Column(name = "nombre", nullable = false, length = 100)
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     @Column(name = "phone", nullable = false, length = 100)
@@ -173,7 +174,7 @@ public class User implements java.io.Serializable{
 
 
     @OneToMany(cascade=ALL)
-    @JoinColumn(name="User_username", referencedColumnName="username", nullable=false)
+    @JoinColumn(name="usuario", referencedColumnName="username", nullable=false,insertable=false, updatable=false)
     public List<Clase> getClases() {
         return clases;
     }

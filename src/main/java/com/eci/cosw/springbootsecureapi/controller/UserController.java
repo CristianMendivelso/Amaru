@@ -1,5 +1,6 @@
 package com.eci.cosw.springbootsecureapi.controller;
 
+import com.eci.cosw.springbootsecureapi.model.Group;
 import com.eci.cosw.springbootsecureapi.model.Todo;
 import com.eci.cosw.springbootsecureapi.model.User;
 import com.eci.cosw.springbootsecureapi.service.ServicesException;
@@ -33,6 +34,7 @@ public class UserController
 
     @Autowired
     private UserService userService;
+
 
     @RequestMapping( value = "/users", method = RequestMethod.GET )
     public List<User> getUsers(){
