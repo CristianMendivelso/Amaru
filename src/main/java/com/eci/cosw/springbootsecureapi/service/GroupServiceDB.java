@@ -44,14 +44,7 @@ public class GroupServiceDB  implements GroupService {
 
     @Override
     public List<Group> getGroupByName(String name) {
-        List<Group> names = this.getAllGroups();
-        System.out.println(names.size());
-        for(int i=0;i<names.size();i++){
-            if(name.equals(names.get(i).getName())){
-                names.add(names.get(i));
-            }
-        }
-        return names;
+        return grprepo.names(name);
 
     }
 
@@ -83,7 +76,7 @@ public class GroupServiceDB  implements GroupService {
 
     @Override
     public List<Group> getGroupByGategory(String name) {
-        return null;
+        return grprepo.categorys(name);
     }
 
     @Override
