@@ -1,5 +1,6 @@
 package com.eci.cosw.springbootsecureapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -173,7 +174,7 @@ public class User implements java.io.Serializable{
 
 
     @OneToMany(cascade=ALL)
-    @JoinColumn(name="User_username", referencedColumnName="username", nullable=false)
+    @JoinColumn(name="[usuario]", referencedColumnName="username", nullable=false)
     public List<Clase> getClases() {
         return clases;
     }

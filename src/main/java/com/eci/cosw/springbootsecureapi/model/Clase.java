@@ -1,5 +1,7 @@
 package com.eci.cosw.springbootsecureapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 
@@ -13,8 +15,9 @@ public class Clase  implements java.io.Serializable{
     private long id_clase;
     private String group_name;
     private int num_inscritos;
+    private String usuarios;
 
-    public Clase(long group_id,String fecha,String hour,String place,long id_clase,String group_name,int num_inscritos){
+    public Clase(long group_id,String fecha,String hour,String place,long id_clase,String group_name,int num_inscritos, String usuarios){
         this.group_id=group_id;
         this.fecha=fecha;
         this.hour=hour;
@@ -22,6 +25,7 @@ public class Clase  implements java.io.Serializable{
         this.id_clase=id_clase;
         this.group_name=group_name;
         this.num_inscritos=num_inscritos;
+        this.usuarios = usuarios;
     }
 
     public  Clase(){}
@@ -90,6 +94,15 @@ public class Clase  implements java.io.Serializable{
 
     public void setNum_inscritos(int num_inscritos) {
         this.num_inscritos = num_inscritos;
+    }
+
+    @JsonIgnore
+    public String getUsuarios() {
+        return this.usuarios;
+    }
+
+    public void setUsuarios(String usuarios) {
+        this.usuarios = usuarios;
     }
 }
 

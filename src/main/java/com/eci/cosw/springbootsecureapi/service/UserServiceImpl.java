@@ -42,8 +42,8 @@ public class UserServiceImpl implements UserService
         comments.add(co2);
         List<Group> groups = new ArrayList<>();
         List<Clase> clases=new ArrayList<>();
-        Clase c1=new Clase(1,"3 Octubre 2017","11:00","Parque el Virrey",1,"Volleyball",0);
-        Clase c2=new Clase(1,"2 Octubre 2017","11:00","Parque el Virrey",2,"Volleyball",0);
+        Clase c1=new Clase(1,"3 Octubre 2017","11:00","Parque el Virrey",1,"Volleyball",0,"leonardo");
+        Clase c2=new Clase(1,"2 Octubre 2017","11:00","Parque el Virrey",2,"Volleyball",0,"cristian");
         clases.add(c1);
         clases.add(c2);
         comments.add(co);

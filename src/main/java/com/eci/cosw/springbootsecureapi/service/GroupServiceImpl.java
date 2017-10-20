@@ -31,8 +31,8 @@ public class GroupServiceImpl implements GroupService{
         List<Comment> comments = new ArrayList<>();
         commentslist.add(co);
         commentslist.add(co2);
-        Clase c1=new Clase(1,"3 Octubre 2017","11:00","Parque el Virrey",1,"Volleyball",0);
-        Clase c2=new Clase(1,"2 Octubre 2017","11:00","Parque el Virrey",2,"Volleyball",0);
+        Clase c1=new Clase(1,"3 Octubre 2017","11:00","Parque el Virrey",1,"Volleyball",0,"leonardo");
+        Clase c2=new Clase(1,"2 Octubre 2017","11:00","Parque el Virrey",2,"Volleyball",0,"leonardo");
         List< Clase > clases=new ArrayList<>();
         clases.add(c1);
         clases.add(c2);
