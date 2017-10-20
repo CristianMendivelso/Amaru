@@ -5,6 +5,7 @@ import com.eci.cosw.springbootsecureapi.model.User;
 import com.eci.cosw.springbootsecureapi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
@@ -76,8 +77,36 @@ public class UserServiceDB implements UserService {
     }
 
     @Override
+    @Transactional
     public User editRate(String username, Double rate) {
-        return null;
+        Optional optional= usrrepo.findById(username);
+        User u=null;
+        if ( optional.isPresent() ){
+            u=(User)optional.get();
+            System.out.println(u.getNombre());
+            Double oldRate = u.getRate();
+            int cont = u.getTotalVotes();
+            if (cont<1){
+                usrrepo.editRate(username,redondearDecimales((oldRate+rate)/1,2) );
+            }
+            else {
+                usrrepo.editRate(username,redondearDecimales((oldRate+rate)/2,2) );
+            }
+            usrrepo.editTotalVotes(username,cont+1);
+
+        }
+        return u;
+    }
+
+
+    public static double redondearDecimales(double valorInicial, int numeroDecimales) {
+        double parteEntera, resultado;
+        resultado = valorInicial;
+        parteEntera = Math.floor(resultado);
+        resultado=(resultado-parteEntera)*Math.pow(10, numeroDecimales);
+        resultado=Math.round(resultado);
+        resultado=(resultado/Math.pow(10, numeroDecimales))+parteEntera;
+        return resultado;
     }
 
     @Override
