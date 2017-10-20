@@ -67,7 +67,7 @@ public class GroupServiceImpl implements GroupService{
     public List<Group> getGroupByName(String name) {
         List<Group> categories=new ArrayList<>();
         for(int i=0;i<groups.size();i++){
-            if(name.equals(groups.get(i).getName())){
+            if(name.equals(groups.get(i).getNombre())){
                 categories.add(groups.get(i));
             }
         }
@@ -103,7 +103,7 @@ public class GroupServiceImpl implements GroupService{
         System.out.println(groupId+" groupid");
         Group group = null;
         for (Group g : groups){
-            System.out.println(g.getName()+" "+g.getId());
+            System.out.println(g.getNombre()+" "+g.getId());
             if (g.getId()==groupId){
                 group = g;
                 break;
@@ -119,9 +119,9 @@ public class GroupServiceImpl implements GroupService{
             Clase te=null;
             Group g = getGroupByid(idgroup);
             for (Clase clase: g.getClases()){
-                if(clase.getId_clase()==idclase){
+                if(clase.getIdclase()==idclase){
                     List<Clase> temp=u.getClases();
-                    clase.setNum_inscritos(clase.getNum_inscritos()+1);
+                    clase.setNuminscritos(clase.getNuminscritos()+1);
                     te=clase;
                     temp.add(clase);
                     u.setClases(temp);
@@ -132,7 +132,7 @@ public class GroupServiceImpl implements GroupService{
             List<Clase> temp= g.getClases();
             int index=0;
             for (int j=0;j<temp.size();j++){
-                if (temp.get(j).getId_clase()==te.getId_clase()){
+                if (temp.get(j).getIdclase()==te.getIdclase()){
                     index=j;
                     break;
                 }
@@ -152,8 +152,8 @@ public class GroupServiceImpl implements GroupService{
         groups.add(group);
         int cont=0;
         for(Clase c:group.getClases()){
-            c.setGroup_id(a);
-            c.setId_clase(cont);
+            c.setIdgrupo(a);
+            c.setIdclase(cont);
             cont+=1;
             users.addGroup(group.getInstructor(),c);
         }

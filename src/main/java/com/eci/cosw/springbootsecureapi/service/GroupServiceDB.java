@@ -49,7 +49,7 @@ public class GroupServiceDB  implements GroupService {
         List<Group> names = this.getAllGroups();
         List<Group> groups = new ArrayList<>();
         for(int i=0;i<names.size();i++){
-            if(name.equals(names.get(i).getName())){
+            if(name.equals(names.get(i).getNombre())){
                 groups.add(names.get(i));
             }
         }
@@ -88,7 +88,7 @@ public class GroupServiceDB  implements GroupService {
         Group g=null;
         if ( optional.isPresent() ){
             g=(Group)optional.get();
-            System.out.println(g.getName());
+            System.out.println(g.getNombre());
             Double oldRate = g.getRate();
             int cont = g.getTotalVotes();
             if (cont<1){

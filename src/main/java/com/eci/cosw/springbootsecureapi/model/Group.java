@@ -16,7 +16,7 @@ public class Group {
 
     private long id;
 
-    private String name;
+    private String nombre;
 
     private String instructor;
 
@@ -34,9 +34,9 @@ public class Group {
 
     private List<Clase> clases;
 
-    public Group(long id,String name,String instructor,List<Comment> comments,String description,String category, Double rate,int totalVotes,String image,List<Clase> clases) {
+    public Group(long id,String nombre,String instructor,List<Comment> comments,String description,String category, Double rate,int totalVotes,String image,List<Clase> clases) {
         this.id=id;
-        this.name=name;
+        this.nombre=nombre;
         this.instructor=instructor;
         this.comments=comments;
         this.description=description;
@@ -51,7 +51,7 @@ public class Group {
     }
 
     public String toString(){
-        return "id: "+id +"name: " +name+ "instructor: "+instructor +"clases: " + clases.size();
+        return "id: "+id +"name: " +nombre+ "instructor: "+instructor +"clases: " + clases.size();
     }
 
     @Id
@@ -64,13 +64,13 @@ public class Group {
         this.id = id;
     }
 
-    @Column(name = "name", nullable = false, length = 100)
-    public String getName() {
-        return this.name;
+    @Column(name = "nombre", nullable = false, length = 100)
+    public String getNombre() {
+        return this.nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     @Column(name = "instructor", nullable = false, length = 100)
@@ -83,7 +83,7 @@ public class Group {
     }
 
     @OneToMany(cascade=ALL)
-    @JoinColumn(name="Groupid", referencedColumnName="id", nullable=false)
+    @JoinColumn(name="Groupid", referencedColumnName="id", nullable=false,insertable=false, updatable=false)
     public List<Comment> getComments() {
         return comments;
     }
@@ -138,7 +138,7 @@ public class Group {
     }
 
     @OneToMany(cascade=ALL)
-    @JoinColumn(name="Group_id", referencedColumnName="id", nullable=false)
+    @JoinColumn(name="idgrupo", referencedColumnName="id", nullable=false,insertable = false, updatable = false)
     public List<Clase> getClases() {
         return clases;
     }

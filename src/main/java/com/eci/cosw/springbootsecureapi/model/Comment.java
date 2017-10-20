@@ -9,60 +9,60 @@ import javax.persistence.Table;
  * Created by 2106088 on 9/6/17.
  */
 @Entity
-@Table(name = "comment" )
+@Table(name = "Comment" )
 public class Comment {
 
-    private String text;
-    private long groupId;
-    private String user;
-    private String date;
+    private String contenido;
+    private long Groupid;
+    private String usuario;
+    private String fecha;
     private long id;
 
     public Comment() {
     }
 
-    public Comment(String text, long groupId, String user, String date,long id) {
-        this.text = text;
-        this.groupId = groupId;
-        this.user = user;
-        this.date = date;
+    public Comment(String contenido, long Groupid, String usuario, String fecha,long id) {
+        this.contenido = contenido;
+        this.Groupid = Groupid;
+        this.usuario = usuario;
+        this.fecha = fecha;
         this.id=id;
     }
 
     @Column(name = "contenido", nullable = false, length = 1000)
-    public String getText() {
-        return text;
+    public String getContenido() {
+        return contenido;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
     }
 
-    //@Column(name = "Groupid", nullable = false)
+    @Column(name = "Groupid", nullable = false)
     public long getGroupId() {
-        return groupId;
+        return Groupid;
     }
 
-    public void setGroupId(long groupId) {
-        this.groupId = groupId;
+    public void setGroupId(long Groupid) {
+        this.Groupid = Groupid;
     }
 
     @Column(name = "usuario", nullable = false, length = 100)
-    public String getUser() {
-        return user;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     @Column(name = "fecha", nullable = false, length = 100)
-    public String getDate() {
-        return date;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setFecha(String date) {
+        this.fecha = date;
     }
 
     @Id
