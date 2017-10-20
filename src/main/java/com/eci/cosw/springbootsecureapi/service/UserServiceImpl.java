@@ -206,7 +206,12 @@ public class UserServiceImpl implements UserService
                 Double oldRate = u.getRate();
                 int cont = u.getTotalVotes();
 
-                u.setRate( redondearDecimales((oldRate+rate)/2,2) );
+                if (cont<1){
+                    u.setRate( redondearDecimales((oldRate+rate)/1,2) );
+                }
+                else {
+                    u.setRate(redondearDecimales((oldRate + rate) / 2, 2));
+                }
                 u.setTotalVotes(cont+1);
                 users.set(i,u);
                 break;
