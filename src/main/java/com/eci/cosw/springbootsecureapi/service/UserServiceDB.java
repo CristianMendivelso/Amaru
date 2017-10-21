@@ -21,7 +21,7 @@ public class UserServiceDB implements UserService {
 
     @Override
     public List<User> getUsers() {
-        List<User> p=usrrepo.findAll();
+        List<User> p = usrrepo.findAll();
         return p;
     }
 
@@ -31,31 +31,40 @@ public class UserServiceDB implements UserService {
     }
 
     @Override
+    @Transactional
     public User editImage(String username, String newImage) {
-        return null;
+        usrrepo.editImage(username, newImage);
+        return findUserByUsername(username);
     }
 
     @Override
+    @Transactional
     public User editDescription(String username, String newDescription) {
-        return null;
+        usrrepo.editDescription(username, newDescription);
+        return findUserByUsername(username);
     }
 
     @Override
+    @Transactional
     public User editEmail(String username, String newEmail) {
-        return null;
+
+        usrrepo.editEmail(username, newEmail);
+        return findUserByUsername(username);
     }
 
     @Override
+    @Transactional
     public User editPhone(String username, String newPhone) {
-        return null;
+        usrrepo.editPhone(username, newPhone);
+        return findUserByUsername(username);
     }
 
     @Override
     public User findUserByUsername(String username) {
-        Optional optional= usrrepo.findById(username);
-        User u=null;
-        if ( optional.isPresent() ){
-            u=(User)optional.get();
+        Optional optional = usrrepo.findById(username);
+        User u = null;
+        if (optional.isPresent()) {
+            u = (User) optional.get();
         }
         return u;
     }
@@ -79,20 +88,19 @@ public class UserServiceDB implements UserService {
     @Override
     @Transactional
     public User editRate(String username, Double rate) {
-        Optional optional= usrrepo.findById(username);
-        User u=null;
-        if ( optional.isPresent() ){
-            u=(User)optional.get();
+        Optional optional = usrrepo.findById(username);
+        User u = null;
+        if (optional.isPresent()) {
+            u = (User) optional.get();
             System.out.println(u.getNombre());
             Double oldRate = u.getRate();
             int cont = u.getTotalVotes();
-            if (cont<1){
-                usrrepo.editRate(username,redondearDecimales((oldRate+rate)/1,2) );
+            if (cont < 1) {
+                usrrepo.editRate(username, redondearDecimales((oldRate + rate) / 1, 2));
+            } else {
+                usrrepo.editRate(username, redondearDecimales((oldRate + rate) / 2, 2));
             }
-            else {
-                usrrepo.editRate(username,redondearDecimales((oldRate+rate)/2,2) );
-            }
-            usrrepo.editTotalVotes(username,cont+1);
+            usrrepo.editTotalVotes(username, cont + 1);
 
         }
         return u;
@@ -103,9 +111,9 @@ public class UserServiceDB implements UserService {
         double parteEntera, resultado;
         resultado = valorInicial;
         parteEntera = Math.floor(resultado);
-        resultado=(resultado-parteEntera)*Math.pow(10, numeroDecimales);
-        resultado=Math.round(resultado);
-        resultado=(resultado/Math.pow(10, numeroDecimales))+parteEntera;
+        resultado = (resultado - parteEntera) * Math.pow(10, numeroDecimales);
+        resultado = Math.round(resultado);
+        resultado = (resultado / Math.pow(10, numeroDecimales)) + parteEntera;
         return resultado;
     }
 
@@ -115,7 +123,11 @@ public class UserServiceDB implements UserService {
     }
 
     @Override
-    public User buy(com.eci.cosw.springbootsecureapi.model.User user) {
-        return null;
+    @Transactional
+    public User buy(String username, int nuevocupo) {
+        User u = findUserByUsername(username);
+        usrrepo.buy(username, nuevocupo + u.getCupo());
+        u.setCupo(u.getCupo() + nuevocupo);
+        return u;
     }
 }
