@@ -20,9 +20,7 @@ public class GroupController {
     private GroupService groupService;
 
     @RequestMapping( path = "/{groupname}", method = RequestMethod.GET )
-    public Group getGroupById(@PathVariable int groupname){
-        return groupService.getGroupByid(groupname);
-    }
+    public Group getGroupById(@PathVariable int groupname){ return groupService.getGroupByid(groupname); }
 
     @RequestMapping( value = "/susbcribe", method = RequestMethod.POST )
     public boolean subscribe(@RequestBody Pojo pojo){

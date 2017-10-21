@@ -1,9 +1,11 @@
 package com.eci.cosw.springbootsecureapi.service;
 
+import com.eci.cosw.springbootsecureapi.model.Clase;
 import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
-import com.eci.cosw.springbootsecureapi.model.User;
+import com.eci.cosw.springbootsecureapi.repositories.ClaseRepository;
 import com.eci.cosw.springbootsecureapi.repositories.GroupRepository;
+import com.eci.cosw.springbootsecureapi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +20,9 @@ public class GroupServiceDB  implements GroupService {
 
     @Autowired
     private GroupRepository grprepo;
+
+    @Autowired
+    private ClaseRepository claserepo;
 
     public List<Group> getAllGroups() {
         List<Group> groups = grprepo.findAll();
@@ -63,8 +68,27 @@ public class GroupServiceDB  implements GroupService {
     }
 
     @Override
+    @Transactional
     public boolean subscribe(long idclase, long idgroup, String username) {
-        return false;
+        boolean transaction= false;
+        Optional optional= grprepo.findById(idgroup);
+        Group g=null;
+        if ( optional.isPresent() ){
+            g=(Group) optional.get();
+            List<Clase> clases = g.getClases();
+            for (Clase c:clases){
+                if (c.getIdclase()==idclase){
+                    List<Clase> allCLases = claserepo.findAll();
+                    Clase newClase = new Clase(idgroup, c.getFecha(), c.getHour(), c.getPlace(),allCLases.size()+1, c.getNombregrupo(),c.getNuminscritos()+1, username);
+                    claserepo.setNumInscritos(idclase, c.getNuminscritos()+1);
+                    claserepo.save(newClase);
+                    transaction=true;
+                }
+
+            }
+        }
+
+    return transaction;
     }
 
     @Override

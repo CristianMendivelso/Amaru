@@ -8,21 +8,21 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Clase" )
 public class Clase  implements java.io.Serializable{
-    private long idgrupo;
+    private long idGrupo;
     private String fecha;
     private String hour;
     private String place;
-    private long idclase;
+    private long idClase;
     private String nombregrupo;
     private int numinscritos;
     private String usuario;
 
-    public Clase(long idgrupo,String fecha,String hour,String place,long idclase,String nombregrupo,int numinscritos, String usuario){
-        this.idgrupo=idgrupo;
+    public Clase(long idGrupo,String fecha,String hour,String place,long idClase,String nombregrupo,int numinscritos, String usuario){
+        this.idGrupo=idGrupo;
         this.fecha=fecha;
         this.hour=hour;
         this.place=place;
-        this.idclase=idclase;
+        this.idClase=idClase;
         this.nombregrupo=nombregrupo;
         this.numinscritos=numinscritos;
         this.usuario = usuario;
@@ -60,21 +60,19 @@ public class Clase  implements java.io.Serializable{
 
     //@Column(name = "idgrupo", nullable = false)
     public long getIdgrupo() {
-        return idgrupo;
+        return idGrupo;
     }
 
     public void setIdgrupo(long idgrupo) {
-        this.idgrupo = idgrupo;
+        this.idGrupo = idgrupo;
     }
 
     @Id
     @Column(name = "idclase", nullable = false)
-    public long getIdclase() {
-        return this.idclase;
-    }
+    public long getIdclase() { return this.idClase; }
 
     public void setIdclase(long idclase) {
-        this.idclase = idclase;
+        this.idClase = idclase;
     }
 
     @Column(name = "nombregrupo", nullable = false, length = 300)
