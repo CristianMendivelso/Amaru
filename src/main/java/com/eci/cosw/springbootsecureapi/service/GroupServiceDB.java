@@ -84,7 +84,7 @@ public class GroupServiceDB  implements GroupService {
             for (Clase c:clases){
                 if (c.getIdclase()==idclase){
                     List<Clase> allCLases = claserepo.findAll();
-                    Clase newClase = new Clase(idgroup, c.getFecha(), c.getHour(), c.getPlace(),allCLases.size()+1, c.getNombregrupo(),c.getNuminscritos()+1, username);
+                    Clase newClase = new Clase(idgroup, c.getFecha(), c.getHour(), c.getPlace(),allCLases.size(), c.getNombregrupo(),c.getNuminscritos()+1, username);
                     claserepo.setNumInscritos(idclase, c.getNuminscritos()+1);
                     claserepo.save(newClase);
                     transaction=true;
