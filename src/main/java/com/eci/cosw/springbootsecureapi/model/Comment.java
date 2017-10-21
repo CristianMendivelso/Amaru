@@ -1,9 +1,6 @@
 package com.eci.cosw.springbootsecureapi.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by 2106088 on 9/6/17.

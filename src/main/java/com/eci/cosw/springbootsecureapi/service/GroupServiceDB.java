@@ -3,12 +3,14 @@ package com.eci.cosw.springbootsecureapi.service;
 import com.eci.cosw.springbootsecureapi.model.Comment;
 import com.eci.cosw.springbootsecureapi.model.Group;
 import com.eci.cosw.springbootsecureapi.model.User;
+import com.eci.cosw.springbootsecureapi.repositories.CommentRepository;
 import com.eci.cosw.springbootsecureapi.repositories.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,6 +20,9 @@ public class GroupServiceDB  implements GroupService {
 
     @Autowired
     private GroupRepository grprepo;
+
+    @Autowired
+    private CommentRepository cmrepo;
 
     public List<Group> getAllGroups() {
         List<Group> groups = grprepo.findAll();
@@ -115,6 +120,18 @@ public class GroupServiceDB  implements GroupService {
 
     @Override
     public Group addCommnet(Comment comment) {
-        return null;
+
+        Optional optional= grprepo.findById(comment.getGroupId());
+        Group g=null;
+        if ( optional.isPresent() ){
+            g=(Group) optional.get();
+            List<Comment> comentarios = g.getComments();
+            comment.setId(comentarios.size());
+            comment.setFecha(new Date().toString());
+            comentarios.add(comment);
+            g.setComments(comentarios);
+            grprepo.save(g);
+        }
+        return g;
     }
 }
