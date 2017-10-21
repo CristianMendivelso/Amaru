@@ -91,12 +91,13 @@ public class GroupServiceDB  implements GroupService {
                 for (Clase c:clases){
                     if (c.getIdclase()==idclase){
                         List<Clase> allCLases = claserepo.findAll();
-                        Clase newClase = new Clase(idgroup, c.getFecha(), c.getHour(), c.getPlace(),allCLases.size()+1, c.getNombregrupo(),c.getNuminscritos()+1, username);
+                        Clase newClase = new Clase(idgroup, c.getFecha(), c.getHour(), c.getPlace(),allCLases.size(), c.getNombregrupo(),c.getNuminscritos()+1, username);
                         claserepo.setNumInscritos(idclase, c.getNuminscritos()+1);
                         claserepo.save(newClase);
                         transaction=true;
                         userService.buy(u.getUsername(),-1);
                     }
+
 
                 }
              }
@@ -107,8 +108,15 @@ public class GroupServiceDB  implements GroupService {
 
     @Override
     public Group createGroup(Group grupo) {
+        List<Clase> allClases = claserepo.findAll();
         List<Group> names = this.getAllGroups();
+        List<Clase> clases = grupo.getClases();
         grupo.setId(names.size());
+        for( int i=0;i<clases.size();i++){
+            clases.get(i).setIdclase(allClases.size() + i);
+            clases.get(i).setIdgrupo(grupo.getId());
+        }
+        grupo.setClases(clases);
         grprepo.save(grupo);
         return grupo;
     }
@@ -132,7 +140,8 @@ public class GroupServiceDB  implements GroupService {
             grprepo.editTotalVotes(groupId,cont+1);
 
         }
-        return g;
+        Group temp=getGroupByid(groupId);
+        return temp;
     }
 
 
@@ -152,19 +161,13 @@ public class GroupServiceDB  implements GroupService {
     }
 
     @Override
+    @Transactional
     public Group addCommnet(Comment comment) {
-
-        Optional optional= grprepo.findById(comment.getGroupId());
-        Group g=null;
-        if ( optional.isPresent() ){
-            g=(Group) optional.get();
-            List<Comment> comentarios = g.getComments();
-            comment.setId(comentarios.size());
-            comment.setFecha(new Date().toString());
-            comentarios.add(comment);
-            g.setComments(comentarios);
-            grprepo.save(g);
-        }
-        return g;
+        List<Comment> lc= cmrepo.findAll();
+        comment.setId(lc.size());
+        comment.setFecha(new Date().toString());
+        cmrepo.save(comment);
+        Group temp=getGroupByid(comment.getGroupId());
+        return temp;
     }
 }

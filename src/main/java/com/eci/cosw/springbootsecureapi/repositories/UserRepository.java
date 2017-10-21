@@ -20,6 +20,7 @@ public interface UserRepository extends JpaRepository<User,String> {
     @Query("update User u set u.totalVotes = ?2 where u.username = ?1")
     void editTotalVotes(String username, int i);
 
+    @Modifying
     @Query("update User u set u.image = ?2 where u.username = ?1")
     void editImage(String username, String newImage);
 

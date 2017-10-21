@@ -22,4 +22,6 @@ public interface GroupRepository extends JpaRepository<Group, Long> {
     @Modifying
     @Query("update Group g set g.totalVotes = ?2 where g.id = ?1")
     void editTotalVotes(long groupId, int i);
+
+
 }
