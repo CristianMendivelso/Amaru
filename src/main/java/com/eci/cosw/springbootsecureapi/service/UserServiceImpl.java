@@ -116,14 +116,14 @@ public class UserServiceImpl implements UserService
     }
 
     @Override
-    public User buy(User user) {
+    public User buy(String username,int nuevocupo) {
         int indice=0;
         for (int i=0;i< users.size();i++){
-            if(users.get(i).getUsername().equals(user.getUsername())){
+            if(users.get(i).getUsername().equals(username)){
                 indice=i;
                 User u = users.get(i);
                 int cupo = u.getCupo();
-                cupo+=user.getCupo();
+                cupo+=nuevocupo;
                 u.setCupo(cupo);
                 users.set(i,u);
                 break;
