@@ -98,8 +98,15 @@ public class GroupServiceDB  implements GroupService {
 
     @Override
     public Group createGroup(Group grupo) {
+        List<Clase> allClases = claserepo.findAll();
         List<Group> names = this.getAllGroups();
+        List<Clase> clases = grupo.getClases();
         grupo.setId(names.size());
+        for( int i=0;i<clases.size();i++){
+            clases.get(i).setIdclase(allClases.size() + i);
+            clases.get(i).setIdgrupo(grupo.getId());
+        }
+        grupo.setClases(clases);
         grprepo.save(grupo);
         return grupo;
     }
