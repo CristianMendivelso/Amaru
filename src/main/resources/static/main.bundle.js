@@ -1,15 +1,19 @@
 webpackJsonp(["main"],{
 
-/***/ "../../../../../src lazy recursive":
+/***/ "../../../../../src/$$_gendir lazy recursive":
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
-	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+	// Here Promise.resolve().then() is used instead of new Promise() to prevent
+	// uncatched exception popping up in devtools
+	return Promise.resolve().then(function() {
+		throw new Error("Cannot find module '" + req + "'.");
+	});
 }
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src lazy recursive";
+webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 
 /***/ }),
 
@@ -34,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<nav  *ngIf=\"isLoggedIn()\" class=\"navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse\">\n  <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\"\n    aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n  <a class=\"navbar-brand\" href=\"#\">AMARU</a>\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLinkActive=\"/welcome\" routerLink=\"/welcome\">Home</a>\n      </li>\n      \n     \n        <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"/info\" routerLink=\"/info\">Ver Perfil</a>\n        </li>\n\n      <li *ngIf=\"isLoggedIn()\" class=\"nav-item\">\n        <a href=\"#\" class=\"nav-link\" (click)=\"signOut()\">(Sign Out)</a>\n      </li>\n      <form class=\"form-inline my-2 my-lg-0\">\n        <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\" #search>\n        <button class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#myModal\" (click)=\"onSubmit(search.value)\">Search</button>\n      </form>\n\n\n    </ul>\n  </div>\n</nav>\n\n  <!-- Modal -->\n  <div class=\"modal fade\" id=\"myModal\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n      <!-- Modal content-->\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <h4 class=\"modal-title\">Result</h4>\n        </div>\n        <div *ngIf=\"group==null\" class=\"modal-body\">\n          <p>group not found</p>\n        </div>\n        <div *ngIf=\"group!=null\" class=\"modal-body\">\n            <h2>Group found</h2>\n            <table class=\"table table-bordered\">\n             <thead>\n               <tr>\n                 <th>Name</th>\n                 <th>Photo</th>\n                 <th>Entrar al grupo</th>\n               </tr>\n             </thead>\n             <tr>\n               <td>{{group.name}}</td>\n               <td><img [src]=\"group.image\" width=\"110\" height=\"110\" /></td>\n               <td> <button class=\"btn btn-outline-success my-2 my-sm-0\" data-dismiss=\"modal\"  (click)=\"entergr()\">Enter</button> <td>                \n             </tr>\n            </table>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n        </div>\n      </div>\n\n    </div>\n  </div>\n\n\n<div class=\"container\">\n  <router-outlet></router-outlet>\n</div>\n\n\n"
+module.exports = "<style>\n  #login-dp {\n    min-width: 250px;\n    padding: 14px 14px 0;\n    overflow: hidden;\n    background-color: rgba(255, 255, 255, .8);\n  }\n\n  #login-dp .help-block {\n    font-size: 12px\n  }\n\n  #login-dp .bottom {\n    background-color: rgba(255, 255, 255, .8);\n    border-top: 1px solid #ddd;\n    clear: both;\n    padding: 14px;\n  }\n\n  #login-dp .social-buttons {\n    margin: 12px 0\n  }\n\n  #login-dp .social-buttons a {\n    width: 49%;\n  }\n\n  #login-dp .form-group {\n    margin-bottom: 10px;\n  }\n\n  .btn-fb {\n    color: #fff;\n    background-color: #3b5998;\n  }\n\n  .btn-fb:hover {\n    color: #fff;\n    background-color: #496ebc\n  }\n\n  .btn-tw {\n    color: #fff;\n    background-color: #55acee;\n  }\n\n  .btn-tw:hover {\n    color: #fff;\n    background-color: #59b5fa;\n  }\n\n  @media(max-width:768px) {\n    #login-dp {\n      background-color: inherit;\n      color: #fff;\n    }\n    #login-dp .bottom {\n      background-color: inherit;\n      border-top: 0 none;\n    }\n\n\n\n\n  }\n</style>\n\n<!-- Header -->\n<header class=\"masthead\">\n  <!--  <video loop muted autoplay poster=\"../video/4.jpg\" >\n        <source src=\"../video/3.webm\" type=\"video/webm\">\n        <source src=\"../video/2.mp4\" type=\"video/mp4\">\n        <source src=\"../video/1.ogg\" type=\"video/ogg\">\n    </video> -->\n  <div class=\"container\">\n    <div class=\"intro-text\">\n      <div class=\"intro-lead-in\">Welcome To AMARU!</div>\n      <div class=\"intro-heading\">It's Nice To Meet You</div>\n      <a class=\"btn btn-xl js-scroll-trigger\" href=\"#services\">Tell Me More</a>\n    </div>\n  </div>\n</header>\n\n<nav class=\"navbar navbar-expand-lg navbar-dark fixed-top\" id=\"mainNav\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\"\n        aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        Menu\n        <i class=\"fa fa-bars\"></i>\n      </button>\n      <a *ngIf=\"isLoggedIn()\" class=\"navbar-brand\" routerLinkActive=\"/welcome\" routerLink=\"/welcome\">AMARU</a>\n      <a *ngIf=\"!isLoggedIn()\" class=\"navbar-brand\" routerLinkActive=\"\" routerLink=\"\">AMARU</a>\n    </div>\n\n    <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\n      <ul class=\"nav navbar-nav mr-auto \">\n\n        <form class=\"form-inline my-2 my-lg-0\">\n          <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search Groups\" aria-label=\"Search Groups\" #search>\n          <button class=\"btn btn-xl pull-right\" data-toggle=\"modal\" data-target=\"#myModal\" (click)=\"onSubmit(search.value)\">Search</button>\n        </form>\n        \n\n\n      </ul>\n\n      <ul *ngIf=\"!isLoggedIn()\" class=\"nav navbar-nav navbar-right\">\n\n        <li class=\"nav-item dropdown\">\n          <a href=\"#\" class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\">\n            <b>Login</b>\n            <span class=\"caret\"></span>\n          </a>\n          <ul id=\"login-dp\" class=\"dropdown-menu pull-left\">\n            <li>\n              <div class=\"row\">\n                <div class=\"col-md-12\">\n                  \n                  <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" accept-charset=\"UTF-8\" id=\"login-nav\">\n                    <div class=\"form-group\">\n                      <label class=\"sr-only\" for=\"exampleInputEmail2\">Email address</label>\n                      <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail2\" formControlName=\"username\" required>\n                    </div>\n                    <div class=\"form-group\">\n                      <label class=\"sr-only\" for=\"exampleInputPassword2\">Password</label>\n                      <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword2\" formControlName=\"password\" required>\n                      <div class=\"help-block text-right\">\n                        <a href=\"\">Forget the password ?</a>\n                      </div>\n                    </div>\n                    <div class=\"form-group\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-block\" [disabled]=\"!signInForm.valid\">Sign in</button>\n                    </div>\n                    <div class=\"checkbox\">\n                      <p class=\"btn btn-primary btn-lg\" *ngIf=\"loginError\">{{loginError}}</p>\n                      <label>\n                        <input type=\"checkbox\"> keep me logged-in\n                      </label>\n                    </div>\n                  </form>\n                </div>\n                <div class=\"bottom text-center\">\n                  New here ?\n                  <a routerLinkActive=\"/newuser\" routerLink=\"/newuser\">\n                    <b>Join Us</b>\n                  </a>\n                </div>\n              </div>\n            </li>\n          </ul>\n        </li>\n      </ul>\n\n      <ul *ngIf=\"isLoggedIn()\" class=\"navbar-nav navbar-right\">\n        <li class=\"nav-item dropdown\">\n          <a href=\"#\" class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\">\n            <span class=\"glyphicon glyphicon-user\"></span>\n            <b>{{user.nombre}}</b>\n            <span class=\"caret\"></span>\n          </a>\n          <ul class=\"dropdown-menu\" style=\"min-width: 20rem;\">\n            <li>\n              <div style=\"padding: 10px;\n              padding-bottom: 0px;\n              padding-top: 0px;\">\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <p class=\"text-center\">\n                      <img [src]=\"user.image\" class=\"img-circle img-responsive\" width=\"87\" height=\"87\" />\n                    </p>\n                  </div>\n                  <div class=\"col-lg-8\">\n                    <p class=\"text-left\">\n                      <strong>{{user.nombre}} {{user.lastname}}</strong>\n                    </p>\n                    <p class=\"text-left small\">{{user.email}}</p>\n                    <p class=\"text-left\">\n                      <a a class=\"nav-link\" routerLinkActive=\"/info\" routerLink=\"/info\" class=\"btn btn-primary btn-block btn-sm\">Actualizar Datos</a>\n                    </p>\n                  </div>\n                </div>\n              </div>\n            </li>\n            <li class=\"divider\"></li>\n            <li>\n              <div style=\"padding: 10px;\n              padding-bottom: 0px;\n              padding-top: 0px;\">\n                <div class=\"row\">\n                  <div class=\"col-lg-12\">\n                    <p>\n                      <a href=\"#\" class=\"btn btn-danger btn-block\" (click)=\"signOut()\">Sign Out</a>\n                    </p>\n                  </div>\n                </div>\n              </div>\n            </li>\n          </ul>\n        </li>\n      </ul>\n\n    </div>\n\n\n\n  </div>\n\n  <!-- <button class=\"btn btn-xl pull-right\" routerLinkActive=\"/signin\" routerLink=\"/signin\">Iniciar Sesión</button>-->\n\n\n\n\n</nav>\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"myModal\" role=\"dialog\">\n  <div class=\"modal-dialog\">\n\n    \n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h4 class=\"modal-title\">Result</h4>\n      </div>\n      <div class=\"modal-body\" *ngIf=\"!longitud()\">\n        <p>group not found</p>\n      </div>\n      <div class=\"modal-body\" *ngIf=\"longitud()\">\n        <table class=\"table table-bordered\">\n          <thead>\n            <tr>\n              <th>Name</th>\n              <th>Photo</th>\n              <th>Instructor</th>\n              <th>Enter To The Group</th>\n            </tr>\n          </thead>\n          <tr *ngFor=\"let g of group\">\n            <td>{{g.nombre}}</td>\n            <td>\n              <img [src]=\"g.image\" width=\"110\" height=\"110\" />\n            </td>\n            <td>{{g.instructor}}</td>\n            <td>\n              <button class=\"btn btn-outline-success my-2 my-sm-0\" data-dismiss=\"modal\" (click)=\"entergr(g.nombre,g.id)\">Enter</button>\n            </td>\n          </tr>\n        </table>\n      </div>\n\n\n    </div>\n\n\n    <div class=\"modal-footer\">\n      <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n    </div>\n  </div>\n\n</div>\n\n\n  <div class=\"container\">\n    <router-outlet></router-outlet>\n  </div>"
 
 /***/ }),
 
@@ -47,6 +51,8 @@ module.exports = "\n<nav  *ngIf=\"isLoggedIn()\" class=\"navbar navbar-toggleabl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,31 +66,63 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var AppComponent = (function () {
-    function AppComponent(authService, router, groupService) {
+    function AppComponent(authService, router, groupService, usersService, formBuilder) {
         this.authService = authService;
         this.router = router;
         this.groupService = groupService;
+        this.usersService = usersService;
+        this.formBuilder = formBuilder;
         this.title = 'app';
+        this.group = [];
         if (!this.authService.isLoggedIn()) {
             this.router.navigate(['/']);
         }
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.signInForm = this.formBuilder.group({
+            username: '',
+            password: '',
+        });
+    };
+    AppComponent.prototype.longitud = function () {
+        if (this.group.length === 0) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
     AppComponent.prototype.isLoggedIn = function () {
         return this.authService.isLoggedIn();
     };
     AppComponent.prototype.signOut = function () {
         this.authService.signOut();
     };
-    AppComponent.prototype.entergr = function () {
-        sessionStorage.setItem('groupname', this.group.name);
+    AppComponent.prototype.entergr = function (name, id) {
+        sessionStorage.setItem('groupname', name);
+        sessionStorage.setItem('groupId', String(id));
+        this.router.navigateByUrl('/DummyComponent', true);
         this.router.navigate(['/group']);
     };
     AppComponent.prototype.onSubmit = function (search) {
         var _this = this;
-        this.group = null;
         this.groupService.getGroupByName(search).subscribe(function (response) {
             _this.group = response;
+        });
+    };
+    AppComponent.prototype.doLogin = function () {
+        var _this = this;
+        sessionStorage.setItem('username', this.signInForm.get('username').value);
+        this.usersService.login(this.signInForm.get('username').value, this.signInForm.get('password').value).subscribe(function (loginResponse) {
+            _this.router.navigate(['/welcome']);
+        }, function (error) {
+            _this.loginError = 'Error Signing in: ' + (error && error.message ? error.message : '');
+        });
+        this.usersService.findUserByUsername(this.signInForm.get('username').value).subscribe(function (usersResponse5) {
+            _this.user = usersResponse5;
         });
     };
     return AppComponent;
@@ -95,10 +133,10 @@ AppComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__common_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__common_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_group_service__["a" /* GroupService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__common_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__common_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_group_service__["a" /* GroupService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__services_users_service__["a" /* UsersService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object])
 ], AppComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -250,7 +288,6 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_22__services_users_service__["a" /* UsersService */],
             __WEBPACK_IMPORTED_MODULE_23__services_group_service__["a" /* GroupService */],
             __WEBPACK_IMPORTED_MODULE_4__common_config_app_configuration_service__["a" /* AppConfiguration */],
-            __WEBPACK_IMPORTED_MODULE_26__pages_group_list_group_list_component__["a" /* GroupListComponent */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
@@ -269,14 +306,10 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_config_app_configuration_service__ = __webpack_require__("../../../../../src/app/common/config/app-configuration.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_auth_service__ = __webpack_require__("../../../../../src/app/common/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/add/observable/throw.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/_esm5/add/observable/throw.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -326,7 +359,7 @@ var APIService = (function () {
         else {
             errObj = error.message ? { message: error.message } : { message: error };
         }
-        return __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__["Observable"].throw(errObj);
+        return __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__["a" /* Observable */].throw(errObj);
     };
     APIService.prototype.get = function (url, options) {
         return this.http
@@ -529,16 +562,41 @@ var INITIAL_CONFIG = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Inje
 
 /***/ }),
 
+/***/ "../../../../../src/app/models/clase.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Clase; });
+var Clase = (function () {
+    function Clase(idgrupo, fecha, hour, place, idclase, nombregrupo, numinscritos, usuario) {
+        this.idgrupo = idgrupo;
+        this.fecha = fecha;
+        this.hour = hour;
+        this.place = place;
+        this.idclase = idclase;
+        this.nombregrupo = nombregrupo;
+        this.numinscritos = numinscritos;
+        this.usuario = usuario;
+    }
+    return Clase;
+}());
+
+//# sourceMappingURL=clase.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/models/comment.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Comment; });
 var Comment = (function () {
-    function Comment(text, user, groupName) {
-        this.text = text;
-        this.user = user;
-        this.groupName = groupName;
+    function Comment(contenido, groupId, usuario, fecha, id) {
+        this.contenido = contenido;
+        this.groupId = groupId;
+        this.usuario = usuario;
+        this.fecha = fecha;
+        this.id = id;
     }
     return Comment;
 }());
@@ -553,20 +611,17 @@ var Comment = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Group; });
 var Group = (function () {
-    function Group(name, instructor, place, days, hour, description, category, comment, rate, totalVotes, image) {
-        this.name = name;
+    function Group(id, nombre, instructor, comments, description, category, rate, totalVotes, image, clases) {
+        this.id = id;
+        this.nombre = nombre;
         this.instructor = instructor;
-        this.students = new Array();
-        this.score = 0;
-        this.comments = comment;
-        this.place = place;
-        this.hour = hour;
-        this.days = days;
+        this.comments = comments;
         this.description = description;
         this.category = category;
         this.rate = rate;
         this.totalVotes = totalVotes;
         this.image = image;
+        this.clases = clases;
     }
     return Group;
 }());
@@ -601,8 +656,8 @@ var Todo = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
 var User = (function () {
-    function User(name, lastname, image, phone, password, email, description, type, username, rate, totalVotes, groups) {
-        this.name = name;
+    function User(nombre, lastname, image, phone, password, email, description, type, username, rate, totalVotes, clases, cupo) {
+        this.nombre = nombre;
         this.lastname = lastname;
         this.image = image;
         this.phone = phone;
@@ -613,7 +668,8 @@ var User = (function () {
         this.username = username;
         this.rate = rate;
         this.totalVotes = totalVotes;
-        this.groups = groups;
+        this.clases = clases;
+        this.cupo = cupo;
     }
     return User;
 }());
@@ -643,7 +699,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/edit-info/edit-info-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\n    <title>Edit Info</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n\n    <style>\n        h1 {\n            font-weight: bold;\n            color: #333333;\n        }\n        h2{\n            text-align: center;\n        }\n        .bg-1 {\n            background-color: #474e5d; /* Green */\n            color: #ffffff;\n        }\n        .bg-2 {\n            background-color: #1abc9c; /* Dark Blue */\n            color: #ffffff;\n        }\n        .bg-3 {\n            background-color: #fff; /* White */\n            color: #555555;\n        }\n        .btn {\n            padding: 10px 20px;\n            background-color: #333;\n            color: #f1f1f1;\n            border-radius: 0;\n            transition: .2s;\n        }\n    </style>\n</head>\n<body >\n\n\n\n<div class=\"container\">\n    <form [formGroup]=\"userForm\" >\n\n<div class=\"container-fluid bg-1 text-center\">\n    <h3>{{user.type}}</h3>\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\n    <button type=\"button\" style=\"position: absolute; right: 0;\" class=\"btn btn-primary btn-lg\" data-toggle=\"modal\" data-target=\"#editImage\" >Edit Image</button>\n    <h3>{{user.name}} {{user.lastname}}</h3>\n</div>\n\n<div class=\"container-fluid bg-2 text-center\">\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editEmail\">Edit Email</button>\n    <h3>Contact</h3>\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"   data-toggle=\"modal\" data-target=\"#editPhone\">Edit Phone</button>\n    <p>Email: {{user.email}}</p>\n    <p>Phone: {{user.phone}}</p>\n\n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editDescription\">Edit Description</button>\n    <h3>Description</h3>\n    <p>{{user.description}}</p>\n\n</div>\n\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"editImage\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- Modal content-->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\">Edit Url Image</h4>\n            </div>\n            <div class=\"modal-body\">\n                <p>New Image Url:</p>\n                <input id=\"newImage\" formControlName=\"newImage\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newImage\" aria-label=\"newImage\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"  (click)=\"onSubmitImage()\">Save</button>\n\n            </div>\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"editEmail\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- Modal content-->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\">Edit Email</h4>\n            </div>\n            <div class=\"modal-body\">\n                <p>New Email:</p>\n                <input id=\"newEmail\" formControlName=\"newEmail\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newEmail\" aria-label=\"newEmail\">\n                <button type=\"button\" class=\"btn btn-default\"  data-dismiss=\"modal\" (click)=\"onSubmitEmail()\">Save</button>\n\n            </div>\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"editPhone\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- Modal content-->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\">Edit Phone</h4>\n            </div>\n            <div class=\"modal-body\">\n                <p>New Phone:</p>\n                <input id=\"newPhone\"  formControlName=\"newPhone\" class=\"form-control mr-sm-2\" type=\"number\" placeholder=\"newPhone\" aria-label=\"newPhone\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\" (click)=\"onSubmitPhone()\">Save</button>\n\n            </div>\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"editDescription\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- Modal content-->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\">Edit Description</h4>\n            </div>\n            <div class=\"modal-body\">\n                <p>New Description:</p>\n                <input id=\"newDescription\" formControlName=\"newDescription\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newDescription\" aria-label=\"newDescription\">\n                <button type=\"button\" class=\"btn btn-default\"data-dismiss=\"modal\"  (click)=\"onSubmitDescription()\">Save</button>\n            </div>\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            </div>\n        </div>\n\n    </div>\n</div>\n    </form>\n\n</div>\n</body>\n</html>\n"
+module.exports = "\n<div class=\"container\">\n    <form [formGroup]=\"userForm\" >\n\n<div class=\"container-fluid bg-1 text-center\">\n    <h3>{{user.type}}</h3>\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\n    <button type=\"button\" style=\"position: absolute; right: 0;\" class=\"btn btn-primary btn-lg\" data-toggle=\"modal\" data-target=\"#editImage\" >Edit Image</button>\n    <h3>{{user.nombre}} {{user.lastname}}</h3>\n</div>\n\n<div class=\"container-fluid bg-2 text-center\">\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editEmail\">Edit Email</button>\n    <h3>Contact</h3>\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"   data-toggle=\"modal\" data-target=\"#editPhone\">Edit Phone</button>\n    <p>Email: {{user.email}}</p>\n    <p>Phone: {{user.phone}}</p>\n\n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editDescription\">Edit Description</button>\n    <h3>Description</h3>\n    <p>{{user.description}}</p>\n\n</div>\n\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"editImage\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- Modal content-->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\">Edit Url Image</h4>\n            </div>\n            <div class=\"modal-body\">\n                <p>New Image Url:</p>\n                <input id=\"newImage\" formControlName=\"newImage\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newImage\" aria-label=\"newImage\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"  (click)=\"onSubmitImage()\">Save</button>\n\n            </div>\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"editEmail\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- Modal content-->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\">Edit Email</h4>\n            </div>\n            <div class=\"modal-body\">\n                <p>New Email:</p>\n                <input id=\"newEmail\" formControlName=\"newEmail\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newEmail\" aria-label=\"newEmail\">\n                <button type=\"button\" class=\"btn btn-default\"  data-dismiss=\"modal\" (click)=\"onSubmitEmail()\">Save</button>\n\n            </div>\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"editPhone\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- Modal content-->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\">Edit Phone</h4>\n            </div>\n            <div class=\"modal-body\">\n                <p>New Phone:</p>\n                <input id=\"newPhone\"  formControlName=\"newPhone\" class=\"form-control mr-sm-2\" type=\"number\" placeholder=\"newPhone\" aria-label=\"newPhone\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\" (click)=\"onSubmitPhone()\">Save</button>\n\n            </div>\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            </div>\n        </div>\n\n    </div>\n</div>\n\n<!-- Modal -->\n<div class=\"modal fade\" id=\"editDescription\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n        <!-- Modal content-->\n        <div class=\"modal-content\">\n            <div class=\"modal-header\">\n                <h4 class=\"modal-title\">Edit Description</h4>\n            </div>\n            <div class=\"modal-body\">\n                <p>New Description:</p>\n                <input id=\"newDescription\" formControlName=\"newDescription\" class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"newDescription\" aria-label=\"newDescription\">\n                <button type=\"button\" class=\"btn btn-default\"data-dismiss=\"modal\"  (click)=\"onSubmitDescription()\">Save</button>\n            </div>\n            <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n            </div>\n        </div>\n\n    </div>\n</div>\n    </form>\n\n</div>\n\n"
 
 /***/ }),
 
@@ -678,38 +734,42 @@ var EditInfoPageComponent = (function () {
     EditInfoPageComponent.prototype.onSubmitImage = function () {
         var _this = this;
         this.usersService.editImage(this.username, this.userForm.get('newImage').value).subscribe(function (serverResponse9) {
-            _this.router.navigate(['/welcome']);
+            _this.user = serverResponse9;
+            _this.router.navigateByUrl('/DummyComponent', true);
+            _this.router.navigate(['/info']);
         }, function (error) {
             console.log(error);
         });
-        this.router.navigate(['/welcome']);
     };
     EditInfoPageComponent.prototype.onSubmitDescription = function () {
         var _this = this;
         this.usersService.editDescription(this.username, this.userForm.get('newDescription').value).subscribe(function (serverResponse9) {
-            _this.router.navigate(['/welcome']);
+            _this.user = serverResponse9;
+            _this.router.navigateByUrl('/DummyComponent', true);
+            _this.router.navigate(['/info']);
         }, function (error) {
             console.log(error);
         });
-        this.router.navigate(['/welcome']);
     };
     EditInfoPageComponent.prototype.onSubmitPhone = function () {
         var _this = this;
         this.usersService.editPhone(this.username, this.userForm.get('newPhone').value).subscribe(function (serverResponse9) {
-            _this.router.navigate(['/welcome']);
+            _this.user = serverResponse9;
+            _this.router.navigateByUrl('/DummyComponent', true);
+            _this.router.navigate(['/info']);
         }, function (error) {
             console.log(error);
         });
-        this.router.navigate(['/welcome']);
     };
     EditInfoPageComponent.prototype.onSubmitEmail = function () {
         var _this = this;
         this.usersService.editEmail(this.username, this.userForm.get('newEmail').value).subscribe(function (serverResponse9) {
-            _this.router.navigate(['/welcome']);
+            _this.user = serverResponse9;
+            _this.router.navigateByUrl('/DummyComponent', true);
+            _this.router.navigate(['/info']);
         }, function (error) {
             console.log(error);
         });
-        this.router.navigate(['/welcome']);
     };
     EditInfoPageComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -761,7 +821,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/group-edit-page/group-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <h2> Create Group </h2>\r\n    <form  [formGroup]=\"groupForm\" (ngSubmit)=\"onSubmit()\" novalidate>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"name\">Name</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"place\">Place</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"place\" formControlName=\"place\" required>\r\n        </div>\r\n        \r\n        <div class=\"form-group\">\r\n            <label>Days</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day1\" formControlName=\"day1\" value = 1> <label for=\"day1\">Monday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day2\" formControlName=\"day2\" value = 1 ><label for=\"day2\">Tuesday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day3\" formControlName=\"day3\" value = 1 ><label for=\"day3\">Wednesday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day4\" formControlName=\"day4\" value = 1 ><label for=\"day4\">Thursday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day5\" formControlName=\"day5\" value = 1 ><label for=\"day5\">Friday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day6\" formControlName=\"day6\" value = 1 ><label for=\"day6\">Saturday</label>\r\n            <br>\r\n            <input type=\"checkbox\" class=\"form-control\" id=\"day7\" formControlName=\"day7\" value = 1 ><label for=\"day7\">Sunday</label>\r\n            <br>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"hour\">Hour: </label>\r\n            <input type=\"time\" class=\"form-control\" id=\"hour\" formControlName=\"hour\" required>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"category\">Category: </label>\r\n            <input list=\"Categories\" class=\"form-control\" id=\"category\" formControlName=\"category\" required>\r\n            <datalist id=\"Categories\">\r\n                <option value=\"Martial arts\">\r\n                <option value=\"Sports\">\r\n                <option value=\"Aerobics\">\r\n                <option value=\"flexibility\">\r\n              </datalist>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"description\">Description</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"image\">Url Image</label>\r\n            <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\">\r\n        </div>\r\n\r\n        <br><br>\r\n        <button type=\"submit\" class=\"btn btn-success\">Create group</button>\r\n\r\n    </form>\r\n</div>"
+module.exports = "<div class=\"container\">\n    <h2> Create Group </h2>\n    <form  [formGroup]=\"groupForm\" >\n\n        <div class=\"form-group\">\n            <label for=\"name\">Name</label>\n            <input type=\"text\" class=\"form-control\" id=\"name\" formControlName=\"name\" required>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"category\">Category: </label>\n            <input list=\"Categories\" class=\"form-control\" id=\"category\" formControlName=\"category\" required>\n            <datalist id=\"Categories\">\n                <option value=\"Martial arts\">\n                <option value=\"Sports\">\n                <option value=\"Aerobics\">\n                <option value=\"Flexibility\">\n                <option value=\"Dance\">\n                <option value=\"Others\">\n              </datalist>\n        </div>\n\n\n        <div class=\"form-group\">\n            <label for=\"description\">Description</label>\n            <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"description\" required>\n        </div>\n\n        <div class=\"form-group\">\n            <label for=\"image\">Url Image</label>\n            <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\" required>\n        </div>\n\n        <h2> Add A Session </h2>\n\n        <table class=\"table table-bordered\">\n            <thead>\n            <tr>\n                <th>Date</th>\n                <th>Hour</th>\n                <th>Place</th>\n            </tr>\n            </thead>\n            <tr *ngFor=\"let clase of clases\">\n                <td>{{clase.fecha}}</td>\n                <td>{{clase.hour}}</td>\n                <td>{{clase.place}}</td>\n            </tr>\n        </table>\n\n        <div class=\"form-group\">\n            <label for=\"place\">Place</label>\n            <input type=\"text\" class=\"form-control\" id=\"place\" formControlName=\"place\" required>\n        </div>\n\n\n        <div class=\"form-group\">\n                Date:\n                <input type=\"date\" name=\"date\" id=\"date\" formControlName=\"date\">\n                Hour:\n                <input type=\"time\" id=\"hour\"  formControlName=\"hour\" required=\"true\">\n\n            <br><br>\n            <button type=\"submit\" class=\"btn\" (click)=\"addClass()\" >Add Session</button>\n\n        </div>\n\n\n\n        <br><br>\n        <button type=\"submit\" class=\"btn btn-success\" (click)=\"onSubmit()\">Create group</button>\n\n    </form>\n</div>\n\n"
 
 /***/ }),
 
@@ -775,6 +835,7 @@ module.exports = "<div class=\"container\">\r\n    <h2> Create Group </h2>\r\n  
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_users_service__ = __webpack_require__("../../../../../src/app/services/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_clase__ = __webpack_require__("../../../../../src/app/models/clase.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -789,31 +850,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var GroupEditPageComponent = (function () {
     function GroupEditPageComponent(groupService, usersService, formBuilder, router) {
         this.groupService = groupService;
         this.usersService = usersService;
         this.formBuilder = formBuilder;
         this.router = router;
-        this.days = [];
         this.comments = [];
+        this.clases = [];
     }
+    GroupEditPageComponent.prototype.addClass = function () {
+        this.clases.push(new __WEBPACK_IMPORTED_MODULE_5__models_clase__["a" /* Clase */](Number(sessionStorage.getItem("groupId")), String(this.groupForm.get('date').value), this.groupForm.get('hour').value, this.groupForm.get('place').value, 0, this.groupForm.get('name').value, 0, sessionStorage.getItem('username')));
+    };
     GroupEditPageComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.groupForm = this.formBuilder.group({
             name: '',
             place: '',
-            day1: '',
-            day2: '',
-            day3: '',
-            day4: '',
-            day5: '',
-            day6: '',
-            day7: '',
-            hour: '',
             description: '',
             category: '',
-            image: ''
+            image: '', hour: '', date: ''
         });
         this.usersService.findUserByUsername(sessionStorage.getItem('username')).subscribe(function (usersResponse4) {
             _this.user = usersResponse4;
@@ -821,33 +878,12 @@ var GroupEditPageComponent = (function () {
     };
     GroupEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        if (this.groupForm.get('day1').value) {
-            this.days.push("Monday");
-        }
-        if (this.groupForm.get('day2').value) {
-            this.days.push("Tuesday");
-        }
-        if (this.groupForm.get('day3').value) {
-            this.days.push("Wednesday");
-        }
-        if (this.groupForm.get('day4').value) {
-            this.days.push("Thursday");
-        }
-        if (this.groupForm.get('day5').value) {
-            this.days.push("Friday");
-        }
-        if (this.groupForm.get('day6').value) {
-            this.days.push("Saturday");
-        }
-        if (this.groupForm.get('day7').value) {
-            this.days.push("Sunday");
-        }
-        this.days;
         sessionStorage.setItem('groupname', this.groupForm.get('name').value);
-        this.groupService.create(this.groupForm.get('name').value, this.user, this.groupForm.get('place').value, this.days, this.groupForm.get('hour').value, this.groupForm.get('description').value, this.groupForm.get('category').value, this.comments, 3, 1, this.groupForm.get('image').value).subscribe(function (serverResponse) {
+        this.groupService.create1(0, this.groupForm.get('name').value, this.user.username, this.comments, this.groupForm.get('description').value, this.groupForm.get('category').value, 0, 0, this.groupForm.get('image').value, this.clases).subscribe(function (serverResponse) {
+            sessionStorage.setItem('groupId', String(serverResponse.id));
             _this.router.navigate(['/group']);
         }, function (error) {
-            console.log(error);
+            console.log('ERROR');
         });
     };
     return GroupEditPageComponent;
@@ -887,7 +923,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/group-list/group-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Groups</h2>\n<table class=\"table table-bordered\">\n <thead>\n   <tr>\n     <th>Name</th>\n     <th>Photo</th>\n   </tr>\n </thead>\n <tr *ngFor=\"let group of groups\">\n  <td>{{group.name}}</td>\n  <td><img [src]=\"group.image\" width=\"110\" height=\"110\" /></td>\n  <td> <button class=\"btn btn-outline-success my-2 my-sm-0\" data-dismiss=\"modal\"  (click)=\"entergr()\">Enter</button> <td>\n </tr>\n</table>"
+module.exports = "<h2>Groups</h2>\n<table class=\"table table-bordered\">\n <thead>\n   <tr>\n     <th>Name</th>\n     <th>Photo</th>\n   </tr>\n </thead>\n <tr *ngFor=\"let group of groups\">\n  <td>{{group.nombre}}</td>\n  <td><img [src]=\"group.image\" width=\"110\" height=\"110\" /></td>\n  <td> <button class=\"btn btn-outline-success my-2 my-sm-0\" data-dismiss=\"modal\"  (click)=\"entergr(group.nombre,group.id)\">Enter</button> <td>\n </tr>\n</table>\n\n<div *ngIf=\"groups.length===0\">\n    <h2>Not groups Found</h2>\n</div>\n\n<button class=\"btn btn-outline-success my-2 my-sm-0\" data-dismiss=\"modal\"  (click)=\"back()\">Atrás</button>"
 
 /***/ }),
 
@@ -898,6 +934,7 @@ module.exports = "<h2>Groups</h2>\n<table class=\"table table-bordered\">\n <the
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupListComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -909,20 +946,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var GroupListComponent = (function () {
-    function GroupListComponent(groupService) {
+    function GroupListComponent(groupService, router) {
         this.groupService = groupService;
+        this.router = router;
         this.groups = [];
     }
     GroupListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.groupService.getGroupByCategory(name).subscribe(function (categories) {
+        this.name = sessionStorage.getItem('category');
+        this.groupService.getGroupByCategory(this.name).subscribe(function (categories) {
             _this.groups = categories;
         });
     };
-    GroupListComponent.prototype.setGroup = function (name) {
-        this.name = null;
-        this.name = name;
+    GroupListComponent.prototype.back = function () {
+        this.router.navigate(['/welcome']);
+    };
+    GroupListComponent.prototype.entergr = function (name, id) {
+        console.log(name);
+        sessionStorage.setItem('groupname', name);
+        sessionStorage.setItem('groupId', String(id));
+        this.router.navigate(['/group']);
     };
     return GroupListComponent;
 }());
@@ -932,10 +977,10 @@ GroupListComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/pages/group-list/group-list.component.html"),
         styles: [__webpack_require__("../../../../../src/app/pages/group-list/group-list.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_group_service__["a" /* GroupService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_group_service__["a" /* GroupService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], GroupListComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=group-list.component.js.map
 
 /***/ }),
@@ -961,7 +1006,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/group-profile-page/group-profile-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\n    <title>Group Page</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n    <style>\n        body {\n            font: 400 15px/1.8 Lato, sans-serif;\n            color: #777;\n          }\n          #tituloA{\n            color:#333333;\n            font-weight: bold;\n            text-align: center;\n          ;\n          }\n          h3, h4 {\n            margin: 10px 0 30px 0;\n            letter-spacing: 3px;\n            font-weight: bold;\n            color: #ffffff;\n            font-size: 20px;\n          }\n          .container {\n            padding: 80px 120px;\n          }\n          .person {\n            border: 10px solid transparent;\n            margin-bottom: 25px;\n            width: 80%;\n            height: 80%;\n            opacity: 0.7;\n          }\n          .person:hover {\n            border-color: #f1f1f1;\n          }\n          .carousel-inner img {\n            -webkit-filter: grayscale(20%);\n            filter: grayscale(20%); /* make all photos black and white */\n            width: 60%; /* Set width to 100% */\n            margin: auto;\n          }\n          .carousel-caption h3 {\n            color: #fff !important;\n          }\n          @media (max-width: 600px) {\n            .carousel-caption {\n              display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */\n            }\n          }\n          .bg-2 { \n      background-color: #474e5d; /* Dark Blue */\n      color: #ffffff;\n  }\n\n  .bg-3 { \n      background-color:darkgray; /* Dark Blue */\n      color: #ffffff;\n  }\n          .bg-1 {\n            background: #2d2d30;\n            color: #bdbdbd;\n          }\n          .bg-1 h3 {color: #fff;}\n          .bg-1 p {font-style: italic;}\n          .list-group-item:first-child {\n            border-top-right-radius: 0;\n            border-top-left-radius: 0;\n          }\n          .list-group-item:last-child {\n            border-bottom-right-radius: 0;\n            border-bottom-left-radius: 0;\n          }\n          .thumbnail {\n            padding: 0 0 15px 0;\n            border: none;\n            border-radius: 0;\n          }\n          .thumbnail p {\n            margin-top: 15px;\n            color: #555;\n          }\n          .btn {\n            padding: 10px 20px;\n            background-color: #333;\n            color: #f1f1f1;\n            border-radius: 0;\n            transition: .2s;\n          }\n          .btn:hover, .btn:focus {\n            border: 1px solid #333;\n            background-color: #fff;\n            color: #000;\n          }\n          .modal-header, h4, .close {\n            background-color: #333;\n            color: #fff !important;\n            text-align: center;\n            font-size: 30px;\n          }\n          .modal-header, .modal-body {\n            padding: 40px 50px;\n          }\n          .nav-tabs li a {\n            color: #777;\n          }\n          #googleMap {\n            width: 100%;\n            height: 400px;\n            -webkit-filter: grayscale(100%);\n            filter: grayscale(100%);\n          }\n          .navbar {\n            font-family: Montserrat, sans-serif;\n            margin-bottom: 0;\n            background-color: #2d2d30;\n            border: 0;\n            font-size: 11px !important;\n            letter-spacing: 4px;\n            opacity: 0.9;\n          }\n          .navbar li a, .navbar .navbar-brand {\n            color: #d5d5d5 !important;\n          }\n          .navbar-nav li a:hover {\n            color: #fff !important;\n          }\n          .navbar-nav li.active a {\n            color: #fff !important;\n            background-color: #29292c !important;\n          }\n          .navbar-default .navbar-toggle {\n            border-color: transparent;\n          }\n          .open .dropdown-toggle {\n            color: #fff;\n            background-color: #555 !important;\n          }\n          .dropdown-menu li a {\n            color: #000 !important;\n          }\n          .dropdown-menu li a:hover {\n            background-color: red !important;\n          }\n          footer {\n            background-color: #2d2d30;\n            color: #f5f5f5;\n            padding: 32px;\n          }\n          footer a {\n            color: #f5f5f5;\n          }\n          footer a:hover {\n            color: #777;\n            text-decoration: none;\n          }\n          .form-control {\n            border-radius: 0;\n          }\n          textarea {\n            resize: none;\n          }\n          \n    </style>\n</head>\n<body>\n\n<div class=\"container\">   \n    <form [formGroup]=\"groupForm\" >\n\n\n<div class=\"container-fluid bg-1 text-center\">\n    <h3>{{group.name}}</h3>\n    <img [src]=\"group.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\n    <h3>Group Description</h3>\n    <p>{{group.description}}</p>\n    <h3>Place</h3>\n    <p>{{group.place}}</p>\n    <h3>Days</h3>\n    <p>{{group.days}}</p>\n    <h3>Hour</h3>\n    <p>{{group.hour}}</p>\n</div>\n\n<div class=\"container-fluid bg-2 text-center\">\n    <h3>{{instructor.type}}</h3>\n    <h2>{{instructor.name}} {{instructor.lastname}}</h2>\n    <h3>Contact</h3>\n    <p>{{instructor.email}}</p>\n    <p>{{instructor.phone}}</p>\n    <button type=\"button\" class=\"btn btn-primary btn-lg\"   (click)=\"seeprofile()\">See Profile</button>            \n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <h3>Averague rate</h3>\n    <p>{{group.rate}}</p>\n    <h3>Total</h3>\n    <p>{{group.totalVotes}}</p>\n    <h3>Rate Group</h3>\n\n    <select class=\"form-control\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\" id=\"newRate\">\n            <option>1</option>\n            <option>2</option>\n            <option>3</option>\n            <option>4</option>\n            <option>5</option>\n        </select>\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \"  (click)=\"onSubmitRate()\">Rate</button>\n    <h3 align=\"center\">Join In This Group</h3>\n    <button align=\"center\" style=\"position: absolute; right: 0;\" type=\"button\" class=\"btn btn-primary btn-lg\"  (click)=\"onSubmitRegister()\">Register</button>\n    \n    <h3>Comments</h3>\n    <tr *ngFor=\"let comentario of comentarios\">\n        <td>{{comentario.user}}</td>\n        <td>{{comentario.text}}</td>\n    </tr>\n\n    <textarea class=\"form-control\" formControlName=\"newComment\" class=\"form-control mr-sm-2\" id=\"newComment\" rows=\"4\" cols=\"50\">\n    </textarea>\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editComment \" (click)=\"onSubmitComment()\">Comment</button>\n  </div>\n\n\n</form>\n</div>\n</body>\n</html>\n"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\n    <title>Group Page</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n    <style>\n        body {\n            font: 400 15px/1.8 Lato, sans-serif;\n            color: #777;\n          }\n          #tituloA{\n            color:#333333;\n            font-weight: bold;\n            text-align: center;\n          ;\n          }\n          h3, h4 {\n            margin: 10px 0 30px 0;\n            letter-spacing: 3px;\n            font-weight: bold;\n            color: #ffffff;\n            font-size: 20px;\n          }\n          .container {\n            padding: 80px 120px;\n          }\n          .person {\n            border: 10px solid transparent;\n            margin-bottom: 25px;\n            width: 80%;\n            height: 80%;\n            opacity: 0.7;\n          }\n          .person:hover {\n            border-color: #f1f1f1;\n          }\n          .carousel-inner img {\n            -webkit-filter: grayscale(20%);\n            filter: grayscale(20%); /* make all photos black and white */\n            width: 60%; /* Set width to 100% */\n            margin: auto;\n          }\n          .carousel-caption h3 {\n            color: #fff !important;\n          }\n          @media (max-width: 600px) {\n            .carousel-caption {\n              display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */\n            }\n          }\n          .bg-2 { \n      background-color: #474e5d; /* Dark Blue */\n      color: #ffffff;\n  }\n\n  .bg-3 { \n      background-color:darkgray; /* Dark Blue */\n      color: #ffffff;\n  }\n          .bg-1 {\n            background: #2d2d30;\n            color: #bdbdbd;\n          }\n          .bg-1 h3 {color: #fff;}\n          .bg-1 p {font-style: italic;}\n          .list-group-item:first-child {\n            border-top-right-radius: 0;\n            border-top-left-radius: 0;\n          }\n          .list-group-item:last-child {\n            border-bottom-right-radius: 0;\n            border-bottom-left-radius: 0;\n          }\n          .thumbnail {\n            padding: 0 0 15px 0;\n            border: none;\n            border-radius: 0;\n          }\n          .thumbnail p {\n            margin-top: 15px;\n            color: #555;\n          }\n          .btn {\n            padding: 10px 20px;\n            background-color: #333;\n            color: #f1f1f1;\n            border-radius: 0;\n            transition: .2s;\n          }\n          .btn:hover, .btn:focus {\n            border: 1px solid #333;\n            background-color: #fff;\n            color: #000;\n          }\n          .modal-header, h4, .close {\n            background-color: #333;\n            color: #fff !important;\n            text-align: center;\n            font-size: 30px;\n          }\n          .modal-header, .modal-body {\n            padding: 40px 50px;\n          }\n          .nav-tabs li a {\n            color: #777;\n          }\n          #googleMap {\n            width: 100%;\n            height: 400px;\n            -webkit-filter: grayscale(100%);\n            filter: grayscale(100%);\n          }\n          .navbar {\n            font-family: Montserrat, sans-serif;\n            margin-bottom: 0;\n            background-color: #2d2d30;\n            border: 0;\n            font-size: 11px !important;\n            letter-spacing: 4px;\n            opacity: 0.9;\n          }\n          .navbar li a, .navbar .navbar-brand {\n            color: #d5d5d5 !important;\n          }\n          .navbar-nav li a:hover {\n            color: #fff !important;\n          }\n          .navbar-nav li.active a {\n            color: #fff !important;\n            background-color: #29292c !important;\n          }\n          .navbar-default .navbar-toggle {\n            border-color: transparent;\n          }\n          .open .dropdown-toggle {\n            color: #fff;\n            background-color: #555 !important;\n          }\n          .dropdown-menu li a {\n            color: #000 !important;\n          }\n          .dropdown-menu li a:hover {\n            background-color: red !important;\n          }\n          footer {\n            background-color: #2d2d30;\n            color: #f5f5f5;\n            padding: 32px;\n          }\n          footer a {\n            color: #f5f5f5;\n          }\n          footer a:hover {\n            color: #777;\n            text-decoration: none;\n          }\n          .form-control {\n            border-radius: 0;\n          }\n          textarea {\n            resize: none;\n          }\n\n    </style>\n</head>\n<body>\n\n<div class=\"container\">   \n    <form [formGroup]=\"groupForm\" >\n\n\n<div class=\"container-fluid bg-1 text-center\">\n    <h3>{{group.nombre}}</h3>\n    <img [src]=\"group.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\n    <h3>Group Description</h3>\n    <p>{{group.description}}</p>\n    <h3>Instructor:</h3>\n    <h2>{{instructor}}</h2>\n    <button type=\"button\" class=\"btn btn-primary btn-lg\"   (click)=\"seeprofile()\">See Profile</button>\n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <h3>Averague rate</h3>\n    <p>{{group.rate}}</p>\n    <h3>Total</h3>\n    <p>{{group.totalVotes}}</p>\n    \n</div>\n\n<div class=\"container-fluid bg-3 text-center\" *ngIf=\"isSameInstructor()\">\n    <h3>Rate Group</h3>\n\n    <select class=\"form-control\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\" id=\"newRate\">\n            <option>1</option>\n            <option>2</option>\n            <option>3</option>\n            <option>4</option>\n            <option>5</option>\n    </select>\n    <button type=\"button\" class=\"btn btn-outline-success my-2 my-sm-0\" (click)=\"onSubmitRate()\">Rate</button>\n\n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <h2>Lista de Clases Pendientes</h2>\n    <table class=\"table table-bordered\">\n        <thead>\n        <tr>\n            <th>Date</th>\n            <th>Hour</th>\n            <th>Place</th>\n            <th>Subscribe</th>\n        </tr>\n        </thead>\n        <tr *ngFor=\"let clase of clases\" >\n        <td>{{clase.fecha}}</td>\n        <td>{{clase.hour}}</td>\n        <td>{{clase.place}}</td>\n        <td> <button class=\"btn btn-outline-success my-2 my-sm-0\"  type=\"button\" (click)=\"onSubmitRegister(clase.idclase,clase.idgrupo)\">Enter</button> </td>\n        </tr>\n    </table>\n\n\n    <h3>Comments</h3>\n    <table class=\"table table-bordered\">\n        <thead>\n            <tr>\n                <th>User</th>\n                <th>Text</th>\n                <th>Date</th>\n            </tr>\n            </thead>\n        <tr align=\"center\"  *ngFor=\"let comentario of comentarios\" >\n            <td>{{comentario.usuario}}</td>\n            <td>{{comentario.contenido}}</td>\n            <td>{{comentario.fecha}}</td>\n    </tr>\n  </table>\n</div>\n\n\n\n\n\n  <div class=\"container-fluid bg-3 text-center\" *ngIf=\"isSameInstructor()\">\n    <textarea class=\"form-control\" formControlName=\"newComment\" class=\"form-control mr-sm-2\" id=\"newComment\" rows=\"4\" cols=\"50\">\n    </textarea>\n      <button type=\"button\" class=\"btn btn-outline-success my-2 my-sm-0\" (click)=\"onSubmitComment()\">Comment</button>\n </div>\n\n\n</form>\n</div>\n</body>\n</html>\n"
 
 /***/ }),
 
@@ -997,13 +1042,14 @@ var GroupProfilePageComponent = (function () {
         this.usersService = usersService;
         this.router = router;
         this.formBuilder = formBuilder;
+        this.clases = [];
     }
     GroupProfilePageComponent.prototype.seeprofile = function () {
-        sessionStorage.setItem('username', this.instructor.username);
+        sessionStorage.setItem('profile', this.instructor);
         this.router.navigate(['/profile']);
     };
     GroupProfilePageComponent.prototype.isSameInstructor = function () {
-        if (this.user.username === this.instructor.username) {
+        if (this.user.username === this.instructor) {
             return false;
         }
         else {
@@ -1012,32 +1058,43 @@ var GroupProfilePageComponent = (function () {
     };
     GroupProfilePageComponent.prototype.onSubmitComment = function () {
         var _this = this;
-        this.co = new __WEBPACK_IMPORTED_MODULE_1__models_comment__["a" /* Comment */](this.groupForm.get('newComment').value, this.username, this.groupname);
+        this.co = new __WEBPACK_IMPORTED_MODULE_1__models_comment__["a" /* Comment */](this.groupForm.get('newComment').value, Number(sessionStorage.getItem('groupId')), this.username, 'fecha', 0);
         this.groupService.addComment(this.co).subscribe(function (groupResponse) {
             _this.group = groupResponse;
+            alert('Comentario Relizado Correctamente');
+            _this.router.navigateByUrl('/jejeje', true);
+            _this.router.navigate(['/group']);
         }, function (error) {
             console.log(error);
         });
-        this.router.navigate(['/welcome']);
     };
-    GroupProfilePageComponent.prototype.onSubmitRegister = function () {
+    GroupProfilePageComponent.prototype.onSubmitRegister = function (idclase, idgroup) {
         var _this = this;
-        this.groupService.registerUserInGroup(this.groupname, this.username).subscribe(function (groupResponse) {
-            _this.group = groupResponse;
+        this.groupService.registerUserInGroup(idclase, idgroup, String(sessionStorage.getItem("username"))).subscribe(function (groupResponse) {
+            _this.result = groupResponse;
+            console.log(_this.result);
+            if (groupResponse) {
+                alert('Suscrito Correctamente');
+                _this.router.navigate(['/welcome']);
+            }
+            else {
+                alert('No tienes el suficiente cupo, por favor suscribete a un plan');
+            }
         }, function (error) {
-            console.log(error);
         });
-        this.router.navigate(['/welcome']);
     };
     GroupProfilePageComponent.prototype.onSubmitRate = function () {
         var _this = this;
-        this.groupService.editRate(this.groupname, this.groupForm.get('newRate').value).subscribe(function (serverResponse9) {
-            _this.router.navigate(['/welcome']);
+        this.groupService.editRate(this.groupId, this.groupForm.get('newRate').value).subscribe(function (serverResponse91) {
+            _this.group = serverResponse91;
+            alert('Calificación Gurdada');
+            _this.router.navigateByUrl('/hola', true);
+            _this.router.navigate(['/group']);
         }, function (error) {
             console.log(error);
         });
-        this.router.navigate(['/welcome']);
     };
+    ;
     GroupProfilePageComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.groupForm = this.formBuilder.group({
@@ -1045,16 +1102,24 @@ var GroupProfilePageComponent = (function () {
             newComment: ''
         });
         this.username = sessionStorage.getItem('username');
-        this.groupname = sessionStorage.getItem('groupname');
-        this.usersService.findUserByUsername(this.username).subscribe(function (usersResponse4) {
-            _this.user = usersResponse4;
+        this.groupId = Number(sessionStorage.getItem('groupId'));
+        this.usersService.findUserByUsername(this.username).subscribe(function (usersResponse90) {
+            _this.user = usersResponse90;
         });
-        this.groupService.getGroupByName(this.groupname).subscribe(function (usersResponse5) {
-            _this.group = usersResponse5;
+        this.groupService.getGroupById(this.groupId).subscribe(function (usersResponse50) {
+            _this.group = usersResponse50;
+            //this.clases = this.group.clases;
             _this.comentarios = _this.group.comments;
             _this.instructor = _this.group.instructor;
+            for (var i = 0; i < _this.group.clases.length; i++) {
+                console.log(_this.group.clases[i].usuario + " -- " + _this.instructor);
+                if (_this.group.clases[i].usuario === _this.instructor) {
+                    _this.clases.push(_this.group.clases[i]);
+                }
+            }
         });
     };
+    ;
     return GroupProfilePageComponent;
 }());
 GroupProfilePageComponent = __decorate([
@@ -1079,7 +1144,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "#titulo {\n    font-style: italic;\n    text-align: center;\n    font-weight: bold;\n}", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -1092,7 +1157,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/home-page/home-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <!-- Theme Made By www.w3schools.com - No Copyright -->\n  <title>Bienvenido a Amaru</title>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n  <link href=\"https://fonts.googleapis.com/css?family=Lato\" rel=\"stylesheet\" type=\"text/css\">\n  <link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\" type=\"text/css\">\n\n  <style>\n    body {\n      font: 400 15px/1.8 Lato, sans-serif;\n      color: #777;\n    }\n    #tituloA{\n      color:#333333;\n      font-weight: bold;\n      text-align: center;\n    ;\n    }\n    h3, h4 {\n      margin: 10px 0 30px 0;\n      letter-spacing: 3px;\n      font-weight: bold;\n      color: #ffffff;\n      font-size: 20px;\n    }\n    .container {\n      padding: 80px 120px;\n    }\n    .person {\n      border: 10px solid transparent;\n      margin-bottom: 25px;\n      width: 80%;\n      height: 80%;\n      opacity: 0.7;\n    }\n    .person:hover {\n      border-color: #f1f1f1;\n    }\n    .carousel-inner img {\n      -webkit-filter: grayscale(20%);\n      filter: grayscale(20%); /* make all photos black and white */\n      width: 60%; /* Set width to 100% */\n      margin: auto;\n    }\n    .carousel-caption h3 {\n      color: #fff !important;\n    }\n    @media (max-width: 600px) {\n      .carousel-caption {\n        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */\n      }\n    }\n    .bg-1 {\n      background: #2d2d30;\n      color: #bdbdbd;\n    }\n    .bg-1 h3 {color: #fff;}\n    .bg-1 p {font-style: italic;}\n    .list-group-item:first-child {\n      border-top-right-radius: 0;\n      border-top-left-radius: 0;\n    }\n    .list-group-item:last-child {\n      border-bottom-right-radius: 0;\n      border-bottom-left-radius: 0;\n    }\n    .thumbnail {\n      padding: 0 0 15px 0;\n      border: none;\n      border-radius: 0;\n    }\n    .thumbnail p {\n      margin-top: 15px;\n      color: #555;\n    }\n    .btn {\n      padding: 10px 20px;\n      background-color: #333;\n      color: #f1f1f1;\n      border-radius: 0;\n      transition: .2s;\n    }\n    .btn:hover, .btn:focus {\n      border: 1px solid #333;\n      background-color: #fff;\n      color: #000;\n    }\n    .modal-header, h4, .close {\n      background-color: #333;\n      color: #fff !important;\n      text-align: center;\n      font-size: 30px;\n    }\n    .modal-header, .modal-body {\n      padding: 40px 50px;\n    }\n    .nav-tabs li a {\n      color: #777;\n    }\n    #googleMap {\n      width: 100%;\n      height: 400px;\n      -webkit-filter: grayscale(100%);\n      filter: grayscale(100%);\n    }\n    .navbar {\n      font-family: Montserrat, sans-serif;\n      margin-bottom: 0;\n      background-color: #2d2d30;\n      border: 0;\n      font-size: 11px !important;\n      letter-spacing: 4px;\n      opacity: 0.9;\n    }\n    .navbar li a, .navbar .navbar-brand {\n      color: #d5d5d5 !important;\n    }\n    .navbar-nav li a:hover {\n      color: #fff !important;\n    }\n    .navbar-nav li.active a {\n      color: #fff !important;\n      background-color: #29292c !important;\n    }\n    .navbar-default .navbar-toggle {\n      border-color: transparent;\n    }\n    .open .dropdown-toggle {\n      color: #fff;\n      background-color: #555 !important;\n    }\n    .dropdown-menu li a {\n      color: #000 !important;\n    }\n    .dropdown-menu li a:hover {\n      background-color: red !important;\n    }\n    footer {\n      background-color: #2d2d30;\n      color: #f5f5f5;\n      padding: 32px;\n    }\n    footer a {\n      color: #f5f5f5;\n    }\n    footer a:hover {\n      color: #777;\n      text-decoration: none;\n    }\n    .form-control {\n      border-radius: 0;\n    }\n    textarea {\n      resize: none;\n    }\n\n  </style>\n</head>\n<body id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">\n\n\n<div id=\"tituloA\"  >\n  <button style=\"position: absolute; right: 0;\" type=\"button\" class=\"btn btn-primary btn-lg\"  routerLinkActive=\"/signin\" routerLink=\"/signin\">Iniciar Sesión</button>\n  <h1 >Bienvenido a AMARU</h1>\n</div>\n\n\n<div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\">\n    <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n    <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\n    <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n  </ol>\n\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <div class=\"item active\">\n      <img src=\"http://www.zamoradeportivo.com/fotos/img_1263.jpg\" alt=\"New York\" width=\"800\" height=\"600\">\n      <div class=\"carousel-caption\">\n        <h3>Puedes Aprender</h3>\n        <p>¡En AMARU Puedes Aprender Disciplinas Deportivas Como Kick Boxing Entre Otros!</p>\n      </div>\n    </div>\n\n    <div class=\"item\">\n      <img src=\"http://3.bp.blogspot.com/-a0rcSwOqJtk/VUnCm-RBOQI/AAAAAAAAZUA/PWGNB17bC54/s1600/IMG_7272.JPG\" alt=\"Chicago\" width=\"800\" height=\"600\">\n      <div class=\"carousel-caption\">\n        <h3>Crea Tus Propios Grupos</h3>\n        <p>En AMARU Con La Opción De Instructor Puedes Enseñarle A Los Demás</p>\n      </div>\n    </div>\n\n    <div class=\"item\">\n      <img src=\"https://www.ecologiaverde.com/wp-content/2016/05/frisbee.jpg\" alt=\"Los Angeles\" width=\"800\" height=\"600\">\n      <div class=\"carousel-caption\">\n        <h3>Sal De La Rutina</h3>\n        <p>Con AMARU Puedes Aprovechar Tus Tiempos Libres Y Fortalecer Tu Mente Y Cuerpo</p>\n      </div>\n    </div>\n  </div>\n\n  <!-- Left and right controls -->\n  <a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">\n    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">\n    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n\n<!-- Container (The Band Section) -->\n<div id=\"band\" class=\"container text-center\">\n  <h1>!Regístrate Es Gratis!</h1>\n  <button type=\"button\" class=\"btn btn-primary btn-lg\"  routerLinkActive=\"/newuser\" routerLink=\"/newuser\">REGISTRARSE</button>\n  <p><em>Nunca es tarde para empezar</em></p>\n  <br>\n\n</div>\n\n<!-- Container (TOUR Section) -->\n<div id=\"tour\" class=\"bg-1\">\n  <div class=\"container\">\n    <h3 class=\"text-center\">¿Qué es AMARU?</h3>\n    <p class=\"text-center\"> Sebastian Castaño <br> Leonardo Herrera <br> Cristian Mendivelso <br> Christian Soto </p>\n\n\n\n  </div>\n\n</div>\n\n<footer class=\"text-center\">\n  <a class=\"up-arrow\" href=\"#myPage\" data-toggle=\"tooltip\" title=\"TO TOP\">\n    <span class=\"glyphicon glyphicon-chevron-up\"></span>\n  </a><br><br>\n  <p>Bootstrap Theme Made By <a href=\"https://www.w3schools.com\" data-toggle=\"tooltip\" title=\"Visit w3schools\">www.w3schools.com</a></p>\n</footer>\n\n\n</body>\n</html>\n"
+module.exports = "<!-- Header -->\n<header class=\"masthead\">\n  <!--  <video loop muted autoplay poster=\"../video/4.jpg\" >\n        <source src=\"../video/3.webm\" type=\"video/webm\">\n        <source src=\"../video/2.mp4\" type=\"video/mp4\">\n        <source src=\"../video/1.ogg\" type=\"video/ogg\">\n    </video> -->\n\n    \n\n\n\n</header>\n\n<div id=\"carouselExampleIndicators\" class=\"carousel slide\" data-ride=\"carousel\">\n  <ol class=\"carousel-indicators\">\n    <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>\n    <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>\n    <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li>\n  </ol>\n  <div class=\"carousel-inner\" role=\"listbox\">\n    <div class=\"carousel-item active\">\n      <img class=\"d-block img-fluid\" src=\"https://i.imgur.com/1PKWVFW.png\" alt=\"First slide\" >\n    </div>\n    <div class=\"carousel-item\">\n      <img class=\"d-block img-fluid\" src=\"https://i.ytimg.com/vi/EFwsLzqXeGk/maxresdefault.jpg\" alt=\"Second slide\">\n      <div class=\"carousel-caption d-none d-md-block\">\n        <h3>Crea Tus Propios Grupos</h3>\n        <p>En AMARU Con La Opción De Instructor Puedes Enseñarle A Los Demás</p>\n      </div>\n    </div>\n    <div class=\"carousel-item\">\n      <img class=\"d-block img-fluid\" src=\"https://i.ytimg.com/vi/dBnUreide7Q/maxresdefault.jpg\" alt=\"Third slide\">\n      <div class=\"carousel-caption d-none d-md-block\">\n        <h3>Sal De La Rutina</h3>\n        <p>Con AMARU Puedes Aprovechar Tus Tiempos Libres Y Fortalecer Tu Mente Y Cuerpo</p>\n      </div>\n    </div>\n  </div>\n  <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">\n    <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Previous</span>\n  </a>\n  <a class=\"carousel-control-next\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\">\n    <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n    <span class=\"sr-only\">Next</span>\n  </a>\n</div>\n\n\n\n\n<!-- Container (The Band Section) -->\n<div id=\"band\" class=\"container text-center\">\n  <h1>!Regístrate Es Gratis!</h1>\n  <button type=\"button\" class=\"btn btn-primary btn-lg\" routerLinkActive=\"/newuser\" routerLink=\"/newuser\">REGISTRARSE</button>\n  <p>\n    <em>Nunca es tarde para empezar</em>\n  </p>\n  <br>\n\n</div>\n\n<!-- Container (TOUR Section) -->\n<div id=\"tour\" class=\"bg-1\">\n  <div class=\"container\">\n    <h3 class=\"text-center\">¿Qué es AMARU?</h3>\n    <p class=\"text-center\"> Sebastian Castaño\n      <br> Leonardo Herrera\n      <br> Cristian Mendivelso\n      <br> Christian Soto </p>\n\n\n\n  </div>\n\n</div>\n\n\n<footer class=\"text-center\">\n  <a class=\"up-arrow\" href=\"#myPage\" data-toggle=\"tooltip\" title=\"TO TOP\">\n    <span class=\"glyphicon glyphicon-chevron-up\"></span>\n  </a>\n  <br>\n  <br>\n  <p>Bootstrap Theme Made By\n    <a href=\"https://www.w3schools.com\" data-toggle=\"tooltip\" title=\"Visit w3schools\">www.w3schools.com</a>\n  </p>\n</footer>"
 
 /***/ }),
 
@@ -1142,7 +1207,6 @@ HomePageComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_group_service__ = __webpack_require__("../../../../../src/app/services/group.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__group_list_group_list_component__ = __webpack_require__("../../../../../src/app/pages/group-list/group-list.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1157,17 +1221,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var HomeSigninPageComponent = (function () {
-    function HomeSigninPageComponent(usersService, router, formBuilder, groupService, groupListComponent) {
+    function HomeSigninPageComponent(usersService, router, formBuilder, groupService) {
         this.usersService = usersService;
         this.router = router;
         this.formBuilder = formBuilder;
         this.groupService = groupService;
-        this.groupListComponent = groupListComponent;
-        this.groups = [];
+        this.clases = [];
         this.flag = false;
         this.flagamaru = false;
+        this.groups = [];
     }
     HomeSigninPageComponent.prototype.isInstructor = function () {
         return this.flag;
@@ -1181,7 +1244,7 @@ var HomeSigninPageComponent = (function () {
         this.username = sessionStorage.getItem('username');
         this.usersService.findUserByUsername(this.username).subscribe(function (usersResponse4) {
             _this.user = usersResponse4;
-            _this.groups = usersResponse4.groups;
+            _this.clases = usersResponse4.clases;
             if (usersResponse4.type === 'INSTRUCTOR') {
                 _this.flag = true;
                 _this.flagamaru = false;
@@ -1192,9 +1255,26 @@ var HomeSigninPageComponent = (function () {
             }
         });
     };
+    HomeSigninPageComponent.prototype.comprar = function (cantidad) {
+        var _this = this;
+        this.groupService.buy(cantidad, sessionStorage.getItem('username')).subscribe(function (usersResponse41) {
+            _this.user = usersResponse41;
+            _this.router.navigateByUrl('/DummyComponent', true);
+            _this.router.navigate(['/welcome']);
+        });
+    };
     HomeSigninPageComponent.prototype.onSubmit = function (name) {
-        this.groupListComponent.setGroup(name);
-        this.router.navigate(['/groups']);
+        var _this = this;
+        this.groupService.getGroupByCategory(name).subscribe(function (categories) {
+            _this.groups = categories;
+        });
+        console.log(name);
+    };
+    HomeSigninPageComponent.prototype.entergr = function (name) {
+        console.log(name);
+        sessionStorage.setItem('groupname', name);
+        this.router.navigateByUrl('/DummyComponent', true);
+        this.router.navigate(['/group']);
     };
     return HomeSigninPageComponent;
 }());
@@ -1204,10 +1284,10 @@ HomeSigninPageComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/pages/home-signin-page/home-signin-page.component.html"),
         styles: [__webpack_require__("../../../../../src/app/pages/home-signin-page/home-signin-page.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_group_service__["a" /* GroupService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__group_list_group_list_component__["a" /* GroupListComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__group_list_group_list_component__["a" /* GroupListComponent */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__services_group_service__["a" /* GroupService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_group_service__["a" /* GroupService */]) === "function" && _d || Object])
 ], HomeSigninPageComponent);
 
-var _a, _b, _c, _d, _e;
+var _a, _b, _c, _d;
 //# sourceMappingURL=home-signin-page-component.js.map
 
 /***/ }),
@@ -1233,7 +1313,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/home-signin-page/home-signin-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\n    <title>Bienvenido a Amaru</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n    <link href=\"https://fonts.googleapis.com/css?family=Lato\" rel=\"stylesheet\" type=\"text/css\">\n    <link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\" type=\"text/css\">\n\n    <style>\n        \n\n        \n        .container {\n            padding: 8px 120px;\n        }\n\n\n        .nav-tabs li a {\n            color: #777;\n        }\n\n        body {\n      font: 400 15px/1.8 Lato, sans-serif;\n      color: #777;\n    }\n    #tituloA{\n      color:#333333;\n      font-weight: bold;\n      text-align: center;\n    ;\n    }\n    h3, h4 {\n      margin: 10px 0 30px 0;\n      letter-spacing: 3px;\n      font-weight: bold;\n      color: #ffffff;\n      font-size: 20px;\n    }\n    .container {\n      padding: 80px 120px;\n    }\n    .person {\n      border: 10px solid transparent;\n      margin-bottom: 25px;\n      width: 80%;\n      height: 80%;\n      opacity: 0.7;\n    }\n    .person:hover {\n      border-color: #f1f1f1;\n    }\n    .carousel-inner img {\n      -webkit-filter: grayscale(20%);\n      filter: grayscale(20%); /* make all photos black and white */\n      width: 60%; /* Set width to 100% */\n      margin: auto;\n    }\n    .carousel-caption h3 {\n      color: #fff !important;\n    }\n    @media (max-width: 600px) {\n      .carousel-caption {\n        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */\n      }\n    }\n    .bg-1 {\n      background: #2d2d30;\n      color: #bdbdbd;\n    }\n    .bg-1 h3 {color: #fff;}\n    .bg-1 p {font-style: italic;}\n    .list-group-item:first-child {\n      border-top-right-radius: 0;\n      border-top-left-radius: 0;\n    }\n    .list-group-item:last-child {\n      border-bottom-right-radius: 0;\n      border-bottom-left-radius: 0;\n    }\n    .thumbnail {\n      padding: 0 0 15px 0;\n      border: none;\n      border-radius: 0;\n    }\n    .thumbnail p {\n      margin-top: 15px;\n      color: #555;\n    }\n    .btn {\n      padding: 10px 20px;\n      background-color: #333;\n      color: #f1f1f1;\n      border-radius: 0;\n      transition: .2s;\n    }\n    .btn:hover, .btn:focus {\n      border: 1px solid #333;\n      background-color: #fff;\n      color: #000;\n    }\n    .modal-header, h4, .close {\n      background-color: #333;\n      color: #fff !important;\n      text-align: center;\n      font-size: 30px;\n    }\n    .modal-header, .modal-body {\n      padding: 40px 50px;\n    }\n    .nav-tabs li a {\n      color: #777;\n    }\n    #googleMap {\n      width: 100%;\n      height: 400px;\n      -webkit-filter: grayscale(100%);\n      filter: grayscale(100%);\n    }\n    .navbar {\n      font-family: Montserrat, sans-serif;\n      margin-bottom: 0;\n      background-color: #2d2d30;\n      border: 0;\n      font-size: 11px !important;\n      letter-spacing: 4px;\n      opacity: 0.9;\n    }\n    .navbar li a, .navbar .navbar-brand {\n      color: #d5d5d5 !important;\n    }\n    .navbar-nav li a:hover {\n      color: #fff !important;\n    }\n    .navbar-nav li.active a {\n      color: #fff !important;\n      background-color: #29292c !important;\n    }\n    .navbar-default .navbar-toggle {\n      border-color: transparent;\n    }\n    .open .dropdown-toggle {\n      color: #fff;\n      background-color: #555 !important;\n    }\n    .dropdown-menu li a {\n      color: #000 !important;\n    }\n    .dropdown-menu li a:hover {\n      background-color: red !important;\n    }\n    footer {\n      background-color: #2d2d30;\n      color: #f5f5f5;\n      padding: 32px;\n    }\n    footer a {\n      color: #f5f5f5;\n    }\n    footer a:hover {\n      color: #777;\n      text-decoration: none;\n    }\n    .form-control {\n      border-radius: 0;\n    }\n    textarea {\n      resize: none;\n    }\n\n    </style>\n</head>\n<body id=\"myPage\" data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">\n\n\n<div id=\"titulo\"  >\n    <h1 >Bienvenido a AMARU</h1>\n\n\n    <div div *ngIf=\"isInstructor()\" class=\"container\">\n    \n        <h1>Instructor:</h1>  \n        <h2>Create a new group!</h2>\n        <button type=\"button\" class=\"btn btn-primary btn-lg\"  routerLinkActive=\"/newGroup\" routerLink=\"/newGroup\">New Group</button>\n        \n        <h2>Actual Groups</h2>\n        <p>Grupos Ofrecidos Actualmente:</p>\n        <table class=\"table table-bordered\">\n            <thead>\n            <tr>\n                <th>Name</th>\n            </tr>\n            </thead>\n            <tr *ngFor=\"let group of groups\">\n                <td>{{group.name}}</td>\n            </tr>\n        </table>\n    </div>\n\n    <div div *ngIf=\"isAmaru()\" class=\"container\">\n        <h2>My Groups</h2>\n        <p>Grupos Inscrito Actualmente:</p>\n        <table class=\"table table-bordered\">\n            <thead>\n            <tr>\n                <th>Name</th>\n            </tr>\n            </thead>\n            <tr *ngFor=\"let group of groups\">\n                <td>{{group.name}}</td>\n            </tr>\n        </table>\n    </div>\n\n\n        <h2>Principales Categorías</h2>\n        <p>Descubre los mejores cursos que se adaptan a tus gustos</p>\n        <br>\n        <div class=\"row\">\n\n            <div class=\"col-md-4\">\n                <div class=\"thumbnail\">\n                        <img src=\"https://static7.depositphotos.com/1004713/683/i/950/depositphotos_6836827-stock-photo-aerobics-class-in-park.jpg\" alt=\"Nature\" style=\"width:100%\">\n                        <div class=\"caption\">\n                            <p #aero align=\"center\" (click)=\"onSubmit(aero.value)\">Aerobics</p>\n                        </div>\n                </div>\n            </div>\n            <div class=\"col-md-4\">\n                <div class=\"thumbnail\">\n                        <img src=\"https://i0.wp.com/www.healthfitnessrevolution.com/wp-content/uploads/2015/04/ThinkstockPhotos-463625399.jpg?fit=720%2C487\" alt=\"Nature\" style=\"width:100%\">\n                        <div class=\"caption\">\n                            <p #mar align=\"center\" (click)=\"onSubmit(mar.value)\">Martial Arts</p>\n                        </div>\n                </div>\n            </div>\n            <div class=\"col-md-4\">\n                <div class=\"thumbnail\">\n                        <img src=\"https://cdn.tinybuddha.com/wp-content/uploads/2011/03/Flexible.jpg\" alt=\"Fjords\" style=\"width:100%\">\n                        <div class=\"caption\">\n                            <p #flex align=\"center\" (click)=\"onSubmit(flex.value)\">Flexibility</p>\n                        </div>\n                </div>\n            </div>\n\n        </div>\n        <div class=\"col-md-4\">\n            <div class=\"thumbnail\">\n                    <img src=\"https://favim.com/orig/201108/16/couple-dancing-kiss-kisses-photography-Favim.com-124153.jpg\" alt=\"Lights\" style=\"width:100%\">\n                    <div class=\"caption\">\n                        <p #dan align=\"center\" (click)=\"onSubmit(dan.value)\">Dance</p>\n                    </div>\n            </div>\n        </div>\n        <div class=\"col-md-4\">\n            <div class=\"thumbnail\">\n                    <img src=\"http://www.imdsg.es/wp-content/uploads/fondo.jpg\" alt=\"Lights\" style=\"width:100%\">\n                    <div class=\"caption\">\n                        <p align=\"center\">Sports</p>\n                    </div>\n            </div>\n        </div>\n        <div class=\"col-md-4\">\n            <div class=\"thumbnail\">\n                    <img src=\"http://innerfitnw.com/wp-content/uploads/2016/04/girl_jogging_868.jpg\" alt=\"Fjords\" style=\"width:100%\">\n                    <div class=\"caption\">\n                        <p align=\"center\">Others</p>\n                    </div>\n            </div>\n        </div>\n\n\n\n\n\n</div>\n\n\n</body>\n</html>"
+module.exports = "\n<head>\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\n    <title>Bienvenido a Amaru</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link href=\"https://fonts.googleapis.com/css?family=Lato\" rel=\"stylesheet\" type=\"text/css\">\n    <link href=\"https://fonts.googleapis.com/css?family=Montserrat\" rel=\"stylesheet\" type=\"text/css\">\n\n \n</head>\n\n\n<div id=\"titulo\"  >\n    <h1 >Bienvenido a AMARU</h1>\n\n\n    <div div *ngIf=\"isInstructor()\" class=\"container\">\n    \n        <h1>Instructor:</h1>  \n        <h2>Create a new group!</h2>\n        <button type=\"button\" class=\"btn btn-primary btn-lg\"  routerLinkActive=\"/newGroup\" routerLink=\"/newGroup\">New Group</button>\n        \n        <h2>Actual Sessions</h2>\n        <p>Sesiones A Dictar</p>\n        <table class=\"table table-bordered\">\n            <thead>\n            <tr>\n                <th>Name</th>\n                <th>Date</th>\n                <th>Hour</th>\n                <th>Place</th>\n                <th># Of Students</th>\n            </tr>\n            </thead>\n            <tr *ngFor=\"let clase of clases\">\n                <td>{{clase.nombregrupo}}</td>\n                <td>{{clase.fecha}}</td>\n                <td>{{clase.hour}}</td>\n                <td>{{clase.place}}</td>\n                <td>{{clase.numinscritos}}</td>\n            </tr>\n        </table>\n    </div>\n\n    <div div *ngIf=\"isAmaru()\" class=\"container\">\n        <p>Te puedes inscribir a {{user.cupo}} clases más</p>\n        <h2>My Sessions</h2>\n        <p>Sessiones Inscritas actualmente</p>\n        <table class=\"table table-bordered\">\n            <thead>\n            <tr>\n                <th>Name</th>\n                <th>Date</th>\n                <th>Hour</th>\n                <th>Place</th>\n            </tr>\n            </thead>\n            <tr *ngFor=\"let clase of clases\">\n                <td>{{clase.nombregrupo}}</td>\n                <td>{{clase.fecha}}</td>\n                <td>{{clase.hour}}</td>\n                <td>{{clase.place}}</td>\n            </tr>\n        </table>\n        <h2>Comprar Subscripción</h2>\n        <button class=\"btn btn-outline-success my-2 my-sm-0\" (click)=\"comprar(1)\">1 Clase</button>\n        <button class=\"btn btn-outline-success my-2 my-sm-0\" (click)=\"comprar(4)\">4 Clases</button>\n        <button class=\"btn btn-outline-success my-2 my-sm-0\" (click)=\"comprar(8)\">8 Clases</button>\n        <button class=\"btn btn-outline-success my-2 my-sm-0\" (click)=\"comprar(12)\">12 Clases</button>\n    </div>\n\n\n        <section class=\"bg-light\" id=\"portfolio\">\n            <div class=\"container\">\n              <div class=\"row\">\n                <div class=\"col-lg-12 text-center\">\n                  <h2 class=\"section-heading\">Principales Categorías</h2>\n                  <h3 class=\"section-subheading text-muted\">Descubre los mejores cursos que se adaptan a tus gustos</h3>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-4 col-sm-6 portfolio-item\">\n                  <a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#aerobicmodal1\" (click)=\"onSubmit('Aerobics')\">\n                    <div class=\"portfolio-hover\">\n                      <div class=\"portfolio-hover-content\">\n                        <i class=\"fa fa-plus fa-3x\"></i>\n                      </div>\n                    </div>\n                    <img class=\"img-fluid\" src=\"https://static7.depositphotos.com/1004713/683/i/950/depositphotos_6836827-stock-photo-aerobics-class-in-park.jpg?fit=720%2C487\" alt=\"\">\n                  </a>\n                  <div class=\"portfolio-caption\">\n                    <h4>Aerobics</h4>\n                  </div>\n                </div>\n\n                <div class=\"col-md-4 col-sm-6 portfolio-item\">\n                  <a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#portfolioModal2\" (click)=\"onSubmit('Martial Arts')\">\n                    <div class=\"portfolio-hover\">\n                      <div class=\"portfolio-hover-content\">\n                        <i class=\"fa fa-plus fa-3x\"></i>\n                      </div>\n                    </div>\n                    <img class=\"img-fluid\" src=\"https://i0.wp.com/www.healthfitnessrevolution.com/wp-content/uploads/2015/04/ThinkstockPhotos-463625399.jpg?fit=720%2C487\" alt=\"\">\n                  </a>\n                  <div class=\"portfolio-caption\">\n                    <h4>Martial Arts</h4>\n                  </div>\n                </div>\n\n                <div class=\"col-md-4 col-sm-6 portfolio-item\">\n                  <a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#portfolioModal4\" (click)=\"onSubmit('Dance')\">\n                    <div class=\"portfolio-hover\">\n                      <div class=\"portfolio-hover-content\">\n                        <i class=\"fa fa-plus fa-3x\"></i>\n                      </div>\n                    </div>\n                    <img class=\"img-fluid\" src=\"https://favim.com/orig/201108/16/couple-dancing-kiss-kisses-photography-Favim.com-124153.jpg\" alt=\"\">\n                  </a>\n                  <div class=\"portfolio-caption\">\n                    <h4>Dance</h4>\n                  </div>\n                </div>\n\n                  <div class=\"col-md-4 col-sm-6 portfolio-item\">\n                  <a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#portfolioM6\" (click)=\"onSubmit('Flexibility')\">\n                    <div class=\"portfolio-hover\">\n                      <div class=\"portfolio-hover-content\">\n                        <i class=\"fa fa-plus fa-3x\"></i>\n                      </div>\n                    </div>\n                    <img class=\"img-fluid\" src=\"https://cdn.tinybuddha.com/wp-content/uploads/2011/03/Flexible.jpg\" alt=\"\" (click)=\"onSubmit('Flexibility')\">\n                  </a>\n                    <div class=\"portfolio-caption\">\n                        <h4>Flexibility</h4>\n                    </div>\n                </div>\n\n                  <div class=\"col-md-4 col-sm-6 portfolio-item\">\n                      <a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#portfolioModal3\" (click)=\"onSubmit('Sports')\">\n                          <div class=\"portfolio-hover\">\n                              <div class=\"portfolio-hover-content\">\n                                  <i class=\"fa fa-plus fa-3x\"></i>\n                              </div>\n                          </div>\n                          <img class=\"img-fluid\" src=\"http://www.imdsg.es/wp-content/uploads/fondo.jpg\" alt=\"\" (click)=\"onSubmit('Sports')\">\n                      </a>\n                  <div class=\"portfolio-caption\">\n                    <h4>Sports</h4>\n                  </div>\n                </div>\n\n                  <div class=\"col-md-4 col-sm-6 portfolio-item\">\n                  <a class=\"portfolio-link\" data-toggle=\"modal\" href=\"#portfolioModal5\">\n                    <div class=\"portfolio-hover\">\n                      <div class=\"portfolio-hover-content\">\n                        <i class=\"fa fa-plus fa-3x\"></i>\n                      </div>\n                    </div>\n                    <img class=\"img-fluid\" img src=\"http://innerfitnw.com/wp-content/uploads/2016/04/girl_jogging_868.jpg\" alt=\"\" (click)=\"onSubmit('Others')\">\n                  </a>\n                  <div class=\"portfolio-caption\">\n                    <h4>Others</h4>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </section>\n      \n\n<!-- Portfolio Modals -->\n\n    <!-- Modal 1 -->\n    <div class=\"portfolio-modal modal fade\" id=\"aerobicmodal1\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n        <div class=\"modal-dialog\">\n          <div class=\"modal-content\">\n            <div class=\"close-modal\" data-dismiss=\"modal\">\n              <div class=\"lr\">\n                <div class=\"rl\"></div>\n              </div>\n            </div>\n            <div class=\"container\">\n              <div class=\"row\">\n                <div class=\"col-lg-8 mx-auto\">\n                  <div class=\"modal-body\">\n                    <!-- Project Details Go Here -->\n                    <h2>Groups</h2>\n                    <img class=\"img-fluid d-block mx-auto\" src=\"https://static7.depositphotos.com/1004713/683/i/950/depositphotos_6836827-stock-photo-aerobics-class-in-park.jpg?fit=720%2C487\" alt=\"\">\n                    <table class=\"table table-bordered\">\n                        <thead>\n                          <tr>\n                            <th>Name</th>\n                            <th>Photo</th>\n                          </tr>\n                        </thead>\n                        <tr *ngFor=\"let group of groups\">\n                         <td>{{group.nombre}}</td>\n                         <td><img [src]=\"group.image\" width=\"110\" height=\"110\" /></td>\n                         <td> <button class=\"btn btn-outline-success my-2 my-sm-0\" data-dismiss=\"modal\"  (click)=\"entergr(group.nombre)\">Enter</button> <td>\n                        </tr>\n                       </table>\n                    <button class=\"btn btn-primary\" data-dismiss=\"modal\" type=\"button\">\n                      <i class=\"fa fa-times\"></i>\n                      Close</button>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n  \n      <!-- Modal 2 -->\n      <div class=\"portfolio-modal modal fade\" id=\"portfolioModal2\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n        <div class=\"modal-dialog\">\n          <div class=\"modal-content\">\n            <div class=\"close-modal\" data-dismiss=\"modal\">\n              <div class=\"lr\">\n                <div class=\"rl\"></div>\n              </div>\n            </div>\n            <div class=\"container\">\n              <div class=\"row\">\n                <div class=\"col-lg-8 mx-auto\">\n                  <div class=\"modal-body\">\n                    <!-- Project Details Go Here -->\n                    <h2>Groups</h2>\n                    <img class=\"img-fluid d-block mx-auto\" src=\"https://i0.wp.com/www.healthfitnessrevolution.com/wp-content/uploads/2015/04/ThinkstockPhotos-463625399.jpg?fit=720%2C487\" alt=\"\">\n                    <table class=\"table table-bordered\">\n                        <thead>\n                          <tr>\n                            <th>Name</th>\n                            <th>Photo</th>\n                          </tr>\n                        </thead>\n                        <tr *ngFor=\"let group of groups\">\n                         <td>{{group.nombre}}</td>\n                         <td><img [src]=\"group.image\" width=\"110\" height=\"110\" /></td>\n                         <td> <button class=\"btn btn-outline-success my-2 my-sm-0\" data-dismiss=\"modal\"  (click)=\"entergr(group.nombre)\">Enter</button> <td>\n                        </tr>\n                       </table>\n                    <button class=\"btn btn-primary\" data-dismiss=\"modal\" type=\"button\">\n                      <i class=\"fa fa-times\"></i>\n                      Close</button>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n  \n      <!-- Modal 3 -->\n      <div class=\"portfolio-modal modal fade\" id=\"portfolioModal3\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n        <div class=\"modal-dialog\">\n          <div class=\"modal-content\">\n            <div class=\"close-modal\" data-dismiss=\"modal\">\n              <div class=\"lr\">\n                <div class=\"rl\"></div>\n              </div>\n            </div>\n            <div class=\"container\">\n              <div class=\"row\">\n                <div class=\"col-lg-8 mx-auto\">\n                  <div class=\"modal-body\">\n                    <!-- Project Details Go Here -->\n                    <h2>Groups</h2>\n                    <img class=\"img-fluid d-block mx-auto\" src=\"http://www.imdsg.es/wp-content/uploads/fondo.jpg\" alt=\"\">\n                    <table class=\"table table-bordered\">\n                        <thead>\n                          <tr>\n                            <th>Name</th>\n                            <th>Photo</th>\n                          </tr>\n                        </thead>\n                        <tr *ngFor=\"let group of groups\">\n                         <td>{{group.nombre}}</td>\n                         <td><img [src]=\"group.image\" width=\"110\" height=\"110\" /></td>\n                         <td> <button class=\"btn btn-outline-success my-2 my-sm-0\" data-dismiss=\"modal\"  (click)=\"entergr(group.nombre)\">Enter</button> <td>\n                        </tr>\n                       </table>\n                    <button class=\"btn btn-primary\" data-dismiss=\"modal\" type=\"button\">\n                      <i class=\"fa fa-times\"></i>\n                      Close</button>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n  \n      <!-- Modal 4 -->\n      <div class=\"portfolio-modal modal fade\" id=\"portfolioModal4\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n        <div class=\"modal-dialog\">\n          <div class=\"modal-content\">\n            <div class=\"close-modal\" data-dismiss=\"modal\">\n              <div class=\"lr\">\n                <div class=\"rl\"></div>\n              </div>\n            </div>\n            <div class=\"container\">\n              <div class=\"row\">\n                <div class=\"col-lg-8 mx-auto\">\n                  <div class=\"modal-body\">\n                    <!-- Project Details Go Here -->\n                    <h2>Groups</h2>\n                    <p class=\"item-intro text-muted\">Dance</p>\n                    <img class=\"img-fluid d-block mx-auto\" src=\"https://favim.com/orig/201108/16/couple-dancing-kiss-kisses-photography-Favim.com-124153.jpg\" alt=\"\">\n                    <table class=\"table table-bordered\">\n                        <thead>\n                          <tr>\n                            <th>Name</th>\n                            <th>Photo</th>\n                          </tr>\n                        </thead>\n                        <tr *ngFor=\"let group of groups\">\n                         <td>{{group.nombre}}</td>\n                         <td><img [src]=\"group.image\" width=\"110\" height=\"110\" /></td>\n                         <td> <button class=\"btn btn-outline-success my-2 my-sm-0\" data-dismiss=\"modal\"  (click)=\"entergr(group.nombre)\">Enter</button> <td>\n                        </tr>\n                       </table>\n                    <button class=\"btn btn-primary\" data-dismiss=\"modal\" type=\"button\">\n                      <i class=\"fa fa-times\"></i>\n                      Close</button>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </div>\n  \n      <!-- Modal 5 portfolioModal5-->\n    <div class=\"portfolio-modal modal fade\" id=\"portfolioModal5\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n        <div class=\"modal-dialog\">\n            <div class=\"modal-content\">\n                <div class=\"close-modal\" data-dismiss=\"modal\">\n                    <div class=\"lr\">\n                        <div class=\"rl\"></div>\n                    </div>\n                </div>\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-lg-8 mx-auto\">\n                            <div class=\"modal-body\">\n                                <!-- Project Details Go Here -->\n                                <h2>Groups</h2>\n                                <p class=\"item-intro text-muted\">Lorem ipsum dolor sit amet consectetur.</p>\n                                <img class=\"img-fluid d-block mx-auto\" src=\"http://innerfitnw.com/wp-content/uploads/2016/04/girl_jogging_868.jpg\" alt=\"\">\n                                <table class=\"table table-bordered\">\n                                    <thead>\n                                    <tr>\n                                        <th>Name</th>\n                                        <th>Photo</th>\n                                    </tr>\n                                    </thead>\n                                    <tr *ngFor=\"let group of groups\">\n                                        <td>{{group.nombre}}</td>\n                                        <td><img [src]=\"group.image\" width=\"110\" height=\"110\" /></td>\n                                        <td> <button class=\"btn btn-outline-success my-2 my-sm-0\" data-dismiss=\"modal\"  (click)=\"entergr(group.nombre)\">Enter</button> <td>\n                                    </tr>\n                                </table>\n                                <button class=\"btn btn-primary\" data-dismiss=\"modal\" type=\"button\">\n                                    <i class=\"fa fa-times\"></i>\n                                    Close</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  \n      <!-- Modal 6 -->\n    <!-- Modal 3 -->\n    <div class=\"portfolio-modal modal fade\" id=\"portfolioM6\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">\n        <div class=\"modal-dialog\">\n            <div class=\"modal-content\">\n                <div class=\"close-modal\" data-dismiss=\"modal\">\n                    <div class=\"lr\">\n                        <div class=\"rl\"></div>\n                    </div>\n                </div>\n                <div class=\"container\">\n                    <div class=\"row\">\n                        <div class=\"col-lg-8 mx-auto\">\n                            <div class=\"modal-body\">\n                                <!-- Project Details Go Here -->\n                                <h2>Groups</h2>\n                                <img class=\"img-fluid d-block mx-auto\" src=\"https://cdn.tinybuddha.com/wp-content/uploads/2011/03/Flexible.jpg\" alt=\"\">\n                                <table class=\"table table-bordered\">\n                                    <thead>\n                                    <tr>\n                                        <th>Name</th>\n                                        <th>Photo</th>\n                                    </tr>\n                                    </thead>\n                                    <tr *ngFor=\"let group of groups\">\n                                        <td>{{group.nombre}}</td>\n                                        <td><img [src]=\"group.image\" width=\"110\" height=\"110\" /></td>\n                                        <td> <button class=\"btn btn-outline-success my-2 my-sm-0\" data-dismiss=\"modal\"  (click)=\"entergr(group.nombre)\">Enter</button> <td>\n                                    </tr>\n                                </table>\n                                <button class=\"btn btn-primary\" data-dismiss=\"modal\" type=\"button\">\n                                    <i class=\"fa fa-times\"></i>\n                                    Close</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n\n\n\n\n\n        </div>\n\n\n"
 
 /***/ }),
 
@@ -1319,7 +1399,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/sign-in/sing-in-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<style>\n    body {\n      font: 400 15px/1.8 Lato, sans-serif;\n      color: #777;\n    }\n    #tituloA{\n      color:#333333;\n      font-weight: bold;\n      text-align: center;\n    ;\n    }\n    h3, h4 {\n      margin: 10px 0 30px 0;\n      letter-spacing: 3px;\n      font-weight: bold;\n      color: #ffffff;\n      font-size: 20px;\n    }\n    .container {\n      padding: 80px 120px;\n    }\n    .person {\n      border: 10px solid transparent;\n      margin-bottom: 25px;\n      width: 80%;\n      height: 80%;\n      opacity: 0.7;\n    }\n    .person:hover {\n      border-color: #f1f1f1;\n    }\n    .carousel-inner img {\n      -webkit-filter: grayscale(20%);\n      filter: grayscale(20%); /* make all photos black and white */\n      width: 60%; /* Set width to 100% */\n      margin: auto;\n    }\n    .carousel-caption h3 {\n      color: #fff !important;\n    }\n    @media (max-width: 600px) {\n      .carousel-caption {\n        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */\n      }\n    }\n    .bg-1 {\n      background: #2d2d30;\n      color: #bdbdbd;\n    }\n    .bg-1 h3 {color: #fff;}\n    .bg-1 p {font-style: italic;}\n    .list-group-item:first-child {\n      border-top-right-radius: 0;\n      border-top-left-radius: 0;\n    }\n    .list-group-item:last-child {\n      border-bottom-right-radius: 0;\n      border-bottom-left-radius: 0;\n    }\n    .thumbnail {\n      padding: 0 0 15px 0;\n      border: none;\n      border-radius: 0;\n    }\n    .thumbnail p {\n      margin-top: 15px;\n      color: #555;\n    }\n    .btn {\n      padding: 10px 20px;\n      background-color: #333;\n      color: #f1f1f1;\n      border-radius: 0;\n      transition: .2s;\n    }\n    .btn:hover, .btn:focus {\n      border: 1px solid #333;\n      background-color: #fff;\n      color: #000;\n    }\n    .modal-header, h4, .close {\n      background-color: #333;\n      color: #fff !important;\n      text-align: center;\n      font-size: 30px;\n    }\n    .modal-header, .modal-body {\n      padding: 40px 50px;\n    }\n    .nav-tabs li a {\n      color: #777;\n    }\n    #googleMap {\n      width: 100%;\n      height: 400px;\n      -webkit-filter: grayscale(100%);\n      filter: grayscale(100%);\n    }\n    .navbar {\n      font-family: Montserrat, sans-serif;\n      margin-bottom: 0;\n      background-color: #2d2d30;\n      border: 0;\n      font-size: 11px !important;\n      letter-spacing: 4px;\n      opacity: 0.9;\n    }\n    .navbar li a, .navbar .navbar-brand {\n      color: #d5d5d5 !important;\n    }\n    .navbar-nav li a:hover {\n      color: #fff !important;\n    }\n    .navbar-nav li.active a {\n      color: #fff !important;\n      background-color: #29292c !important;\n    }\n    .navbar-default .navbar-toggle {\n      border-color: transparent;\n    }\n    .open .dropdown-toggle {\n      color: #fff;\n      background-color: #555 !important;\n    }\n    .dropdown-menu li a {\n      color: #000 !important;\n    }\n    .dropdown-menu li a:hover {\n      background-color: red !important;\n    }\n    footer {\n      background-color: #2d2d30;\n      color: #f5f5f5;\n      padding: 32px;\n    }\n    footer a {\n      color: #f5f5f5;\n    }\n    footer a:hover {\n      color: #777;\n      text-decoration: none;\n    }\n    .form-control {\n      border-radius: 0;\n    }\n    textarea {\n      resize: none;\n    }\n\n  </style>\n\n<div class=\"container\">\n  <h2>Sign In</h2>\n  <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" novalidate>\n    <div class=\"form-group\">\n      <label for=\"description\">Username</label>\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"username\" required>\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"description\">Password</label>\n      <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\">\n    </div>\n\n    <button type=\"submit\" class=\"btn btn-primary btn-lg\" [disabled]=\"!signInForm.valid\">Sign In</button>\n\n    <p class=\"btn btn-primary btn-lg\" *ngIf=\"loginError\">{{loginError}}</p>\n    <br><br>\n    <button type=\"button\" class=\"btn btn-primary btn-lg\" routerLinkActive=\"/\" routerLink=\"/\" >Back</button>\n  </form>\n</div>\n"
+module.exports = "\n\n<div class=\"container\">\n  <h2>Sign In</h2>\n  <form [formGroup]=\"signInForm\" (ngSubmit)=\"doLogin()\" novalidate>\n    <div class=\"form-group\">\n      <label for=\"description\">Username</label>\n      <input type=\"text\" class=\"form-control\" id=\"description\" formControlName=\"username\" required>\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"description\">Password</label>\n      <input type=\"password\" class=\"form-control\" id=\"alterEgo\" formControlName=\"password\">\n    </div>\n\n    <button type=\"submit\" class=\"btn btn-primary btn-lg\" [disabled]=\"!signInForm.valid\">Sign In</button>\n\n    <p class=\"btn btn-primary btn-lg\" *ngIf=\"loginError\">{{loginError}}</p>\n    <br><br>\n    <button type=\"button\" class=\"btn btn-primary btn-lg\" routerLinkActive=\"/\" routerLink=\"/\" >Back</button>\n  </form>\n</div>\n"
 
 /***/ }),
 
@@ -1558,7 +1638,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-edit-page/user-edit-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <h2> Sign Up in AMARU </h2>\n    <form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\" novalidate>\n      <div class=\"form-group\">\n        <label for=\"nombre\">Name</label>\n        <input type=\"text\" class=\"form-control\" id=\"nombre\" formControlName=\"nombre\" required>\n      </div>\n  \n      <div class=\"form-group\">\n        <label for=\"lastname\">Lastname</label>\n        <input type=\"text\" class=\"form-control\" id=\"lastname\" formControlName=\"lastname\">\n      </div>\n  \n      <div class=\"form-group\">\n        <label for=\"image\">Url Image</label>\n        <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"email\">Email</label>\n        <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input type=\"password\" class=\"form-control\" id=\"password\" formControlName=\"password\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"username\">Username</label>\n        <input type=\"text\" class=\"form-control\" id=\"username\" formControlName=\"username\">\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"phone\">Phone</label>\n        <input type=\"int\" class=\"form-control\" id=\"phone\" formControlName=\"phone\">\n      </div>\n\n\n\n      <div class=\"container\">\n        <label >Type of User</label>\n        <p>Teach as Instructor, Learn as Amaru</p>\n        <select class=\"form-control\" id=\"type\"  formControlName=\"type\">\n          <option value=\"INSTRUCTOR\">Instructor</option>\n          <option value=\"AMARU\">Amaru</option>\n        </select>\n      </div>\n\n\n      <br><br>\n      <button type=\"submit\" class=\"btn btn-success\">Registrarse</button>\n  \n    </form>\n  </div>"
+module.exports = "<div class=\"container\">\n    <h2> Sign Up in AMARU </h2>\n    <form [formGroup]=\"userForm\" (ngSubmit)=\"onSubmit()\" novalidate>\n      <div class=\"form-group\">\n        <label for=\"nombre\">Name</label>\n        <input type=\"text\" class=\"form-control\" id=\"nombre\" formControlName=\"nombre\" required>\n      </div>\n  \n      <div class=\"form-group\">\n        <label for=\"lastname\">Lastname</label>\n        <input type=\"text\" class=\"form-control\" id=\"lastname\" formControlName=\"lastname\" required>\n      </div>\n  \n      <div class=\"form-group\">\n        <label for=\"image\">Url Image</label>\n        <input type=\"text\" class=\"form-control\" id=\"image\" formControlName=\"image\" required>\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"email\">Email</label>\n        <input type=\"text\" class=\"form-control\" id=\"email\" formControlName=\"email\" required>\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"username\">Username</label>\n        <input type=\"text\" class=\"form-control\" id=\"username\" formControlName=\"username\" required>\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"password\">Password</label>\n        <input type=\"password\" class=\"form-control\" id=\"password\" formControlName=\"password\" required>\n      </div>\n\n\n\n      <div class=\"form-group\">\n        <label for=\"phone\">Phone</label>\n        <input type=\"int\" class=\"form-control\" id=\"phone\" formControlName=\"phone\" required>\n      </div>\n\n\n\n      <div class=\"container\">\n        <label >Type of User</label>\n        <p>Teach as Instructor, Learn as Amaru</p>\n        <select class=\"form-control\" id=\"type\"  formControlName=\"type\">\n          <option value=\"INSTRUCTOR\">Instructor</option>\n          <option value=\"AMARU\">Amaru</option>\n        </select>\n      </div>\n\n\n      <br><br>\n      <button type=\"submit\"  data-toggle=\"modal\" data-target=\"#myModal2\" class=\"btn btn-success\">Registrarse</button>\n\n    </form>\n\n  <!-- Modal -->\n  <div class=\"modal fade\" id=\"myModal2\" data-keyboard=\"false\" data-backdrop=\"static\" role=\"dialog\">\n    <div class=\"modal-dialog\">\n\n      <!-- Modal content-->\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <h4 class=\"modal-title\">Result</h4>\n        </div>\n        <div *ngIf=\"!exitoso\" class=\"modal-body\">\n          <p>No fue exitoso</p>\n        </div>\n        <div *ngIf=\"exitoso\" class=\"modal-body\">\n          <p>Registro exitoso</p>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"  (click)=\"onOk()\">Aceptar</button>\n        </div>\n      </div>\n\n    </div>\n  </div>\n  </div>"
 
 /***/ }),
 
@@ -1589,6 +1669,7 @@ var UserEditPageComponent = (function () {
         this.userService = userService;
         this.formBuilder = formBuilder;
         this.router = router;
+        this.exitoso = false;
     }
     UserEditPageComponent.prototype.ngOnInit = function () {
         this.userForm = this.formBuilder.group({
@@ -1605,11 +1686,13 @@ var UserEditPageComponent = (function () {
     };
     UserEditPageComponent.prototype.onSubmit = function () {
         var _this = this;
-        this.userService.create(this.userForm.get('nombre').value, this.userForm.get('lastname').value, this.userForm.get('image').value, this.userForm.get('phone').value, this.userForm.get('password').value, this.userForm.get('email').value, this.userForm.get('description').value, this.userForm.get('type').value, this.userForm.get('username').value, 0, 0, new Array()).subscribe(function (serverResponse2) {
-            _this.router.navigate(['/']);
+        this.userService.create1(this.userForm.get('nombre').value, this.userForm.get('lastname').value, this.userForm.get('image').value, this.userForm.get('phone').value, this.userForm.get('password').value, this.userForm.get('email').value, this.userForm.get('description').value, this.userForm.get('type').value, this.userForm.get('username').value, 0, 0, [], 5).subscribe(function (serverResponse2) {
+            _this.exitoso = true;
         }, function (error) {
             console.log(error);
         });
+    };
+    UserEditPageComponent.prototype.onOk = function () {
         this.router.navigate(['/']);
     };
     return UserEditPageComponent;
@@ -1649,7 +1732,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-list-page/user-list-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<h2>Lista de Usuarios</h2>\n<table class=\"table table-bordered\">\n <thead>\n   <tr>\n     <th>Name</th>\n     <th>Lastname</th>\n     <th>Image</th>\n       <th>email</th>\n       <th>Phone</th>\n       <th>Type</th>\n       <th>Description</th>\n   </tr>\n </thead>\n <tr *ngFor=\"let user of usuarios\">\n   <td>{{user.name}}</td>\n   <td>{{user.lastname}}</td>\n     <td><img [src]=\"user.image\" width=\"110\" height=\"110\" /></td>\n     <td>{{user.email}}</td>\n     <td>{{user.phone}}</td>\n     <td>{{user.type}}</td>\n     <td>{{user.description}}</td>\n </tr>\n</table>\n"
+module.exports = "\n<h2>Lista de Usuarios</h2>\n<table class=\"table table-bordered\">\n <thead>\n   <tr>\n     <th>Name</th>\n     <th>Lastname</th>\n     <th>Image</th>\n       <th>email</th>\n       <th>Phone</th>\n       <th>Type</th>\n       <th>Description</th>\n   </tr>\n </thead>\n <tr *ngFor=\"let user of usuarios\">\n   <td>{{user.nombre}}</td>\n   <td>{{user.lastname}}</td>\n     <td><img [src]=\"user.image\" width=\"110\" height=\"110\" /></td>\n     <td>{{user.email}}</td>\n     <td>{{user.phone}}</td>\n     <td>{{user.type}}</td>\n     <td>{{user.description}}</td>\n </tr>\n</table>\n"
 
 /***/ }),
 
@@ -1719,7 +1802,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pages/user-profile/user-profile-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <!-- Theme Made By www.w3schools.com - No Copyright -->\n    <title>User Page</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n    <style>\n        h1 {\n            font-weight: bold;\n            color: #333333;\n        }\n        h2{\n            text-align: center;\n        }\n        .bg-1 {\n            background-color: #474e5d; /* Green */\n            color: #ffffff;\n        }\n        .bg-2 {\n            background-color: #1abc9c; /* Dark Blue */\n            color: #ffffff;\n        }\n        .bg-3 {\n            background-color: #fff; /* White */\n            color: #555555;\n        }\n    </style>\n</head>\n<body>\n\n<div class=\"container\">\n    <form [formGroup]=\"userForm\" >\n\n<div class=\"container-fluid bg-1 text-center\">\n    <h3>{{user.type}}</h3>\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\n    <h3>{{user.name}} {{user.lastname}}</h3>\n</div>\n\n<div class=\"container-fluid bg-2 text-center\">\n    <h3>Contact</h3>\n    <p>{{user.email}}</p>\n    <p>{{user.phone}}</p>\n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <h3>Description</h3>\n    <p>{{user.description}}</p>\n</div>\n\n<div div *ngIf=\"isInstructor()\" class=\"container\">\n    <h2>Grupos Actuales</h2>\n    <p>Grupos Ofrecidos Actualmente:</p>\n    <table class=\"table table-bordered\">\n        <thead>\n        <tr>\n            <th>Name</th>\n        </tr>\n        </thead>\n        <tr *ngFor=\"let group of groups\">\n            <td>{{group.name}}</td>\n        </tr>\n    </table>\n</div>\n\n<div *ngIf=\"isInstructor()\" class=\"container-fluid bg-3 text-center\">\n    <h3>Averague rate</h3>\n    <p>{{user.rate}}</p>\n    <h3>Total</h3>\n    <p>{{user.totalVotes}}</p>\n\n    <h3>Rate Instructor</h3>\n\n\n    <!--\n    <label>Number:\n        <input id=\"newRate\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\"  ng-model=\"3\"\n               min=\"1\" max=\"5\" required>\n    </label>\n\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" onclick=\"myFunction()\" (click)=\"onSubmitRate()\">Rate</button>\n    -->\n    <select class=\"form-control\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\" id=\"newRate\">\n        <option>1</option>\n        <option>2</option>\n        <option>3</option>\n        <option>4</option>\n        <option>5</option>\n    </select>\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" (click)=\"onSubmitRate()\">Rate</button>\n    \n\n</div>\n\n</form>\n</div>\n</body>\n</html>\n"
+module.exports = "\n\n<div class=\"container\">\n    <form [formGroup]=\"userForm\" >\n\n<div class=\"container-fluid bg-1 text-center\">\n    <h3>{{user.type}}</h3>\n    <img [src]=\"user.image\" class=\"img-circle\" width=\"200\" height=\"200\" />\n    <h3>{{user.nombre}} {{user.lastname}}</h3>\n</div>\n\n<div class=\"container-fluid bg-2 text-center\">\n    <h3>Contact</h3>\n    <p>{{user.email}}</p>\n    <p>{{user.phone}}</p>\n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <h3>Description</h3>\n    <p>{{user.description}}</p>\n</div>\n\n<div div *ngIf=\"isInstructor()\" class=\"container\">\n    <h2>Grupos Actuales</h2>\n    <p>Grupos Ofrecidos Actualmente:</p>\n    <table class=\"table table-bordered\">\n        <thead>\n        <tr>\n            <th>Name</th>\n        </tr>\n        </thead>\n        <tr *ngFor=\"let group of groups\">\n            <td>{{group.nombre}}</td>\n        </tr>\n    </table>\n</div>\n\n<div class=\"container-fluid bg-3 text-center\">\n    <h3>Averague rate</h3>\n    <p>{{user.rate}}</p>\n    <h3>Total</h3>\n    <p>{{user.totalVotes}}</p>\n\n\n\n</div>    \n<div *ngIf=\"isInstructor()\" class=\"container-fluid bg-3 text-center\">\n    <h3>Rate Instructor</h3>\n\n\n    <!--\n    <label>Number:\n        <input id=\"newRate\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\"  ng-model=\"3\"\n               min=\"1\" max=\"5\" required>\n    </label>\n\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" onclick=\"myFunction()\" (click)=\"onSubmitRate()\">Rate</button>\n    -->\n    <select class=\"form-control\" formControlName=\"newRate\" class=\"form-control mr-sm-2\" type=\"number\" id=\"newRate\">\n        <option>1</option>\n        <option>2</option>\n        <option>3</option>\n        <option>4</option>\n        <option>5</option>\n    </select>\n    <button type=\"button\" style=\"position: absolute; right: 0;\"class=\"btn btn-primary btn-lg\"  data-toggle=\"modal\" data-target=\"#editRate \" (click)=\"onSubmitRate()\">Rate</button>\n    \n\n</div>\n\n\n</form>\n\n"
 
 /***/ }),
 
@@ -1750,14 +1833,14 @@ var UserProfilePageComponent = (function () {
         this.usersService = usersService;
         this.router = router;
         this.formBuilder = formBuilder;
-        this.groups = [];
+        this.clases = [];
     }
     UserProfilePageComponent.prototype.isInstructor = function () {
-        if (this.user.type === 'INSTRUCTOR') {
-            return true;
+        if (this.userLoged.type === 'INSTRUCTOR') {
+            return false;
         }
         else {
-            return false;
+            return true;
         }
     };
     UserProfilePageComponent.prototype.onSubmitRate = function () {
@@ -1774,10 +1857,14 @@ var UserProfilePageComponent = (function () {
         this.userForm = this.formBuilder.group({
             newRate: ''
         });
-        this.username = sessionStorage.getItem('username');
+        this.username = sessionStorage.getItem('profile');
+        this.usernameLoged = sessionStorage.getItem('username');
         this.usersService.findUserByUsername(this.username).subscribe(function (usersResponse4) {
             _this.user = usersResponse4;
-            _this.groups = usersResponse4.groups;
+            _this.clases = usersResponse4.clases;
+        });
+        this.usersService.findUserByUsername(this.usernameLoged).subscribe(function (usersResponse5) {
+            _this.userLoged = usersResponse5;
         });
     };
     return UserProfilePageComponent;
@@ -1842,17 +1929,23 @@ var GroupService = (function (_super) {
         _this.resourceUrl = 'group/';
         return _this;
     }
-    GroupService.prototype.getGroupByName = function (name) {
-        return this.get(this.resourceUrl + name);
+    GroupService.prototype.getGroupById = function (id) {
+        return this.get(this.resourceUrl + id);
     };
-    GroupService.prototype.create = function (name, instructor, place, days, hour, description, category, comments, rate, totalVotes, image) {
-        return this.post(this.resourceUrl + "groups", new __WEBPACK_IMPORTED_MODULE_1__models_group__["a" /* Group */](name, instructor, place, days, hour, description, category, comments, rate, totalVotes, image));
+    GroupService.prototype.create1 = function (id, name, instructor, comments, description, category, rate, totalVotes, image, clases) {
+        return this.post(this.resourceUrl + "groups", new __WEBPACK_IMPORTED_MODULE_1__models_group__["a" /* Group */](id, name, instructor, comments, description, category, rate, totalVotes, image, clases));
     };
-    GroupService.prototype.registerUserInGroup = function (groupname, user) {
-        return this.get(this.resourceUrl + "register/" + groupname + "," + user);
+    GroupService.prototype.registerUserInGroup = function (idclase, idgroup, username) {
+        return this.post(this.resourceUrl + "susbcribe", { idclase: idclase, idgroup: idgroup, username: username });
     };
-    GroupService.prototype.editRate = function (name, rate) {
-        return this.post(this.resourceUrl + 'rate', { name: name, rate: rate });
+    GroupService.prototype.editRate = function (id, rate) {
+        return this.post(this.resourceUrl + 'rate', { id: id, rate: rate });
+    };
+    GroupService.prototype.getGroupByName = function (search) {
+        return this.get(this.resourceUrl + "groupsname/" + search);
+    };
+    GroupService.prototype.buy = function (cupo, username) {
+        return this.post('user/' + 'buy/', { username: username, cupo: cupo });
     };
     GroupService.prototype.getGroupByCategory = function (name) {
         return this.get(this.resourceUrl + "groups/" + name);
@@ -2004,8 +2097,8 @@ var UsersService = (function (_super) {
         return this.gets("user/" + username);
     };
     ;
-    UsersService.prototype.create = function (name, lastname, image, phone, password, email, description, type, username, rate, totalVotes, groups) {
-        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_5__models_user__["a" /* User */](name, lastname, image, phone, password, email, description, type, username, rate, totalVotes, groups));
+    UsersService.prototype.create1 = function (name, lastname, image, phone, password, email, description, type, username, rate, totalVotes, clases, cupo) {
+        return this.post(this.resourceUrl, new __WEBPACK_IMPORTED_MODULE_5__models_user__["a" /* User */](name, lastname, image, phone, password, email, description, type, username, rate, totalVotes, clases, cupo));
     };
     UsersService.prototype.getLoged = function () {
         return this.loged;
